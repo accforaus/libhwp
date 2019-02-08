@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ccebcb7-0f8e-4ea3-8d4a-f2a34a77c95d" name="Default Changelist" comment="" />
+    <list default="true" id="5ccebcb7-0f8e-4ea3-8d4a-f2a34a77c95d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -285,6 +287,9 @@
       <replace>하이퍼링크 필드 업데이트 시 글자 속성이 링크 생성인지</replace>
       <replace>필드 내용이 수정되었는지</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -790,10 +795,13 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="565" />
-    <option name="y" value="42" />
+    <option name="x" value="19" />
+    <option name="y" value="23" />
     <option name="width" value="1600" />
     <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -1087,7 +1095,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/josh/ChinaProject/kotlin/libhwp/src/main/kotlin/com/tang/hwplib/objects/docinfo/CharShape.kt" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549547942367" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549598699819" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1228,7 +1236,7 @@
       <workItem from="1549541537448" duration="444000" />
       <workItem from="1549541993621" duration="1592000" />
       <workItem from="1549543840437" duration="4008000" />
-      <workItem from="1549598084281" duration="242000" />
+      <workItem from="1549598084281" duration="377000" />
     </task>
     <servers />
   </component>
@@ -1265,13 +1273,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324852000" />
+    <option name="totallyTimeSpent" value="324987000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="565" y="42" width="1600" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="19" y="23" width="1600" height="877" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13029525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13029525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1287,7 +1294,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32982087" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.32899868" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32139093" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
@@ -1341,6 +1348,9 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
