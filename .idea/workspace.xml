@@ -2,585 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ccebcb7-0f8e-4ea3-8d4a-f2a34a77c95d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/libhwp_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/libhwp_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/HWPDocument.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/HWPRecordHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bindata/HWPBinData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bindata/HWPEmbeddedBinaryData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bindata/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bindata/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bindata/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/HWPBodyText.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/HWPSection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlAdditionalText.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlAutoNumber.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlBookmark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlColumnDefine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlEndNote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlEquation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlField.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlFooter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlFootnote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlHiddenComment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlIndexMark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlNewNumber.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlOverlappingLetter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlPageHide.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlPageNumberPosition.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlPageOddEvenAdjust.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlSectionDefine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlTable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/HWPControlTypeKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/HWPCtrlData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterItem.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/bookmark/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAdditionalText.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAutoNumber.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderBookmark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderColumnDefine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderEndnote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderField.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFooter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFootnote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderGso.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderIndexMark.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderNewNumber.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderOverlappingLetter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageHide.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageNumberPosition.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageOddEvenAdjust.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderSectionDefine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/additionaltext/HWPAdditionalTextPosition.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/additionaltext/HWPAdditionalTextPosition.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/additionaltext/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/additionaltext/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/additionaltext/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/autonumber/HWPAutoNumberHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/autonumber/HWPNumberSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/autonumber/HWPNumberSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/autonumber/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/autonumber/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/autonumber/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDefineHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDirection.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDirection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/field/HWPFieldHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/field/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/field/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/field/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPGsoHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPHeightCriterion.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPHeightCriterion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPHorzRelTo.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPHorzRelTo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPObjectNumberSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPObjectNumberSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPRelativeArrange.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPRelativeArrange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPTextFlowMethod.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPTextFlowMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPTextHorzArrange.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPTextHorzArrange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPVertRelTo.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPVertRelTo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPWidthCriterion.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/HWPWidthCriterion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/gso/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/header/HWPHeaderFooterApplyPage.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/header/HWPHeaderFooterApplyPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/header/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/header/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/header/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/newnumber/HWPNewNumberHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/newnumber/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/newnumber/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/newnumber/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagehide/HWPPageHideHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagehide/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagehide/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagehide/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagenumberposition/HWPNumberPosition.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagenumberposition/HWPNumberPosition.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagenumberposition/PageNumberPositionHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagenumberposition/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagenumberposition/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pagenumberposition/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pageoddevenadjust/HWPOddEvenDivision.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pageoddevenadjust/HWPOddEvenDivision.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pageoddevenadjust/PageOddEvenAdjustHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pageoddevenadjust/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pageoddevenadjust/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/pageoddevenadjust/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/sectiondefine/HWPSectionDefineHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/sectiondefine/HWPTextDirection.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/sectiondefine/HWPTextDirection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/sectiondefine/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/sectiondefine/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/ctrlheader/sectiondefine/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/equation/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/equation/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/equation/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/footnoteendnote/ListHeaderForFootnoteEndnote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/footnoteendnote/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/footnoteendnote/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/footnoteendnote/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlArc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlContainer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlCurve.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlEllipse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlLine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlOLE.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlObjectLinkLine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPicture.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPolygon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlRectangle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPControlVideo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaptionDirection.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaptionDirection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/ListHeaderCaptionProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/ListHeaderForHWPCaption.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/caption/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/listheader/HWPListHeaderProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/listheader/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/listheader/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/listheader/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentArc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentContainer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentCurve.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentEllipse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLineForObjectLinkLine.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentNormal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentOLE.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPicture.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPolygon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentRectangle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentVideo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/arc/HWPArcBorder.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/arc/HWPArcBorder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/arc/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/arc/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/arc/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/curve/HWPCurveSegmentType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/curve/HWPCurveSegmentType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/curve/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/curve/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/curve/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ellipse/HWPShapeComponentEllipseProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ellipse/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ellipse/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ellipse/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineArrowShape.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineArrowShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineArrowSize.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineArrowSize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineEndShape.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineEndShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineInfoProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPOutlineStyle.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPOutlineStyle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/DVASPECT.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/DVASPECT.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/HWPObjectSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/HWPObjectSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/HWPShapeComponentOLEProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ole/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorWithEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPInnerMargin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPNeonEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffectProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPReflectionEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPShadowEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPSoftEdgeEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPMatrix.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPRenderingInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPScaleRotateMatrixPair.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPLineChange.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPLineChange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextBox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextVerticalAlignment.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextVerticalAlignment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/ListHeaderForHWPTextBox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/textbox/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/HWPLocalVideoProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/HWPWebVideoProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/gso/video/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/headerfooter/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/headerfooter/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/headerfooter/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/hiddencomment/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/hiddencomment/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/hiddencomment/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPBatangPageInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPEndnoteDisplayMethod.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPEndnoteDisplayMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFillArea.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFillArea.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootEndNoteShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootnoteDisplayMethod.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootnoteDisplayMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootnoteShapeProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPNumberShape.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPNumberShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPNumberingMethod.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPNumberingMethod.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageBorderFill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageBorderFillProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDef.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDefProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPositionCriterion.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPositionCriterion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/sectiondefine/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/DivideAtPageBoundary.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/DivideAtPageBoundary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/HWPCell.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/HWPRow.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/HWPTable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/HWPZoneInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/ListHeaderForCell.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/ListHeaderPropertyForCell.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/TableProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/control/table/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraphList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraphListInterface.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPCharPositionShapeIdPair.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/charshape/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/charshape/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/charshape/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/header/HWPControlMask.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/header/HWPDivideSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/header/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/header/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/header/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPLineSegItemTag.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/LineSegItem.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemoList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/memo/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/memo/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/memo/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPParaRangeTag.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPRangeTagItem.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/rangetag/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/rangetag/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/rangetag/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlExtend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlInline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/bodytext/paragraph/text/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPBinData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPBorderFill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPBullet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPCharShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPDocInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPFaceName.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPIDMappings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPNumbering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPParaShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPStyle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/HWPTabDef.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataCompress.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataCompress.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataState.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataState.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/HWPBinDataType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bindata/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBackSlashDiagonalShape.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBackSlashDiagonalShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderFillProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderThickness.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderThickness.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPDiagonalSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPDiagonalSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPEachBorder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPSlashDiagonalShape.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/HWPSlashDiagonalShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPFillInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPFillType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientFill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFillType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFillType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternFill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureEffect.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureEffect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/borderfill/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bullet/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bullet/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/bullet/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPCharOffsets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPCharShapeProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPCharSpaces.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPEmphasisSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPEmphasisSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPOuterLineSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPOuterLineSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPRelativeSizes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPShadowSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPShadowSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPUnderLineSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/HWPUnderLineSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/charshape/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/compatibledocument/HWPCompatibleDocumentSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/compatibledocument/HWPCompatibleDocumentSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/compatibledocument/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/compatibledocument/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/compatibledocument/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/documentproperties/HWPCaretPosition.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/documentproperties/HWPStartNumber.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/documentproperties/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/documentproperties/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/documentproperties/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/HWPFaceNameEnum.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/HWPFaceNameProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/HWPFontType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/HWPFontType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/HWPFontTypeInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/facename/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPExtendNumbering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphAlignment.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphAlignment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphHeadInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphHeadInfoProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPValueType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/HWPValueType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/numbering/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPAlignment.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPAlignment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPLineDivideForEnglish.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPLineDivideForEnglish.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPLineDivideForHangul.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPLineDivideForHangul.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPLineSpaceSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPLineSpaceSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPParaHeadShape.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPParaHeadShape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPParaShapeProperty1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPParaShapeProperty2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPParaShapeProperty3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPVerticalAlignment.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/HWPVerticalAlignment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/parashape/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/style/HWPStyleProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/style/HWPStyleSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/style/HWPStyleSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/style/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/style/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/style/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/HWPTabDefProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/HWPTabInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/HWPTabSort.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/HWPTabSort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/docinfo/tabdef/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/etc/Color4Byte.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/etc/HWPTagKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/etc/UnknownRecord.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/etc/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/etc/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/etc/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPEncryptVersionType.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPEncryptVersionType.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPFileHeader.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPFileHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPFileVersion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPKOGLCCLInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPKOGLLicenceSupportCountry.Companion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/HWPKOGLLicenceSupportCountry.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/fileheader/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/objects/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/util/exceptions/StreamReaderException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/util/exceptions/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/util/exceptions/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/util/exceptions/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/AutoSetterKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/ForDocInfoKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/ForParagraphKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/InstanceID.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/ForControlKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/ForGsoControlKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/pack/PackKt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/pack/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/pack/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/pack/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/gso/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/control/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/com/tang/hwplib/writer/autosetter/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/index-all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dokkaJavadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/BasicTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestJava.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-BasicTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestJava.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -639,7 +91,7 @@
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.26" value="2" />
@@ -647,7 +99,7 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -659,6 +111,7 @@
           <entry key="java" value="24" />
           <entry key="kt" value="1138" />
           <entry key="md" value="1" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -669,20 +122,25 @@
           <entry key="Kotlin" value="1138" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="1215" />
+          <entry key="gradle" value="1505" />
           <entry key="java" value="562" />
           <entry key="kt" value="337284" />
+          <entry key="md" value="268" />
+          <entry key="yml" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="1215" />
+          <entry key="Groovy" value="1505" />
           <entry key="JAVA" value="562" />
           <entry key="Kotlin" value="337284" />
+          <entry key="Markdown" value="268" />
+          <entry key="YAML" value="29" />
         </counts>
       </usages-collector>
     </session>
@@ -692,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-889">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state relative-caret-position="198">
+              <caret line="77" column="60" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -707,35 +165,33 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradlew">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPSection.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="161">
+                <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradlew">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3476" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5322" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -1121,9 +577,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6197211147000" />
+        <entry key="$PROJECT_DIR$" value="6197212937000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="4157391436" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3270341021" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="3487862748" />
       </map>
@@ -1426,8 +882,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideo.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/autosetter/control/gso/pack/Pack.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/autosetter/AutoSetter.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/autosetter/ForDocInfo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/autosetter/ForParagraph.kt" />
@@ -1477,6 +931,8 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/TestKotlin.kt" />
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1493,8 +949,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="122" />
-    <option name="y" value="53" />
+    <option name="x" value="218" />
+    <option name="y" value="518" />
     <option name="width" value="1600" />
     <option name="height" value="877" />
   </component>
@@ -1506,14 +962,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="libhwp" type="b2602c69:ProjectViewProjectNode" />
               <item name="libhwp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="libhwp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="libhwp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="libhwp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="libhwp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1525,12 +992,12 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/josh/ChinaProject/kotlin/libhwp/src/main/kotlin/com/tang/hwplib/objects/docinfo/CharShape.kt" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549604705103" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549608723721" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.17285156" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
@@ -1562,7 +1029,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.libhwp [publish]">
+  <component name="RunManager" selected="Gradle.libhwp [jar]">
     <configuration name="libhwp [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1599,6 +1066,24 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
+    <configuration name="libhwp [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="libhwp [publish]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1617,16 +1102,6 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
-    <configuration name="test.debug" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="libhwp_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="METHOD_NAME" value="debug" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="test.debugs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="libhwp_test" />
       <option name="PACKAGE_NAME" value="" />
@@ -1638,19 +1113,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.test.debug" />
       <item itemvalue="JUnit.test.debugs" />
       <item itemvalue="Gradle.libhwp [dokkaJavadoc]" />
       <item itemvalue="Gradle.libhwp [dependencies]" />
       <item itemvalue="Gradle.libhwp [publish]" />
+      <item itemvalue="Gradle.libhwp [jar]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.libhwp [jar]" />
         <item itemvalue="Gradle.libhwp [publish]" />
         <item itemvalue="Gradle.libhwp [dependencies]" />
         <item itemvalue="Gradle.libhwp [dokkaJavadoc]" />
         <item itemvalue="JUnit.test.debugs" />
-        <item itemvalue="JUnit.test.debug" />
       </list>
     </recent_temporary>
   </component>
@@ -1683,6 +1158,7 @@
       <workItem from="1549541993621" duration="1592000" />
       <workItem from="1549543840437" duration="4008000" />
       <workItem from="1549598084281" duration="3738000" />
+      <workItem from="1549605448104" duration="2201000" />
     </task>
     <servers />
   </component>
@@ -1719,7 +1195,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328348000" />
+    <option name="totallyTimeSpent" value="330549000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1731,9 +1207,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="122" y="53" width="1600" height="877" extended-state="0" />
+    <frame x="218" y="518" width="1600" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22593068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22849807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1742,12 +1219,12 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914287" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40312093" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40312093" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37934667" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899868" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49935815" visible="true" weight="0.32769832" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49935815" weight="0.32769832" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5006418" side_tool="true" weight="0.32899868" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32139093" />
@@ -1759,7 +1236,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32960597" />
-      <window_info anchor="right" id="Gradle" order="6" visible="true" weight="0.27856225" />
+      <window_info anchor="right" id="Gradle" order="6" visible="true" weight="0.27792042" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -1882,13 +1359,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/autosetter/control/ForControl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="138" column="42" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -2145,9 +1615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#228#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2171,6 +1638,12 @@
           <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/TestKotlinBasic.kt">
       <provider selected="true" editor-type-id="text-editor" />
@@ -2225,29 +1698,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPSection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-889">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3476" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5322" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
@@ -2257,10 +1712,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPSection.class">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="198">
+          <caret line="77" column="60" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="161">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -2270,10 +1742,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>libhwp-1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

@@ -70,3 +70,10 @@ publish {
     issueTracker = 'https://github.com/accforaus/libhwp/issues'
     repository = 'https://github.com/accforaus/libhwp.git'
 }
+
+jar {
+    baseName = 'hwplib'
+    version = 1.0
+    archiveName = 'hwplib-1.0.jar'
+    from { configurations.compile.collect { it.isDirectory() ? it: zipTree(it) }}
+}
