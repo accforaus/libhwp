@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="libhwp-1.0">
+    <output-path>$PROJECT_DIR$/out/artifacts/libhwp_1_0</output-path>
+    <root id="archive" name="libhwp-1.0.jar" />
+  </artifact>
+</component>
