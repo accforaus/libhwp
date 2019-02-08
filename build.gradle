@@ -11,7 +11,9 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.9.17"
+        classpath 'com.novoda:bintray-release:0.8.0'
     }
+
 }
 
 plugins {
@@ -20,8 +22,10 @@ plugins {
     id 'org.jetbrains.dokka' version '0.9.17'
 }
 
+apply plugin: 'com.novoda.bintray-release'
+
 group 'kotlin.tang.com'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -55,3 +59,14 @@ description = """
     Project version: ${version}
     Gradle version: ${gradle.gradleVersion}
 """
+
+publish {
+    userOrg = 'accforaus'
+    groupId = 'kotlin.tang.com'
+    artifactId = 'libhwp'
+    publishVersion = '1.0'
+    desc = 'https://github.com/accforaus/libhwp'
+    website = 'https://github.com/accforaus/libhwp'
+    issueTracker = 'https://github.com/accforaus/libhwp/issues'
+    repository = 'https://github.com/accforaus/libhwp.git'
+}

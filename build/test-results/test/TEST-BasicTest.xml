@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BasicTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-02-08T05:49:59" hostname="MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="basic" classname="BasicTest" time="0.0"/>
+  <testcase name="부호없는 상수 테스트" classname="BasicTest" time="0.001"/>
+  <system-out><![CDATA[49 0 50 0 51 0 52 0 53 0 54 0 55 0 56 0 57 0 ]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

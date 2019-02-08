@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestJava" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-08T05:41:13" hostname="MacBook-Air.local" time="0.007">
+  <properties/>
+  <testcase name="test" classname="TestJava" time="0.007"/>
+  <system-out><![CDATA[-2147483648
+2147483647
+0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
