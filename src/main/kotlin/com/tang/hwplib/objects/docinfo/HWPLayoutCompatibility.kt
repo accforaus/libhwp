@@ -1,0 +1,22 @@
+package com.tang.hwplib.objects.docinfo
+import com.tang.hwplib.objects.etc.LAYOUT_COMPATIBILITY
+/**
+ * 레이아웃 호환성을 나타내는 객체
+ * Tag ID: HWPTAG_LAYOUT_COMPATIBILITY [LAYOUT_COMPATIBILITY]
+ * 20 bytes
+ *
+ * @author accforaus
+ *
+ * @property [letterLevelFormat] [Long], 글자 단위 서식 (UINT32 - unsigned 4 bytes)
+ * @property [paragraphLevelFormat] [Long], 문단 단위 서식 (UINT32 - unsigned 4 bytes)
+ * @property [sectionLevelFormat] [Long], 구역 단위 서식 (UINT32 - unsigned 4 bytes)
+ * @property [objectLevelFormat] [Long], 개체 단위 서식 (UINT32 - unsigned 4 bytes)
+ * @property [fieldLevelFormat] [Long], 필드 단위 서식 (UINT32 - unsigned 4 bytes)
+ */
+class HWPLayoutCompatibility {
+    var letterLevelFormat: Long = 0
+    var paragraphLevelFormat: Long = 0
+    var sectionLevelFormat: Long = 0
+    var objectLevelFormat: Long = 0
+    var fieldLevelFormat: Long = 0
+}
