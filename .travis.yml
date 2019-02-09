@@ -8,7 +8,7 @@ branches:
 
 before_install:
   - chmod +x gradlew
-  - chmod +x gradle/wrapper/gradlew-wrapper.jar
+  - chmod +x gradle/wrapper/gradle-wrapper.jar
 
 cache:
   directories:
