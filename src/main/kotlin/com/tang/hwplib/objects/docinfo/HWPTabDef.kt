@@ -23,4 +23,14 @@ class HWPTabDef {
      * @return [HWPTabInfo] 생성된 정보 반환
      */
     fun addNewTabInfo() : HWPTabInfo = HWPTabInfo().also { tabInfoList.add(it) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPTabDef] 복사된 객체 반환
+     */
+    fun copy() : HWPTabDef = HWPTabDef().also {
+        it.property.value = this.property.value
+        for (tabInfo in this.tabInfoList) it.tabInfoList.add(tabInfo)
+    }
 }

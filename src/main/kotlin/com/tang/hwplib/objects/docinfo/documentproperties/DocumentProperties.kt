@@ -13,6 +13,17 @@ class HWPCaretPosition {
     var listID: Long = 0
     var paragraphID: Long = 0
     var positionInParagraph: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCaretPosition] 복사된 객체 반환
+     */
+    fun copy() : HWPCaretPosition = HWPCaretPosition().also {
+        it.listID = this.listID
+        it.paragraphID = this.paragraphID
+        it.positionInParagraph = this.positionInParagraph
+    }
 }
 
 /**
@@ -34,4 +45,18 @@ class HWPStartNumber {
     var picture: Int = 0
     var table: Int = 0
     var equation: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPStartNumber] 복사된 객체 반환
+     */
+    fun copy() : HWPStartNumber = HWPStartNumber().also {
+        it.page = this.page
+        it.footnote = this.footnote
+        it.endnote = this.endnote
+        it.picture = this.picture
+        it.table = this.table
+        it.equation = this.equation
+    }
 }

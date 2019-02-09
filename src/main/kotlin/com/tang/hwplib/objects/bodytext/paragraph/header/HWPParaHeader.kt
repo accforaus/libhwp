@@ -36,4 +36,23 @@ class HWPParaHeader {
     var lineAlignCount: Int = 0
     var instanceID: Long = 0
     var isMergedByTrack: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParaHeader] 복사된 객체 반환
+     */
+    fun copy() : HWPParaHeader = HWPParaHeader().also {
+        it.lastInList = this.lastInList
+        it.characterCount = this.characterCount
+        it.controlMask.value = this.controlMask.value
+        it.paraShapeId = this.paraShapeId
+        it.styleId = this.styleId
+        it.divideSort.value = this.divideSort.value
+        it.charShapeCount = this.charShapeCount
+        it.rangeTagCount = this.rangeTagCount
+        it.lineAlignCount = this.lineAlignCount
+        it.instanceID = this.instanceID
+        it.isMergedByTrack = this.isMergedByTrack
+    }
 }

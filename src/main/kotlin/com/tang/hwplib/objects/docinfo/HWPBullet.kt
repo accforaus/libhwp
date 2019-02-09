@@ -23,4 +23,17 @@ class HWPBullet {
     var imageBulletCheck: Int = 0
     var imageBullet: HWPImageBullet = HWPImageBullet()
     var checkBulletChar: String = ""
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPBullet] 복사된 객체 반환
+     */
+    fun copy() : HWPBullet = HWPBullet().also {
+        it.paragraphHeadInfo = this.paragraphHeadInfo.copy()
+        it.bulletChar = this.bulletChar
+        it.imageBulletCheck = this.imageBulletCheck
+        it.imageBullet = this.imageBullet.copy()
+        it.checkBulletChar = this.checkBulletChar
+    }
 }

@@ -26,4 +26,17 @@ class HWPShadowInfo {
     var offsetX: Int = 0
     var offsetY: Int = 0
     var transparent: Short = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShadowInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPShadowInfo = HWPShadowInfo().also {
+        it.type.value = this.type.value
+        it.color.value = this.color.value
+        it.offsetX = this.offsetX
+        it.offsetY = this.offsetY
+        it.transparent = this.transparent
+    }
 }

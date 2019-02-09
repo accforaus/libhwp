@@ -22,4 +22,17 @@ class HWPBinData {
     var relativePathForLink: String? = null
     var binDataID: Int = 0
     var extensionForEmbedding: String? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPBinData] 복사된 객체 반환
+     */
+    fun copy(): HWPBinData = HWPBinData().also {
+        it.property.value = this.property.value
+        it.absolutePathForLink = this.absolutePathForLink
+        it.relativePathForLink = this.relativePathForLink
+        it.binDataID = this.binDataID
+        it.extensionForEmbedding = this.extensionForEmbedding
+    }
 }

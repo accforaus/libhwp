@@ -19,4 +19,14 @@ class UnknownRecord constructor() {
     constructor(header: HWPRecordHeader) : this() {
         this.header = header.copy()
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [UnknownRecord] 복사된 객체 반환
+     */
+    fun copy() : UnknownRecord = UnknownRecord().also {
+        this.header?.run { it.header = this.copy() }
+        this.body?.run { it.body = this.copyOf() }
+    }
 }

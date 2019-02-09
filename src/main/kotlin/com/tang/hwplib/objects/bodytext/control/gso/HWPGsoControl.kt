@@ -30,35 +30,48 @@ open class HWPGsoControl: HWPControl {
      *
      * @return [HWPCtrlHeaderGso] 헤더 반환
      */
-    fun getHeader() : HWPCtrlHeaderGso? = if (header != null) header as HWPCtrlHeaderGso else null
+    fun getHeader(): HWPCtrlHeaderGso? = if (header != null) header as HWPCtrlHeaderGso else null
 
     /**
      * Gso 개체의 ID를 반환하는 함수
      *
      * @return [Long] Gso ID값 반환
      */
-    fun getGsoId() : Long? = shapeComponent.gsoId
+    fun getGsoId(): Long? = shapeComponent.gsoId
 
     /**
      * Gso 개체의 ID를 설정하는 함수
      *
      * @param [gsoId] 설정할 Gso ID값
      */
-    fun setGsoId(gsoId: Long) { shapeComponent.gsoId = gsoId}
+    fun setGsoId(gsoId: Long) {
+        shapeComponent.gsoId = gsoId
+    }
 
     /**
      * Gso 컨트롤 유형을 반환하는 함수
      *
      * @return [HWPGsoControlType] Gso 컨트롤 유형 반환
      */
-    fun getGsoType() : HWPGsoControlType = HWPGsoControlType.idOf(getGsoId()!!)
+    fun getGsoType(): HWPGsoControlType = HWPGsoControlType.idOf(getGsoId()!!)
 
     /**
      * 캡션을 생성하는 함수
      */
-    fun createCaption() { caption = HWPCaption() }
-}
+    fun createCaption() {
+        caption = HWPCaption()
+    }
 
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPGsoControl] 복사된 객체 반환
+     */
+    override fun copy(): HWPGsoControl = HWPGsoControl().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        this.caption?.run { it.caption = this.copy() }
+    }
+}
 /**
  * 호 개체
  * Tag ID: HWPTAG_SHAPE_COMPONENT_ARC [SHAPE_COMPONENT_ARC]
@@ -90,6 +103,23 @@ class HWPControlArc: HWPGsoControl {
      * 그리기 객체 글상자용 텍스트 정보를 제거하는 함수
      */
     fun deleteTextBox() { textBox = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlArc] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlArc = HWPControlArc(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        this.textBox?.run { it.textBox = this.copy() }
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        it.shapeComponentArc = this.shapeComponentArc.copy()
+    }
 }
 
 /**
@@ -120,6 +150,23 @@ class HWPControlContainer: HWPGsoControl {
     */
     fun addChildControl(childControl: HWPGsoControl) {
         childControlList.add(childControl)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlContainer] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlContainer = HWPControlContainer(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentContainer)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentContainer).copy()
+        for (childControl in this.childControlList)
+            it.childControlList.add(childControl.copy())
     }
 }
 
@@ -154,6 +201,23 @@ class HWPControlCurve: HWPGsoControl {
      * 그리기 객체 글상자용 텍스트 정보를 제거하는 함수
      */
     fun deleteTextBox() { textBox = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlCurve] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlCurve = HWPControlCurve(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        this.textBox?.run { it.textBox = this.copy() }
+        it.shapeComponentCurve = this.shapeComponentCurve.copy()
+    }
 }
 
 /**
@@ -187,6 +251,23 @@ class HWPControlEllipse: HWPGsoControl {
      * 그리기 객체 글상자용 텍스트 정보를 제거하는 함수
      */
     fun deleteTextBox() { textBox = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlEllipse] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlEllipse = HWPControlEllipse(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        this.textBox?.run { it.textBox = this.copy() }
+        it.shapeComponentEllipse = this.shapeComponentEllipse.copy()
+    }
 }
 
 /**
@@ -207,6 +288,22 @@ class HWPControlLine: HWPGsoControl {
     constructor(header: HWPCtrlHeaderGso?) : super(header) {
         setGsoId(HWPGsoControlType.Line.id)
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlLine] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlLine = HWPControlLine(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        it.shapeComponentLine = this.shapeComponentLine.copy()
+    }
 }
 
 /**
@@ -226,6 +323,22 @@ class HWPControlObjectLinkLine: HWPGsoControl {
     constructor() : this(HWPCtrlHeaderGso())
     constructor(header: HWPCtrlHeaderGso?) : super(header) {
         setGsoId(HWPGsoControlType.ObjectLinkLine.id)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlObjectLinkLine] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlObjectLinkLine = HWPControlObjectLinkLine(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        it.shapeComponentObjectLinkLine = this.shapeComponentObjectLinkLine
     }
 }
 
@@ -248,6 +361,22 @@ class HWPControlOLE: HWPGsoControl {
     constructor(header: HWPCtrlHeaderGso?) : super(header) {
         setGsoId(HWPGsoControlType.OLE.id)
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlOLE] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlOLE = HWPControlOLE(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        it.shapeComponentOLE = this.shapeComponentOLE.copy()
+    }
 }
 
 /**
@@ -268,6 +397,22 @@ class HWPControlPicture: HWPGsoControl {
     constructor() : this(HWPCtrlHeaderGso())
     constructor(header: HWPCtrlHeaderGso?) : super(header) {
         setGsoId(HWPGsoControlType.Picture.id)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlPicture] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlPicture = HWPControlPicture(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        it.shapeComponentPicture = this.shapeComponentPicture.copy()
     }
 }
 
@@ -302,6 +447,23 @@ class HWPControlPolygon: HWPGsoControl {
      * 그리기 객체 글상자용 텍스트 정보를 제거하는 함수
      */
     fun deleteTextBox() { textBox = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlPolygon] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlPolygon = HWPControlPolygon(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        this.textBox?.run { it.textBox = this.copy() }
+        it.shapeComponentPolygon = this.shapeComponentPolygon.copy()
+    }
 }
 
 /**
@@ -335,6 +497,23 @@ class HWPControlRectangle: HWPGsoControl {
      * 그리기 객체 글상자용 텍스트 정보를 제거하는 함수
      */
     fun deleteTextBox() { textBox = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlRectangle] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlRectangle =  HWPControlRectangle(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        this.textBox?.run { it.textBox = this.copy() }
+        it.shapeComponentRectangle = this.shapeComponentRectangle.copy()
+    }
 }
 
 /**
@@ -352,6 +531,22 @@ class HWPControlVideo: HWPGsoControl {
     constructor() : this(HWPCtrlHeaderGso())
     constructor(header: HWPCtrlHeaderGso?) : super(header) {
         setGsoId(HWPGsoControlType.Video.id)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlVideo] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlVideo = HWPControlVideo(HWPCtrlHeaderGso()).also {
+        super.copy().run {
+            it.caption = this.caption
+            it.setCtrlData(this.getCtrlData())
+        }
+        it.header = this.getHeader()?.copy()
+        if (it.shapeComponent is HWPShapeComponentNormal)
+            it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
+        it.shapeComponentVideo = this.shapeComponentVideo.copy()
     }
 }
 /**
@@ -375,5 +570,26 @@ fun createHWPGSOControl(gsoId: Long, header: HWPCtrlHeaderGso?) : HWPGsoControl?
     HWPGsoControlType.OLE.id -> HWPControlOLE(header)
     HWPGsoControlType.Container.id -> HWPControlContainer(header)
     HWPGsoControlType.ObjectLinkLine.id -> HWPControlObjectLinkLine(header)
+    else -> null
+}
+
+/**
+ * 개체 컨트롤을 복사하는 함수
+ *
+ * @param [gsoControl] [HWPGsoControl] 개체 컨트롤 객체
+ * @return [HWPGsoControl] 복사된 객체 반환 (존재하지 않으면 NULL)
+ */
+fun copyGsoControl(gsoControl: HWPGsoControl): HWPGsoControl? = when(gsoControl) {
+    is HWPControlLine -> gsoControl.copy()
+    is HWPControlRectangle -> gsoControl.copy()
+    is HWPControlEllipse -> gsoControl.copy()
+    is HWPControlArc -> gsoControl.copy()
+    is HWPControlPolygon -> gsoControl.copy()
+    is HWPControlCurve -> gsoControl.copy()
+    is HWPControlPicture -> gsoControl.copy()
+    is HWPControlOLE -> gsoControl.copy()
+    is HWPControlContainer -> gsoControl.copy()
+    is HWPControlObjectLinkLine -> gsoControl.copy()
+    is HWPControlVideo -> gsoControl.copy()
     else -> null
 }

@@ -181,4 +181,16 @@ class HWPParagraphHeadInfo {
     var correctionValueForWidth: Short = 0
     var distanceFromBody: Short = 0
     var charShapeID: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParagraphHeadInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPParagraphHeadInfo = HWPParagraphHeadInfo().also {
+        it.property.value = this.property.value
+        it.correctionValueForWidth = this.correctionValueForWidth
+        it.distanceFromBody = this.distanceFromBody
+        it.charShapeID = this.charShapeID
+    }
 }

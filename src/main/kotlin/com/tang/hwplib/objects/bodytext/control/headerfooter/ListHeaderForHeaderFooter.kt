@@ -18,4 +18,16 @@ class ListHeaderForHeaderFooter {
     var property: HWPListHeaderProperty = HWPListHeaderProperty()
     var textWidth: Long = 0
     var textHeight: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [ListHeaderForHeaderFooter] 복사된 객체 반환
+     */
+    fun copy() : ListHeaderForHeaderFooter = ListHeaderForHeaderFooter().also {
+        it.paraCount = this.paraCount
+        it.property.value = this.property.value
+        it.textWidth = this.textWidth
+        it.textHeight = this.textHeight
+    }
 }

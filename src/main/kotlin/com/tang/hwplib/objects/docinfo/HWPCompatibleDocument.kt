@@ -13,4 +13,13 @@ import com.tang.hwplib.objects.etc.COMPATIBLE_DOCUMENT
  */
 class HWPCompatibleDocument {
     var compatibleDocumentSort: HWPCompatibleDocumentSort? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCompatibleDocument] 복사된 객체 반환
+     */
+    fun copy() : HWPCompatibleDocument = HWPCompatibleDocument().also {
+        this.compatibleDocumentSort?.run { it.compatibleDocumentSort = HWPCompatibleDocumentSort.valueOf(this.value) }
+    }
 }

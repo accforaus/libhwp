@@ -17,4 +17,16 @@ class HWPImageBullet {
     var brightness: Short = 0
     var effects: Short = 0
     var id: Short = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPImageBullet] 복사된 객체 반환
+     */
+    fun copy() : HWPImageBullet = HWPImageBullet().also {
+        it.contrast = this.contrast
+        it.brightness = this.brightness
+        it.effects = this.effects
+        it.id = this.id
+    }
 }

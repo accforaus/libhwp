@@ -2,6 +2,7 @@ package com.tang.hwplib.objects.bodytext.paragraph
 
 import com.tang.hwplib.objects.bodytext.control.HWPControl
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
+import com.tang.hwplib.objects.bodytext.control.copyControl
 import com.tang.hwplib.objects.bodytext.control.createHWPControl
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderGso
 import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
@@ -93,6 +94,16 @@ class HWPParagraphList: HWPParagraphListInterface {
         for (p in paragraphList)
             this.append(p.getNormalString()).append("\n")
         return this.toString()
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParagraphList] 복사된 객체 반환
+     */
+    fun copy() : HWPParagraphList = HWPParagraphList().also {
+        for (paragraph in this.paragraphList)
+            it.paragraphList.add(paragraph.copy())
     }
 }
 
@@ -248,5 +259,31 @@ class HWPParagraph {
         if (memoList == null)
             memoList = ArrayList()
         memoList!!.add(it)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParagraph] 복사된 객체 반환
+     */
+    fun copy() : HWPParagraph = HWPParagraph().also {
+        it.header = this.header.copy()
+        this.text?.run { it.text = this.copy() }
+        this.paraCharShape?.run { it.paraCharShape = this.copy() }
+        this.lineSeg?.run { it.lineSeg = this.copy() }
+        this.rangeTag?.run { it.rangeTag = this.copy() }
+        this.controlList?.run {
+            it.controlList = ArrayList()
+            for (control in this) {
+                copyControl(control)?.run {
+                    it.controlList?.add(this)
+                }
+            }
+        }
+        this.memoList?.run {
+            it.memoList = ArrayList()
+            for (memo in this)
+                it.memoList?.add(memo.copy())
+        }
     }
 }

@@ -56,4 +56,16 @@ class HWPDocument {
     fun write(path: String) {
         toHWPFile(this, path)
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPDocument] 복사된 객체 반환
+     */
+    fun copy() : HWPDocument = HWPDocument().also {
+        it.fileHeader = this.fileHeader.copy()
+        it.docInfo = this.docInfo.copy()
+        it.bodyText = this.bodyText.copy()
+        it.binData = this.binData.copy()
+    }
 }

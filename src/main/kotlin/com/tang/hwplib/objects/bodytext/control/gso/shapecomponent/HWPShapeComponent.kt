@@ -47,6 +47,28 @@ open class HWPShapeComponent {
     var renderingInfo: HWPRenderingInfo = HWPRenderingInfo()
 
     /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponent] 복사된 객체 반환
+     */
+    open fun copy() : HWPShapeComponent = HWPShapeComponent().also {
+        it.gsoId = this.gsoId
+        it.offsetX = this.offsetX
+        it.offsetY = this.offsetY
+        it.groupingCount = this.groupingCount
+        it.localFileVersion = this.localFileVersion
+        it.widthAtCreate = this.widthAtCreate
+        it.heightAtCreate = this.heightAtCreate
+        it.widthAtCurrent = this.widthAtCurrent
+        it.heightAtCurrent = this.heightAtCurrent
+        it.property = this.property
+        it.rotateAngle = this.rotateAngle
+        it.rotateXCenter = this.rotateXCenter
+        it.rotateYCenter = this.rotateYCenter
+        it.renderingInfo = this.renderingInfo.copy()
+    }
+
+    /**
      * normal matrix로 설정하는 함수
      */
     fun setMatrixsNormal() {
@@ -125,6 +147,33 @@ class HWPShapeComponentNormal: HWPShapeComponent() {
      * 그림자 정보를 제거하는 함수
      */
     fun deleteShadowInfo() { shadowInfo = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentNormal] 복사된 객체 반환
+     */
+    override fun copy(): HWPShapeComponentNormal = HWPShapeComponentNormal().also {
+        super.copy().run {
+            it.gsoId = this.gsoId
+            it.offsetX = this.offsetX
+            it.offsetY = this.offsetY
+            it.groupingCount = this.groupingCount
+            it.localFileVersion = this.localFileVersion
+            it.widthAtCreate = this.widthAtCreate
+            it.heightAtCreate = this.heightAtCreate
+            it.widthAtCurrent = this.widthAtCurrent
+            it.heightAtCurrent = this.heightAtCurrent
+            it.property = this.property
+            it.rotateAngle = this.rotateAngle
+            it.rotateXCenter = this.rotateXCenter
+            it.rotateYCenter = this.rotateYCenter
+            it.renderingInfo = this.renderingInfo.copy()
+        }
+        this.lineInfo?.run { it.lineInfo = this.copy() }
+        this.fillInfo?.run { it.fillInfo = this.copy() }
+        this.shadowInfo?.run { it.shadowInfo = this.copy() }
+    }
 }
 
 /**
@@ -144,4 +193,29 @@ class HWPShapeComponentContainer: HWPShapeComponent() {
      * @param [id] [Long], 추가할 개체의 컨트롤 ID
      */
     fun addChildControlId(id: Long) { childControlIdList.add(id) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentContainer] 복사된 객체 반환
+     */
+    override fun copy(): HWPShapeComponentContainer = HWPShapeComponentContainer().also {
+        super.copy().run {
+            it.gsoId = this.gsoId
+            it.offsetX = this.offsetX
+            it.offsetY = this.offsetY
+            it.groupingCount = this.groupingCount
+            it.localFileVersion = this.localFileVersion
+            it.widthAtCreate = this.widthAtCreate
+            it.heightAtCreate = this.heightAtCreate
+            it.widthAtCurrent = this.widthAtCurrent
+            it.heightAtCurrent = this.heightAtCurrent
+            it.property = this.property
+            it.rotateAngle = this.rotateAngle
+            it.rotateXCenter = this.rotateXCenter
+            it.rotateYCenter = this.rotateYCenter
+            it.renderingInfo = this.renderingInfo.copy()
+        }
+        for (childControlId in this.childControlIdList) it.childControlIdList.add(childControlId)
+    }
 }

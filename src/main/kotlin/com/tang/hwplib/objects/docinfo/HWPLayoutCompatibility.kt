@@ -19,4 +19,17 @@ class HWPLayoutCompatibility {
     var sectionLevelFormat: Long = 0
     var objectLevelFormat: Long = 0
     var fieldLevelFormat: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPLayoutCompatibility] 복사된 객체 반환
+     */
+    fun copy() : HWPLayoutCompatibility = HWPLayoutCompatibility().also {
+        it.letterLevelFormat = this.letterLevelFormat
+        it.paragraphLevelFormat = this.paragraphLevelFormat
+        it.sectionLevelFormat = this.sectionLevelFormat
+        it.objectLevelFormat = this.objectLevelFormat
+        it.fieldLevelFormat = this.fieldLevelFormat
+    }
 }

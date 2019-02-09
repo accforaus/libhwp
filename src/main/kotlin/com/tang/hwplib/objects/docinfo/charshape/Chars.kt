@@ -136,6 +136,15 @@ class HWPCharOffsets {
     fun setForAll(charOffset: Byte) {
         for (index in 0 until array.size) array[index] = charOffset
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharOffsets] 복사된 객체 반환
+     */
+    fun copy() : HWPCharOffsets = HWPCharOffsets().also {
+        it.array = this.array.copyOf()
+    }
 }
 
 /**
@@ -551,5 +560,14 @@ class HWPCharSpaces {
      */
     fun setForAll(charOffset: Byte) {
         for (index in 0 until array.size) array[index] = charOffset
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharSpaces] 복사된 객체 반환
+     */
+    fun copy() : HWPCharSpaces = HWPCharSpaces().also {
+        it.array = this.array.copyOf()
     }
 }

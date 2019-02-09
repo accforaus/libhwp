@@ -15,6 +15,17 @@ class HWPEmbeddedBinaryData {
     var name: String = ""
     var data: ByteArray? = null
     var compressMethod: HWPBinDataCompress? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPEmbeddedBinaryData] 복사된 객체 반환
+     */
+    fun copy(): HWPEmbeddedBinaryData = HWPEmbeddedBinaryData().also {
+        it.name = this.name
+        it.data = this.data
+        this.compressMethod?.run { it.compressMethod = HWPBinDataCompress.valueOf(this.value) }
+    }
 }
 
 /**
@@ -49,5 +60,15 @@ class HWPBinData {
             this.compressMethod = compressMethod
             embeddedBinaryDataList.add(this)
         }
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPBinData] 복사된 객체 반환
+     */
+    fun copy(): HWPBinData = HWPBinData().also {
+        for (ebd in this.embeddedBinaryDataList)
+            it.addNewEmbeddedBinaryData(ebd.name, ebd.data!!, ebd.compressMethod!!)
     }
 }

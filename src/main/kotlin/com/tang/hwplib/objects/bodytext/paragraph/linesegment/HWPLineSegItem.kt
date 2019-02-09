@@ -194,7 +194,7 @@ class HWPLineSegItemTag {
  * @property [segmentWidth] [Int], 세그먼트의 폭
  * @property [tag] [HWPLineSegItemTag], 태그 (UINT32 - unsigned 4 bytes)
  */
-class LineSegItem {
+class HWPLineSegItem {
     var textStartPosition: Long = 0
     var lineVerticalPosition: Int = 0
     var lineHeight: Int = 0
@@ -204,4 +204,21 @@ class LineSegItem {
     var startPositionFromColumn: Int = 0
     var segmentWidth: Int = 0
     var tag: HWPLineSegItemTag = HWPLineSegItemTag()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPLineSegItem] 복사된 객체 반환
+     */
+    fun copy() : HWPLineSegItem = HWPLineSegItem().also {
+        it.textStartPosition = this.textStartPosition
+        it.lineVerticalPosition = this.lineVerticalPosition
+        it.lineHeight = this.lineHeight
+        it.textPartHeight = this.textPartHeight
+        it.distanceBaseLineToLineVerticalPosition = this.distanceBaseLineToLineVerticalPosition
+        it.lineSpace = this.lineSpace
+        it.startPositionFromColumn = this.startPositionFromColumn
+        it.segmentWidth = this.segmentWidth
+        it.tag.value = this.tag.value
+    }
 }

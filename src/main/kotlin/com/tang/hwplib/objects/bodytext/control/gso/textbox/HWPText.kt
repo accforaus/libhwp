@@ -31,6 +31,23 @@ class ListHeaderForHWPTextBox {
     var textWidth: Long = 0
     var editableAtFormMode: Boolean = false
     var fieldName: String? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [ListHeaderForHWPTextBox] 복사된 객체 반환
+     */
+    fun copy() : ListHeaderForHWPTextBox = ListHeaderForHWPTextBox().also {
+        it.paraCount = this.paraCount
+        it.property.value = this.property.value
+        it.leftMargin = this.leftMargin
+        it.rightMargin = this.rightMargin
+        it.topMargin = this.topMargin
+        it.bottomMargin = this.bottomMargin
+        it.textWidth = this.textWidth
+        it.editableAtFormMode = this.editableAtFormMode
+        it.fieldName = this.fieldName
+    }
 }
 
 /**
@@ -44,4 +61,14 @@ class ListHeaderForHWPTextBox {
 class HWPTextBox {
     var listHeader: ListHeaderForHWPTextBox = ListHeaderForHWPTextBox()
     var paragraphList: HWPParagraphList = HWPParagraphList()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPTextBox] 복사된 객체 반환
+     */
+    fun copy() : HWPTextBox = HWPTextBox().also {
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }

@@ -232,4 +232,24 @@ class HWPFootEndNoteShape {
     var divideLineSort: HWPBorderType = HWPBorderType.Solid
     var divideLineThickness: HWPBorderThickness = HWPBorderThickness.MM0_1
     var divideLineColor: Color4Byte = Color4Byte()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFootEndNoteShape] 복사된 객체 반환
+     */
+    fun copy() : HWPFootEndNoteShape = HWPFootEndNoteShape().also {
+        it.property.value = this.property.value
+        it.userSymbol = this.userSymbol
+        it.beforeDecorativeLetter = this.beforeDecorativeLetter
+        it.afterDecorativeLetter = this.afterDecorativeLetter
+        it.startNumber = this.startNumber
+        it.divideLineLength = this.divideLineLength
+        it.divideLineTopMargin = this.divideLineTopMargin
+        it.divideLineBottomMargin = this.divideLineBottomMargin
+        it.betweenNotesMargin = this.betweenNotesMargin
+        it.divideLineSort = HWPBorderType.valueOf(this.divideLineSort.value)
+        it.divideLineThickness = HWPBorderThickness.valueOf(this.divideLineThickness.value)
+        it.divideLineColor.value = this.divideLineColor.value
+    }
 }

@@ -11,6 +11,13 @@ import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraphList
  */
 class HWPMemoList {
     var memoIndex: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPMemoList] 복사된 객체 반환
+     */
+    fun copy() : HWPMemoList = HWPMemoList().also { it.memoIndex = this.memoIndex }
 }
 
 /**
@@ -26,4 +33,15 @@ class HWPMemo {
     var memoList: HWPMemoList = HWPMemoList()
     var listHeader: ListHeaderForHWPMemo = ListHeaderForHWPMemo()
     var paragraphList: HWPParagraphList = HWPParagraphList()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPMemo] 복사된 객체 반환
+     */
+    fun copy() : HWPMemo = HWPMemo().also {
+        it.memoList = this.memoList
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }

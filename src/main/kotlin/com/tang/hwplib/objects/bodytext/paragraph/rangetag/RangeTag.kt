@@ -18,6 +18,18 @@ class HWPRangeTagItem {
     var rangeEnd: Long = 0
     var sort: Short = 0
     var data: ByteArray? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPRangeTagItem] 복사된 객체 반환
+     */
+    fun copy() : HWPRangeTagItem = HWPRangeTagItem().also {
+        it.rangeStart = this.rangeStart
+        it.rangeEnd = this.rangeEnd
+        it.sort = this.sort
+        it.data = this.data?.copyOf()
+    }
 }
 
 /**
@@ -37,5 +49,19 @@ class HWPRangeTagItem {
 class HWPParaRangeTag {
     var rangeTagItemList: ArrayList<HWPRangeTagItem> = ArrayList()
 
+    /**
+     * 영역 태그 아이템을 추가하고 반환하는 함수
+     *
+     * @return [HWPRangeTagItem] 생성된 객체 반환
+     */
     fun addNewRangeTagItem() : HWPRangeTagItem = HWPRangeTagItem().also { rangeTagItemList.add(it) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParaRangeTag] 복사된 객체 반환
+     */
+    fun copy() : HWPParaRangeTag = HWPParaRangeTag().also {
+        for (rangeTagItem in this.rangeTagItemList) it.rangeTagItemList.add(rangeTagItem.copy())
+    }
 }

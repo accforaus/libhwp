@@ -18,6 +18,18 @@ class ListHeaderForBatangPage {
     var property: HWPListHeaderProperty = HWPListHeaderProperty()
     var textWidth: Long = 0
     var textHeight: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [ListHeaderForBatangPage] 복사된 객체 반환
+     */
+    fun copy() : ListHeaderForBatangPage = ListHeaderForBatangPage().also {
+        it.paraCount = this.paraCount
+        it.property.value = this.property.value
+        it.textWidth = this.textWidth
+        it.textHeight = this.textHeight
+    }
 }
 
 /**
@@ -31,4 +43,14 @@ class ListHeaderForBatangPage {
 class HWPBatangPageInfo {
     var listHeader: ListHeaderForBatangPage = ListHeaderForBatangPage()
     var paragraphList: HWPParagraphList = HWPParagraphList()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPBatangPageInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPBatangPageInfo = HWPBatangPageInfo().also {
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }

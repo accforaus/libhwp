@@ -220,4 +220,13 @@ class HWPParaText {
         }
         processEndOfParagraph()
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParaText] 복사된 객체 반환
+     */
+    fun copy() : HWPParaText = HWPParaText().also {
+        for (char in this.charList) it.charList.add(char.copy())
+    }
 }

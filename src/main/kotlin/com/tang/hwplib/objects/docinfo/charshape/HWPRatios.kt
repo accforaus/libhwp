@@ -132,4 +132,13 @@ class HWPRatios {
     fun setForAll(ratio: Short) {
         for (index in 0 until array.size) array[index] = ratio
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPRatios] 복사된 객체 반환
+     */
+    fun copy() : HWPRatios = HWPRatios().also {
+        it.array = this.array.copyOf()
+    }
 }

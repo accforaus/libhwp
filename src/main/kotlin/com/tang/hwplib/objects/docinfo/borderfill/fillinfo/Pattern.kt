@@ -71,4 +71,15 @@ class HWPPatternFill {
     var backColor: Color4Byte = Color4Byte()
     var patternColor: Color4Byte = Color4Byte()
     var patterType: HWPPatternType = HWPPatternType.None
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPPatternFill] 복사된 객체 반환
+     */
+    fun copy() : HWPPatternFill = HWPPatternFill().also {
+        it.backColor.value = this.backColor.value
+        it.patternColor.value = this.patternColor.value
+        it.patterType = HWPPatternType.valueOf(this.patterType.value)
+    }
 }

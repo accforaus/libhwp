@@ -42,4 +42,27 @@ class HWPCharShape {
     var shadowColor: Color4Byte = Color4Byte()
     var borderFillId: Int = 0
     var strikeLineColor: Color4Byte = Color4Byte()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharShape] 복사된 객체 반환
+     */
+    fun copy() : HWPCharShape = HWPCharShape().also {
+        it.faceNameIds = this.faceNameIds.copy()
+        it.ratios = this.ratios.copy()
+        it.charSpaces = this.charSpaces.copy()
+        it.relativeSizes = this.relativeSizes.copy()
+        it.charOffsets = this.charOffsets.copy()
+        it.baseSize = this.baseSize
+        it.property.value = this.property.value
+        it.shadowGap1 = this.shadowGap1
+        it.shadowGap2 = this.shadowGap2
+        it.charColor.value = this.charColor.value
+        it.underLineColor.value = this.underLineColor.value
+        it.shadeColor.value = this.shadeColor.value
+        it.shadowColor.value = this.shadowColor.value
+        it.borderFillId = this.borderFillId
+        it.strikeLineColor.value = this.strikeLineColor.value
+    }
 }

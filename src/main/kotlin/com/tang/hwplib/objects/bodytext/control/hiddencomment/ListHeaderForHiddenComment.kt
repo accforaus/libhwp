@@ -14,4 +14,14 @@ import com.tang.hwplib.objects.bodytext.control.gso.listheader.HWPListHeaderProp
 class ListHeaderForHiddenComment {
     var paraCount: Int = 0
     var property: HWPListHeaderProperty = HWPListHeaderProperty()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [ListHeaderForHiddenComment] 복사된 객체 반환
+     */
+    fun copy() : ListHeaderForHiddenComment = ListHeaderForHiddenComment().also {
+        it.paraCount = this.paraCount
+        it.property.value = this.property.value
+    }
 }

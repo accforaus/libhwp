@@ -41,8 +41,15 @@ enum class HWPVideoType(v: Int) {
  *
  * @property [thumbBinDataID] [Short], 썸내일 파일이 사용하는 스토리지의 BinData ID (UINT16 - unsigned 2 bytes)
  */
-abstract class HWPVideoProperty {
+open class HWPVideoProperty {
     var thumbBinDataID: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPVideoProperty] 복사된 객체 반환
+     */
+    open fun copy() : HWPVideoProperty = HWPVideoProperty().also { it.thumbBinDataID = this.thumbBinDataID }
 }
 
 /**
@@ -56,6 +63,11 @@ abstract class HWPVideoProperty {
  */
 class HWPLocalVideoProperty: HWPVideoProperty() {
     var videoBinDataID: Int = 0
+
+    override fun copy(): HWPLocalVideoProperty = HWPLocalVideoProperty().also {
+        super.copy()
+        it.videoBinDataID = this.videoBinDataID
+    }
 }
 
 /**
@@ -68,4 +80,9 @@ class HWPLocalVideoProperty: HWPVideoProperty() {
  */
 class HWPWebVideoProperty: HWPVideoProperty() {
     var webTag: String? = null
+
+    override fun copy(): HWPWebVideoProperty = HWPWebVideoProperty().also {
+        super.copy()
+        it.webTag = this.webTag
+    }
 }

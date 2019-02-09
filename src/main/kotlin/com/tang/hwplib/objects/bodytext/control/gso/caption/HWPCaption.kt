@@ -118,6 +118,20 @@ class ListHeaderForHWPCaption {
     var captionWidth: Long = 0
     var spaceBetweenCaptionAndFrame: Int = 0
     var textWidth: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [ListHeaderForHWPCaption] 복사된 객체 반환
+     */
+    fun copy() : ListHeaderForHWPCaption = ListHeaderForHWPCaption().also {
+        it.paraCount = this.paraCount
+        it.property.value = this.property.value
+        it.captionProperty.value = this.captionProperty.value
+        it.captionWidth = this.captionWidth
+        it.spaceBetweenCaptionAndFrame = this.spaceBetweenCaptionAndFrame
+        it.textWidth = this.textWidth
+    }
 }
 
 /**
@@ -132,4 +146,14 @@ class ListHeaderForHWPCaption {
 class HWPCaption {
     var listHeaderForCaption: ListHeaderForHWPCaption = ListHeaderForHWPCaption()
     var paragraphList: HWPParagraphList = HWPParagraphList()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCaption] 복사된 객체 반환
+     */
+    fun copy() : HWPCaption = HWPCaption().also {
+        it.listHeaderForCaption = this.listHeaderForCaption.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }

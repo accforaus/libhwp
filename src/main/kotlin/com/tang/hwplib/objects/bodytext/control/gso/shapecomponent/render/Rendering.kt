@@ -30,6 +30,15 @@ class HWPMatrix {
     fun setValue(index: Int, value: Double) {
         values[index] = value
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPMatrix] 복사된 객체 반환
+     */
+    fun copy() : HWPMatrix = HWPMatrix().also {
+        it.values = this.values.copyOf()
+    }
 }
 
 /**
@@ -43,6 +52,16 @@ class HWPMatrix {
 class HWPScaleRotateMatrixPair {
     var scaleMatrix: HWPMatrix = HWPMatrix()
     var rotateMatrix: HWPMatrix = HWPMatrix()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPScaleRotateMatrixPair] 복사된 객체 반환
+     */
+    fun copy() : HWPScaleRotateMatrixPair = HWPScaleRotateMatrixPair().also {
+        it.scaleMatrix = this.scaleMatrix.copy()
+        it.rotateMatrix = this.rotateMatrix.copy()
+    }
 }
 
 /**
@@ -64,4 +83,14 @@ class HWPRenderingInfo {
      * @return [HWPScaleRotateMatrixPair] 생성된 객체 반환
      */
     fun addNewScaleRotateMatrixPair(): HWPScaleRotateMatrixPair = HWPScaleRotateMatrixPair().apply { scaleRotateMatrixPairList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPRenderingInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPRenderingInfo = HWPRenderingInfo().also {
+        it.translationMatrix = this.translationMatrix.copy()
+        for (scaleRotateMatrix in this.scaleRotateMatrixPairList) it.scaleRotateMatrixPairList.add(scaleRotateMatrix.copy())
+    }
 }

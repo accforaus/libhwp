@@ -31,4 +31,21 @@ class HWPBorderFill {
     var diagonalThickness: HWPBorderThickness = HWPBorderThickness.MM0_1
     var diagonalColor: Color4Byte = Color4Byte()
     var fillInfo: HWPFillInfo = HWPFillInfo()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPBorderFill] 복사된 객체 반환
+     */
+    fun copy(): HWPBorderFill = HWPBorderFill().also {
+        it.property.value = this.property.value
+        it.leftBorder = this.leftBorder.copy()
+        it.rightBorder = this.rightBorder.copy()
+        it.topBorder = this.topBorder.copy()
+        it.bottomBorder = this.bottomBorder.copy()
+        it.diagonalSort = HWPBorderType.valueOf(this.diagonalSort.value)
+        it.diagonalThickness = HWPBorderThickness.valueOf(this.diagonalThickness.value)
+        it.diagonalColor.value = this.diagonalColor.value
+        it.fillInfo = this.fillInfo.copy()
+    }
 }

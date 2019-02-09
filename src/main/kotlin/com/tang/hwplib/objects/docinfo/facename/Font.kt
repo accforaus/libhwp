@@ -56,4 +56,22 @@ class HWPFontTypeInfo {
     var characterShape: Short = 0
     var middleLine: Short = 0
     var xHeight: Short = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFontTypeInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPFontTypeInfo = HWPFontTypeInfo().also {
+        it.fontType = this.fontType
+        it.serifType = this.serifType
+        it.thickness = this.thickness
+        it.ratio = this.ratio
+        it.contrast = this.contrast
+        it.strokeDeviation = this.strokeDeviation
+        it.characterStrokeType = this.characterStrokeType
+        it.characterShape = this.characterShape
+        it.middleLine = this.middleLine
+        it.xHeight = this.xHeight
+    }
 }

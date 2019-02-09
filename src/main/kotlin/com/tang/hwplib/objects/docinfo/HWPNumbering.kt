@@ -114,4 +114,19 @@ class HWPNumbering {
             extendStartNumberForLevel[level - 8] = extendStartNumber
         else throw Exception("invalid level: $level")
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPNumbering] 복사된 객체 반환
+     */
+    fun copy() : HWPNumbering = HWPNumbering().also {
+        for ((index, levelNumbering)in this.levelNumberingList.withIndex())
+            it.levelNumberingList[index] = levelNumbering.copy()
+        it.startNumber = this.startNumber
+        it.startNumberForLevel = this.startNumberForLevel.copyOf()
+        for ((index, extendLevelNumbering) in this.extendLevelNumberingList.withIndex())
+            it.extendLevelNumberingList[index] = extendLevelNumbering.copy()
+        it.extendStartNumberForLevel = this.extendStartNumberForLevel.copyOf()
+    }
 }

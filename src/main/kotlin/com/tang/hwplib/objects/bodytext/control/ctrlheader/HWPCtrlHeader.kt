@@ -28,7 +28,14 @@ import com.tang.hwplib.objects.etc.Color4Byte
  *
  * @property [ctrlId] [Long], 컨트롤 ID
  */
-open class HWPCtrlHeader(var ctrlId: Long)
+open class HWPCtrlHeader(var ctrlId: Long) {
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeader] 복사된 객체 반환
+     */
+    open fun copy(): HWPCtrlHeader = HWPCtrlHeader(this.ctrlId)
+}
 
 /**
  * 덧말 컨트롤 헤더를 나타내는 객체
@@ -53,6 +60,22 @@ class HWPCtrlHeaderAdditionalText : HWPCtrlHeader(HWPControlType.AdditionalText.
     var option: Long = 0
     var styleId: Long = 0
     var alignment: HWPAlignment? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderAdditionalText] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderAdditionalText = HWPCtrlHeaderAdditionalText().also {
+        super.copy()
+        it.mainText = this.mainText
+        it.subText = this.subText
+        this.position?.run { it.position = HWPAdditionalTextPosition.valueOf(this.value) }
+        it.fsizeratio = this.fsizeratio
+        it.option = this.option
+        it.styleId = this.styleId
+        this.alignment?.run { it.alignment = HWPAlignment.valueOf(this.value) }
+    }
 }
 
 /**
@@ -74,6 +97,22 @@ class HWPCtrlHeaderAutoNumber: HWPCtrlHeader(HWPControlType.AutoNumber.ctrlId) {
     var userSymbol: String? = null
     var beforeDecorationLetter: String? = null
     var afterDecorationLetter: String? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderAutoNumber] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderAutoNumber = HWPCtrlHeaderAutoNumber().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.number = this.number
+        it.userSymbol = this.userSymbol
+        it.beforeDecorationLetter = this.beforeDecorationLetter
+        it.afterDecorationLetter = this.afterDecorationLetter
+    }
 }
 
 /**
@@ -82,7 +121,18 @@ class HWPCtrlHeaderAutoNumber: HWPCtrlHeader(HWPControlType.AutoNumber.ctrlId) {
  *
  * @author accforaus
  */
-class HWPCtrlHeaderBookmark: HWPCtrlHeader(HWPControlType.Bookmark.ctrlId)
+class HWPCtrlHeaderBookmark: HWPCtrlHeader(HWPControlType.Bookmark.ctrlId) {
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderBookmark] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderBookmark = HWPCtrlHeaderBookmark().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+    }
+}
 
 /**
  * 단 정의 컨트롤 헤더를 나타내는 객체
@@ -108,7 +158,30 @@ class HWPCtrlHeaderColumnDefine: HWPCtrlHeader(HWPControlType.ColumnDefine.ctrlI
     var divideLineThickness: HWPBorderThickness? = null
     var divideLineColor: Color4Byte = Color4Byte()
 
+    /**
+     * 단 정보를 추가하고 반환하는 함수
+     *
+     * @return [HWPColumnInfo] 생성된 객체 반환
+     */
     fun addNewColumnInfo() : HWPColumnInfo = HWPColumnInfo().also { columnInfoList.add(it) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderColumnDefine] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderColumnDefine = HWPCtrlHeaderColumnDefine().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.gapBetweenColumn = this.gapBetweenColumn
+        it.property2 = this.property2
+        for (columnInfo in this.columnInfoList) it.columnInfoList.add(columnInfo.copy())
+        this.divideLineSort?.run { it.divideLineSort = HWPBorderType.valueOf(this.value) }
+        this.divideLineThickness?.run { it.divideLineThickness = HWPBorderThickness.valueOf(this.value) }
+        it.divideLineColor.value = this.divideLineColor.value
+    }
 }
 
 /**
@@ -136,6 +209,22 @@ class HWPCtrlHeaderField: HWPCtrlHeader {
 
     constructor() : this(HWPControlType.FIELD_UNKNOWN.ctrlId)
     constructor(ctrlId: Long) : super(ctrlId)
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderField] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderField = HWPCtrlHeaderField(HWPControlType.FIELD_UNKNOWN.ctrlId).also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.etcProperty = this.etcProperty
+        it.command = this.command
+        it.instanceId = this.instanceId
+        it.memoIndex = this.memoIndex
+    }
 }
 
 /**
@@ -156,6 +245,22 @@ class HWPCtrlHeaderEndnote: HWPCtrlHeader(HWPControlType.Endnote.ctrlId) {
     var afterDecorationLetter: String? = null
     var numberShape: HWPNumberShape? = null
     var instanceId: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderEndnote] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderEndnote = HWPCtrlHeaderEndnote().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.number = this.number
+        it.beforeDecorationLetter = this.beforeDecorationLetter
+        it.afterDecorationLetter = this.afterDecorationLetter
+        this.numberShape?.run { it.numberShape = HWPNumberShape.valueOf(this.value) }
+        it.instanceId = this.instanceId
+    }
 }
 
 /**
@@ -170,6 +275,19 @@ class HWPCtrlHeaderEndnote: HWPCtrlHeader(HWPControlType.Endnote.ctrlId) {
 class HWPCtrlHeaderFooter: HWPCtrlHeader(HWPControlType.Footer.ctrlId) {
     var applyPage: HWPHeaderFooterApplyPage? = null
     var createIndex: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderFooter] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderFooter = HWPCtrlHeaderFooter().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        this.applyPage?.run { it.applyPage = HWPHeaderFooterApplyPage.valueOf(this.value) }
+        it.createIndex = this.createIndex
+    }
 }
 
 /**
@@ -190,6 +308,22 @@ class HWPCtrlHeaderFootnote: HWPCtrlHeader(HWPControlType.Footnote.ctrlId) {
     var afterDecorationLetter: String? = null
     var numberShape: HWPNumberShape? = null
     var instanceId: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderFootnote] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderFootnote = HWPCtrlHeaderFootnote().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.number = this.number
+        it.beforeDecorationLetter = this.beforeDecorationLetter
+        it.afterDecorationLetter = this.afterDecorationLetter
+        this.numberShape?.run { it.numberShape = HWPNumberShape.valueOf(this.value) }
+        it.instanceId = this.instanceId
+    }
 }
 
 /**
@@ -204,6 +338,19 @@ class HWPCtrlHeaderFootnote: HWPCtrlHeader(HWPControlType.Footnote.ctrlId) {
 class HWPCtrlHeaderHeader: HWPCtrlHeader(HWPControlType.Header.ctrlId) {
     var applyPage: HWPHeaderFooterApplyPage? = null
     var createIndex: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderHeader] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderHeader = HWPCtrlHeaderHeader().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        this.applyPage?.run { it.applyPage = HWPHeaderFooterApplyPage.valueOf(this.value) }
+        it.createIndex = this.createIndex
+    }
 }
 
 /**
@@ -245,6 +392,30 @@ class HWPCtrlHeaderGso: HWPCtrlHeader {
 
     constructor() : super(HWPControlType.Gso.ctrlId)
     constructor(controlType: HWPControlType) : super(controlType.ctrlId)
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderGso] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderGso = HWPCtrlHeaderGso().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.yOffset = this.yOffset
+        it.xOffset = this.xOffset
+        it.width = this.width
+        it.height = this.height
+        it.zOrder = this.zOrder
+        it.outerMarginLeft = this.outerMarginLeft
+        it.outerMarginRight = this.outerMarginRight
+        it.outerMarginTop = this.outerMarginTop
+        it.outerMarginBottom = this.outerMarginBottom
+        it.instanceId = this.instanceId
+        it.preventPageDivide = this.preventPageDivide
+        it.explanation = this.explanation
+    }
 }
 
 /**
@@ -260,6 +431,19 @@ class HWPCtrlHeaderGso: HWPCtrlHeader {
 class HWPCtrlHeaderNewNumber: HWPCtrlHeader(HWPControlType.NewNumber.ctrlId) {
     var property: HWPNewNumberHeaderProperty = HWPNewNumberHeaderProperty()
     var number: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderNewNumber] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderNewNumber = HWPCtrlHeaderNewNumber().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.number = this.number
+    }
 }
 
 /**
@@ -273,6 +457,18 @@ class HWPCtrlHeaderNewNumber: HWPCtrlHeader(HWPControlType.NewNumber.ctrlId) {
  */
 class HWPCtrlHeaderPageOddEvenAdjust: HWPCtrlHeader(HWPControlType.PageOddEvenAdjust.ctrlId) {
     var property: PageOddEvenAdjustHeaderProperty = PageOddEvenAdjustHeaderProperty()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderPageOddEvenAdjust] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderPageOddEvenAdjust = HWPCtrlHeaderPageOddEvenAdjust().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+    }
 }
 
 /**
@@ -312,6 +508,22 @@ class HWPCtrlHeaderOverlappingLetter: HWPCtrlHeader(HWPControlType.OverlappingLe
     fun addCharShapeId(charShapeId: Long) {
         charShapeIdList.add(charShapeId)
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderOverlappingLetter] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderOverlappingLetter = HWPCtrlHeaderOverlappingLetter().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        for (overlappingLetter in this.overlappingLetterList) it.overlappingLetterList.add(overlappingLetter)
+        it.borderType = this.borderType
+        it.internalFontSize = this.internalFontSize
+        it.expendInsideLetter = this.expendInsideLetter
+        for (charShapeID in this.charShapeIdList) it.charShapeIdList.add(charShapeID)
+    }
 }
 
 /**
@@ -327,6 +539,19 @@ class HWPCtrlHeaderOverlappingLetter: HWPCtrlHeader(HWPControlType.OverlappingLe
 class HWPCtrlHeaderIndexMark: HWPCtrlHeader(HWPControlType.IndexMark.ctrlId) {
     var keyword1: String? = null
     var keyword2: String? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderIndexMark] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderIndexMark = HWPCtrlHeaderIndexMark().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.keyword1 = this.keyword1
+        it.keyword2 = this.keyword2
+    }
 }
 
 /**
@@ -340,6 +565,18 @@ class HWPCtrlHeaderIndexMark: HWPCtrlHeader(HWPControlType.IndexMark.ctrlId) {
  */
 class HWPCtrlHeaderPageHide: HWPCtrlHeader(HWPControlType.PageHide.ctrlId) {
     var property: HWPPageHideHeaderProperty = HWPPageHideHeaderProperty()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderPageHide] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderPageHide = HWPCtrlHeaderPageHide().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+    }
 }
 
 /**
@@ -361,7 +598,22 @@ class HWPCtrlHeaderPageNumberPosition: HWPCtrlHeader(HWPControlType.PageNumberPo
     var userSymbol: String? = null
     var beforeDecorationLetter: String? = null
     var afterDecorationLetter: String? = null
-    //var always "-" WCHAR
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderPageNumberPosition] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderPageNumberPosition = HWPCtrlHeaderPageNumberPosition().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.number = this.number
+        it.userSymbol = this.userSymbol
+        it.beforeDecorationLetter = this.beforeDecorationLetter
+        it.afterDecorationLetter = this.afterDecorationLetter
+    }
 }
 
 /**
@@ -395,4 +647,26 @@ class HWPCtrlHeaderSectionDefine: HWPCtrlHeader(HWPControlType.SectionDefine.ctr
     var tableStartNumber: Int = 0
     var equationStartNumber: Int = 0
     var defaultLanguage: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlHeaderSectionDefine] 복사된 객체 반환
+     */
+    override fun copy(): HWPCtrlHeaderSectionDefine = HWPCtrlHeaderSectionDefine().also {
+        super.copy().run {
+            it.ctrlId = this.ctrlId
+        }
+        it.property.value = this.property.value
+        it.columnGap = this.columnGap
+        it.verticalLineAlign = this.verticalLineAlign
+        it.horizontalLineAlign = this.horizontalLineAlign
+        it.defaultTabGap = this.defaultTabGap
+        it.numberParaShapeId = this.numberParaShapeId
+        it.pageStartNumber = this.pageStartNumber
+        it.imageStartNumber = this.imageStartNumber
+        it.tableStartNumber = this.tableStartNumber
+        it.equationStartNumber = this.equationStartNumber
+        it.defaultLanguage = this.defaultLanguage
+    }
 }

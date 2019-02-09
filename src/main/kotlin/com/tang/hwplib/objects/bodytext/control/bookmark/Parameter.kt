@@ -95,6 +95,16 @@ class HWPParameterSet {
     var parameterItemList: ArrayList<HWPParameterItem> = ArrayList()
 
     /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParameterSet] 복사된 객체 반환
+     */
+    fun copy() : HWPParameterSet = HWPParameterSet().also {
+        it.id = this.id
+        for (parameterItem in this.parameterItemList)
+            it.parameterItemList.add(parameterItem.copy())
+    }
+    /**
      * 파라미터 아이템을 추가하고 반환하는 함수
      *
      * @return [HWPParameterItem]  생성된 객체 밚놘
@@ -152,7 +162,7 @@ class HWPParameterSet {
  * @property [value_UI4] [Long], UINT32 (UINT32 - unsigned 4 bytes)
  * @property [value_UI] [Long], UINT (UINT32 - unsigned 4 bytes)
  * @property [value_ParameterSet] [HWPParameterSet], 파라미터 셋
- * @property [value_ParameterArray] [ArrayList], 파라미터 셋 배열
+ * @property [value_ParameterArray] [Array], 파라미터 셋 배열
  * @property [value_binData] [Int], 바이너리 데이터[HWPBinData] ID
  */
 class HWPParameterItem {
@@ -171,6 +181,31 @@ class HWPParameterItem {
     var value_ParameterArray: Array<HWPParameterItem>? = null
     var value_binData: Int = -1
 
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParameterItem] 복사된 객체 반환
+     */
+    fun copy() : HWPParameterItem = HWPParameterItem().also {
+        it.id = this.id
+        this.type?.run { it.type = HWPParameterType.valueOf(this.value) }
+        it.value_BSTR = this.value_BSTR
+        it.value_I1 = this.value_I1
+        it.value_I2 = this.value_I2
+        it.value_I4 = this.value_I4
+        it.value_I = this.value_I4
+        it.value_UI1 = this.value_UI1
+        it.value_UI2 = this.value_UI2
+        it.value_UI4 = this.value_UI4
+        it.value_UI = this.value_UI
+        this.value_ParameterSet?.run { it.value_ParameterSet = this.copy() }
+        this.value_ParameterArray?.run {
+            it.value_ParameterArray = Array(this.size, {HWPParameterItem()})
+            for ((index,parameterItem) in this.withIndex())
+                it.value_ParameterArray!![index] = parameterItem.copy()
+        }
+        it.value_binData = this.value_binData
+    }
     /**
      * 파라미터 셋을 생성하는 함수
      */
@@ -215,4 +250,13 @@ class HWPParameterItem {
  */
 class HWPCtrlData {
     var parameterSet: HWPParameterSet = HWPParameterSet()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCtrlData] 복사된 객체 반환
+     */
+    fun copy() : HWPCtrlData = HWPCtrlData().also {
+        it.parameterSet = this.parameterSet.copy()
+    }
 }

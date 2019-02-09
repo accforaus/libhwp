@@ -149,6 +149,24 @@ class ListHeaderForCell {
     var borderFillId: Int = 0
     var textWidth: Long = 0
     var fieldName: String? = null
+
+    fun copy() : ListHeaderForCell = ListHeaderForCell().also {
+        it.paraCount = this.paraCount
+        it.property.value = this.property.value
+        it.colIndex = this.colIndex
+        it.rowIndex = this.rowIndex
+        it.colSpan = this.colSpan
+        it.rowSpan = this.rowSpan
+        it.width = this.width
+        it.height = this.height
+        it.leftMargin = this.leftMargin
+        it.rightMargin = this.rightMargin
+        it.topMargin = this.topMargin
+        it.bottomMargin = this.bottomMargin
+        it.borderFillId = this.borderFillId
+        it.textWidth = this.textWidth
+        it.fieldName = this.fieldName
+    }
 }
 
 /**
@@ -162,4 +180,14 @@ class ListHeaderForCell {
 class HWPCell {
     var listHeader: ListHeaderForCell = ListHeaderForCell()
     var paragraphList: HWPParagraphList = HWPParagraphList()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCell] 복사된 객체 반환
+     */
+    fun copy() : HWPCell = HWPCell().also {
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }

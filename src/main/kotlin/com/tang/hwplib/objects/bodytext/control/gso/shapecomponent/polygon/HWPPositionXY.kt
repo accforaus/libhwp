@@ -12,4 +12,14 @@ package com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.polygon
 class HWPPositionXY {
     var x: Long = 0
     var y: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPPositionXY] 복사된 객체 반환
+     */
+    fun copy() : HWPPositionXY = HWPPositionXY().also {
+        it.x = this.x
+        it.y = this.y
+    }
 }

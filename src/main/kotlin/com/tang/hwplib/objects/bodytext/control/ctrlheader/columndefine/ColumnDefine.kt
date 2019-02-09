@@ -90,6 +90,16 @@ enum class HWPColumnDirection(v: Byte) {
 class HWPColumnInfo {
     var width: Int = 0
     var gap: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPColumnInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPColumnInfo = HWPColumnInfo().also {
+        it.width = this.width
+        it.gap = this.gap
+    }
 }
 
 /**

@@ -60,4 +60,15 @@ class HWPTabInfo {
     var position: Long = 0
     var tabSort: HWPTabSort? = null
     var fillSort: HWPBorderType? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPTabInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPTabInfo = HWPTabInfo().also {
+        it.position = this.position
+        this.tabSort?.run { it.tabSort = HWPTabSort.valueOf(this.value) }
+        this.fillSort?.run { it.fillSort = HWPBorderType.valueOf(this.value) }
+    }
 }

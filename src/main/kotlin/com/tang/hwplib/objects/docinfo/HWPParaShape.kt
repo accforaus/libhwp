@@ -49,4 +49,30 @@ class HWPParaShape {
     var property3: HWPParaShapeProperty3 = HWPParaShapeProperty3()
     var lineSpace2: Long = 0
     var unknown: Long = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParaShape] 복사된 객체 반환
+     */
+    fun copy() : HWPParaShape = HWPParaShape().also {
+        it.property1.value = this.property1.value
+        it.leftMargin = this.leftMargin
+        it.rightMargin = this.rightMargin
+        it.indent = this.indent
+        it.topParaSpace = this.topParaSpace
+        it.bottomParaSpace = this.bottomParaSpace
+        it.lineSpace = this.lineSpace
+        it.tabDefId = this.tabDefId
+        it.paraHeadId = this.paraHeadId
+        it.borderFillId = this.borderFillId
+        it.leftBorderSpace = this.leftBorderSpace
+        it.rightBorderSpace = this.rightBorderSpace
+        it.topBorderSpace = this.topBorderSpace
+        it.bottomBorderSpace = this.bottomBorderSpace
+        it.property2.value = this.property2.value
+        it.property3.value = this.property3.value
+        it.lineSpace2 = this.lineSpace2
+        it.unknown = this.unknown
+    }
 }

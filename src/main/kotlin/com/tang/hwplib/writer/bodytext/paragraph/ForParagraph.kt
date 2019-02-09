@@ -263,5 +263,5 @@ internal fun forParagraph(p: HWPParagraph, sw: StreamWriter) {
  * @param [sw] [StreamWriter], 스트림 쓰기 객체
  */
 internal fun forParagraphList(pl: HWPParagraphListInterface, sw: StreamWriter) {
-    for (p in pl) forParagraph(p, sw)
+     for (p in pl) forParagraph(p, sw)
 }

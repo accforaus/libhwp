@@ -132,4 +132,16 @@ class HWPFillInfo {
     fun deleteImageFill() {
         imageFill = null
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFillInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPFillInfo = HWPFillInfo().also {
+        it.type.value = this.type.value
+        it.patternFill = this.patternFill?.copy()
+        it.gradientFill = this.gradientFill?.copy()
+        it.imageFill = this.imageFill?.copy()
+    }
 }

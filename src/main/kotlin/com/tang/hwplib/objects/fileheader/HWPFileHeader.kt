@@ -1,5 +1,7 @@
 package com.tang.hwplib.objects.fileheader
 
+import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPFillInfo
+
 /**
  * 파일 인식 정보를 나타내는 객체
  * 한글의 문서 파일이라는 것을 나타내기 위해 사용
@@ -68,5 +70,35 @@ class HWPFileHeader {
                 0x65, 0x6e, 0x74, 0x20, 0x46, 0x69, 0x6c, 0x65, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFileVersion] 복사된 객체 반환
+     */
+    fun copy() : HWPFileHeader = HWPFileHeader().also {
+        it.version = this.version.copy()
+        it.compressed = this.compressed
+        it.hasPassword = this.hasPassword
+        it.isDeploymentDocument = this.isDeploymentDocument
+        it.saveScript = this.saveScript
+        it.isDRMDocument = this.isDRMDocument
+        it.hasXMLTemplate = this.hasXMLTemplate
+        it.hasDocumentHistory = this.hasDocumentHistory
+        it.hasSignature = this.hasSignature
+        it.encryptPublicCertification = this.encryptPublicCertification
+        it.savePrepareSignature = this.savePrepareSignature
+        it.isPublicCertificationDRMDocument = this.isPublicCertificationDRMDocument
+        it.isCCLDocument = this.isCCLDocument
+        it.isMobileOptimize = this.isMobileOptimize
+        it.isSecurityPersonalPrivacy = this.isSecurityPersonalPrivacy
+        it.hasTrackChange = this.hasTrackChange
+        it.hasKOGLCopyright = this.hasKOGLCopyright
+        it.hasVideoControl = this.hasVideoControl
+        it.hasOrderFieldControl = this.hasOrderFieldControl
+        it.koglCCLInfo = this.koglCCLInfo.copy()
+        it.encryptVersionType = HWPEncryptVersionType.valueOf(this.encryptVersionType.value)
+        it.koglLicenceSupportCountry = HWPKOGLLicenceSupportCountry.valueOf(this.koglLicenceSupportCountry.value)
     }
 }

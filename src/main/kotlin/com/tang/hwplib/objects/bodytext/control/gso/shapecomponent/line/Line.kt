@@ -445,4 +445,16 @@ class HWPLineInfo {
     var thickness: Int = 0
     var property: HWPLineInfoProperty = HWPLineInfoProperty()
     var outlineStyle: HWPOutlineStyle = HWPOutlineStyle.Normal
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPLineInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPLineInfo = HWPLineInfo().also {
+        it.color.value = this.color.value
+        it.thickness = this.thickness
+        it.property.value = this.property.value
+        it.outlineStyle.value = this.outlineStyle.value
+    }
 }

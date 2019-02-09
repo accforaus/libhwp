@@ -15,7 +15,22 @@ import com.tang.hwplib.objects.etc.PARA_LINE_SEG
  * @property [lineSegItemList] [ArrayList], 레이아웃 세그먼트 아이템의 리스트
  */
 class HWPParaLineSeg {
-    var lineSegItemList: ArrayList<LineSegItem> = ArrayList()
+    var lineSegItemList: ArrayList<HWPLineSegItem> = ArrayList()
 
-    fun addNewLineSegItem() : LineSegItem = LineSegItem().also { lineSegItemList.add(it) }
+    /**
+     * 레이아웃 세그먼트 아이팀을 추가하고 반환하는 함수
+     *
+     * @return [HWPLineSegItem] 생성된 객체 반환
+     */
+    fun addNewLineSegItem() : HWPLineSegItem = HWPLineSegItem().also { lineSegItemList.add(it) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPParaLineSeg] 복사된 객체 반환
+     */
+    fun copy() : HWPParaLineSeg = HWPParaLineSeg().also {
+        for (lineSegItem in this.lineSegItemList)
+            it.lineSegItemList.add(lineSegItem.copy())
+    }
 }

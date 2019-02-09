@@ -6,7 +6,7 @@ import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraphListInterface
 import com.tang.hwplib.objects.bodytext.paragraph.charshape.HWPParaCharShape
 import com.tang.hwplib.objects.bodytext.paragraph.header.HWPParaHeader
-import com.tang.hwplib.objects.bodytext.paragraph.linesegment.LineSegItem
+import com.tang.hwplib.objects.bodytext.paragraph.linesegment.HWPLineSegItem
 import com.tang.hwplib.objects.bodytext.paragraph.linesegment.HWPParaLineSeg
 import com.tang.hwplib.objects.bodytext.paragraph.memo.ListHeaderForHWPMemo
 import com.tang.hwplib.objects.bodytext.paragraph.memo.HWPMemo
@@ -196,11 +196,11 @@ private class ForParagraph {
      */
     private fun forLineSeg(p: HWPParagraph) {
         /**
-         * 문단 세그먼트 아이디 아이템 [LineSegItem]을 읽는 함수
+         * 문단 세그먼트 아이디 아이템 [HWPLineSegItem]을 읽는 함수
          *
-         * @param [plsi] [LineSegItem], 빈 문단 세그먼트 아이템
+         * @param [plsi] [HWPLineSegItem], 빈 문단 세그먼트 아이템
          */
-        fun paraLineSegItem(plsi: LineSegItem) {
+        fun paraLineSegItem(plsi: HWPLineSegItem) {
             plsi.run {
                 textStartPosition = sr!!.readUInt32()
                 lineVerticalPosition = sr!!.readInt32()

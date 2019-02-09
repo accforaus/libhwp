@@ -79,4 +79,16 @@ class HWPFileVersion {
                 .append(".")
                 .toString()
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFileVersion] 복사된 객체 반환
+     */
+    fun copy() : HWPFileVersion = HWPFileVersion().also {
+        it.mm = this.mm
+        it.nn = this.nn
+        it.pp = this.pp
+        it.rr = this.rr
+    }
 }

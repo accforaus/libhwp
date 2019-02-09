@@ -51,4 +51,15 @@ class HWPSection: HWPParagraphListInterface {
      * 마지막 바탕 정보를 생성하는 함수
      */
     fun createLastBatangPageInfo() { lastBatangPageInfo = HWPBatangPageInfo() }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPSection] 복사된 객체 반환
+     */
+    fun copy() : HWPSection = HWPSection().also {
+        for (paragraph in this.paragraphList)
+            it.paragraphList.add(paragraph.copy())
+        this.lastBatangPageInfo?.run { it.lastBatangPageInfo = this.copy() }
+    }
 }

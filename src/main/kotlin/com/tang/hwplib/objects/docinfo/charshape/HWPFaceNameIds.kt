@@ -131,4 +131,13 @@ class HWPFaceNameIds {
     fun setForAll(faceNameID: Int) {
         for (index in 0 until array.size) array[index] = faceNameID
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFaceNameIds] 복사된 객체 반환
+     */
+    fun copy() : HWPFaceNameIds = HWPFaceNameIds().also {
+        it.array = this.array.copyOf()
+    }
 }

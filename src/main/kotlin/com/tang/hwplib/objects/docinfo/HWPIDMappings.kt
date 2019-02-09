@@ -45,4 +45,30 @@ class HWPIDMappings {
     var memoShapeCount: Int = 0
     var trackChangeCount: Int = 0
     var trackChangeAuthorCount: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPIDMappings] 복사된 객체 반환
+     */
+    fun copy() : HWPIDMappings = HWPIDMappings().also {
+        it.binDataCount = this.binDataCount
+        it.hangulFaceNameCount = this.hangulFaceNameCount
+        it.englishFaceNameCount = this.englishFaceNameCount
+        it.hanjaFaceNameCount = this.hanjaFaceNameCount
+        it.japaneseFaceNameCount = this.japaneseFaceNameCount
+        it.etcFaceNameCount = this.etcFaceNameCount
+        it.symbolFaceNameCount = this.symbolFaceNameCount
+        it.userFaceNameCount = this.userFaceNameCount
+        it.borderFillCount = this.borderFillCount
+        it.charShapeCount = this.charShapeCount
+        it.tabDefCount = this.tabDefCount
+        it.numberingCount = this.numberingCount
+        it.bulletCount = this.bulletCount
+        it.paraShapeCount = this.paraShapeCount
+        it.styleCount = this.styleCount
+        it.memoShapeCount = this.memoShapeCount
+        it.trackChangeCount = this.trackChangeCount
+        it.trackChangeAuthorCount = this.trackChangeAuthorCount
+    }
 }

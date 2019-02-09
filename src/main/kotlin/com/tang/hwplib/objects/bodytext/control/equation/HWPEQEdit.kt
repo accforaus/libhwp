@@ -26,4 +26,20 @@ class HWPEQEdit {
     var versionInfo: String? = null
     var fontName: String? = null
     var unknown: String? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPEQEdit] 복사된 객체 반환
+     */
+    fun copy() : HWPEQEdit = HWPEQEdit().also {
+        it.property = this.property
+        it.script = this.script
+        it.letterSize = this.letterSize
+        it.letterColor.value = this.letterColor.value
+        it.baseLine = this.baseLine
+        it.versionInfo = this.versionInfo
+        it.fontName = this.fontName
+        it.unknown = this.unknown
+    }
 }

@@ -85,4 +85,20 @@ class HWPGradientFill {
      * @return [Color4Byte] 생성된 색을 반환
      */
     fun addNewColor() : Color4Byte = Color4Byte().apply { colorList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPGradientFill] 복사된 객체 반환
+     */
+    fun copy() : HWPGradientFill = HWPGradientFill().also {
+        it.gradientType = HWPGradientType.valueOf(this.gradientType.value)
+        it.startAngle = this.startAngle
+        it.centerX = this.centerX
+        it.centerY = this.centerY
+        it.blurringDegree = this.blurringDegree
+        for (int in this.changePointList) it.changePointList.add(int)
+        for (color4Byte in this.colorList) it.colorList.add(color4Byte)
+        it.blurringCenter = this.blurringCenter
+    }
 }

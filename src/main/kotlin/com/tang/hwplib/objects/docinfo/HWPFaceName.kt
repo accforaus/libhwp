@@ -24,4 +24,20 @@ class HWPFaceName {
     var substituteFontName: String? = null
     var fontTypeInfo: HWPFontTypeInfo = HWPFontTypeInfo()
     var baseFontName: String? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPFaceName] 복사된 객체 반환
+     */
+    fun copy() : HWPFaceName = HWPFaceName().also {
+        it.property.value = this.property.value
+        it.name = this.name
+        this.substituteFontType?.run {
+            it.substituteFontType = HWPFontType.valueOf(this.value)
+        }
+        it.substituteFontName = this.substituteFontName
+        it.fontTypeInfo = this.fontTypeInfo.copy()
+        it.baseFontName = this.baseFontName
+    }
 }

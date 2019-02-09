@@ -36,6 +36,21 @@ class HWPShapeComponentArc {
     var axis1Y: Int = 0
     var axis2X: Int = 0
     var axis2Y: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentArc] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentArc = HWPShapeComponentArc().also {
+        it.arcBorder = HWPArcBorder.valueOf(this.arcBorder.value)
+        it.centerX = this.centerX
+        it.centerY = this.centerY
+        it.axis1X = this.axis1X
+        it.axis1Y = this.axis1Y
+        it.axis2X = this.axis2X
+        it.axis2Y = this.axis2Y
+    }
 }
 
 /**
@@ -65,6 +80,16 @@ class HWPShapeComponentCurve {
      */
     fun addCurveSegmentType(cst: HWPCurveSegmentType) {
         segmentTypeList.add(cst)
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentCurve] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentCurve = HWPShapeComponentCurve().also {
+        for (position in this.positionList) it.positionList.add(position.copy())
+        for (segmentType in this.segmentTypeList) it.segmentTypeList.add(HWPCurveSegmentType.valueOf(segmentType.value))
     }
 }
 
@@ -106,6 +131,29 @@ class HWPShapeComponentEllipse {
     var startY2: Int = 0
     var endX2: Int = 0
     var endY2: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentEllipse] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentEllipse = HWPShapeComponentEllipse().also {
+        it.property.value = this.property.value
+        it.centerX = this.centerX
+        it.centerY = this.centerY
+        it.axis1X = this.axis1X
+        it.axis1Y = this.axis1Y
+        it.axis2X = this.axis2X
+        it.axis2Y = this.axis2Y
+        it.startX = this.startX
+        it.startY = this.startY
+        it.endX = this.endX
+        it.endY = this.endY
+        it.startX2 = this.startX2
+        it.startY2 = this.startY2
+        it.endX2 = this.endX2
+        it.endY2 = this.endY2
+    }
 }
 
 /**
@@ -126,6 +174,19 @@ class HWPShapeComponentLine {
     var endX: Int = 0
     var endY: Int = 0
     var startedRightOrBottom: Boolean = false
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentLine] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentLine = HWPShapeComponentLine().also {
+        it.startX = this.startX
+        it.startY = this.startY
+        it.endX = this.endX
+        it.endY = this.endY
+        it.startedRightOrBottom = this.startedRightOrBottom
+    }
 }
 
 /**
@@ -146,6 +207,19 @@ class HWPShapeComponentLineForObjectLinkLine {
     var endX: Int = 0
     var endY: Int = 0
     var unknown: ByteArray? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentLineForObjectLinkLine] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentLineForObjectLinkLine = HWPShapeComponentLineForObjectLinkLine().also {
+        it.startX = this.startX
+        it.startY = this.startY
+        it.endX = this.endX
+        it.endY = this.endY
+        it.unknown = this.unknown?.copyOf()
+    }
 }
 
 /**
@@ -170,6 +244,21 @@ class HWPShapeComponentOLE {
     var borderColor: Color4Byte = Color4Byte()
     var borderThickness: Int = 0
     var borderProperty: HWPLineInfoProperty = HWPLineInfoProperty()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentOLE] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentOLE = HWPShapeComponentOLE().also {
+        it.property.value = this.property.value
+        it.extentWidth = this.extentWidth
+        it.extentHeight = this.extentHeight
+        it.binDataId = this.binDataId
+        it.borderColor.value = this.borderColor.value
+        it.borderThickness = this.borderThickness
+        it.borderProperty.value = this.borderProperty.value
+    }
 }
 
 /**
@@ -218,6 +307,33 @@ class HWPShapeComponentPicture {
     var imageWidth: Long = 0
     var imageHeight: Long = 0
     var imageTransparency: Byte = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentPicture] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentPicture = HWPShapeComponentPicture().also {
+        it.borderColor.value = this.borderColor.value
+        it.borderThickness = this.borderThickness
+        it.borderProperty.value = this.borderProperty.value
+        it.leftTop = this.leftTop.copy()
+        it.rightTop = this.rightTop.copy()
+        it.leftBottom = this.leftBottom.copy()
+        it.rightBottom = this.rightBottom.copy()
+        it.leftAfterCutting = this.leftAfterCutting
+        it.topAfterCutting = this.topAfterCutting
+        it.rightAfterCutting = this.rightAfterCutting
+        it.bottomAfterCutting = this.bottomAfterCutting
+        it.innerMargin = this.innerMargin.copy()
+        it.pictureInfo = this.pictureInfo.copy()
+        it.borderTransparency = this.borderTransparency
+        it.instanceId = this.instanceId
+        it.pictureEffect = this.pictureEffect.copy()
+        it.imageWidth = this.imageWidth
+        it.imageHeight = this.imageHeight
+        it.imageTransparency = this.imageTransparency
+    }
 }
 
 /**
@@ -237,6 +353,15 @@ class HWPShapeComponentPolygon {
      * @return [HWPPositionXY] 생성된 객체 반환
      */
     fun addNewPosition() : HWPPositionXY = HWPPositionXY().apply { positionList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentPolygon] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentPolygon = HWPShapeComponentPolygon().also {
+        for (position in this.positionList) it.positionList.add(position.copy())
+    }
 }
 
 /**
@@ -264,6 +389,23 @@ class HWPShapeComponentRectangle {
     var y3: Int = 0
     var x4: Int = 0
     var y4: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentRectangle] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentRectangle = HWPShapeComponentRectangle().also {
+        it.roundRate = this.roundRate
+        it.x1 = this.x1
+        it.y1 = this.y1
+        it.x2 = this.x2
+        it.y2 = this.y2
+        it.x3 = this.x3
+        it.y3 = this.y3
+        it.x4 = this.x4
+        it.y4 = this.y4
+    }
 }
 
 /**
@@ -277,4 +419,14 @@ class HWPShapeComponentRectangle {
 class HWPShapeComponentVideo {
     var videoType: HWPVideoType = HWPVideoType.Local
     var videoProperty: HWPVideoProperty? = null
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShapeComponentVideo] 복사된 객체 반환
+     */
+    fun copy() : HWPShapeComponentVideo = HWPShapeComponentVideo().also {
+        it.videoType.value = this.videoType.value
+        this.videoProperty?.run { it.videoProperty = this.copy() }
+    }
 }

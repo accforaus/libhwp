@@ -15,6 +15,16 @@ import com.tang.hwplib.util.binary.set
 class HWPColorEffect {
     var sort: Int = 0
     var value: Float = 0f
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPColorEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPColorEffect = HWPColorEffect().also {
+        it.sort = this.sort
+        it.value = this.value
+    }
 }
 
 /**
@@ -38,6 +48,17 @@ class HWPColorWithEffect {
      * @return [HWPColorEffect] 생성된 객체 반환
      */
     fun addNewColorEffect() : HWPColorEffect = HWPColorEffect().apply { colorEffectList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPColorWithEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPColorWithEffect = HWPColorWithEffect().also {
+        it.type = this.type
+        it.color = this.color?.copyOf()
+        for (colorEffect in this.colorEffectList) it.colorEffectList.add(colorEffect.copy())
+    }
 }
 
 /**
@@ -56,6 +77,18 @@ class HWPInnerMargin {
     var right: Int = 0
     var top: Int = 0
     var bottom: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPInnerMargin] 복사된 객체 반환
+     */
+    fun copy() : HWPInnerMargin = HWPInnerMargin().also {
+        it.left = this.left
+        it.right = this.right
+        it.top = this.top
+        it.bottom = this.bottom
+    }
 }
 
 /**
@@ -72,6 +105,17 @@ class HWPNeonEffect {
     var transparency: Float = 0f
     var radius: Float = 0f
     var color: HWPColorWithEffect = HWPColorWithEffect()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPNeonEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPNeonEffect = HWPNeonEffect().also {
+        it.transparency = this.transparency
+        it.radius = this.radius
+        it.color = this.color.copy()
+    }
 }
 
 /**
@@ -194,6 +238,28 @@ class HWPReflectionEffect {
     var endTransparency: Float = 0f
     var endPosition: Float = 0f
     var offsetDirection: Float = 0f
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPReflectionEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPReflectionEffect = HWPReflectionEffect().also {
+        it.style = this.style
+        it.radius = this.radius
+        it.direction = this.direction
+        it.distance = this.distance
+        it.tiltAngleX = this.tiltAngleX
+        it.tiltAngleY = this.tiltAngleY
+        it.zoomRateX = this.zoomRateX
+        it.zoomRateY = this.zoomRateY
+        it.rotationStyle = this.rotationStyle
+        it.startTransparency = this.startTransparency
+        it.startPosition = this.startPosition
+        it.endTransparency = this.endTransparency
+        it.endPosition = this.endPosition
+        it.offsetDirection = this.offsetDirection
+    }
 }
 
 /**
@@ -228,6 +294,26 @@ class HWPShadowEffect {
     var zoomRateY: Float = 0f
     var rotateWithShape: Int = 0
     var color: HWPColorWithEffect = HWPColorWithEffect()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPShadowEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPShadowEffect = HWPShadowEffect().also {
+        it.style = this.style
+        it.transparency = this.transparency
+        it.cloudy = this.cloudy
+        it.direction = this.direction
+        it.distance = this.distance
+        it.sort = this.sort
+        it.tiltAngleX = this.tiltAngleX
+        it.tiltAngleY = this.tiltAngleY
+        it.zoomRateX = this.zoomRateX
+        it.zoomRateY = this.zoomRateY
+        it.rotateWithShape = this.rotateWithShape
+        it.color = this.color.copy()
+    }
 }
 
 /**
@@ -240,6 +326,15 @@ class HWPShadowEffect {
  */
 class HWPSoftEdgeEffect {
     var radius: Float = 0f
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPSoftEdgeEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPSoftEdgeEffect = HWPSoftEdgeEffect().also {
+        it.radius = this.radius
+    }
 }
 
 /**
@@ -300,4 +395,17 @@ class HWPPictureEffect {
      * 반사 효과를 제거하는 함수
      */
     fun deleteReflectionEffect() { reflectionEffect = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPPictureEffect] 복사된 객체 반환
+     */
+    fun copy() : HWPPictureEffect = HWPPictureEffect().also {
+        it.property.value = this.property.value
+        this.shadowEffect?.run { it.shadowEffect = this.copy() }
+        this.neonEffect?.run { it.neonEffect = this.copy() }
+        this.softEdgeEffect?.run { it.softEdgeEffect = this.copy() }
+        this.reflectionEffect?.run { it.reflectionEffect = this.copy() }
+    }
 }

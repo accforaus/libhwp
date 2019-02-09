@@ -16,4 +16,14 @@ class HWPBodyText {
      * @return [HWPSection] 생성된 객체 반환
      */
     fun addNewSection() : HWPSection = HWPSection().apply { sectionList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPBodyText] 복사된 객체 반환
+     */
+    fun copy(): HWPBodyText = HWPBodyText().also {
+        for (section in this.sectionList)
+            it.sectionList.add(section.copy())
+    }
 }

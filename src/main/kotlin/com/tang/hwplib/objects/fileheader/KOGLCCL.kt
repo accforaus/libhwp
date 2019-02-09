@@ -75,4 +75,15 @@ class HWPKOGLCCLInfo {
         value = set(value, 2, isPermitCopy)
         return value
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPKOGLCCLInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPKOGLCCLInfo = HWPKOGLCCLInfo().also {
+        it.koglCclInfo = this.koglCclInfo
+        it.isPreventCopy = this.isPreventCopy
+        it.isPermitCopy = this.isPermitCopy
+    }
 }

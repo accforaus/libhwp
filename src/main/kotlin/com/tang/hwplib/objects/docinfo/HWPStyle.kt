@@ -24,4 +24,19 @@ class HWPStyle {
     var languageId: Short = 0
     var paraShapeId: Int = 0
     var charShapeId: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPStyle] 복사된 객체 반환
+     */
+    fun copy() : HWPStyle = HWPStyle().also {
+        it.hangulName = this.hangulName
+        it.englishName = this.englishName
+        it.property.value = this.property.value
+        it.nextStyleId = this.nextStyleId
+        it.languageId = this.languageId
+        it.paraShapeId = this.paraShapeId
+        it.charShapeId = this.charShapeId
+    }
 }

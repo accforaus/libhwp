@@ -6,7 +6,9 @@ import com.tang.hwplib.objects.bodytext.control.bookmark.HWPParameterType
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.*
 import com.tang.hwplib.objects.bodytext.control.equation.HWPEQEdit
 import com.tang.hwplib.objects.bodytext.control.footnoteendnote.ListHeaderForFootnoteEndnote
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
 import com.tang.hwplib.objects.bodytext.control.gso.caption.HWPCaption
+import com.tang.hwplib.objects.bodytext.control.gso.copyGsoControl
 import com.tang.hwplib.objects.bodytext.control.headerfooter.ListHeaderForHeaderFooter
 import com.tang.hwplib.objects.bodytext.control.hiddencomment.ListHeaderForHiddenComment
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPBatangPageInfo
@@ -26,7 +28,7 @@ import com.tang.hwplib.objects.etc.*
  *
  * @property [ctrlData] [HWPCtrlData] 컴트롤 임의의 데이터
  */
-abstract class HWPControl(var header: HWPCtrlHeader?) {
+open class HWPControl(var header: HWPCtrlHeader?) {
     private var ctrlData: HWPCtrlData? = null
 
     /**
@@ -63,7 +65,11 @@ abstract class HWPControl(var header: HWPCtrlHeader?) {
      * @param [ctrlData] [HWPCtrlData] 컨트롤 임의의 데이터
      */
     fun setCtrlData(ctrlData: HWPCtrlData?) {
-        this.ctrlData = ctrlData ?: HWPCtrlData()
+        this.ctrlData = ctrlData
+    }
+
+    open fun copy() : HWPControl = HWPControl(null).also {
+        this.ctrlData?.run { it.ctrlData = this.copy() }
     }
 }
 
@@ -81,6 +87,16 @@ class HWPControlAdditionalText: HWPControl(HWPCtrlHeaderAdditionalText()) {
      * @return [HWPCtrlHeaderAdditionalText] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderAdditionalText = header as HWPCtrlHeaderAdditionalText
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlAdditionalText] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlAdditionalText = HWPControlAdditionalText().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -97,6 +113,16 @@ class HWPControlAutoNumber: HWPControl(HWPCtrlHeaderAutoNumber()) {
      * @return [HWPCtrlHeaderAutoNumber] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderAutoNumber = header as HWPCtrlHeaderAutoNumber
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlAutoNumber] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlAutoNumber = HWPControlAutoNumber().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -115,6 +141,16 @@ class HWPControlBookmark: HWPControl(HWPCtrlHeaderBookmark()) {
      * @return [HWPCtrlHeaderBookmark] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderBookmark = header as HWPCtrlHeaderBookmark
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlBookmark] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlBookmark = HWPControlBookmark().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -131,6 +167,16 @@ class HWPControlColumnDefine: HWPControl(HWPCtrlHeaderColumnDefine()) {
      * @return [HWPCtrlHeaderColumnDefine] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderColumnDefine = header as HWPCtrlHeaderColumnDefine
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlColumnDefine] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlColumnDefine = HWPControlColumnDefine().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -153,6 +199,18 @@ class HWPControlEndNote: HWPControl(HWPCtrlHeaderEndnote()) {
      * @return [HWPCtrlHeaderEndnote] 컨트롤 헤더 반환
      */
     fun getHeader(): HWPCtrlHeaderEndnote = header as HWPCtrlHeaderEndnote
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlEndNote] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlEndNote = HWPControlEndNote().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }
 
 /**
@@ -189,6 +247,18 @@ class HWPControlEquation: HWPControl(HWPCtrlHeaderGso(HWPControlType.Equation)) 
      */
     fun deleteCaption() {
         caption = null
+    }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlEquation] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlEquation = HWPControlEquation().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+        this.caption?.run { it.caption = this.copy() }
+        it.eqEdit = this.eqEdit.copy()
     }
 }
 
@@ -228,6 +298,16 @@ class HWPControlField: HWPControl {
         }
         return null
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlField] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlField = HWPControlField().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -250,6 +330,18 @@ class HWPControlFooter: HWPControl(HWPCtrlHeaderFooter()) {
      * @return [HWPCtrlHeaderFooter] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderFooter = header as HWPCtrlHeaderFooter
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlFooter] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlFooter = HWPControlFooter().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }
 
 /**
@@ -272,6 +364,18 @@ class HWPControlFootnote: HWPControl(HWPCtrlHeaderFootnote()) {
      * @return [HWPCtrlHeaderFootnote] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderFootnote = header as HWPCtrlHeaderFootnote
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlFootnote] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlFootnote = HWPControlFootnote().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }
 
 /**
@@ -294,6 +398,18 @@ class HWPControlHeader: HWPControl(HWPCtrlHeaderHeader()) {
      * @return [HWPCtrlHeaderHeader] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderHeader = header as HWPCtrlHeaderHeader
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlHeader] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlHeader = HWPControlHeader().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }
 
 /**
@@ -310,6 +426,18 @@ class HWPControlHeader: HWPControl(HWPCtrlHeaderHeader()) {
 class HWPControlHiddenComment: HWPControl(HWPCtrlHeader(HWPControlType.HiddenComment.ctrlId)) {
     var listHeader: ListHeaderForHiddenComment = ListHeaderForHiddenComment()
     var paragraphList: HWPParagraphList = HWPParagraphList()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlHiddenComment] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlHiddenComment = HWPControlHiddenComment().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = this.header?.copy()
+        it.listHeader = this.listHeader.copy()
+        it.paragraphList = this.paragraphList.copy()
+    }
 }
 
 /**
@@ -326,6 +454,16 @@ class HWPControlIndexMark: HWPControl(HWPCtrlHeaderIndexMark()) {
      * @return [HWPCtrlHeaderIndexMark] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderIndexMark = header as HWPCtrlHeaderIndexMark
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlIndexMark] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlIndexMark = HWPControlIndexMark().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -342,6 +480,16 @@ class HWPControlNewNumber: HWPControl(HWPCtrlHeaderNewNumber()) {
      * @return [HWPCtrlHeaderNewNumber] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderNewNumber = header as HWPCtrlHeaderNewNumber
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlNewNumber] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlNewNumber = HWPControlNewNumber().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -358,6 +506,16 @@ class HWPControlOverlappingLetter: HWPControl(HWPCtrlHeaderOverlappingLetter()) 
      * @return [HWPCtrlHeaderOverlappingLetter] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderOverlappingLetter = header as HWPCtrlHeaderOverlappingLetter
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlOverlappingLetter] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlOverlappingLetter = HWPControlOverlappingLetter().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -374,6 +532,16 @@ class HWPControlPageHide: HWPControl(HWPCtrlHeaderPageHide()) {
      * @return [HWPCtrlHeaderPageHide] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderPageHide = header as HWPCtrlHeaderPageHide
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlPageHide] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlPageHide = HWPControlPageHide().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -390,6 +558,16 @@ class HWPControlPageOddEvenAdjust: HWPControl(HWPCtrlHeaderPageOddEvenAdjust()) 
      * @return [HWPCtrlHeaderPageOddEvenAdjust] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderPageOddEvenAdjust = header as HWPCtrlHeaderPageOddEvenAdjust
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlPageOddEvenAdjust] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlPageOddEvenAdjust = HWPControlPageOddEvenAdjust().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -406,6 +584,16 @@ class HWPControlPageNumberPosition: HWPControl(HWPCtrlHeaderPageNumberPosition()
      * @return [HWPCtrlHeaderPageNumberPosition] 컨트롤 헤더 반환
      */
     fun getHeader() : HWPCtrlHeaderPageNumberPosition = header as HWPCtrlHeaderPageNumberPosition
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlPageNumberPosition] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlPageNumberPosition = HWPControlPageNumberPosition().also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+    }
 }
 
 /**
@@ -445,6 +633,23 @@ class HWPControlSectionDefine: HWPControl(HWPCtrlHeaderSectionDefine()) {
      * @return [HWPBatangPageInfo] 생성된 객체 반환
      */
     fun addNewBatangPageInfo() : HWPBatangPageInfo = HWPBatangPageInfo().apply { batangPageInfoList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPControlSectionDefine] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlSectionDefine =  HWPControlSectionDefine().also {
+        super.copy()
+        it.header = getHeader().copy()
+        it.pageDef = this.pageDef.copy()
+        it.footnoteShape = this.footnoteShape.copy()
+        it.endnoteShape = this.endnoteShape.copy()
+        it.bothPageBorderFill = this.bothPageBorderFill.copy()
+        it.evenPageBorderFill = this.evenPageBorderFill.copy()
+        it.oddPageBorderFill = this.oddPageBorderFill.copy()
+        for (batangPage in this.batangPageInfoList) it.batangPageInfoList.add(batangPage.copy())
+    }
 }
 
 /**
@@ -493,6 +698,19 @@ class HWPControlTable: HWPControl {
      * 캡션을 제거하는 함수
      */
     fun deleteCaption() { caption = null }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPTable] 복사된 객체 반환
+     */
+    override fun copy(): HWPControlTable = HWPControlTable(HWPCtrlHeaderGso(HWPControlType.Table)).also {
+        it.setCtrlData(super.copy().getCtrlData())
+        it.header = getHeader().copy()
+        it.table = this.table.copy()
+        for (row in this.rowList) it.rowList.add(row.copy())
+        this.caption?.run { it.caption = this.copy() }
+    }
 }
 
 /**
@@ -522,6 +740,7 @@ fun createHWPControl(ctrlId: Long): HWPControl? {
         HWPControlType.AutoNumber.ctrlId -> HWPControlAutoNumber()
         HWPControlType.NewNumber.ctrlId -> HWPControlNewNumber()
         HWPControlType.PageHide.ctrlId -> HWPControlPageHide()
+        HWPControlType.PageOddEvenAdjust.ctrlId -> HWPControlPageOddEvenAdjust()
         HWPControlType.PageNumberPosition.ctrlId -> HWPControlPageNumberPosition()
         HWPControlType.IndexMark.ctrlId -> HWPControlIndexMark()
         HWPControlType.Bookmark.ctrlId -> HWPControlBookmark()
@@ -534,4 +753,34 @@ fun createHWPControl(ctrlId: Long): HWPControl? {
         return HWPControlField(ctrlId)
     else
         return create(ctrlId)
+}
+
+/**
+ * 컨트롤을 복사하고 반환하는 함수
+ *
+ * @param [control] [HWPControl] 컨트롤 객체
+ * @return [HWPControl] 복사된 객체 반환 (존재하지 않으면 NULL)
+ */
+fun copyControl(control: HWPControl) : HWPControl? = when(control) {
+    is HWPControlSectionDefine -> control.copy()
+    is HWPControlColumnDefine -> control.copy()
+    is HWPControlTable -> control.copy()
+    is HWPControlEquation -> control.copy()
+    is HWPControlHeader -> control.copy()
+    is HWPControlFooter -> control.copy()
+    is HWPControlFootnote -> control.copy()
+    is HWPControlEndNote -> control.copy()
+    is HWPControlAutoNumber -> control.copy()
+    is HWPControlNewNumber -> control.copy()
+    is HWPControlPageHide -> control.copy()
+    is HWPControlPageOddEvenAdjust -> control.copy()
+    is HWPControlPageNumberPosition -> control.copy()
+    is HWPControlIndexMark -> control.copy()
+    is HWPControlBookmark -> control.copy()
+    is HWPControlOverlappingLetter -> control.copy()
+    is HWPControlAdditionalText -> control.copy()
+    is HWPControlHiddenComment -> control.copy()
+    is HWPControlField -> control.copy()
+    is HWPGsoControl -> copyGsoControl(control)
+    else -> null
 }

@@ -17,4 +17,15 @@ class HWPDocumentProperties {
     var sectionCount: Int = 0
     var startNumber: HWPStartNumber = HWPStartNumber()
     var caretPosition: HWPCaretPosition = HWPCaretPosition()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPDocumentProperties] 복사된 객체 반환
+     */
+    fun copy(): HWPDocumentProperties = HWPDocumentProperties().also {
+        it.sectionCount = this.sectionCount
+        it.startNumber = this.startNumber.copy()
+        it.caretPosition = this.caretPosition.copy()
+    }
 }

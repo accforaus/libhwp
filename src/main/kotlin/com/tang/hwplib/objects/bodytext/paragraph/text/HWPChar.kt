@@ -44,6 +44,13 @@ abstract class HWPChar {
      */
     abstract fun getType() : HWPCharType
 
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPChar] 복사된 객체 반환
+     */
+    abstract fun copy() : HWPChar
+
     companion object {
         /**
          * 제어 문자의 종류를 반환하는 함수
@@ -71,6 +78,13 @@ abstract class HWPChar {
 
 class HWPCharControlChar : HWPChar() {
     override fun getType(): HWPCharType = HWPCharType.ControlChar
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharControlChar] 복사된 객체 반환
+     */
+    override fun copy(): HWPCharControlChar = HWPCharControlChar().also { it.code = this.code }
 
     /**
      * 문자 코드를 설정하는 함수
@@ -106,6 +120,16 @@ class HWPCharControlExtend: HWPChar() {
     override fun getType(): HWPCharType = HWPCharType.ControlExtend
 
     /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharControlExtend] 복사된 객체 반환
+     */
+    override fun copy(): HWPCharControlExtend = HWPCharControlExtend().also {
+        it.code = this.code
+        it.addition = this.addition.copyOf()
+    }
+
+    /**
      * InstanceID 오브젝트의 포인터를 반환하는 함수
      *
      * @return [String] [addition]을 이용하여 오브젝트 포인터를 반환
@@ -138,6 +162,16 @@ class HWPCharControlExtend: HWPChar() {
 class HWPCharControlInline: HWPChar() {
     var addition: ByteArray = ByteArray(12)
     override fun getType(): HWPCharType = HWPCharType.ControlInline
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharControlInline] 복사된 객체 반환
+     */
+    override fun copy(): HWPCharControlInline = HWPCharControlInline().also {
+        it.code = this.code
+        it.addition = this.addition.copyOf()
+    }
 }
 
 /**
@@ -148,6 +182,12 @@ class HWPCharControlInline: HWPChar() {
 class HWPCharNormal: HWPChar() {
     override fun getType(): HWPCharType = HWPCharType.Normal
 
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPCharNormal] 복사된 객체 반환
+     */
+    override fun copy(): HWPCharNormal = HWPCharNormal().also { it.code = this.code }
     /**
      * 문자 코드 [code]를 문자열로 변환하는 함수
      *

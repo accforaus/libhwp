@@ -135,4 +135,23 @@ class HWPTable {
      * @return [HWPZoneInfo] 생성된 영역 속성 반환
      */
     fun addNewZoneInfo() : HWPZoneInfo = HWPZoneInfo().apply { zoneInfoList.add(this) }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPTable] 복사된 객체 반환
+     */
+    fun copy() : HWPTable = HWPTable().also {
+        it.property.value = this.property.value
+        it.rowCount = this.rowCount
+        it.columnCount = this.columnCount
+        it.cellSpacing = this.cellSpacing
+        it.leftInnerMargin = this.leftInnerMargin
+        it.rightInnerMargin = this.rightInnerMargin
+        it.topInnerMargin = this.topInnerMargin
+        it.bottomInnerMargin = this.bottomInnerMargin
+        for (int in this.cellCountOfRowList) it.cellCountOfRowList.add(int)
+        it.borderFillId = this.borderFillId
+        for (zoneInfo in this.zoneInfoList) it.zoneInfoList.add(zoneInfo.copy())
+    }
 }

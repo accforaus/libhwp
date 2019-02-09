@@ -132,4 +132,13 @@ class HWPRelativeSizes {
     fun setForAll(relativeSize: Short) {
         for (index in 0 until array.size) array[index] = relativeSize
     }
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPRelativeSizes] 복사된 객체 반환
+     */
+    fun copy() : HWPRelativeSizes = HWPRelativeSizes().also {
+        it.array = this.array.copyOf()
+    }
 }

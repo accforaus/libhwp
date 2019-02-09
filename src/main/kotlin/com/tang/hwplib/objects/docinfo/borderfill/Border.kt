@@ -203,6 +203,17 @@ class HWPEachBorder {
     var type: HWPBorderType = HWPBorderType.Solid
     var thickness: HWPBorderThickness = HWPBorderThickness.MM0_1
     var color: Color4Byte = Color4Byte()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPEachBorder] 복사된 객체 반환
+     */
+    fun copy(): HWPEachBorder = HWPEachBorder().also {
+        it.type = HWPBorderType.valueOf(this.type.value)
+        it.thickness = HWPBorderThickness.valueOf(this.thickness.value)
+        it.color.value = this.color.value
+    }
 }
 
 /**

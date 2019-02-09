@@ -185,6 +185,20 @@ class HWPPageBorderFill {
     var topGap: Int = 0
     var bottomGap: Int = 0
     var borderFillId: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPPageBorderFill] 복사된 객체 반환
+     */
+    fun copy() : HWPPageBorderFill = HWPPageBorderFill().also {
+        it.property.value = this.property.value
+        it.leftGap = this.leftGap
+        it.rightGap = this.rightGap
+        it.topGap = this.topGap
+        it.bottomGap = this.bottomGap
+        it.borderFillId = this.borderFillId
+    }
 }
 
 /**
@@ -342,4 +356,22 @@ class HWPPageDef {
     var footerMargin: Long = 0
     var gutterMargin: Long = 0
     var property: HWPPageDefProperty = HWPPageDefProperty()
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPPageDef] 복사된 객체 반환
+     */
+    fun copy() : HWPPageDef = HWPPageDef().also {
+        it.paperWidth = this.paperWidth
+        it.paperHeight = this.paperHeight
+        it.leftMargin = this.leftMargin
+        it.rightMargin = this.rightMargin
+        it.topMargin = this.topMargin
+        it.bottomMargin = this.bottomMargin
+        it.headerMargin = this.headerMargin
+        it.footerMargin = this.footerMargin
+        it.gutterMargin = this.gutterMargin
+        it.property.value = this.property.value
+    }
 }

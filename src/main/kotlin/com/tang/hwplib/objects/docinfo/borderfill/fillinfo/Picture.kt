@@ -61,4 +61,16 @@ class HWPPictureInfo {
     var contrast: Byte = 0
     var effect: HWPPictureEffect = HWPPictureEffect.RealPicture
     var binItemID: Int = 0
+
+    /**
+     * 객체를 복사한 후 반환하는 함수
+     *
+     * @return [HWPPictureInfo] 복사된 객체 반환
+     */
+    fun copy() : HWPPictureInfo = HWPPictureInfo().also {
+        it.brightness = this.brightness
+        it.contrast = this.contrast
+        it.effect = HWPPictureEffect.valueOf(this.effect.value)
+        it.binItemID = this.binItemID
+    }
 }
