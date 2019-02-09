@@ -1,14 +1,18 @@
 language: java
 jdk:
-  - openjdk8
+  - oraclejdk8
 
 branches:
   only:
   - master
+
+before_install:
+  - chmod +x gradlew
+  - chmod +x gradle/wrapper/gradlew-wrapper.jar
 
 cache:
   directories:
   - '$HOME/.m2/repository'
   - '$HOME/.gradle'
 
-script: "./gradlew clean build"
+script: ./gradlew clean build
