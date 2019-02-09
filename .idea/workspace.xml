@@ -7,518 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ccebcb7-0f8e-4ea3-8d4a-f2a34a77c95d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/HWPDocumentCopyTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/HWPDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/HWPDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bindata/HWPBinData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bindata/HWPBinData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bindata/HWPEmbeddedBinaryData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bindata/HWPEmbeddedBinaryData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/HWPBodyText.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/HWPBodyText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/HWPSection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/HWPSection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlAdditionalText.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlAdditionalText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlAutoNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlAutoNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlBookmark.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlBookmark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlColumnDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlColumnDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlEndNote.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlEndNote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlEquation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlEquation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlField.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlFooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlFooter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlFootnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlFootnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlHiddenComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlHiddenComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlIndexMark.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlIndexMark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlKt$createHWPControl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlKt$createHWPControl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlNewNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlNewNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlOverlappingLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlOverlappingLetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlPageHide.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlPageHide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlPageNumberPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlPageNumberPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlPageOddEvenAdjust.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlPageOddEvenAdjust.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlSectionDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlSectionDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/HWPControlTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPCtrlData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPCtrlData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAdditionalText.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAdditionalText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAutoNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAutoNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderBookmark.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderBookmark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderColumnDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderColumnDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderEndnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderEndnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderField.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFooter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFootnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFootnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderGso.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderGso.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderIndexMark.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderIndexMark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderNewNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderNewNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderOverlappingLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderOverlappingLetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageHide.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageHide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageNumberPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageNumberPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageOddEvenAdjust.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageOddEvenAdjust.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderSectionDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderSectionDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDefineHeaderProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDefineHeaderProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/footnoteendnote/ListHeaderForFootnoteEndnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/footnoteendnote/ListHeaderForFootnoteEndnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlArc.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlArc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlCurve.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlCurve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlEllipse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlEllipse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlOLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlOLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlObjectLinkLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlObjectLinkLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPolygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPolygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlRectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlVideo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPControlVideo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/caption/ListHeaderForHWPCaption.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/caption/ListHeaderForHWPCaption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentArc.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentArc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentCurve.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentCurve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentEllipse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentEllipse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLineForObjectLinkLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLineForObjectLinkLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentNormal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentOLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentOLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPolygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPolygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentRectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentVideo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentVideo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorWithEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorWithEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPInnerMargin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPInnerMargin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPNeonEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPNeonEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffectProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffectProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPReflectionEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPReflectionEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPShadowEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPShadowEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPSoftEdgeEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPSoftEdgeEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPMatrix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPRenderingInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPRenderingInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPScaleRotateMatrixPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPScaleRotateMatrixPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/textbox/ListHeaderForHWPTextBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/textbox/ListHeaderForHWPTextBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/video/HWPLocalVideoProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/video/HWPLocalVideoProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/video/HWPWebVideoProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/gso/video/HWPWebVideoProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPBatangPageInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPBatangPageInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootEndNoteShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootEndNoteShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageBorderFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageBorderFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDef.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDef.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDefProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDefProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPRow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPRow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPZoneInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/HWPZoneInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/ListHeaderForCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/control/table/ListHeaderForCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraphList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraphList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPCharPositionShapeIdPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPCharPositionShapeIdPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPLineSegItemTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPLineSegItemTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/linesegment/LineSegItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemoList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemoList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPParaRangeTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPParaRangeTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPRangeTagItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPRangeTagItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar$setCode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar$setCode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlExtend.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlExtend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlInline.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlInline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal$getCh$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal$getCh$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPBinData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPBinData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPBorderFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPBorderFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPCharShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPCharShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPDocInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPDocInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPFaceName.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPFaceName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPIDMappings.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPIDMappings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPNumbering.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPNumbering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPParaShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPParaShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPStyle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPTabDef.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/HWPTabDef.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderFillProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderFillProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/HWPEachBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/HWPEachBorder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPFillInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPFillInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPCharOffsets.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPCharOffsets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPCharShapeProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPCharShapeProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPCharSpaces.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPCharSpaces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPRelativeSizes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/charshape/HWPRelativeSizes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/documentproperties/HWPCaretPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/documentproperties/HWPCaretPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/documentproperties/HWPStartNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/documentproperties/HWPStartNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/facename/HWPFontTypeInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/facename/HWPFontTypeInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/numbering/HWPExtendNumbering.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/numbering/HWPExtendNumbering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphHeadInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphHeadInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/tabdef/HWPTabInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/docinfo/tabdef/HWPTabInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/etc/UnknownRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/etc/UnknownRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPFileHeader$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPFileHeader$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPFileHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPFileHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPFileVersion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPFileVersion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPKOGLCCLInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/objects/fileheader/HWPKOGLCCLInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph$forLineSeg$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph$forLineSeg$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/writer/bodytext/paragraph/ForParagraphKt$forParagraph$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/tang/hwplib/writer/bodytext/paragraph/ForParagraphKt$forParagraph$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/libhwp10jar-classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/libhwp10jar-classes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/libhwp-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/libhwp-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/LineSegItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/com/tang/hwplib/objects/bodytext/paragraph/linesegment/LineSegItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/HWPDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/HWPDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bindata/HWPBinData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bindata/HWPBinData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bindata/HWPEmbeddedBinaryData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bindata/HWPEmbeddedBinaryData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPBodyText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPBodyText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPSection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/HWPSection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlAdditionalText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlAdditionalText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlAutoNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlAutoNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlBookmark.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlBookmark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlColumnDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlColumnDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlEndNote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlEndNote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlEquation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlEquation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlFooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlFooter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlFootnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlFootnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlHiddenComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlHiddenComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlIndexMark.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlIndexMark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlKt$createHWPControl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlKt$createHWPControl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlNewNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlNewNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlOverlappingLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlOverlappingLetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlPageHide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlPageHide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlPageNumberPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlPageNumberPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlPageOddEvenAdjust.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlPageOddEvenAdjust.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlSectionDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlSectionDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/HWPControlTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPCtrlData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPCtrlData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/bookmark/HWPParameterSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAdditionalText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAdditionalText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAutoNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderAutoNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderBookmark.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderBookmark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderColumnDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderColumnDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderEndnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderEndnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFooter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFootnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderFootnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderGso.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderGso.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderIndexMark.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderIndexMark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderNewNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderNewNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderOverlappingLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderOverlappingLetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageHide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageHide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageNumberPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageNumberPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageOddEvenAdjust.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderPageOddEvenAdjust.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderSectionDefine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeaderSectionDefine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDefineHeaderProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnDefineHeaderProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/HWPColumnInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/footnoteendnote/ListHeaderForFootnoteEndnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/footnoteendnote/ListHeaderForFootnoteEndnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlArc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlArc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlCurve.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlCurve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlEllipse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlEllipse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlOLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlOLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlObjectLinkLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlObjectLinkLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPolygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlPolygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlRectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlVideo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPControlVideo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControlKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/caption/ListHeaderForHWPCaption.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/caption/ListHeaderForHWPCaption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentArc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentArc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentCurve.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentCurve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentEllipse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentEllipse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLineForObjectLinkLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentLineForObjectLinkLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentNormal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentOLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentOLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPolygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentPolygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentRectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentVideo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponentVideo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/HWPLineInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorWithEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPColorWithEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPInnerMargin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPInnerMargin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPNeonEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPNeonEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffectProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPPictureEffectProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPReflectionEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPReflectionEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPShadowEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPShadowEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPSoftEdgeEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/HWPSoftEdgeEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPMatrix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPRenderingInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPRenderingInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPScaleRotateMatrixPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/HWPScaleRotateMatrixPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/HWPShadowInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPTextBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/textbox/ListHeaderForHWPTextBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/textbox/ListHeaderForHWPTextBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/video/HWPLocalVideoProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/video/HWPLocalVideoProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideoProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/video/HWPWebVideoProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/gso/video/HWPWebVideoProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPBatangPageInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPBatangPageInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootEndNoteShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPFootEndNoteShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPMakingBookMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageBorderFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageBorderFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDef.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDef.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDefProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPageDefProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/HWPPaperDirection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPRow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPRow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPZoneInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/HWPZoneInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/ListHeaderForCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/control/table/ListHeaderForCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraphList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraphList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPCharPositionShapeIdPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPCharPositionShapeIdPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPLineSegItemTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPLineSegItemTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/linesegment/LineSegItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemoList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemoList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPParaRangeTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPParaRangeTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPRangeTagItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/rangetag/HWPRangeTagItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar$setCode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar$setCode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlChar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlExtend.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlExtend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlInline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharControlInline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal$getCh$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal$getCh$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPCharNormal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPBinData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPBinData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPBorderFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPBorderFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPCharShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPCharShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPDocInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPDocInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPFaceName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPFaceName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPIDMappings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPIDMappings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPNumbering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPNumbering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPParaShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPParaShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPStyle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPTabDef.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/HWPTabDef.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderFillProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/HWPBorderFillProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/HWPEachBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/HWPEachBorder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPFillInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPFillInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPGradientFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPImageFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPatternFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/HWPPictureInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPCharOffsets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPCharOffsets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPCharShapeProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPCharShapeProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPCharSpaces.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPCharSpaces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPRelativeSizes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/charshape/HWPRelativeSizes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/documentproperties/HWPCaretPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/documentproperties/HWPCaretPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/documentproperties/HWPStartNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/documentproperties/HWPStartNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/facename/HWPFontTypeInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/facename/HWPFontTypeInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/numbering/HWPExtendNumbering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/numbering/HWPExtendNumbering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphHeadInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/numbering/HWPParagraphHeadInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/tabdef/HWPTabInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/docinfo/tabdef/HWPTabInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/etc/UnknownRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/etc/UnknownRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPFileHeader$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPFileHeader$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPFileHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPFileHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPFileVersion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPFileVersion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPKOGLCCLInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/objects/fileheader/HWPKOGLCCLInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph$forLineSeg$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph$forLineSeg$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/writer/bodytext/paragraph/ForParagraphKt$forParagraph$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/tang/hwplib/writer/bodytext/paragraph/ForParagraphKt$forParagraph$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/BasicTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/test$debug$thread$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/testClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/HWPDocument.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/HWPDocument.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bindata/HWPBinData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bindata/HWPBinData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/HWPBodyText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/HWPBodyText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/HWPSection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/HWPSection.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/HWPControl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/HWPControl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/bookmark/Parameter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/bookmark/Parameter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/ColumnDefine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/columndefine/ColumnDefine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/equation/HWPEQEdit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/footnoteendnote/FootnoteEndnote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/footnoteendnote/FootnoteEndnote.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/caption/HWPCaption.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ShapeComponentEach.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/ShapeComponentEach.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/Line.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/line/Line.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/Picture.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/picture/Picture.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/polygon/HWPPositionXY.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/Rendering.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/render/Rendering.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/Shadowing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/shadow/Shadowing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/textbox/HWPText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/video/HWPVideo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/headerfooter/ListHeaderForHeaderFooter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/hiddencomment/ListHeaderForHiddenComment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/FootEndNote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/FootEndNote.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/ListHeaderForBatangPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/Page.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/Page.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/table/HWPCell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/table/HWPCell.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/table/HWPRow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/table/HWPRow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/table/HWPTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/table/HWPTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/HWPParagraph.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/charshape/HWPParaCharShape.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/header/HWPParaHeader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPParaLineSeg.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/linesegment/LineSegItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/linesegment/HWPLineSegItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/rangetag/RangeTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/rangetag/RangeTag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/text/HWPParaText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPBinData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPBinData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPBorderFill.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPBorderFill.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPBullet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPBullet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPCharShape.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPCharShape.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPCompatibleDocument.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPDocInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPDocInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPDocumentProperties.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPFaceName.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPFaceName.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPIDMappings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPIDMappings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPLayoutCompatibility.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPNumbering.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPNumbering.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPParaShape.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPParaShape.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPStyle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPStyle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPTabDef.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPTabDef.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/Border.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/Border.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Fill.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Fill.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Gradient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Gradient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Image.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Image.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Pattern.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Pattern.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Picture.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/borderfill/fillinfo/Picture.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/bullet/HWPImageBullet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/Chars.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/Chars.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/HWPFaceNameIds.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/HWPRatios.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/RelatieSizes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/charshape/RelatieSizes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/documentproperties/DocumentProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/documentproperties/DocumentProperties.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/facename/Font.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/facename/Font.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/numbering/HWPLevelNumbering.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/numbering/ParagraphHead.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/numbering/ParagraphHead.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/tabdef/Tab.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/tabdef/Tab.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/etc/UnknownRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/etc/UnknownRecord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/fileheader/HWPFileHeader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/fileheader/HWPFileHeader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/fileheader/HWPFileVersion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/fileheader/HWPFileVersion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/fileheader/KOGLCCL.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/fileheader/KOGLCCL.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/reader/bodytext/paragraph/ForParagraph.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/bodytext/paragraph/ForParagraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/bodytext/paragraph/ForParagraph.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/TestKotlin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/TestKotlinBasic.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -595,8 +85,8 @@
           <entry key="gradle" value="6" />
           <entry key="gradlew" value="2" />
           <entry key="java" value="25" />
-          <entry key="kt" value="1403" />
-          <entry key="md" value="1" />
+          <entry key="kt" value="1404" />
+          <entry key="md" value="2" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -605,8 +95,8 @@
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="6" />
           <entry key="JAVA" value="25" />
-          <entry key="Kotlin" value="1403" />
-          <entry key="Markdown" value="1" />
+          <entry key="Kotlin" value="1404" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="YAML" value="1" />
         </counts>
@@ -615,9 +105,9 @@
         <counts>
           <entry key="gradle" value="1849" />
           <entry key="java" value="562" />
-          <entry key="kt" value="366298" />
-          <entry key="md" value="282" />
-          <entry key="txt" value="74" />
+          <entry key="kt" value="366302" />
+          <entry key="md" value="685" />
+          <entry key="txt" value="185" />
           <entry key="yml" value="29" />
         </counts>
       </usages-collector>
@@ -625,9 +115,9 @@
         <counts>
           <entry key="Groovy" value="1849" />
           <entry key="JAVA" value="562" />
-          <entry key="Kotlin" value="366298" />
-          <entry key="Markdown" value="282" />
-          <entry key="PLAIN_TEXT" value="74" />
+          <entry key="Kotlin" value="366304" />
+          <entry key="Markdown" value="683" />
+          <entry key="PLAIN_TEXT" value="185" />
           <entry key="YAML" value="29" />
         </counts>
       </usages-collector>
@@ -635,15 +125,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/HWPWriter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.kt">
           <provider selected="true" editor-type-id="text-editor">
@@ -659,11 +140,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/bodytext/paragraph/ForParagraph.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="250" selection-start-line="250" selection-end-line="250" />
+            <state relative-caret-position="362">
+              <caret line="256" column="3" selection-start-line="256" selection-start-column="3" selection-end-line="256" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/HWPDocumentCopyTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="6" column="168" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="168" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="136">
+                <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -716,15 +221,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/field/Field.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-333" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/docinfo/ForDocInfo.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="567" selection-start-line="567" selection-end-line="567" />
-            </state>
           </provider>
         </entry>
       </file>
@@ -1404,7 +900,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/memo/ListHeaderForHWPMemo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/memo/HWPMemo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/rangetag/RangeTag.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/paragraph/text/HWPChar.kt" />
@@ -1448,13 +943,14 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/shapecomponent/HWPShapeComponent.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/gso/HWPGsoControl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bindata/HWPBinData.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/HWPDocumentCopyTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/docinfo/HWPCharShape.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/bodytext/paragraph/ForParagraph.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/ctrlheader/HWPCtrlHeader.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/HWPControl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/bodytext/paragraph/control/gso/ForGsoControl.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/HWPDocumentCopyTest.kt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1695,7 +1191,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/josh/ChinaProject/kotlin/libhwp/src/main/kotlin/com/tang/hwplib/objects/docinfo/CharShape.kt" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549717278970" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549718076934" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -1862,7 +1358,7 @@
       <workItem from="1549543840437" duration="4008000" />
       <workItem from="1549598084281" duration="3738000" />
       <workItem from="1549605448104" duration="29189000" />
-      <workItem from="1549710941467" duration="6134000" />
+      <workItem from="1549710941467" duration="6953000" />
     </task>
     <task id="LOCAL-00001" summary="docs: Change Readme">
       <created>1549608844463</created>
@@ -1871,13 +1367,17 @@
       <option name="project" value="LOCAL" />
       <updated>1549608844463</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: Copy HWP Documents&#10;&#10;this feature offers whole hwp documents hard copy not soft copy">
+      <created>1549717432497</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549717432497</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HWPDocumentCopyTest_바르게_복사되었는지_테스트 - 2019.02.09 at 21h 29m 07s.xml">
-      <configuration name="HWPDocumentCopyTest.바르게 복사되었는지 테스트" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="HWPDocumentCopyTest_바르게_복사되었는지_테스트 - 2019.02.09 at 21h 31m 36s.xml">
       <configuration name="HWPDocumentCopyTest.바르게 복사되었는지 테스트" configurationId="JUnit" />
     </history-entry>
@@ -1905,9 +1405,12 @@
     <history-entry file="HWPDocumentCopyTest_바르게_복사되었는지_테스트 - 2019.02.09 at 22h 00m 12s.xml">
       <configuration name="HWPDocumentCopyTest.바르게 복사되었는지 테스트" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HWPDocumentCopyTest_바르게_복사되었는지_테스트 - 2019.02.09 at 22h 01m 16s.xml">
+      <configuration name="HWPDocumentCopyTest.바르게 복사되었는지 테스트" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363671000" />
+    <option name="totallyTimeSpent" value="364490000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1920,8 +1423,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="880" y="23" width="1042" height="983" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.299" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.299" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1930,7 +1434,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35314286" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35314286" />
       <window_info anchor="bottom" x="179" y="238" width="1600" height="785" id="Debug" order="3" weight="0.4502857" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1994,7 +1498,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="docs: Change Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: Change Readme" />
+    <MESSAGE value="feat: Copy HWP Documents&#10;&#10;this feature offers whole hwp documents hard copy not soft copy" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Copy HWP Documents&#10;&#10;this feature offers whole hwp documents hard copy not soft copy" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -2068,11 +1573,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/Number.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3620" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/objects/bodytext/control/sectiondefine/Page.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10088" />
@@ -2309,16 +1809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/HWPDocumentCopyTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/docinfo/ForDocInfo.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -2420,8 +1910,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/tang/hwplib/writer/bodytext/paragraph/ForParagraph.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="250" selection-start-line="250" selection-end-line="250" />
+        <state relative-caret-position="362">
+          <caret line="256" column="3" selection-start-line="256" selection-start-column="3" selection-end-line="256" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/HWPDocumentCopyTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="168" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="168" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
