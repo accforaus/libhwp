@@ -114,4 +114,17 @@ class HWPImageFill {
         it.imageFillType = HWPImageFillType.valueOf(this.imageFillType.value)
         it.pictureInfo = this.pictureInfo.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPictureInfo] 생성된 객체 반환
+         */
+        fun build(imageFillType: HWPImageFillType = HWPImageFillType.None,
+                  pictureInfo: HWPPictureInfo = HWPPictureInfo.build()): HWPImageFill = HWPImageFill().apply {
+            this.imageFillType = imageFillType
+            this.pictureInfo = pictureInfo
+        }
+    }
 }

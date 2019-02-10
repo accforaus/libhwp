@@ -1,7 +1,10 @@
 package com.tang.hwplib.objects.docinfo
 
 import com.tang.hwplib.objects.docinfo.style.HWPStyleProperty
+import com.tang.hwplib.objects.docinfo.style.HWPStyleSort
 import com.tang.hwplib.objects.etc.STYLE
+import com.tang.hwplib.util.exceptions.HWPBuildException
+
 /**
  * 스타일(문단 스타일)을 나타내는 객체
  * Tag ID: HWPTAG_STYLE [STYLE]
@@ -38,5 +41,41 @@ class HWPStyle {
         it.languageId = this.languageId
         it.paraShapeId = this.paraShapeId
         it.charShapeId = this.charShapeId
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPStyle] 생성된 객체 반환
+         */
+        fun build(hangulName: String? = null,
+                  englishName: String? = null,
+                  property: HWPStyleProperty = HWPStyleProperty.build(0),
+                  nextStyleId: Short = 0,
+                  languageId: Short = 0,
+                  paraShapeId: Int = 0,
+                  charShapeId: Int = 0)
+                : HWPStyle = HWPStyle().apply {
+            property.run {
+                when (getStyleSort()) {
+                    HWPStyleSort.ParaStyle -> {
+                        if (paraShapeId < 0)
+                            throw HWPBuildException("[HWPStyle] Style Sort is ParaStyle, paraShapeId($paraShapeId) must set greater than 0")
+                    }
+                    HWPStyleSort.CharStyle -> {
+                        if (charShapeId < 0)
+                            throw HWPBuildException("[HWPStyle] Style Sort is CharStyle, charShapeId($charShapeId) must set grader than 0")
+                    }
+                }
+            }
+            this.hangulName = hangulName
+            this.englishName = englishName
+            this.property = property
+            this.nextStyleId = nextStyleId
+            this.languageId = languageId
+            this.paraShapeId = paraShapeId
+            this.charShapeId = charShapeId
+        }
     }
 }

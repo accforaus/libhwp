@@ -163,6 +163,33 @@ class HWPParagraphHeadInfoProperty {
         else
             value = set(value, 4, true)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParagraphHeadInfoProperty] 생성된 객체 반환
+         */
+        fun build(paragraphAlignment: HWPParagraphAlignment = HWPParagraphAlignment.Left,
+                  isFollowStringWidth: Boolean = false,
+                  isAutoIndent: Boolean = false,
+                  valueTypeForDistanceFromBody: HWPValueType = HWPValueType.RatioForLetter)
+                : HWPParagraphHeadInfoProperty = HWPParagraphHeadInfoProperty().apply {
+            setParagraphAlignment(paragraphAlignment)
+            setFollowStringWidth(isFollowStringWidth)
+            setAutoIndent(isAutoIndent)
+            setValueTypeForDistanceFromBody(valueTypeForDistanceFromBody)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParagraphHeadInfoProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPParagraphHeadInfoProperty = HWPParagraphHeadInfoProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -192,5 +219,23 @@ class HWPParagraphHeadInfo {
         it.correctionValueForWidth = this.correctionValueForWidth
         it.distanceFromBody = this.distanceFromBody
         it.charShapeID = this.charShapeID
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParagraphHeadInfo] 생성된 객체 반환
+         */
+        fun build(property: HWPParagraphHeadInfoProperty = HWPParagraphHeadInfoProperty.build(),
+                  correctionValueForWidth: Short = 0,
+                  distanceFromBody: Short = 0,
+                  charShapeID: Long = 0)
+                : HWPParagraphHeadInfo = HWPParagraphHeadInfo().apply {
+            this.property = property
+            this.correctionValueForWidth = correctionValueForWidth
+            this.distanceFromBody = distanceFromBody
+            this.charShapeID = charShapeID
+        }
     }
 }

@@ -86,4 +86,20 @@ class HWPKOGLCCLInfo {
         it.isPreventCopy = this.isPreventCopy
         it.isPermitCopy = this.isPermitCopy
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPKOGLCCLInfo] 생성된 객체 반환
+         */
+        fun build(koglCclInfo: Boolean = false,
+                  isPreventCopy: Boolean = false,
+                  isPermitCopy: Boolean = false):
+                HWPKOGLCCLInfo = HWPKOGLCCLInfo().apply {
+            this.koglCclInfo = koglCclInfo
+            this.isPreventCopy = isPreventCopy
+            this.isPermitCopy = isPermitCopy
+        }
+    }
 }

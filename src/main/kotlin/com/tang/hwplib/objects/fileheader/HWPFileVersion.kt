@@ -91,4 +91,18 @@ class HWPFileVersion {
         it.pp = this.pp
         it.rr = this.rr
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFileVersion] 생성된 객체 반환
+         */
+        fun build(mm: Short = 5, nn: Short = 0, pp :Short = 5, rr :Short = 0): HWPFileVersion = HWPFileVersion().apply {
+            this.mm = mm
+            this.nn = nn
+            this.pp = pp
+            this.rr = rr
+        }
+    }
 }

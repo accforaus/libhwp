@@ -65,4 +65,43 @@ class HWPCharShape {
         it.borderFillId = this.borderFillId
         it.strikeLineColor.value = this.strikeLineColor.value
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharShape] 생성된 객체 반환
+         */
+        fun build(faceNameIds: HWPFaceNameIds = HWPFaceNameIds.build(),
+                  ratios: HWPRatios = HWPRatios.build(),
+                  charSpaces: HWPCharSpaces = HWPCharSpaces.build(),
+                  relativeSizes: HWPRelativeSizes = HWPRelativeSizes.build(),
+                  charOffsets: HWPCharOffsets = HWPCharOffsets.build(),
+                  baseSize: Int = 0,
+                  property: HWPCharShapeProperty = HWPCharShapeProperty.build(),
+                  shadowGap1: Byte = 0, shadowGap2: Byte = 0,
+                  charColor: Color4Byte = Color4Byte.build(),
+                  underLineColor: Color4Byte = Color4Byte.build(),
+                  shadeColor: Color4Byte = Color4Byte.build(),
+                  shadowColor: Color4Byte = Color4Byte.build(),
+                  borderFillId: Int = 0,
+                  strikeLineColor: Color4Byte = Color4Byte.build())
+                : HWPCharShape = HWPCharShape().apply {
+            this.faceNameIds = faceNameIds
+            this.ratios = ratios
+            this.charSpaces = charSpaces
+            this.relativeSizes = relativeSizes
+            this.charOffsets = charOffsets
+            this.baseSize = baseSize
+            this.property = property
+            this.shadowGap1 = shadowGap1
+            this.shadowGap2 = shadowGap2
+            this.charColor = charColor
+            this.underLineColor = underLineColor
+            this.shadeColor = shadeColor
+            this.shadowColor = shadowColor
+            this.borderFillId = borderFillId
+            this.strikeLineColor = strikeLineColor
+        }
+    }
 }

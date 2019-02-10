@@ -1,7 +1,9 @@
 package com.tang.hwplib.objects.docinfo
 
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataProperty
+import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataType
 import com.tang.hwplib.objects.etc.BIN_DATA
+import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
  * 바이너리 데이터 (가변)
@@ -34,5 +36,36 @@ class HWPBinData {
         it.relativePathForLink = this.relativePathForLink
         it.binDataID = this.binDataID
         it.extensionForEmbedding = this.extensionForEmbedding
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPBinData] 생성된 객체 반환
+         */
+        fun build(property: HWPBinDataProperty = HWPBinDataProperty.build(),
+                  absolutePathForLink: String? = null,
+                  relativePathForLink: String? = null,
+                  binDataID: Int = 0,
+                  extensionForEmbedding: String? = null) : HWPBinData = HWPBinData().apply {
+            property.run {
+                when(getType()) {
+                    HWPBinDataType.Link -> {
+                        if (absolutePathForLink == null || relativePathForLink == null)
+                            throw HWPBuildException("[HWPBinData] Type: Link, absolute path ($absolutePathForLink) or relate path($relativePathForLink) must be not null")
+                    }
+                    else -> {
+                        if (extensionForEmbedding == null)
+                            throw HWPBuildException("[HWPBinData] Type: ${getType()}, extension for embedding must be not null")
+                    }
+                }
+            }
+            this.property = property
+            this.absolutePathForLink = absolutePathForLink
+            this.relativePathForLink = relativePathForLink
+            this.binDataID = binDataID
+            this.extensionForEmbedding = extensionForEmbedding
+        }
     }
 }

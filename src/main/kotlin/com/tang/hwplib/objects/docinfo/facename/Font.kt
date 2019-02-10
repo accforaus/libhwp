@@ -74,4 +74,29 @@ class HWPFontTypeInfo {
         it.middleLine = this.middleLine
         it.xHeight = this.xHeight
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFontTypeInfo] 생성된 객체 반환
+         */
+        fun build(fontType: Short = 0, serifType: Short = 0,
+                  thickness: Short = 0, ratio: Short = 0,
+                  contrast: Short = 0, strokeDeviation: Short = 0,
+                  characterStrokeType: Short = 0, characterShape: Short = 0,
+                  middleLine: Short = 0, xHeight: Short = 0)
+                : HWPFontTypeInfo = HWPFontTypeInfo().apply {
+            this.fontType = fontType
+            this.serifType = serifType
+            this.thickness = thickness
+            this.ratio = ratio
+            this.contrast = contrast
+            this.strokeDeviation = strokeDeviation
+            this.characterStrokeType = characterStrokeType
+            this.characterShape = characterShape
+            this.middleLine = middleLine
+            this.xHeight = xHeight
+        }
+    }
 }

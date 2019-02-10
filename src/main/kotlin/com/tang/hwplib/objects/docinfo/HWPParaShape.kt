@@ -75,4 +75,42 @@ class HWPParaShape {
         it.lineSpace2 = this.lineSpace2
         it.unknown = this.unknown
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShape] 생성된 객체 반환
+         */
+        fun build(property1: HWPParaShapeProperty1 = HWPParaShapeProperty1.build(),
+                  leftMargin: Int = 0, rightMargin: Int = 0, indent: Int = 0,
+                  topParaSpace: Int = 0, bottomParaSpace: Int = 0,
+                  lineSpace: Int = 0, tabDefId: Int = 0, paraHeadId: Int = 0,
+                  borderFillId: Int = 0, leftBorderSpace: Short = 0,
+                  rightBorderSpace: Short = 0, topBorderSpace: Short = 0,
+                  bottomBorderSpace: Short = 0,
+                  property2: HWPParaShapeProperty2 = HWPParaShapeProperty2.build(),
+                  property3: HWPParaShapeProperty3 = HWPParaShapeProperty3.build(0),
+                  lineSpace2: Long = 0, unknown: Long = 0)
+                : HWPParaShape = HWPParaShape().apply {
+            this.property1 = property1
+            this.leftMargin = leftMargin
+            this.rightMargin = rightMargin
+            this.indent = indent
+            this.topParaSpace = topParaSpace
+            this.bottomParaSpace = bottomParaSpace
+            this.lineSpace = lineSpace
+            this.tabDefId = tabDefId
+            this.paraHeadId = paraHeadId
+            this.borderFillId = borderFillId
+            this.leftBorderSpace = leftBorderSpace
+            this.rightBorderSpace = rightBorderSpace
+            this.topBorderSpace = topBorderSpace
+            this.bottomBorderSpace = bottomBorderSpace
+            this.property2 = property2
+            this.property3 = property3
+            this.lineSpace2 = lineSpace2
+            this.unknown = unknown
+        }
+    }
 }

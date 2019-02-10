@@ -145,6 +145,26 @@ class HWPCharOffsets {
     fun copy() : HWPCharOffsets = HWPCharOffsets().also {
         it.array = this.array.copyOf()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharOffsets] 생성된 객체 반환
+         */
+        fun build(array: ByteArray = ByteArray(7)): HWPCharOffsets = HWPCharOffsets().apply {
+            this.array = array
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharOffsets] 생성된 객체 반환
+         */
+        fun build(value: Byte) : HWPCharOffsets = HWPCharOffsets().apply {
+            setForAll(value)
+        }
+    }
 }
 
 /**
@@ -225,7 +245,7 @@ class HWPCharShapeProperty {
      *
      * @param [underLineShape] [HWPBorderType], 밑줄 모양 값을 가진 데이터
      */
-    fun setUnserLineShape(underLineShape: HWPBorderType) {
+    fun setUnderLineShape(underLineShape: HWPBorderType) {
         value = set(value, 4, 7, underLineShape.value.toInt())
     }
 
@@ -235,16 +255,16 @@ class HWPCharShapeProperty {
      *
      * @return [HWPUnderLineSort] 외곽선 종류를 반환
      */
-    fun getOutterLineSort() : HWPOuterLineSort = HWPOuterLineSort.valueOf(get(value, 8, 10).toByte())
+    fun getOuterLineSort() : HWPOuterLineSort = HWPOuterLineSort.valueOf(get(value, 8, 10).toByte())
 
     /**
      * 외곽선 종류룰 설정하는 함수
      * bit 8-10
      *
-     * @param [outterLineSort] [HWPBorderType], 외곽선 종류 값을 가진 데이터
+     * @param [outerLineSort] [HWPBorderType], 외곽선 종류 값을 가진 데이터
      */
-    fun setOutterLineSort(outterLineSort: HWPOuterLineSort) {
-        value = set(value, 8, 10, outterLineSort.value.toInt())
+    fun setOuterLineSort(outerLineSort: HWPOuterLineSort) {
+        value = set(value, 8, 10, outerLineSort.value.toInt())
     }
 
     /**
@@ -427,6 +447,50 @@ class HWPCharShapeProperty {
     fun setKerning(kerning: Boolean) {
         value = set(value, 30, kerning)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharShapeProperty] 생성된 객체 반환
+         */
+        fun build(isItalic: Boolean = false,
+                  isBold: Boolean = false,
+                  underLineSort: HWPUnderLineSort = HWPUnderLineSort.None,
+                  underLineShape: HWPBorderType = HWPBorderType.Solid,
+                  outerLineSort: HWPOuterLineSort = HWPOuterLineSort.None,
+                  shadowSort: HWPShadowSort = HWPShadowSort.None,
+                  isEmboss: Boolean = false,
+                  isEngrave: Boolean = false,
+                  isSuperScript: Boolean = false,
+                  isSubScript: Boolean = false,
+                  isStrikeLine: Boolean = false,
+                  emphasisSort: HWPEmphasisSort = HWPEmphasisSort.None,
+                  isUsingSpaceAppropriateForFont: Boolean = false,
+                  strikeLineShape: HWPBorderType = HWPBorderType.Solid,
+                  isKerning: Boolean = false)
+                : HWPCharShapeProperty = HWPCharShapeProperty().apply {
+            setItalic(isItalic)
+            setBold(isBold)
+            setUnderLineSort(underLineSort)
+            setUnderLineShape(underLineShape)
+            setOuterLineSort(outerLineSort)
+            setShadowSort(shadowSort)
+            setEmboss(isEmboss)
+            setEngrave(isEngrave)
+            setSuperScript(isSuperScript)
+            setSubScript(isSubScript)
+            setStrikeLine(isStrikeLine)
+            setEmpasisSort(emphasisSort)
+            setUsingSpaceAppropriateForFont(isUsingSpaceAppropriateForFont)
+            setStrikeLineShape(strikeLineShape)
+            setKerning(isKerning)
+        }
+
+        fun build(value: Long = 0): HWPCharShapeProperty = HWPCharShapeProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -569,5 +633,25 @@ class HWPCharSpaces {
      */
     fun copy() : HWPCharSpaces = HWPCharSpaces().also {
         it.array = this.array.copyOf()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharSpaces] 생성된 객체 반환
+         */
+        fun build(array: ByteArray = ByteArray(7)): HWPCharSpaces = HWPCharSpaces().apply {
+            this.array = array
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharSpaces] 생성된 객체 반환
+         */
+        fun build(value: Byte): HWPCharSpaces = HWPCharSpaces().apply {
+            setForAll(value)
+        }
     }
 }

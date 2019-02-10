@@ -28,4 +28,20 @@ class HWPDocumentProperties {
         it.startNumber = this.startNumber.copy()
         it.caretPosition = this.caretPosition.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPDocumentProperties] 생성된 객체 반환
+         */
+        fun build(sectionCount: Int = 0,
+                  startNumber: HWPStartNumber = HWPStartNumber.build(),
+                  caretPosition: HWPCaretPosition = HWPCaretPosition.build())
+                : HWPDocumentProperties = HWPDocumentProperties().apply {
+            this.sectionCount = sectionCount
+            this.startNumber = startNumber
+            this.caretPosition = caretPosition
+        }
+    }
 }

@@ -30,6 +30,22 @@ class HWPRangeTagItem {
         it.sort = this.sort
         it.data = this.data?.copyOf()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRangeTagItem] 생성된 객체 반환
+         */
+        fun build(rangeStart: Long = 0, rangeEnd: Long = 0,
+                  sort: Short = 0, data: ByteArray? = null)
+                : HWPRangeTagItem = HWPRangeTagItem().apply {
+            this.rangeStart = rangeStart
+            this.rangeEnd = rangeEnd
+            this.sort = sort
+            this.data = data
+        }
+    }
 }
 
 /**
@@ -63,5 +79,18 @@ class HWPParaRangeTag {
      */
     fun copy() : HWPParaRangeTag = HWPParaRangeTag().also {
         for (rangeTagItem in this.rangeTagItemList) it.rangeTagItemList.add(rangeTagItem.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaRangeTag] 생성된 객체 반환
+         */
+        fun build(
+                rangeTagItemGenerator: () -> ArrayList<HWPRangeTagItem> = {ArrayList()}
+        ) : HWPParaRangeTag = HWPParaRangeTag().apply {
+            this.rangeTagItemList = rangeTagItemGenerator()
+        }
     }
 }

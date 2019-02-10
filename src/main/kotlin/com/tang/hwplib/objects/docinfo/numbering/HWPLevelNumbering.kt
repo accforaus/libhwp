@@ -21,6 +21,20 @@ class HWPLevelNumbering {
         it.paragraphHeadInfo = this.paragraphHeadInfo.copy()
         it.numberFormat = this.numberFormat
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLevelNumbering] 생성된 객체 반환
+         */
+        fun build(paragraphHeadInfo: HWPParagraphHeadInfo = HWPParagraphHeadInfo.build(),
+                  numberFormat: String? = null)
+                : HWPLevelNumbering = HWPLevelNumbering().apply {
+            this.paragraphHeadInfo = paragraphHeadInfo
+            this.numberFormat = numberFormat
+        }
+    }
 }
 
 /**
@@ -41,5 +55,17 @@ class HWPExtendNumbering {
      */
     fun copy() : HWPExtendNumbering = HWPExtendNumbering().also {
         it.numberFormat = this.numberFormat
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPExtendNumbering] 생성된 객체 반환
+         */
+        fun build(numberFormat: String? = null)
+                : HWPExtendNumbering = HWPExtendNumbering().apply {
+            this.numberFormat = numberFormat
+        }
     }
 }

@@ -129,4 +129,36 @@ class HWPNumbering {
             it.extendLevelNumberingList[index] = extendLevelNumbering.copy()
         it.extendStartNumberForLevel = this.extendStartNumberForLevel.copyOf()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLevelNumbering] 생성된 객체 반환
+         */
+        fun build(levelNumberingGenerator: () -> ArrayList<HWPLevelNumbering> = { createEmptyLevelNumberingList() },
+                  startNumber: Int = 0,
+                  startNumberForLevel: LongArray = LongArray(7),
+                  extendLevelNumberingGenerator: () -> ArrayList<HWPExtendNumbering> = { createEmptyExtendLevelNumberingList() },
+                  extendStartNumberForLevel: LongArray = LongArray(3))
+                : HWPNumbering = HWPNumbering().apply {
+            this.levelNumberingList = levelNumberingGenerator()
+            this.startNumber = startNumber
+            this.startNumberForLevel = startNumberForLevel
+            this.extendLevelNumberingList = extendLevelNumberingGenerator()
+            this.extendStartNumberForLevel = extendStartNumberForLevel
+        }
+
+        private fun createEmptyLevelNumberingList(): ArrayList<HWPLevelNumbering> {
+            val temp: ArrayList<HWPLevelNumbering> = ArrayList()
+            for (index in 0 until 7) HWPLevelNumbering.build().let { temp.add(it) }
+            return temp
+        }
+
+        private fun createEmptyExtendLevelNumberingList(): ArrayList<HWPExtendNumbering> {
+            val temp: ArrayList<HWPExtendNumbering> = ArrayList()
+            for (index in 0 until 3) HWPExtendNumbering.build().let { temp.add(it) }
+            return temp
+        }
+    }
 }

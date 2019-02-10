@@ -73,4 +73,20 @@ class HWPPictureInfo {
         it.effect = HWPPictureEffect.valueOf(this.effect.value)
         it.binItemID = this.binItemID
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPictureInfo] 생성된 객체 반환
+         */
+        fun build(brightness: Byte = 0, contrast: Byte = 0,
+                  effect: HWPPictureEffect = HWPPictureEffect.RealPicture,
+                  binItemID: Int = 0) : HWPPictureInfo = HWPPictureInfo().apply {
+            this.brightness = brightness
+            this.contrast = contrast
+            this.effect = effect
+            this.binItemID = binItemID
+        }
+    }
 }

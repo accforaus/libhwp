@@ -26,6 +26,25 @@ class HWPEmbeddedBinaryData {
         it.data = this.data
         this.compressMethod?.run { it.compressMethod = HWPBinDataCompress.valueOf(this.value) }
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @property [name] [String], 저장된 데이터 이름
+         * @property [data] [ByteArray], 저장된 데이터 바이너리
+         * @property [compressMethod] [HWPBinDataCompress], 저장된 데이터의 압축 종류
+         * @return [HWPEmbeddedBinaryData] 생성된 객체 반환
+         */
+        fun build(name: String = "",
+                  data: ByteArray = ByteArray(0),
+                  compressMethod: HWPBinDataCompress = HWPBinDataCompress.ByStorageDefault):
+                HWPEmbeddedBinaryData = HWPEmbeddedBinaryData().apply {
+            this.name = name
+            this.data = data
+            this.compressMethod = compressMethod
+        }
+    }
 }
 
 /**
@@ -70,5 +89,17 @@ class HWPBinData {
     fun copy(): HWPBinData = HWPBinData().also {
         for (ebd in this.embeddedBinaryDataList)
             it.addNewEmbeddedBinaryData(ebd.name, ebd.data!!, ebd.compressMethod!!)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @param [builder] [Function] Embedded Binary Data List를 생성하는 함수
+         * @return [HWPBinData] 생성된 객체 반환
+         */
+        fun build(builder: () -> ArrayList<HWPEmbeddedBinaryData> = { ArrayList() }) : HWPBinData = HWPBinData().apply {
+            this.embeddedBinaryDataList = builder()
+        }
     }
 }

@@ -338,4 +338,59 @@ class HWPControlMask {
     fun setFixWidthBlank(fixWidthBlank: Boolean) {
         value = set(value, 31, fixWidthBlank)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlMask] 생성된 객체 반환
+         */
+        fun build(hasSectColDef: Boolean = false,
+                  hasFieldStart: Boolean = false,
+                  hasFieldEnd: Boolean = false,
+                  hasTitleMark: Boolean = false,
+                  hasTab: Boolean = false,
+                  hasLineBreak: Boolean = false,
+                  hasGsoTable: Boolean = false,
+                  hasParaBreak: Boolean = false,
+                  hasHiddenComment: Boolean = false,
+                  hasHeaderFooter: Boolean = false,
+                  hasFootnoteEndnote: Boolean = false,
+                  hasAutoNumber: Boolean = false,
+                  hasPageControl: Boolean = false,
+                  hasBookmark: Boolean = false,
+                  hasAdditionalTextOverlappingLetter: Boolean = false,
+                  hasHyphen: Boolean = false,
+                  hasBundleBlank: Boolean = false,
+                  hasFixWidthBlank: Boolean = false)
+                : HWPControlMask = HWPControlMask().apply {
+            setHasSectColDef(hasSectColDef)
+            setFieldStart(hasFieldStart)
+            setFieldEnd(hasFieldEnd)
+            setTitleMark(hasTitleMark)
+            setTab(hasTab)
+            setHasLineBreak(hasLineBreak)
+            setGsoTable(hasGsoTable)
+            setParaBreak(hasParaBreak)
+            setHiddenComment(hasHiddenComment)
+            setHeaderFooter(hasHeaderFooter)
+            setFootnoteEndnote(hasFootnoteEndnote)
+            setAutoNumber(hasAutoNumber)
+            setPageControl(hasPageControl)
+            setBookmark(hasBookmark)
+            setAdditionalTextOverlappingLetter(hasAdditionalTextOverlappingLetter)
+            setHyphen(hasHyphen)
+            setBundleBlank(hasBundleBlank)
+            setFixWidthBlank(hasFixWidthBlank)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlMask] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPControlMask = HWPControlMask().apply {
+            this.value = value
+        }
+    }
 }

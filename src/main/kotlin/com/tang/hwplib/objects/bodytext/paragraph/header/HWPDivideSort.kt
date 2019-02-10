@@ -85,4 +85,31 @@ class HWPDivideSort {
     fun setDivideColumn(divideColumn: Boolean) {
         value = set(value, 3, divideColumn)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPDivideSort] 생성된 객체 반환
+         */
+        fun build(isDivideSection: Boolean = false,
+                  isDivideMultiColumn: Boolean = false,
+                  isDividePage: Boolean = false,
+                  isDivideColumn: Boolean = false)
+                : HWPDivideSort = HWPDivideSort().apply {
+            setDivideSection(isDivideSection)
+            setDivideMultiColumn(isDivideMultiColumn)
+            setDividePage(isDividePage)
+            setDivideColumn(isDivideColumn)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPDivideSort] 생성된 객체 반환
+         */
+        fun build(value: Short = 0): HWPDivideSort = HWPDivideSort().apply {
+            this.value = value
+        }
+    }
 }

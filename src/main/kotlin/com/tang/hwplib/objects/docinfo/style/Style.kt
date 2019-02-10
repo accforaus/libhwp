@@ -66,4 +66,24 @@ class HWPStyleProperty {
     fun setStyleSort(styleSort: HWPStyleSort) {
         value = set(value, 0, 2, styleSort.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPStyleProperty] 생성된 객체 반환
+         */
+        fun build(styleSort: HWPStyleSort = HWPStyleSort.ParaStyle) : HWPStyleProperty = HWPStyleProperty().apply {
+            setStyleSort(styleSort)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPStyleProperty] 생성된 객체 반환
+         */
+        fun build(value: Short = 0): HWPStyleProperty = HWPStyleProperty().apply {
+            this.value = value
+        }
+    }
 }

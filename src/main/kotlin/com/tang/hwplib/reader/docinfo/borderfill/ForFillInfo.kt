@@ -38,7 +38,7 @@ internal fun forFillInfo(fi: HWPFillInfo, sr: StreamReader) {
         pf.run {
             backColor.value = sr.readColorRef()
             patternColor.value = sr.readColorRef()
-            patterType = HWPPatternType.valueOf(sr.readInt32().toByte())
+            patternType = HWPPatternType.valueOf(sr.readInt32().toByte())
         }
     }
 

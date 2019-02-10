@@ -55,4 +55,31 @@ class HWPParaHeader {
         it.instanceID = this.instanceID
         it.isMergedByTrack = this.isMergedByTrack
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaHeader] 생성된 객체 반환
+         */
+        fun build(lastInList: Boolean = false,
+                  characterCount: Long = 0,
+                  controlMask: HWPControlMask = HWPControlMask.build(),
+                  paraShapeId: Int = 0, styleId: Short = 0,
+                  divideSort: HWPDivideSort = HWPDivideSort.build(),
+                  charShapeCount: Int = 0, rangeTagCount: Int = 0,
+                  lineAlignCount: Int = 0, isMergedByTrack: Int = 0)
+                : HWPParaHeader = HWPParaHeader().apply {
+            this.lastInList = lastInList
+            this.characterCount = characterCount
+            this.controlMask = controlMask
+            this.paraShapeId = paraShapeId
+            this.styleId = styleId
+            this.divideSort = divideSort
+            this.charShapeCount = charShapeCount
+            this.rangeTagCount = rangeTagCount
+            this.lineAlignCount = lineAlignCount
+            this.isMergedByTrack = isMergedByTrack
+        }
+    }
 }

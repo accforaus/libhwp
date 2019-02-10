@@ -30,4 +30,17 @@ class HWPRecordHeader {
         it.level = this.level
         it.tagId = this.tagId
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRecordHeader] 생성된 객체 반환
+         */
+        fun build(tagId: Short = 0, level: Short = 0, size: Long = 0): HWPRecordHeader = HWPRecordHeader().apply {
+            this.tagId = tagId
+            this.level = level
+            this.size = size
+        }
+    }
 }

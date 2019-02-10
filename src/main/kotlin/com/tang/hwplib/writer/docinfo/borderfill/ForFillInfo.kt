@@ -69,7 +69,7 @@ internal fun forFillInfo(fi: HWPFillInfo, sw: StreamWriter) {
             fi.patternFill?.run {
                 sw.writeColorRef(backColor.value)
                 sw.writeColorRef(patternColor.value)
-                sw.writeUInt32(patterType.value.toLong())
+                sw.writeUInt32(patternType.value.toLong())
             }
         }
         if (fi.type.hasGradientFill()) {

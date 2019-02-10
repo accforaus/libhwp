@@ -140,4 +140,24 @@ class HWPFaceNameIds {
     fun copy() : HWPFaceNameIds = HWPFaceNameIds().also {
         it.array = this.array.copyOf()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFaceNameIds] 생성된 객체 반환
+         */
+        fun build(array: IntArray = IntArray(7)): HWPFaceNameIds = HWPFaceNameIds().apply {
+            this.array = array
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFaceNameIds] 생성된 객체 반환
+         */
+        fun build(value: Int): HWPFaceNameIds = HWPFaceNameIds().apply {
+            setForAll(value)
+        }
+    }
 }

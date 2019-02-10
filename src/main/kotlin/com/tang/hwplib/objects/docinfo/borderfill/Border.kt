@@ -214,6 +214,21 @@ class HWPEachBorder {
         it.thickness = HWPBorderThickness.valueOf(this.thickness.value)
         it.color.value = this.color.value
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPEachBorder] 생성된 객체 반환
+         */
+        fun build(type: HWPBorderType = HWPBorderType.Solid,
+                  thickness: HWPBorderThickness = HWPBorderThickness.MM0_1,
+                  color: Color4Byte = Color4Byte.build()): HWPEachBorder = HWPEachBorder().apply {
+            this.type = type
+            this.thickness = thickness
+            this.color = color
+        }
+    }
 }
 
 /**
@@ -392,5 +407,42 @@ class HWPBorderFillProperty {
      */
     fun setHasCenterLine(hasCenterLine: Boolean) {
         value = set(value, 13, hasCenterLine)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPBorderFillProperty] 생성된 객체 반환
+         */
+        fun build(is3DEffect: Boolean = false,
+                  isShadowEffect: Boolean = false,
+                  SlashDiagonalShape: HWPSlashDiagonalShape = HWPSlashDiagonalShape.None,
+                  backSlashDiagonalShape: HWPBackSlashDiagonalShape = HWPBackSlashDiagonalShape.None,
+                  isBrokenSlashDiagonal: Boolean = false,
+                  isBrokenBackSlashDiagonal: Boolean = false,
+                  isRotateSlashDiagonal180: Boolean = false,
+                  isRotateBackSlashDiagonal180: Boolean = false,
+                  hasCenterLine: Boolean = false)
+                : HWPBorderFillProperty = HWPBorderFillProperty().apply {
+            set3DEffect(is3DEffect)
+            setShadowEffect(isShadowEffect)
+            setSlashDiagonalShape(SlashDiagonalShape)
+            setBackSlashDiagonalShape(backSlashDiagonalShape)
+            setBrokenSlashDiagonal(isBrokenSlashDiagonal)
+            setBrokenBackSlashDiagonal(isBrokenBackSlashDiagonal)
+            setRotateSlashDiagonal180(isRotateSlashDiagonal180)
+            setRotateBackSlashDiagonal180(isRotateBackSlashDiagonal180)
+            setHasCenterLine(hasCenterLine)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPBorderFillProperty] 생성된 객체 반환
+         */
+        fun build(value: Int = 0) : HWPBorderFillProperty = HWPBorderFillProperty().apply {
+            this.value = value
+        }
     }
 }

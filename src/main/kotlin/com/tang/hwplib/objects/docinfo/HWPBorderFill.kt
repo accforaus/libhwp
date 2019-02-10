@@ -48,4 +48,32 @@ class HWPBorderFill {
         it.diagonalColor.value = this.diagonalColor.value
         it.fillInfo = this.fillInfo.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPBorderFill] 생성된 객체 반환
+         */
+        fun build(property: HWPBorderFillProperty = HWPBorderFillProperty.build(),
+                  leftBorder: HWPEachBorder = HWPEachBorder.build(),
+                  rightBorder: HWPEachBorder = HWPEachBorder.build(),
+                  topBorder: HWPEachBorder = HWPEachBorder.build(),
+                  bottomBorder: HWPEachBorder = HWPEachBorder.build(),
+                  diagonalSort: HWPBorderType = HWPBorderType.Solid,
+                  diagonalThickness: HWPBorderThickness = HWPBorderThickness.MM0_1,
+                  diagonalColor: Color4Byte = Color4Byte.build(),
+                  fillInfo: HWPFillInfo = HWPFillInfo.build())
+                : HWPBorderFill = HWPBorderFill().apply {
+            this.property = property
+            this.leftBorder = leftBorder
+            this.rightBorder = rightBorder
+            this.topBorder = topBorder
+            this.bottomBorder = bottomBorder
+            this.diagonalSort = diagonalSort
+            this.diagonalThickness = diagonalThickness
+            this.diagonalColor = diagonalColor
+            this.fillInfo = fillInfo
+        }
+    }
 }

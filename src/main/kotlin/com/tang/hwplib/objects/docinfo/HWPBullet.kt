@@ -36,4 +36,24 @@ class HWPBullet {
         it.imageBullet = this.imageBullet.copy()
         it.checkBulletChar = this.checkBulletChar
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParagraphHeadInfo] 생성된 객체 반환
+         */
+        fun build(paragraphHeadInfo: HWPParagraphHeadInfo = HWPParagraphHeadInfo.build(),
+                  bulletChar: String = "",
+                  imageBulletCheck: Int = 0,
+                  imageBullet: HWPImageBullet = HWPImageBullet.build(),
+                  checkBulletChar: String = "")
+                : HWPBullet = HWPBullet().apply {
+            this.paragraphHeadInfo = paragraphHeadInfo
+            this.bulletChar = bulletChar
+            this.imageBulletCheck =imageBulletCheck
+            this.imageBullet = imageBullet
+            this.checkBulletChar = checkBulletChar
+        }
+    }
 }

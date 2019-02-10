@@ -71,4 +71,18 @@ class HWPTabInfo {
         this.tabSort?.run { it.tabSort = HWPTabSort.valueOf(this.value) }
         this.fillSort?.run { it.fillSort = HWPBorderType.valueOf(this.value) }
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPTabInfo] 생성된 객체 반환
+         */
+        fun build(position: Long = 0, tabSort: HWPTabSort? = null, fillSort: HWPBorderType? = null)
+                : HWPTabInfo = HWPTabInfo().apply {
+            this.position = position
+            this.tabSort = tabSort
+            this.fillSort = fillSort
+        }
+    }
 }

@@ -29,4 +29,16 @@ class UnknownRecord constructor() {
         this.header?.run { it.header = this.copy() }
         this.body?.run { it.body = this.copyOf() }
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRecordHeader] 생성된 객체 반환
+         */
+        fun build(header: HWPRecordHeader = HWPRecordHeader.build(),
+                  body: ByteArray? = null): UnknownRecord = UnknownRecord(header).apply {
+            this.body = body
+        }
+    }
 }

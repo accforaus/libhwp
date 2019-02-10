@@ -4,6 +4,8 @@ import com.tang.hwplib.objects.docinfo.facename.HWPFaceNameProperty
 import com.tang.hwplib.objects.docinfo.facename.HWPFontType
 import com.tang.hwplib.objects.docinfo.facename.HWPFontTypeInfo
 import com.tang.hwplib.objects.etc.FACE_NAME
+import com.tang.hwplib.util.exceptions.HWPBuildException
+
 /**
  * 글꼴 (가변)
  * Tag ID: HWPTAG_FACE_NAME [FACE_NAME]
@@ -39,5 +41,35 @@ class HWPFaceName {
         it.substituteFontName = this.substituteFontName
         it.fontTypeInfo = this.fontTypeInfo.copy()
         it.baseFontName = this.baseFontName
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFaceName] 생성된 객체 반환
+         */
+        fun build(property: HWPFaceNameProperty = HWPFaceNameProperty.build(),
+                  name: String? = null,
+                  substituteFontType: HWPFontType? = null,
+                  substituteFontName: String? = null,
+                  fontTypeInfo: HWPFontTypeInfo = HWPFontTypeInfo.build(),
+                  baseFontName: String? = null)
+                : HWPFaceName = HWPFaceName().apply {
+            property.run {
+                if (hasSubstituteFont())
+                    if (substituteFontName == null)
+                        throw HWPBuildException("[HWPFaceName] Substitute Font flag: true, Substitute font must be not null")
+                if (hasBaseFont())
+                    if (baseFontName == null)
+                        throw HWPBuildException("[HWPFaceName] Base font flag: true, Base font name must be not null")
+            }
+            this.property = property
+            this.name = name
+            this.substituteFontType = substituteFontType
+            this.substituteFontName = substituteFontName
+            this.fontTypeInfo = fontTypeInfo
+            this.baseFontName = baseFontName
+        }
     }
 }

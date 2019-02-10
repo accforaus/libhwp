@@ -69,9 +69,11 @@ class HWPParaText {
      */
     fun getInlineCharIndex(startIndex: Int, charCode: Short) : Int = Any().run {
         for ((index, value) in charList.withIndex()) {
-            val ch: HWPChar = value
-            if (ch.getType() == HWPCharType.ControlInline && ch.code == charCode)
-                return index
+            if (index >= startIndex) {
+                val ch: HWPChar = value
+                if (ch.getType() == HWPCharType.ControlInline && ch.code == charCode)
+                    return index
+            }
         }
         return -1
     }

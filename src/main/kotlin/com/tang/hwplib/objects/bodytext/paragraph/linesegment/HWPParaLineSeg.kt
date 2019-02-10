@@ -33,4 +33,17 @@ class HWPParaLineSeg {
         for (lineSegItem in this.lineSegItemList)
             it.lineSegItemList.add(lineSegItem.copy())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaLineSeg] 생성된 객체 반환
+         */
+        fun build(
+                lineSegItemGenerator: () -> ArrayList<HWPLineSegItem> = {ArrayList()}
+        ) : HWPParaLineSeg = HWPParaLineSeg().apply {
+            this.lineSegItemList = lineSegItemGenerator()
+        }
+    }
 }

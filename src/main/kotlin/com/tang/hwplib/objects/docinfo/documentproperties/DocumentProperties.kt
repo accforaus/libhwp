@@ -24,6 +24,22 @@ class HWPCaretPosition {
         it.paragraphID = this.paragraphID
         it.positionInParagraph = this.positionInParagraph
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCaretPosition] 생성된 객체 반환
+         */
+        fun build(listID: Long = 0,
+                  paragraphID: Long = 0,
+                  positionInParagraph: Long = 0)
+                : HWPCaretPosition = HWPCaretPosition().apply {
+            this.listID = listID
+            this.paragraphID = paragraphID
+            this.positionInParagraph = positionInParagraph
+        }
+    }
 }
 
 /**
@@ -58,5 +74,24 @@ class HWPStartNumber {
         it.picture = this.picture
         it.table = this.table
         it.equation = this.equation
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPStartNumber] 생성된 객체 반환
+         */
+        fun build(page: Int = 0, footnote: Int = 0,
+                  endnote: Int = 0, picture: Int = 0,
+                  table: Int = 0, equation: Int = 0)
+                : HWPStartNumber = HWPStartNumber().apply {
+            this.page = page
+            this.footnote = footnote
+            this.endnote = endnote
+            this.picture = picture
+            this.table = table
+            this.equation = equation
+        }
     }
 }

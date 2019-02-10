@@ -141,4 +141,24 @@ class HWPRelativeSizes {
     fun copy() : HWPRelativeSizes = HWPRelativeSizes().also {
         it.array = this.array.copyOf()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRelativeSizes] 생성된 객체 반환
+         */
+        fun build(array: ShortArray = ShortArray(7)): HWPRelativeSizes = HWPRelativeSizes().apply {
+            this.array = array
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRelativeSizes] 생성된 객체 반환
+         */
+        fun build(value: Short): HWPRelativeSizes = HWPRelativeSizes().apply {
+            setForAll(value)
+        }
+    }
 }

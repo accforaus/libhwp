@@ -1,5 +1,6 @@
 package com.tang.hwplib.objects.bodytext.paragraph.text
 
+import com.tang.hwplib.util.exceptions.HWPBuildException
 import java.nio.charset.Charset
 import kotlin.experimental.and
 
@@ -106,6 +107,19 @@ class HWPCharControlChar : HWPChar() {
         }
         code = checkCode(b)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharControlChar] 생성된 객체 반환
+         */
+        fun build(code: Short) : HWPCharControlChar = HWPCharControlChar().apply {
+            if(HWPControlCharType.valueOf(code) == HWPControlCharType.None)
+                throw HWPBuildException("[HWPCharControl] Code: $code is not Char Control Code")
+            this.code = code
+        }
+    }
 }
 
 /**
@@ -116,6 +130,7 @@ class HWPCharControlChar : HWPChar() {
  */
 class HWPCharControlExtend: HWPChar() {
     var addition: ByteArray = ByteArray(12)
+    var objectInstanceID: String = getInstanceId()
 
     override fun getType(): HWPCharType = HWPCharType.ControlExtend
 
@@ -127,6 +142,7 @@ class HWPCharControlExtend: HWPChar() {
     override fun copy(): HWPCharControlExtend = HWPCharControlExtend().also {
         it.code = this.code
         it.addition = this.addition.copyOf()
+        it.objectInstanceID = this.objectInstanceID
     }
 
     /**
@@ -145,6 +161,23 @@ class HWPCharControlExtend: HWPChar() {
             }
         }
         return String(this, 0, bufferIndex)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharControlExtend] 생성된 객체 반환
+         */
+        fun build(code: Short = 0,
+                  addition: ByteArray = ByteArray(12))
+                : HWPCharControlExtend = HWPCharControlExtend().apply {
+            if (HWPControlExtendType.valueOf(code) == HWPControlExtendType.None)
+                throw HWPBuildException("[HWPControlExtend] Code:$code is not Extended Code")
+            this.code = code
+            this.addition = addition
+            this.objectInstanceID = this.getInstanceId()
+        }
     }
 }
 
@@ -172,6 +205,15 @@ class HWPCharControlInline: HWPChar() {
         it.code = this.code
         it.addition = this.addition.copyOf()
     }
+
+    companion object {
+        fun build(code: Short = 0, addition: ByteArray = ByteArray(12)) : HWPCharControlInline = HWPCharControlInline().apply {
+            if (HWPControlInlineType.valueOf(code) == HWPControlInlineType.None)
+                throw HWPBuildException("[HWPCharInline] Code: $code is not Inline Code")
+            this.code = code
+            this.addition = addition
+        }
+    }
 }
 
 /**
@@ -180,6 +222,7 @@ class HWPCharControlInline: HWPChar() {
  * @author accforaus
  */
 class HWPCharNormal: HWPChar() {
+    var char: String = getCh()
     override fun getType(): HWPCharType = HWPCharType.Normal
 
     /**
@@ -187,7 +230,10 @@ class HWPCharNormal: HWPChar() {
      *
      * @return [HWPCharNormal] 복사된 객체 반환
      */
-    override fun copy(): HWPCharNormal = HWPCharNormal().also { it.code = this.code }
+    override fun copy(): HWPCharNormal = HWPCharNormal().also {
+        it.code = this.code
+        it.char = this.char
+    }
     /**
      * 문자 코드 [code]를 문자열로 변환하는 함수
      *
@@ -207,5 +253,17 @@ class HWPCharNormal: HWPChar() {
             return String(ch, 0, 2, Charset.forName("UTF-16LE"))
         }
         return shortToString(code)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharNormal] 생성된 객체 반환
+         */
+        fun build(code: Short = 0) : HWPCharNormal = HWPCharNormal().apply {
+            this.code = code
+            this.char = this.getCh()
+        }
     }
 }

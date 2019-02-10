@@ -85,4 +85,28 @@ class Color4Byte {
     fun setA(a: Short) {
         value = set(value, 24, 31, a.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [Color4Byte] 생성된 객체 반환
+         */
+        fun build(r: Short = 0, g: Short = 0, b: Short = 0, a: Short = 0):
+                Color4Byte = Color4Byte().apply {
+            setR(r)
+            setG(g)
+            setB(b)
+            setA(a)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [Color4Byte] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): Color4Byte = Color4Byte().apply {
+            this.value = value
+        }
+    }
 }

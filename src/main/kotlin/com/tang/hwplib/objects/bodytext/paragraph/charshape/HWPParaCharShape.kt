@@ -18,6 +18,16 @@ open class HWPCharPositionShapeIdPair(var position: Long, var shapeId: Long) {
      * @return [HWPCharPositionShapeIdPair] 복사된 객체 반환
      */
     fun copy() : HWPCharPositionShapeIdPair = HWPCharPositionShapeIdPair(this.position, this.shapeId)
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCharPositionShapeIdPair] 생성된 객체 반환
+         */
+        fun build(position: Long = 0, shapeId: Long = 0)
+                : HWPCharPositionShapeIdPair = HWPCharPositionShapeIdPair(position, shapeId)
+    }
 }
 
 /**
@@ -51,5 +61,18 @@ class HWPParaCharShape {
     fun copy() : HWPParaCharShape = HWPParaCharShape().also {
         for (positionShapeIDPair in this.positionShapeIdPairList)
             it.positionShapeIdPairList.add(positionShapeIDPair.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaCharShape] 생성된 객체 반환
+         */
+        fun build(
+                positionShapeIDPairGenerator: () -> ArrayList<HWPCharPositionShapeIdPair> = {ArrayList()}
+        ) : HWPParaCharShape = HWPParaCharShape().apply {
+            this.positionShapeIdPairList = positionShapeIDPairGenerator()
+        }
     }
 }

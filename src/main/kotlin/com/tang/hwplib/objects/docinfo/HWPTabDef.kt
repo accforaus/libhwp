@@ -33,4 +33,18 @@ class HWPTabDef {
         it.property.value = this.property.value
         for (tabInfo in this.tabInfoList) it.tabInfoList.add(tabInfo)
     }
+
+    /**
+     * 객체를 생성하고 반환하는 함수
+     *
+     * @return [HWPTabDef] 생성된 객체 반환
+     */
+    companion object {
+        fun build(property: HWPTabDefProperty = HWPTabDefProperty.build(),
+                  tabInfoGenerator: () -> ArrayList<HWPTabInfo> = {ArrayList()})
+                : HWPTabDef = HWPTabDef().apply {
+            this.property = property
+            this.tabInfoList = tabInfoGenerator()
+        }
+    }
 }

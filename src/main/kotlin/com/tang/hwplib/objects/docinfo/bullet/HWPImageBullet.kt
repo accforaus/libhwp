@@ -29,4 +29,20 @@ class HWPImageBullet {
         it.effects = this.effects
         it.id = this.id
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPImageBullet] 생성된 객체 반환
+         */
+        fun build(contrast: Short = 0, brightness: Short = 0,
+                  effects: Short = 0, id: Short = 0)
+                : HWPImageBullet = HWPImageBullet().apply {
+            this.contrast = contrast
+            this.brightness = brightness
+            this.effects = effects
+            this.id = id
+        }
+    }
 }

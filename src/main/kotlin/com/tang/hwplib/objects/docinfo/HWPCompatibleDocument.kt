@@ -22,4 +22,16 @@ class HWPCompatibleDocument {
     fun copy() : HWPCompatibleDocument = HWPCompatibleDocument().also {
         this.compatibleDocumentSort?.run { it.compatibleDocumentSort = HWPCompatibleDocumentSort.valueOf(this.value) }
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCompatibleDocument] 생성된 객체 반환
+         */
+        fun build(compatibleDocumentSort: HWPCompatibleDocumentSort? = null)
+                : HWPCompatibleDocument = HWPCompatibleDocument().apply {
+            this.compatibleDocumentSort = compatibleDocumentSort
+        }
+    }
 }

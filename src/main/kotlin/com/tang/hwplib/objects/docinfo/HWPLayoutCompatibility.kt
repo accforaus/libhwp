@@ -32,4 +32,24 @@ class HWPLayoutCompatibility {
         it.objectLevelFormat = this.objectLevelFormat
         it.fieldLevelFormat = this.fieldLevelFormat
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLayoutCompatibility] 생성된 객체 반환
+         */
+        fun build(letterLevelFormat: Long = 0,
+                  paragraphLevelFormat: Long = 0,
+                  sectionLevelFormat: Long = 0,
+                  objectLevelFormat: Long = 0,
+                  fieldLevelFormat: Long = 0)
+                : HWPLayoutCompatibility = HWPLayoutCompatibility().apply {
+            this.letterLevelFormat = letterLevelFormat
+            this.paragraphLevelFormat = paragraphLevelFormat
+            this.sectionLevelFormat = sectionLevelFormat
+            this.objectLevelFormat = objectLevelFormat
+            this.fieldLevelFormat = fieldLevelFormat
+        }
+    }
 }

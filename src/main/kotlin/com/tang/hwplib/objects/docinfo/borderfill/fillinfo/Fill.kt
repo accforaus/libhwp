@@ -2,6 +2,7 @@ package com.tang.hwplib.objects.docinfo.borderfill.fillinfo
 
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
+import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
  * 채우기 종류를 나타내는 객체
@@ -68,6 +69,30 @@ class HWPFillType {
      */
     fun setGradientFill(gradientFill: Boolean) {
         value = set(value, 2, gradientFill)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFillType] 생성된 객체 반환
+         */
+        fun build(hasPatternFill: Boolean = false,
+                  hasImageFill: Boolean = false,
+                  hasGradientFill: Boolean = false): HWPFillType = HWPFillType().apply {
+            setPatternFill(hasPatternFill)
+            setImageFill(hasImageFill)
+            setGradientFill(hasGradientFill)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFillType] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPFillType = HWPFillType().apply {
+            this.value = value
+        }
     }
 }
 
@@ -143,5 +168,30 @@ class HWPFillInfo {
         it.patternFill = this.patternFill?.copy()
         it.gradientFill = this.gradientFill?.copy()
         it.imageFill = this.imageFill?.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFillInfo] 생성된 객체 반환
+         */
+        fun build(type: HWPFillType = HWPFillType.build(),
+                  patternFill: HWPPatternFill? = null,
+                  gradientFill: HWPGradientFill? = null,
+                  imageFill: HWPImageFill? = null): HWPFillInfo = HWPFillInfo().apply {
+            type.run {
+                if (hasGradientFill())
+                    if (gradientFill == null) throw HWPBuildException("[HWPFillInfo] Gradient Fill Flag: true, Gradient Fill must be not null")
+                if (hasPatternFill())
+                    if (patternFill == null) throw HWPBuildException("[HWPFillInfo Pattern Fill Flag: true, Pattern Fill must be not null")
+                if (hasImageFill())
+                    if (imageFill == null) throw HWPBuildException("[HWPFillInfo] Image Fill Flag: true, Image Fill must be not null")
+            }
+            this.type = type
+            this.patternFill = patternFill
+            this.gradientFill = gradientFill
+            this.imageFill = imageFill
+        }
     }
 }

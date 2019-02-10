@@ -176,6 +176,43 @@ class HWPLineSegItemTag {
     fun setBit31(bit31: Boolean) {
         value = set(value, 31, bit31)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLineSegItemTag] 생성된 객체 반환
+         */
+        fun build(isFirstLineAtPage: Boolean = false,
+                  isFirstLineAtColumn: Boolean = false,
+                  isEmptySegment: Boolean = false,
+                  isFirstSegmentAtLine: Boolean = false,
+                  isLastSegmentAtLine: Boolean = false,
+                  isAutoHyphenation: Boolean = false,
+                  isAdjustIndentation: Boolean = false,
+                  isAdjustBullet: Boolean = false,
+                  bit31: Boolean = false)
+                : HWPLineSegItemTag = HWPLineSegItemTag().apply {
+            setFirstLineAtPage(isFirstLineAtPage)
+            setFirstLineAtColumn(isFirstLineAtColumn)
+            setEmptySegment(isEmptySegment)
+            setFirstSegmentAtLine(isFirstSegmentAtLine)
+            setLastSegmentAtLine(isLastSegmentAtLine)
+            setAutoHyphenation(isAutoHyphenation)
+            setAdjustIndentation(isAdjustIndentation)
+            setAdjustBullet(isAdjustBullet)
+            setBit31(bit31)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLineSegItemTag] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPLineSegItemTag = HWPLineSegItemTag().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -220,5 +257,33 @@ class HWPLineSegItem {
         it.startPositionFromColumn = this.startPositionFromColumn
         it.segmentWidth = this.segmentWidth
         it.tag.value = this.tag.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLineSegItem] 생성된 객체 반환
+         */
+        fun build(textStartPosition: Long = 0,
+                  lineVerticalPosition: Int = 0,
+                  lineHeight: Int = 0,
+                  textPartHeight: Int = 0,
+                  distanceBaseLineToLineVerticalPosition: Int = 0,
+                  lineSpace: Int = 0,
+                  startPositionFromColumn: Int = 0,
+                  segmentWidth: Int = 0,
+                  tag: HWPLineSegItemTag = HWPLineSegItemTag.build())
+                : HWPLineSegItem = HWPLineSegItem().apply {
+            this.textStartPosition = textStartPosition
+            this.lineVerticalPosition = lineVerticalPosition
+            this.lineHeight = lineHeight
+            this.textPartHeight = textPartHeight
+            this.distanceBaseLineToLineVerticalPosition = distanceBaseLineToLineVerticalPosition
+            this.lineSpace = lineSpace
+            this.startPositionFromColumn = startPositionFromColumn
+            this.segmentWidth = segmentWidth
+            this.tag = tag
+        }
     }
 }

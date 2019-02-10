@@ -183,4 +183,29 @@ class HWPBinDataProperty {
      * @param [state] [HWPBinDataState], 바이너리 데이터 상태를 가진 데이터
      */
     fun setState(state: HWPBinDataState) { value = set(value,8, 9, state.value.toInt()) }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPBinDataProperty] 생성된 객체 반환
+         */
+        fun build(type: HWPBinDataType = HWPBinDataType.Link,
+                  compress: HWPBinDataCompress = HWPBinDataCompress.ByStorageDefault,
+                  state: HWPBinDataState = HWPBinDataState.NotAccess):
+                HWPBinDataProperty = HWPBinDataProperty().apply {
+            setType(type)
+            setCompress(compress)
+            setState(state)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPBinDataProperty] 생성된 객체 반환
+         */
+        fun build(value: Int = 0): HWPBinDataProperty = HWPBinDataProperty().apply {
+            this.value = value
+        }
+    }
 }

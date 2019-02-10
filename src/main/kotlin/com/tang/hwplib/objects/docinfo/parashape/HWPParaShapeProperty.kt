@@ -313,6 +313,59 @@ class HWPParaShapeProperty1 {
     fun setParaTailShape(paraTailShape: Boolean) {
         value = set(value, 30, paraTailShape)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShapeProperty1] 생성된 객체 반환
+         */
+        fun build(lineSpaceSort: HWPLineSpaceSort = HWPLineSpaceSort.RatioForLetter,
+                  alignment: HWPAlignment = HWPAlignment.Justify,
+                  divideForEnglish: HWPLineDivideForEnglish = HWPLineDivideForEnglish.ByWord,
+                  divideForHangul: HWPLineDivideForHangul = HWPLineDivideForHangul.ByWord,
+                  isUseGrid: Boolean = false,
+                  minimumSpace: Byte = 0,
+                  isProtectLonger: Boolean = false,
+                  isTogetherNextPara: Boolean = false,
+                  isProtectPara: Boolean = false,
+                  isSplitPageBeforePara: Boolean = false,
+                  verticalAlignment: HWPVerticalAlignment = HWPVerticalAlignment.ByFont,
+                  isLineHeightForFont: Boolean = false,
+                  paraHeadShape: HWPParaHeadShape = HWPParaHeadShape.None,
+                  paraLevel: Byte = 0,
+                  isLinkBorder: Boolean = false,
+                  isIgnoreParaMargin: Boolean = false,
+                  paraTailShape: Boolean = false)
+                : HWPParaShapeProperty1 = HWPParaShapeProperty1().apply {
+            setLineSpaceSort(lineSpaceSort)
+            setAlignment(alignment)
+            setLineDivideForEnglish(divideForEnglish)
+            setLineDivideForHangul(divideForHangul)
+            setUseGrid(isUseGrid)
+            setMinimumSpace(minimumSpace)
+            setProtectLonger(isProtectLonger)
+            setTogetherNextPara(isTogetherNextPara)
+            setProtectPara(isProtectPara)
+            setSplitPageBeforePage(isSplitPageBeforePara)
+            setVerticalAlignment(verticalAlignment)
+            setLineHeightForFont(isLineHeightForFont)
+            setParaHeadShape(paraHeadShape)
+            setParaLevel(paraLevel)
+            setLinkBorder(isLinkBorder)
+            setIgnoreParaMargin(isIgnoreParaMargin)
+            setParaTailShape(paraTailShape)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShapeProperty1] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPParaShapeProperty1 = HWPParaShapeProperty1().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -379,6 +432,31 @@ class HWPParaShapeProperty2 {
     fun setAutoAdjustGapHangulNumber(autoAdjustGapHangulNumber: Boolean) {
         value = set(value, 5, autoAdjustGapHangulNumber)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShapeProperty2] 생성된 객체 반환
+         */
+        fun build(isInputSingleLine: Boolean = false,
+                  isAutoAdjustGapHangulEnglish: Boolean = false,
+                  isAutoAdjustGapHangulNumber: Boolean = false)
+                : HWPParaShapeProperty2 = HWPParaShapeProperty2().apply {
+            setInputSingleLine(isInputSingleLine)
+            setAutoAdjustGapHangulEnglish(isAutoAdjustGapHangulEnglish)
+            setAutoAdjustGapHangulNumber(isAutoAdjustGapHangulNumber)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShapeProperty2] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPParaShapeProperty2 = HWPParaShapeProperty2().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -408,5 +486,26 @@ class HWPParaShapeProperty3 {
      */
     fun setLineSpaceSort(lineSpaceSort: HWPLineSpaceSort) {
         value = set(value, 0, 4, lineSpaceSort.value.toInt())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShapeProperty3] 생성된 객체 반환
+         */
+        fun build(lineSpaceSort: HWPLineSpaceSort = HWPLineSpaceSort.RatioForLetter)
+                : HWPParaShapeProperty3 = HWPParaShapeProperty3().apply {
+            setLineSpaceSort(lineSpaceSort)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParaShapeProperty3] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPParaShapeProperty3 = HWPParaShapeProperty3().apply {
+            this.value = value
+        }
     }
 }

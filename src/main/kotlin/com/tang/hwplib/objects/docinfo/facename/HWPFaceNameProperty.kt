@@ -61,4 +61,29 @@ class HWPFaceNameProperty {
     fun setBaseFont(baseFont: Boolean) {
         value = set(value, 5, baseFont)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFaceNameProperty] 생성된 객체 반환
+         */
+        fun build(hasSubstituteFont: Boolean = false,
+                  hasFontInfo: Boolean = false,
+                  hasBaseFont: Boolean = false)
+                : HWPFaceNameProperty = HWPFaceNameProperty().apply {
+            setSubstituteFont(hasSubstituteFont)
+            setFontInfo(hasFontInfo)
+            setBaseFont(hasBaseFont)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFaceNameProperty] 생성된 객체 반환
+         */
+        fun build(value: Short = 0): HWPFaceNameProperty = HWPFaceNameProperty().apply {
+            this.value = value
+        }
+    }
 }

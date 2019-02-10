@@ -51,4 +51,27 @@ class HWPTabDefProperty {
     fun setAutoTabAtParagraphRightEnd(autoTabAtParagraphRightEnd: Boolean) {
         value = set(value, 1, autoTabAtParagraphRightEnd)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPTabDefProperty] 생성된 객체 반환
+         */
+        fun build(isAutoTabAtParagraphLeftEnd: Boolean = false,
+                  isAutoTabAtParagraphRightEnd: Boolean = false)
+                : HWPTabDefProperty = HWPTabDefProperty().apply {
+            setAutoTabAtParagraphLeftEnd(isAutoTabAtParagraphLeftEnd)
+            setAutoTabAtParagraphRightEnd(isAutoTabAtParagraphRightEnd)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPTabDefProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPTabDefProperty = HWPTabDefProperty().apply {
+            this.value = value
+        }
+    }
 }

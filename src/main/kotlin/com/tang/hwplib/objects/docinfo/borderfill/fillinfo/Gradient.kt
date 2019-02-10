@@ -1,6 +1,7 @@
 package com.tang.hwplib.objects.docinfo.borderfill.fillinfo
 
 import com.tang.hwplib.objects.etc.Color4Byte
+import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
  * 그러데이션 유형
@@ -100,5 +101,30 @@ class HWPGradientFill {
         for (int in this.changePointList) it.changePointList.add(int)
         for (color4Byte in this.colorList) it.colorList.add(color4Byte)
         it.blurringCenter = this.blurringCenter
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPGradientFill] 생성된 객체 반환
+         */
+        fun build(gradientType: HWPGradientType = HWPGradientType.Stripe,
+                  startAngle: Short = 0,
+                  centerX: Short = 0, centerY: Short = 0,
+                  blurringDegree: Short = 0, blurringCenter: Short = 0,
+                  pointsAndColor: () -> Pair<ArrayList<Int>, ArrayList<Color4Byte>> = {Pair(ArrayList(), ArrayList())}) : HWPGradientFill =
+                HWPGradientFill().apply {
+                    this.gradientType = gradientType
+                    this.startAngle = startAngle
+                    this.centerX = centerX
+                    this.centerY = centerY
+                    this.blurringDegree = blurringDegree
+                    this.blurringCenter = blurringCenter
+                    val (points, colors) = pointsAndColor()
+                    if (points.size != colors.size) throw HWPBuildException("[HWPGradientFill] Change Point List size and Color list size must be same")
+                    this.changePointList = points
+                    this.colorList = colors
+        }
     }
 }

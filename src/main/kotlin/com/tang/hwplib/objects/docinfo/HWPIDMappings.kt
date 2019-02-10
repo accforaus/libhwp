@@ -71,4 +71,50 @@ class HWPIDMappings {
         it.trackChangeCount = this.trackChangeCount
         it.trackChangeAuthorCount = this.trackChangeAuthorCount
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPIDMappings] 생성된 객체 반환
+         */
+        fun build(binDataCount: Int = 0,
+                  hangulFaceNameCount: Int = 0,
+                  englishFaceNameCount: Int = 0,
+                  hanjaFaceNameCount: Int = 0,
+                  japaneseFaceNameCount: Int = 0,
+                  etcFaceNameCount: Int = 0,
+                  symbolFaceNameCount: Int = 0,
+                  userFaceNameCount: Int = 0,
+                  borderFillCount: Int = 0,
+                  charShapeCount: Int = 0,
+                  tabDefCount: Int = 0,
+                  numberingCount: Int = 0,
+                  bulletCount: Int = 0,
+                  paraShapeCount: Int = 0,
+                  styleCount: Int = 0,
+                  memoShapeCount: Int = 0,
+                  trackChangeCount: Int = 0,
+                  trackChangeAuthorCount: Int = 0)
+                : HWPIDMappings = HWPIDMappings().apply {
+            this.binDataCount = binDataCount
+            this.hangulFaceNameCount = hangulFaceNameCount
+            this.englishFaceNameCount = englishFaceNameCount
+            this.hanjaFaceNameCount = hanjaFaceNameCount
+            this.japaneseFaceNameCount = japaneseFaceNameCount
+            this.etcFaceNameCount = etcFaceNameCount
+            this.symbolFaceNameCount = symbolFaceNameCount
+            this.userFaceNameCount = userFaceNameCount
+            this.borderFillCount = borderFillCount
+            this.charShapeCount = charShapeCount
+            this.tabDefCount = tabDefCount
+            this.numberingCount = numberingCount
+            this.bulletCount = bulletCount
+            this.paraShapeCount = paraShapeCount
+            this.styleCount = styleCount
+            this.memoShapeCount = memoShapeCount
+            this.trackChangeCount = trackChangeCount
+            this.trackChangeAuthorCount = trackChangeAuthorCount
+        }
+    }
 }

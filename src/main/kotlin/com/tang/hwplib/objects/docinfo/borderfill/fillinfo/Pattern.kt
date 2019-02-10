@@ -65,12 +65,12 @@ enum class HWPPatternType(v: Byte) {
  *
  * @property [backColor] [Color4Byte], 배경색 (COLORREF - unsigned 4 bytes)
  * @property [patternColor] [Color4Byte], 무늬색 (COLORREF - unsigned 4 bytes)
- * @property [patterType] [HWPPatternType], 무늬 종류 (INT32 - signed 4 bytes)
+ * @property [patternType] [HWPPatternType], 무늬 종류 (INT32 - signed 4 bytes)
  */
 class HWPPatternFill {
     var backColor: Color4Byte = Color4Byte()
     var patternColor: Color4Byte = Color4Byte()
-    var patterType: HWPPatternType = HWPPatternType.None
+    var patternType: HWPPatternType = HWPPatternType.None
 
     /**
      * 객체를 복사한 후 반환하는 함수
@@ -80,6 +80,21 @@ class HWPPatternFill {
     fun copy() : HWPPatternFill = HWPPatternFill().also {
         it.backColor.value = this.backColor.value
         it.patternColor.value = this.patternColor.value
-        it.patterType = HWPPatternType.valueOf(this.patterType.value)
+        it.patternType = HWPPatternType.valueOf(this.patternType.value)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPatternFill] 생성된 객체 반환
+         */
+        fun build(backColor: Color4Byte = Color4Byte.build(),
+                  patternColor: Color4Byte = Color4Byte.build(),
+                  patternType: HWPPatternType = HWPPatternType.None): HWPPatternFill = HWPPatternFill().apply {
+            this.backColor = backColor
+            this.patternColor = patternColor
+            this.patternType = patternType
+        }
     }
 }

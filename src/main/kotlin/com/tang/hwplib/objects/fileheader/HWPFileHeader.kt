@@ -70,6 +70,48 @@ class HWPFileHeader {
                 0x65, 0x6e, 0x74, 0x20, 0x46, 0x69, 0x6c, 0x65, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00)
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFileHeader] 생성된 객체 반환
+         */
+        fun build(version: HWPFileVersion = HWPFileVersion.build(),
+                  compressed: Boolean = false, hasPassword: Boolean = false,
+                  isDeploymentDocument: Boolean = false, saveScript: Boolean = false,
+                  isDRMDocument: Boolean = false, hasXMLTemplate: Boolean = false,
+                  hasDocumentHistory: Boolean = false, hasSignature: Boolean = false,
+                  encryptPublicCertification: Boolean = false, savePrepareSignature: Boolean = false,
+                  isPublicCertificationDRMDocument: Boolean = false, isCCLDocument: Boolean = false,
+                  isMobileOptimize: Boolean = false, isSecurityPersonalPrivacy: Boolean = false,
+                  hasTrackChange: Boolean = false, hasKOGLCopyright: Boolean = false,
+                  hasVideoControl: Boolean = false, hasOrderFieldControl: Boolean = false,
+                  koglCCLInfo: HWPKOGLCCLInfo = HWPKOGLCCLInfo.build(), encryptVersionType: HWPEncryptVersionType = HWPEncryptVersionType.MoreHWP70,
+                  koglLicenceSupportCountry: HWPKOGLLicenceSupportCountry = HWPKOGLLicenceSupportCountry.KOR
+        ): HWPFileHeader = HWPFileHeader().apply {
+            this.version = version
+            this.compressed = compressed
+            this.hasPassword = hasPassword
+            this.isDeploymentDocument = isDeploymentDocument
+            this.saveScript = saveScript
+            this.isDRMDocument = isDRMDocument
+            this.hasXMLTemplate = hasXMLTemplate
+            this.hasDocumentHistory = hasDocumentHistory
+            this.hasSignature = hasSignature
+            this.encryptPublicCertification = encryptPublicCertification
+            this.savePrepareSignature = savePrepareSignature
+            this.isPublicCertificationDRMDocument = isPublicCertificationDRMDocument
+            this.isCCLDocument = isCCLDocument
+            this.isMobileOptimize = isMobileOptimize
+            this.isSecurityPersonalPrivacy = isSecurityPersonalPrivacy
+            this.hasTrackChange = hasTrackChange
+            this.hasKOGLCopyright = hasKOGLCopyright
+            this.hasVideoControl = hasVideoControl
+            this.hasOrderFieldControl = hasOrderFieldControl
+            this.koglCCLInfo = koglCCLInfo
+            this.encryptVersionType = encryptVersionType
+            this.koglLicenceSupportCountry = koglLicenceSupportCountry
+        }
     }
 
     /**
