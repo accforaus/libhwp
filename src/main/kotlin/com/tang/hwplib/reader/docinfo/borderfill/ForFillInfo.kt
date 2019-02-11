@@ -49,13 +49,13 @@ internal fun forFillInfo(fi: HWPFillInfo, sr: StreamReader) {
      */
     fun gradientFill(gf: HWPGradientFill) {
         gf.run {
-            gradientType = HWPGradientType.valueOf(sr.readInt16().toByte())
-            startAngle = sr.readInt16()
-            centerX = sr.readInt16()
-            centerY = sr.readInt16()
-            blurringDegree = sr.readInt16()
+            gradientType = HWPGradientType.valueOf(sr.readInt8())
+            startAngle = sr.readUInt32()
+            centerX = sr.readUInt32()
+            centerY = sr.readUInt32()
+            blurringDegree = sr.readUInt32()
 
-            val colorCount: Short = sr.readInt16()
+            val colorCount: Long = sr.readUInt32()
             if (colorCount > 2) {
                 for (index in 0 until colorCount)
                     addChangePoint(sr.readInt32())

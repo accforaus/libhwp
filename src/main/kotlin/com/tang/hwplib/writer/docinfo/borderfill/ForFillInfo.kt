@@ -75,10 +75,10 @@ internal fun forFillInfo(fi: HWPFillInfo, sw: StreamWriter) {
         if (fi.type.hasGradientFill()) {
             fi.gradientFill?.run {
                 sw.writeInt8(gradientType.value)
-                sw.writeInt16(startAngle)
-                sw.writeInt16(centerX)
-                sw.writeInt16(centerY)
-                sw.writeInt16(blurringDegree)
+                sw.writeUInt32(startAngle)
+                sw.writeUInt32(centerX)
+                sw.writeUInt32(centerY)
+                sw.writeUInt32(blurringDegree)
 
                 val colorCount: Int = colorList.size
                 sw.writeUInt32(colorCount.toLong())

@@ -63,10 +63,10 @@ enum class HWPGradientType(v: Byte) {
  */
 class HWPGradientFill {
     var gradientType: HWPGradientType = HWPGradientType.Stripe
-    var startAngle: Short = 0
-    var centerX: Short = 0
-    var centerY: Short = 0
-    var blurringDegree: Short = 0
+    var startAngle: Long = 0
+    var centerX: Long = 0
+    var centerY: Long = 0
+    var blurringDegree: Long = 0
     var changePointList: ArrayList<Int> = ArrayList()
     var colorList: ArrayList<Color4Byte> = ArrayList()
     var blurringCenter: Short = 0
@@ -110,9 +110,9 @@ class HWPGradientFill {
          * @return [HWPGradientFill] 생성된 객체 반환
          */
         fun build(gradientType: HWPGradientType = HWPGradientType.Stripe,
-                  startAngle: Short = 0,
-                  centerX: Short = 0, centerY: Short = 0,
-                  blurringDegree: Short = 0, blurringCenter: Short = 0,
+                  startAngle: Long = 0,
+                  centerX: Long = 0, centerY: Long = 0,
+                  blurringDegree: Long = 0, blurringCenter: Short = 0,
                   pointsAndColor: () -> Pair<ArrayList<Int>, ArrayList<Color4Byte>> = {Pair(ArrayList(), ArrayList())}) : HWPGradientFill =
                 HWPGradientFill().apply {
                     this.gradientType = gradientType
