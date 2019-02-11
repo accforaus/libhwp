@@ -227,6 +227,11 @@ class HWPCharControlExtend: HWPChar() {
  */
 class HWPCharControlInline: HWPChar() {
     var addition: ByteArray = ByteArray(12)
+        set(value) {
+            additionInfo = getInstanceId(value)
+            field = value
+        }
+    var additionInfo: String = ""
     var charType: HWPControlInlineType = HWPControlInlineType.None
     override fun getType(): HWPCharType = HWPCharType.ControlInline
 
@@ -251,6 +256,19 @@ class HWPCharControlInline: HWPChar() {
             this.code = code
             this.addition = addition
         }
+    }
+
+    private fun getInstanceId(addition: ByteArray) : String = ByteArray(addition.size).run {
+        var bufferIndex: Int = 0
+        var insert: Boolean = false
+        for (index in addition.size - 1 downTo 0) {
+            if (addition[index].toInt() != 0)
+                insert = true
+            if (insert) {
+                this[bufferIndex++] = addition[index]
+            }
+        }
+        return String(this, 0, bufferIndex)
     }
 }
 
