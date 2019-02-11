@@ -72,6 +72,317 @@ open class HWPControl(var header: HWPCtrlHeader?) {
     open fun copy() : HWPControl = HWPControl(null).also {
         this.ctrlData?.run { it.ctrlData = this.copy() }
     }
+
+    companion object {
+        fun getAddition(control: HWPControl) : ByteArray = ByteArray(12).apply {
+            when (control) {
+                is HWPControlSectionDefine -> {
+                    this[3] = 's'.toByte()
+                    this[2] = 'e'.toByte()
+                    this[1] = 'c'.toByte()
+                    this[0] = 'd'.toByte()
+                }
+                is HWPControlColumnDefine -> {
+                    this[3] = 'c'.toByte()
+                    this[2] = 'o'.toByte()
+                    this[1] = 'l'.toByte()
+                    this[0] = 'd'.toByte()
+                }
+                is HWPControlHeader -> {
+                    this[3] = 'h'.toByte()
+                    this[2] = 'e'.toByte()
+                    this[1] = 'a'.toByte()
+                    this[0] = 'd'.toByte()
+                }
+                is HWPControlFooter -> {
+                    this[3] = 'f'.toByte()
+                    this[2] = 'o'.toByte()
+                    this[1] = 'o'.toByte()
+                    this[0] = 't'.toByte()
+                }
+                is HWPControlFootnote -> {
+                    this[3] = 'f'.toByte()
+                    this[2] = 'n'.toByte()
+                    this[1] = ' '.toByte()
+                    this[0] = ' '.toByte()
+                }
+                is HWPControlEndNote -> {
+                    this[3] = 'e'.toByte()
+                    this[2] = 'n'.toByte()
+                    this[1] = ' '.toByte()
+                    this[0] = ' '.toByte()
+                }
+                is HWPControlAutoNumber -> {
+                    this[3] = 'a'.toByte()
+                    this[2] = 't'.toByte()
+                    this[1] = 'n'.toByte()
+                    this[0] = 'o'.toByte()
+                }
+                is HWPControlNewNumber -> {
+                    this[3] = 'n'.toByte()
+                    this[2] = 'w'.toByte()
+                    this[1] = 'n'.toByte()
+                    this[0] = 'o'.toByte()
+                }
+                is HWPControlPageHide -> {
+                    this[3] = 'p'.toByte()
+                    this[2] = 'g'.toByte()
+                    this[1] = 'h'.toByte()
+                    this[0] = 'd'.toByte()
+                }
+                is HWPControlPageOddEvenAdjust -> {
+                    this[3] = 'p'.toByte()
+                    this[2] = 'g'.toByte()
+                    this[1] = 'c'.toByte()
+                    this[0] = 't'.toByte()
+                }
+                is HWPControlPageNumberPosition -> {
+                    this[3] = 'p'.toByte()
+                    this[2] = 'g'.toByte()
+                    this[1] = 'n'.toByte()
+                    this[0] = 'p'.toByte()
+                }
+                is HWPControlIndexMark -> {
+                    this[3] = 'i'.toByte()
+                    this[2] = 'd'.toByte()
+                    this[1] = 'x'.toByte()
+                    this[0] = 'm'.toByte()
+                }
+                is HWPControlBookmark -> {
+                    this[3] = 'b'.toByte()
+                    this[2] = 'o'.toByte()
+                    this[1] = 'k'.toByte()
+                    this[0] = 'm'.toByte()
+                }
+                is HWPControlOverlappingLetter -> {
+                    this[3] = 't'.toByte()
+                    this[2] = 'c'.toByte()
+                    this[1] = 'p'.toByte()
+                    this[0] = 's'.toByte()
+                }
+                is HWPControlAdditionalText -> {
+                    this[3] = 't'.toByte()
+                    this[2] = 'd'.toByte()
+                    this[1] = 'u'.toByte()
+                    this[0] = 't'.toByte()
+                }
+                is HWPControlHiddenComment -> {
+                    this[3] = 't'.toByte()
+                    this[2] = 'c'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 't'.toByte()
+                }
+            }
+        }
+        fun getFieldStartAddition(control: HWPControlField): ByteArray = ByteArray(12).apply {
+            when (control.getHeader().ctrlId) {
+                HWPControlType.FIELD_UNKNOWN.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'u'.toByte()
+                    this[1] = 'n'.toByte()
+                    this[0] = 'k'.toByte()
+                }
+                HWPControlType.FIELD_DATE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'd'.toByte()
+                    this[1] = 't'.toByte()
+                    this[0] = 'e'.toByte()
+                }
+                HWPControlType.FIELD_DOCDATE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'd'.toByte()
+                    this[1] = 'd'.toByte()
+                    this[0] = 't'.toByte()
+                }
+                HWPControlType.FIELD_PATH.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'p'.toByte()
+                    this[1] = 'a'.toByte()
+                    this[0] = 't'.toByte()
+                }
+                HWPControlType.FIELD_BOOKMARK.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'b'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 'k'.toByte()
+                }
+                HWPControlType.FIELD_MAILMERGE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'm'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 'g'.toByte()
+                }
+                HWPControlType.FIELD_CROSSREF.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'x'.toByte()
+                    this[1] = 'r'.toByte()
+                    this[0] = 'f'.toByte()
+                }
+                HWPControlType.FIELD_FORMULA.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'f'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 'u'.toByte()
+                }
+                HWPControlType.FIELD_CLICKHERE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'c'.toByte()
+                    this[1] = 'l'.toByte()
+                    this[0] = 'k'.toByte()
+                }
+                HWPControlType.FIELD_SUMMARY.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 's'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 'r'.toByte()
+                }
+                HWPControlType.FIELD_USERINFO.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'u'.toByte()
+                    this[1] = 's'.toByte()
+                    this[0] = 'r'.toByte()
+                }
+                HWPControlType.FIELD_HYPERLINK.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'h'.toByte()
+                    this[1] = 'l'.toByte()
+                    this[0] = 'k'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_SIGN.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 's'.toByte()
+                    this[1] = 'i'.toByte()
+                    this[0] = 'g'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_DELETE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'd'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_ATTACH.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'a'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_CLIPPING.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'C'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_SAWTOOTH.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'S'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_THINKING.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'T'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_PRAISE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'P'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_LINE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'L'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_SIMPLECHANGE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'c'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_HYPERLINK.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'h'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_LINEATTACH.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'A'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_LINELINK.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'i'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_LINETRANSFER.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 't'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_RIGHTMOVE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'r'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_LEFTMOVE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'l'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_TRANSFER.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'n'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_SIMPLEINSERT.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = '*'.toByte()
+                    this[0] = 'e'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_SPLIT.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 's'.toByte()
+                    this[1] = 'p'.toByte()
+                    this[0] = 'l'.toByte()
+                }
+                HWPControlType.FIELD_REVISION_CHANGE.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 'r'.toByte()
+                }
+                HWPControlType.FIELD_MEMO.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = '%'.toByte()
+                    this[1] = 'm'.toByte()
+                    this[0] = 'e'.toByte()
+                }
+                HWPControlType.FIELD_PRIVATE_INFO_SECURITY.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 'c'.toByte()
+                    this[1] = 'p'.toByte()
+                    this[0] = 'r'.toByte()
+                }
+                HWPControlType.FIELD_TABLEOFCONTENTS.ctrlId -> {
+                    this[3] = '%'.toByte()
+                    this[2] = 't'.toByte()
+                    this[1] = 'o'.toByte()
+                    this[0] = 'c'.toByte()
+                }
+            }
+        }
+    }
 }
 
 /**
