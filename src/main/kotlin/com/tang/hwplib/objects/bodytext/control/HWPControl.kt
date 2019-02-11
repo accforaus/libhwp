@@ -76,6 +76,18 @@ open class HWPControl(var header: HWPCtrlHeader?) {
     companion object {
         fun getAddition(control: HWPControl) : ByteArray = ByteArray(12).apply {
             when (control) {
+                is HWPControlTable -> {
+                    this[3] = 't'.toByte()
+                    this[2] = 'b'.toByte()
+                    this[1] = 'l'.toByte()
+                    this[0] = ' '.toByte()
+                }
+                is HWPControlEquation -> {
+                    this[3] = 'e'.toByte()
+                    this[2] = 'q'.toByte()
+                    this[1] = 'e'.toByte()
+                    this[0] = 'd'.toByte()
+                }
                 is HWPControlSectionDefine -> {
                     this[3] = 's'.toByte()
                     this[2] = 'e'.toByte()
