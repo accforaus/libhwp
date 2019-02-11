@@ -116,6 +116,7 @@ enum class HWPControlType(id: Long) {
     FIELD_REVISION_DELETE(makeCtrlID('%', '%', '*', 'd')),
     FIELD_REVISION_ATTACH(makeCtrlID('%', '%', '*','a')),
     FIELD_REVISION_CLIPPING(makeCtrlID('%', '%', '*', 'C')),
+    FIELD_REVISION_SAWTOOTH(makeCtrlID('%', '%', '*', 'S')),
     FIELD_REVISION_THINKING(makeCtrlID('%', '%', '*', 'T')),
     FIELD_REVISION_PRAISE(makeCtrlID('%', '%', '*', 'P')),
     FIELD_REVISION_LINE(makeCtrlID('%', '%', '*', 'L')),
@@ -131,7 +132,8 @@ enum class HWPControlType(id: Long) {
     FIELD_REVISION_SPLIT(makeCtrlID('%', 's', 'p', 'l')),
     FIELD_REVISION_CHANGE(makeCtrlID('%', '%', 'm', 'r')),
     FIELD_MEMO(makeCtrlID('%', '%', 'm', 'e')),
-    FIELD_PRIVATE_INFO_SECURITY(makeCtrlID('%', 'c', 'p', 'r'));
+    FIELD_PRIVATE_INFO_SECURITY(makeCtrlID('%', 'c', 'p', 'r')),
+    FIELD_TABLEOFCONTENTS(makeCtrlID('%','t','o','c'));
 
     var ctrlId: Long = id
 
