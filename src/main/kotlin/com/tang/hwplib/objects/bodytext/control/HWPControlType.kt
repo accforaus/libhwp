@@ -162,7 +162,7 @@ enum class HWPControlType(id: Long) {
                 || ctrlId == FIELD_PATH.ctrlId || ctrlId == FIELD_BOOKMARK.ctrlId || ctrlId == FIELD_MAILMERGE.ctrlId
                 || ctrlId == FIELD_CROSSREF.ctrlId || ctrlId == FIELD_FORMULA.ctrlId || ctrlId == FIELD_CLICKHERE.ctrlId
                 || ctrlId == FIELD_SUMMARY.ctrlId || ctrlId == FIELD_USERINFO.ctrlId || ctrlId == FIELD_HYPERLINK.ctrlId
-                || ctrlId == FIELD_REVISION_SIGN.ctrlId || ctrlId == FIELD_REVISION_DELETE.ctrlId
+                || ctrlId == FIELD_REVISION_SIGN.ctrlId || ctrlId == FIELD_REVISION_DELETE.ctrlId || ctrlId == FIELD_REVISION_SAWTOOTH.ctrlId
                 || ctrlId == FIELD_REVISION_ATTACH.ctrlId || ctrlId == FIELD_REVISION_CLIPPING.ctrlId
                 || ctrlId == FIELD_REVISION_THINKING.ctrlId || ctrlId == FIELD_REVISION_PRAISE.ctrlId
                 || ctrlId == FIELD_REVISION_LINE.ctrlId || ctrlId == FIELD_REVISION_SIMPLECHANGE.ctrlId
@@ -171,6 +171,6 @@ enum class HWPControlType(id: Long) {
                 || ctrlId == FIELD_REVISION_RIGHTMOVE.ctrlId || ctrlId == FIELD_REVISION_LEFTMOVE.ctrlId
                 || ctrlId == FIELD_REVISION_TRANSFER.ctrlId || ctrlId == FIELD_REVISION_SIMPLEINSERT.ctrlId
                 || ctrlId == FIELD_REVISION_SPLIT.ctrlId || ctrlId == FIELD_REVISION_CHANGE.ctrlId
-                || ctrlId == FIELD_MEMO.ctrlId || ctrlId == FIELD_PRIVATE_INFO_SECURITY.ctrlId
+                || ctrlId == FIELD_MEMO.ctrlId || ctrlId == FIELD_PRIVATE_INFO_SECURITY.ctrlId || ctrlId == FIELD_TABLEOFCONTENTS.ctrlId
     }
 }
