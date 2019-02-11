@@ -1,5 +1,6 @@
 package com.tang.hwplib.objects.bodytext.paragraph.text
 
+import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.exceptions.HWPBuildException
 import java.nio.charset.Charset
 import kotlin.experimental.and
@@ -37,13 +38,18 @@ enum class HWPCharType {
  */
 abstract class HWPChar {
     var code: Short = 0
-
+        set(value) {
+            setCharType(value)
+            field = value
+        }
     /**
      * 제어 문자의 종류를 반환하는 함수
      *
      * @return [HWPCharType] 제어 문자의 종류를 반환
      */
     abstract fun getType() : HWPCharType
+
+    abstract fun setCharType(code: Short)
 
     /**
      * 객체를 복사한 후 반환하는 함수
@@ -78,6 +84,7 @@ abstract class HWPChar {
  */
 
 class HWPCharControlChar : HWPChar() {
+    var charType: HWPControlCharType = HWPControlCharType.None
     override fun getType(): HWPCharType = HWPCharType.ControlChar
 
     /**
@@ -86,6 +93,10 @@ class HWPCharControlChar : HWPChar() {
      * @return [HWPCharControlChar] 복사된 객체 반환
      */
     override fun copy(): HWPCharControlChar = HWPCharControlChar().also { it.code = this.code }
+
+    override fun setCharType(code: Short) {
+        this.charType = HWPControlCharType.valueOf(code)
+    }
 
     /**
      * 문자 코드를 설정하는 함수
@@ -130,9 +141,18 @@ class HWPCharControlChar : HWPChar() {
  */
 class HWPCharControlExtend: HWPChar() {
     var addition: ByteArray = ByteArray(12)
-    var objectInstanceID: String = getInstanceId()
+        set(value) {
+            this.objectInstanceID = getInstanceId(value)
+            field = value
+        }
+    var objectInstanceID: String = ""
+    var charType: HWPControlExtendType = HWPControlExtendType.None
 
     override fun getType(): HWPCharType = HWPCharType.ControlExtend
+
+    override fun setCharType(code: Short) {
+        this.charType = HWPControlExtendType.valueOf(code)
+    }
 
     /**
      * 객체를 복사한 후 반환하는 함수
@@ -151,6 +171,19 @@ class HWPCharControlExtend: HWPChar() {
      * @return [String] [addition]을 이용하여 오브젝트 포인터를 반환
      */
     fun getInstanceId() : String = ByteArray(addition.size).run {
+        var bufferIndex: Int = 0
+        var insert: Boolean = false
+        for (index in addition.size - 1 downTo 0) {
+            if (addition[index].toInt() != 0)
+                insert = true
+            if (insert) {
+                this[bufferIndex++] = addition[index]
+            }
+        }
+        return String(this, 0, bufferIndex)
+    }
+
+    fun getInstanceId(addition: ByteArray) : String = ByteArray(addition.size).run {
         var bufferIndex: Int = 0
         var insert: Boolean = false
         for (index in addition.size - 1 downTo 0) {
@@ -194,7 +227,12 @@ class HWPCharControlExtend: HWPChar() {
  */
 class HWPCharControlInline: HWPChar() {
     var addition: ByteArray = ByteArray(12)
+    var charType: HWPControlInlineType = HWPControlInlineType.None
     override fun getType(): HWPCharType = HWPCharType.ControlInline
+
+    override fun setCharType(code: Short) {
+        this.charType = HWPControlInlineType.valueOf(code)
+    }
 
     /**
      * 객체를 복사한 후 반환하는 함수
@@ -222,9 +260,11 @@ class HWPCharControlInline: HWPChar() {
  * @author accforaus
  */
 class HWPCharNormal: HWPChar() {
-    var char: String = getCh()
+    var char: String = ""
     override fun getType(): HWPCharType = HWPCharType.Normal
-
+    override fun setCharType(code: Short) {
+        this.char = shortToString(code)
+    }
     /**
      * 객체를 복사한 후 반환하는 함수
      *
@@ -234,24 +274,26 @@ class HWPCharNormal: HWPChar() {
         it.code = this.code
         it.char = this.char
     }
+
+    /**
+     * [Short]를 [String]으로 변환하는 함수
+     *
+     * @param [code] [Short], 변환될 데이터
+     * @return [String] 변환된 [code]데이터
+     */
+    private fun shortToString(code: Short) : String {
+        val ch: ByteArray = ByteArray(2)
+        ch[0] = code.and(0xff).toByte()
+        ch[1] = (code.toInt().shr(8)).and(0xff).toByte()
+        return String(ch, 0, 2, Charset.forName("UTF-16LE"))
+    }
+
     /**
      * 문자 코드 [code]를 문자열로 변환하는 함수
      *
      * @return [String] [code]를 문자열로 변환후 반환
      */
     fun getCh() : String {
-        /**
-         * [Short]를 [String]으로 변환하는 함수
-         *
-         * @param [code] [Short], 변환될 데이터
-         * @return [String] 변환된 [code]데이터
-         */
-        fun shortToString(code: Short) : String {
-            val ch: ByteArray = ByteArray(2)
-            ch[0] = code.and(0xff).toByte()
-            ch[1] = (code.toInt().shr(8)).and(0xff).toByte()
-            return String(ch, 0, 2, Charset.forName("UTF-16LE"))
-        }
         return shortToString(code)
     }
 
