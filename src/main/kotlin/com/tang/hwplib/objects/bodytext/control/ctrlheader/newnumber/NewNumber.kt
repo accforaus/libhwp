@@ -32,4 +32,24 @@ class HWPNewNumberHeaderProperty {
     fun setNumberSort(numberSort: HWPNumberSort) {
         value = set(value, 0, 3, numberSort.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPNewNumberHeaderProperty] 생성된 객체 반환
+         */
+        fun build(numberSort: HWPNumberSort = HWPNumberSort.Page) : HWPNewNumberHeaderProperty = HWPNewNumberHeaderProperty().apply {
+            setNumberSort(numberSort)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPNewNumberHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPNewNumberHeaderProperty = HWPNewNumberHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }

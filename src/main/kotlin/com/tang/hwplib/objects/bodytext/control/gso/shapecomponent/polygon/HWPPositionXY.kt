@@ -22,4 +22,16 @@ class HWPPositionXY {
         it.x = this.x
         it.y = this.y
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPositionXY] 생성된 객체 반환
+         */
+        fun build(x: Long = 0, y: Long = 0) : HWPPositionXY = HWPPositionXY().apply {
+            this.x = x
+            this.y = y
+        }
+    }
 }

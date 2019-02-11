@@ -35,6 +35,15 @@ open class HWPCtrlHeader(var ctrlId: Long) {
      * @return [HWPCtrlHeader] 복사된 객체 반환
      */
     open fun copy(): HWPCtrlHeader = HWPCtrlHeader(this.ctrlId)
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeader] 생성된 객체 반환
+         */
+        fun build(ctrlId: Long) : HWPCtrlHeader = HWPCtrlHeader(ctrlId)
+    }
 }
 
 /**
@@ -76,6 +85,28 @@ class HWPCtrlHeaderAdditionalText : HWPCtrlHeader(HWPControlType.AdditionalText.
         it.styleId = this.styleId
         this.alignment?.run { it.alignment = HWPAlignment.valueOf(this.value) }
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderAdditionalText] 생성된 객체 반환
+         */
+        fun build(mainText: String? = null, subText: String? = null,
+                  position: HWPAdditionalTextPosition? = null,
+                  fsizeratio: Long = 0, option: Long = 0, styleId: Long = 0,
+                  alignment: HWPAlignment? = null)
+                : HWPCtrlHeaderAdditionalText = HWPCtrlHeaderAdditionalText().apply {
+            this.ctrlId = HWPControlType.AdditionalText.ctrlId
+            this.mainText = mainText
+            this.subText = subText
+            this.position = position
+            this.fsizeratio = fsizeratio
+            this.option = option
+            this.styleId = styleId
+            this.alignment = alignment
+        }
+    }
 }
 
 /**
@@ -113,6 +144,26 @@ class HWPCtrlHeaderAutoNumber: HWPCtrlHeader(HWPControlType.AutoNumber.ctrlId) {
         it.beforeDecorationLetter = this.beforeDecorationLetter
         it.afterDecorationLetter = this.afterDecorationLetter
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderAdditionalText] 생성된 객체 반환
+         */
+        fun build(property: HWPAutoNumberHeaderProperty = HWPAutoNumberHeaderProperty.build(),
+                  number: Int = 0, userSymbol: String? = null,
+                  beforeDecorationLetter: String? = null,
+                  afterDecorationLetter: String? = null)
+                : HWPCtrlHeaderAutoNumber = HWPCtrlHeaderAutoNumber().apply {
+            this.ctrlId = HWPControlType.AutoNumber.ctrlId
+            this.property = property
+            this.number = number
+            this.userSymbol = userSymbol
+            this.beforeDecorationLetter = beforeDecorationLetter
+            this.afterDecorationLetter = afterDecorationLetter
+        }
+    }
 }
 
 /**
@@ -130,6 +181,17 @@ class HWPCtrlHeaderBookmark: HWPCtrlHeader(HWPControlType.Bookmark.ctrlId) {
     override fun copy(): HWPCtrlHeaderBookmark = HWPCtrlHeaderBookmark().also {
         super.copy().run {
             it.ctrlId = this.ctrlId
+        }
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderBookmark] 생성된 객체 반환
+         */
+        fun build() : HWPCtrlHeaderBookmark = HWPCtrlHeaderBookmark().apply {
+            this.ctrlId = HWPControlType.Bookmark.ctrlId
         }
     }
 }
@@ -182,6 +244,30 @@ class HWPCtrlHeaderColumnDefine: HWPCtrlHeader(HWPControlType.ColumnDefine.ctrlI
         this.divideLineThickness?.run { it.divideLineThickness = HWPBorderThickness.valueOf(this.value) }
         it.divideLineColor.value = this.divideLineColor.value
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderColumnDefine] 생성된 객체 반환
+         */
+        fun build(property: HWPColumnDefineHeaderProperty = HWPColumnDefineHeaderProperty.build(),
+                  getBetweenColumn: Int = 0, property2: Int = 0,
+                  columnInfoGenerator: () -> ArrayList<HWPColumnInfo> = {ArrayList()},
+                  divideLineSort: HWPBorderType? = null,
+                  divideLineThickness: HWPBorderThickness? = null,
+                  divideLineColor: Color4Byte = Color4Byte.build())
+                : HWPCtrlHeaderColumnDefine = HWPCtrlHeaderColumnDefine().apply {
+            this.ctrlId = HWPControlType.ColumnDefine.ctrlId
+            this.property = property
+            this.gapBetweenColumn = getBetweenColumn
+            this.property2 = property2
+            this.columnInfoList = columnInfoGenerator()
+            this.divideLineSort = divideLineSort
+            this.divideLineThickness = divideLineThickness
+            this.divideLineColor = divideLineColor
+        }
+    }
 }
 
 /**
@@ -225,6 +311,27 @@ class HWPCtrlHeaderField: HWPCtrlHeader {
         it.instanceId = this.instanceId
         it.memoIndex = this.memoIndex
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderField] 생성된 객체 반환
+         */
+        fun build(ctrlId: Long = 0,
+                  property: HWPFieldHeaderProperty = HWPFieldHeaderProperty.build(),
+                  etcProperty: Short = 0, command: String? = null, memoIndex: Int = 0)
+                : HWPCtrlHeaderField = HWPCtrlHeaderField().apply {
+            this.ctrlId = when (ctrlId) {
+                0.toLong() -> HWPControlType.FIELD_UNKNOWN.ctrlId
+                else -> ctrlId
+            }
+            this.property = property
+            this.etcProperty = etcProperty
+            this.command = command
+            this.memoIndex = memoIndex
+        }
+    }
 }
 
 /**
@@ -261,6 +368,25 @@ class HWPCtrlHeaderEndnote: HWPCtrlHeader(HWPControlType.Endnote.ctrlId) {
         this.numberShape?.run { it.numberShape = HWPNumberShape.valueOf(this.value) }
         it.instanceId = this.instanceId
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderEndnote] 생성된 객체 반환
+         */
+        fun build(number: Long = 0,
+                  beforeDecorationLetter: String? = null,
+                  afterDecorationLetter: String? = null,
+                  numberShape: HWPNumberShape? = null)
+                : HWPCtrlHeaderEndnote = HWPCtrlHeaderEndnote().apply {
+            this.ctrlId = HWPControlType.Endnote.ctrlId
+            this.number = number
+            this.beforeDecorationLetter = beforeDecorationLetter
+            this.afterDecorationLetter = afterDecorationLetter
+            this.numberShape = numberShape
+        }
+    }
 }
 
 /**
@@ -287,6 +413,21 @@ class HWPCtrlHeaderFooter: HWPCtrlHeader(HWPControlType.Footer.ctrlId) {
         }
         this.applyPage?.run { it.applyPage = HWPHeaderFooterApplyPage.valueOf(this.value) }
         it.createIndex = this.createIndex
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderFooter] 생성된 객체 반환
+         */
+        fun build(applyPage: HWPHeaderFooterApplyPage? = null,
+                  createIndex: Int = 0)
+                : HWPCtrlHeaderFooter = HWPCtrlHeaderFooter().apply {
+            this.ctrlId = HWPControlType.Footer.ctrlId
+            this.applyPage = applyPage
+            this.createIndex = createIndex
+        }
     }
 }
 
@@ -324,6 +465,25 @@ class HWPCtrlHeaderFootnote: HWPCtrlHeader(HWPControlType.Footnote.ctrlId) {
         this.numberShape?.run { it.numberShape = HWPNumberShape.valueOf(this.value) }
         it.instanceId = this.instanceId
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderFootnote] 생성된 객체 반환
+         */
+        fun build(number: Long = 0,
+                  beforeDecorationLetter: String? = null,
+                  afterDecorationLetter: String? = null,
+                  numberShape: HWPNumberShape? = null)
+                : HWPCtrlHeaderFootnote = HWPCtrlHeaderFootnote().apply {
+            this.ctrlId = HWPControlType.Footnote.ctrlId
+            this.number = number
+            this.beforeDecorationLetter = beforeDecorationLetter
+            this.afterDecorationLetter = afterDecorationLetter
+            this.numberShape = numberShape
+        }
+    }
 }
 
 /**
@@ -350,6 +510,20 @@ class HWPCtrlHeaderHeader: HWPCtrlHeader(HWPControlType.Header.ctrlId) {
         }
         this.applyPage?.run { it.applyPage = HWPHeaderFooterApplyPage.valueOf(this.value) }
         it.createIndex = this.createIndex
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderHeader] 생성된 객체 반환
+         */
+        fun build(applyPage: HWPHeaderFooterApplyPage? = null, createIndex: Int = 0)
+                : HWPCtrlHeaderHeader = HWPCtrlHeaderHeader().apply {
+            this.ctrlId = HWPControlType.Header.ctrlId
+            this.applyPage = applyPage
+            this.createIndex = createIndex
+        }
     }
 }
 
@@ -416,6 +590,38 @@ class HWPCtrlHeaderGso: HWPCtrlHeader {
         it.preventPageDivide = this.preventPageDivide
         it.explanation = this.explanation
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderGso] 생성된 객체 반환
+         */
+        fun build(ctrlId: Long = 0,
+                  property: HWPGsoHeaderProperty = HWPGsoHeaderProperty.build(),
+                  yOffset: Long = 0, xOffset: Long = 0, width: Long = 0, height: Long = 0,
+                  zOrder: Int = 0, outerMarginLeft: Int = 0, outerMarginRight: Int = 0,
+                  outerMarginTop: Int = 0, outerMarginBottom: Int = 0, preventPageDivide: Boolean = false,
+                  explanation: String? = null)
+                : HWPCtrlHeaderGso = HWPCtrlHeaderGso().apply {
+            this.ctrlId = when (ctrlId) {
+                0.toLong() -> HWPControlType.Gso.ctrlId
+                else -> ctrlId
+            }
+            this.property = property
+            this.yOffset = yOffset
+            this.xOffset = xOffset
+            this.width = width
+            this.height = height
+            this.zOrder = zOrder
+            this.outerMarginLeft = outerMarginLeft
+            this.outerMarginRight = outerMarginRight
+            this.outerMarginTop = outerMarginTop
+            this.outerMarginBottom = outerMarginBottom
+            this.preventPageDivide = preventPageDivide
+            this.explanation = explanation
+        }
+    }
 }
 
 /**
@@ -444,6 +650,21 @@ class HWPCtrlHeaderNewNumber: HWPCtrlHeader(HWPControlType.NewNumber.ctrlId) {
         it.property.value = this.property.value
         it.number = this.number
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderNewNumber] 생성된 객체 반환
+         */
+        fun build(property: HWPNewNumberHeaderProperty = HWPNewNumberHeaderProperty.build(0),
+                  number: Int = 0)
+                : HWPCtrlHeaderNewNumber = HWPCtrlHeaderNewNumber().apply {
+            this.ctrlId = HWPControlType.NewNumber.ctrlId
+            this.property = property
+            this.number = number
+        }
+    }
 }
 
 /**
@@ -468,6 +689,19 @@ class HWPCtrlHeaderPageOddEvenAdjust: HWPCtrlHeader(HWPControlType.PageOddEvenAd
             it.ctrlId = this.ctrlId
         }
         it.property.value = this.property.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderPageOddEvenAdjust] 생성된 객체 반환
+         */
+        fun build(property: PageOddEvenAdjustHeaderProperty = PageOddEvenAdjustHeaderProperty.build(0))
+                : HWPCtrlHeaderPageOddEvenAdjust = HWPCtrlHeaderPageOddEvenAdjust().apply {
+            this.ctrlId = HWPControlType.PageOddEvenAdjust.ctrlId
+            this.property = property
+        }
     }
 }
 
@@ -524,6 +758,28 @@ class HWPCtrlHeaderOverlappingLetter: HWPCtrlHeader(HWPControlType.OverlappingLe
         it.expendInsideLetter = this.expendInsideLetter
         for (charShapeID in this.charShapeIdList) it.charShapeIdList.add(charShapeID)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderOverlappingLetter] 생성된 객체 반환
+         */
+        fun build(
+                overlappingLetterGenerator: () -> ArrayList<String> = {ArrayList()},
+                borderType: Short = 0, internalFontSize: Byte = 0,
+                expendInsideLetter: Short = 0,
+                charShapeIdGenerator: () -> ArrayList<Long> = {ArrayList()}
+        )
+                : HWPCtrlHeaderOverlappingLetter = HWPCtrlHeaderOverlappingLetter().apply {
+            this.ctrlId = HWPControlType.OverlappingLetter.ctrlId
+            this.overlappingLetterList = overlappingLetterGenerator()
+            this.borderType = borderType
+            this.internalFontSize = internalFontSize
+            this.expendInsideLetter = expendInsideLetter
+            this.charShapeIdList = charShapeIdGenerator()
+        }
+    }
 }
 
 /**
@@ -552,6 +808,20 @@ class HWPCtrlHeaderIndexMark: HWPCtrlHeader(HWPControlType.IndexMark.ctrlId) {
         it.keyword1 = this.keyword1
         it.keyword2 = this.keyword2
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderIndexMark] 생성된 객체 반환
+         */
+        fun build(keyword1: String? = null, keyword2: String? = null)
+                : HWPCtrlHeaderIndexMark = HWPCtrlHeaderIndexMark().apply {
+            this.ctrlId = HWPControlType.IndexMark.ctrlId
+            this.keyword1 = keyword1
+            this.keyword2 = keyword2
+        }
+    }
 }
 
 /**
@@ -576,6 +846,19 @@ class HWPCtrlHeaderPageHide: HWPCtrlHeader(HWPControlType.PageHide.ctrlId) {
             it.ctrlId = this.ctrlId
         }
         it.property.value = this.property.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderPageHide] 생성된 객체 반환
+         */
+        fun build(property: HWPPageHideHeaderProperty = HWPPageHideHeaderProperty.build())
+                : HWPCtrlHeaderPageHide = HWPCtrlHeaderPageHide().apply {
+            this.ctrlId = HWPControlType.PageHide.ctrlId
+            this.property = property
+        }
     }
 }
 
@@ -613,6 +896,25 @@ class HWPCtrlHeaderPageNumberPosition: HWPCtrlHeader(HWPControlType.PageNumberPo
         it.userSymbol = this.userSymbol
         it.beforeDecorationLetter = this.beforeDecorationLetter
         it.afterDecorationLetter = this.afterDecorationLetter
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderPageNumberPosition] 생성된 객체 반환
+         */
+        fun build(property: PageNumberPositionHeaderProperty = PageNumberPositionHeaderProperty.build(),
+                  number: Int = 0, userSymbol: String? = null,
+                  beforeDecorationLetter: String? = null, afterDecorationLetter: String? = null)
+                : HWPCtrlHeaderPageNumberPosition = HWPCtrlHeaderPageNumberPosition().apply {
+            this.ctrlId = HWPControlType.PageNumberPosition.ctrlId
+            this.property = property
+            this.number = number
+            this.userSymbol = userSymbol
+            this.beforeDecorationLetter = beforeDecorationLetter
+            this.afterDecorationLetter = afterDecorationLetter
+        }
     }
 }
 
@@ -668,5 +970,32 @@ class HWPCtrlHeaderSectionDefine: HWPCtrlHeader(HWPControlType.SectionDefine.ctr
         it.tableStartNumber = this.tableStartNumber
         it.equationStartNumber = this.equationStartNumber
         it.defaultLanguage = this.defaultLanguage
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCtrlHeaderSectionDefine] 생성된 객체 반환
+         */
+        fun build(property: HWPSectionDefineHeaderProperty = HWPSectionDefineHeaderProperty.build(),
+                  columnGap: Int = 0, verticalLineAlign: Int = 0, horizontalLineAlign: Int = 0,
+                  defaultTabGap: Long = 0, numberParaShapeId: Int = 0, pageStartNumber: Int = 0,
+                  imageStartNumber: Int = 0, tableStartNumber: Int = 0, equationStartNumber: Int = 0,
+                  defaultLanguage: Int = 0)
+                : HWPCtrlHeaderSectionDefine = HWPCtrlHeaderSectionDefine().apply {
+            this.ctrlId = HWPControlType.SectionDefine.ctrlId
+            this.property = property
+            this.columnGap = columnGap
+            this.verticalLineAlign = verticalLineAlign
+            this.horizontalLineAlign = horizontalLineAlign
+            this.defaultTabGap = defaultTabGap
+            this.numberParaShapeId = numberParaShapeId
+            this.pageStartNumber = pageStartNumber
+            this.imageStartNumber = imageStartNumber
+            this.tableStartNumber = tableStartNumber
+            this.equationStartNumber = equationStartNumber
+            this.defaultLanguage = defaultLanguage
+        }
     }
 }

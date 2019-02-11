@@ -30,4 +30,21 @@ class ListHeaderForHeaderFooter {
         it.textWidth = this.textWidth
         it.textHeight = this.textHeight
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderForHeaderFooter] 생성된 객체 반환
+         */
+        fun build(paraCount: Int = 0,
+                  property: HWPListHeaderProperty = HWPListHeaderProperty.build(),
+                  textWidth: Long = 0, textHeight: Long = 0)
+                : ListHeaderForHeaderFooter = ListHeaderForHeaderFooter().apply {
+            this.paraCount = paraCount
+            this.property = property
+            this.textWidth = textWidth
+            this.textHeight = textHeight
+        }
+    }
 }

@@ -105,6 +105,18 @@ class HWPParagraphList: HWPParagraphListInterface {
         for (paragraph in this.paragraphList)
             it.paragraphList.add(paragraph.copy())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParagraphList] 생성된 객체 반환
+         */
+        fun build(paragraphGenerator: () -> ArrayList<HWPParagraph> = {ArrayList()})
+                : HWPParagraphList = HWPParagraphList().apply {
+            this.paragraphList = paragraphGenerator()
+        }
+    }
 }
 
 /**

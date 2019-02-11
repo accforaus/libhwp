@@ -39,6 +39,17 @@ class HWPMatrix {
     fun copy() : HWPMatrix = HWPMatrix().also {
         it.values = this.values.copyOf()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPMatrix] 생성된 객체 반환
+         */
+        fun build(values: DoubleArray = DoubleArray(6)) : HWPMatrix = HWPMatrix().apply {
+            this.values = values
+        }
+    }
 }
 
 /**
@@ -61,6 +72,20 @@ class HWPScaleRotateMatrixPair {
     fun copy() : HWPScaleRotateMatrixPair = HWPScaleRotateMatrixPair().also {
         it.scaleMatrix = this.scaleMatrix.copy()
         it.rotateMatrix = this.rotateMatrix.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPScaleRotateMatrixPair] 생성된 객체 반환
+         */
+        fun build(scaleMatrix: HWPMatrix = HWPMatrix.build(),
+                  rotateMatrix: HWPMatrix = HWPMatrix.build())
+                : HWPScaleRotateMatrixPair = HWPScaleRotateMatrixPair().apply {
+            this.scaleMatrix = scaleMatrix
+            this.rotateMatrix = rotateMatrix
+        }
     }
 }
 
@@ -92,5 +117,19 @@ class HWPRenderingInfo {
     fun copy() : HWPRenderingInfo = HWPRenderingInfo().also {
         it.translationMatrix = this.translationMatrix.copy()
         for (scaleRotateMatrix in this.scaleRotateMatrixPairList) it.scaleRotateMatrixPairList.add(scaleRotateMatrix.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRenderingInfo] 생성된 객체 반환
+         */
+        fun build(translationMatrix: HWPMatrix = HWPMatrix.build(),
+                  scaleRotateGenerator: () -> ArrayList<HWPScaleRotateMatrixPair> = {ArrayList()})
+                : HWPRenderingInfo = HWPRenderingInfo().apply {
+            this.translationMatrix = translationMatrix
+            this.scaleRotateMatrixPairList = scaleRotateGenerator()
+        }
     }
 }

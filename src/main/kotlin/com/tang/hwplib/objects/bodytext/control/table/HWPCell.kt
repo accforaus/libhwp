@@ -108,6 +108,24 @@ class ListHeaderPropertyForCell {
     fun setEditableAtFormMode(editableAtFormMode: Boolean) {
         value = set(value, 19, editableAtFormMode)
     }
+
+    companion object {
+        fun build(textDirection: HWPTextDirection = HWPTextDirection.Horizontal,
+                  lineChange: HWPLineChange = HWPLineChange.Normal,
+                  textVerticalAlignment: HWPTextVerticalAlignment = HWPTextVerticalAlignment.Top,
+                  protectCell: Boolean = false, editableAtFormMode: Boolean = false)
+                : ListHeaderPropertyForCell = ListHeaderPropertyForCell().apply {
+            setTextDirection(textDirection)
+            setLineChange(lineChange)
+            setTextVerticalAlignment(textVerticalAlignment)
+            setProtectCell(protectCell)
+            setEditableAtFormMode(editableAtFormMode)
+        }
+
+        fun build(value: Long = 0) : ListHeaderPropertyForCell = ListHeaderPropertyForCell().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -167,6 +185,37 @@ class ListHeaderForCell {
         it.textWidth = this.textWidth
         it.fieldName = this.fieldName
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderForCell] 생성된 객체 반환
+         */
+        fun build(paraCount: Int = 0,
+                  property: ListHeaderPropertyForCell = ListHeaderPropertyForCell.build(),
+                  colIndex: Int = 0, rowIndex: Int = 0, colSpan: Int = 0, rowSpan: Int = 0,
+                  width: Long = 0, height: Long = 0, leftMargin: Int = 0, rightMargin: Int = 0,
+                  topMargin: Int = 0, bottomMargin: Int = 0, borderFillId: Int = 0,
+                  textWidth: Long = 0, fieldName: String? = null)
+                : ListHeaderForCell = ListHeaderForCell().apply {
+            this.paraCount = paraCount
+            this.property = property
+            this.colIndex = colIndex
+            this.rowIndex = rowIndex
+            this.colSpan = colSpan
+            this.rowSpan = rowSpan
+            this.width = width
+            this.height = height
+            this.leftMargin = leftMargin
+            this.rightMargin = rightMargin
+            this.topMargin = topMargin
+            this.bottomMargin = bottomMargin
+            this.borderFillId = borderFillId
+            this.textWidth = textWidth
+            this.fieldName = fieldName
+        }
+    }
 }
 
 /**
@@ -189,5 +238,19 @@ class HWPCell {
     fun copy() : HWPCell = HWPCell().also {
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCell] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForCell = ListHeaderForCell.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPCell = HWPCell().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
     }
 }

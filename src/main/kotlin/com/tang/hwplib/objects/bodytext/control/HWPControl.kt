@@ -17,6 +17,7 @@ import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPPageBorderFill
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPPageDef
 import com.tang.hwplib.objects.bodytext.control.table.HWPRow
 import com.tang.hwplib.objects.bodytext.control.table.HWPTable
+import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraphList
 
 import com.tang.hwplib.objects.etc.*
@@ -97,6 +98,15 @@ class HWPControlAdditionalText: HWPControl(HWPCtrlHeaderAdditionalText()) {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlAdditionalText] 생성된 객체 반환
+         */
+        fun build() : HWPControlAdditionalText = HWPControlAdditionalText()
+    }
 }
 
 /**
@@ -122,6 +132,15 @@ class HWPControlAutoNumber: HWPControl(HWPCtrlHeaderAutoNumber()) {
     override fun copy(): HWPControlAutoNumber = HWPControlAutoNumber().also {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlAutoNumber] 생성된 객체 반환
+         */
+        fun build() : HWPControlAutoNumber = HWPControlAutoNumber()
     }
 }
 
@@ -151,6 +170,15 @@ class HWPControlBookmark: HWPControl(HWPCtrlHeaderBookmark()) {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlBookmark] 생성된 객체 반환
+         */
+        fun build() : HWPControlBookmark = HWPControlBookmark()
+    }
 }
 
 /**
@@ -176,6 +204,15 @@ class HWPControlColumnDefine: HWPControl(HWPCtrlHeaderColumnDefine()) {
     override fun copy(): HWPControlColumnDefine = HWPControlColumnDefine().also {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlColumnDefine] 생성된 객체 반환
+         */
+        fun build() : HWPControlColumnDefine = HWPControlColumnDefine()
     }
 }
 
@@ -210,6 +247,20 @@ class HWPControlEndNote: HWPControl(HWPCtrlHeaderEndnote()) {
         it.header = getHeader().copy()
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlEndNote] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForFootnoteEndnote = ListHeaderForFootnoteEndnote.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPControlEndNote = HWPControlEndNote().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
     }
 }
 
@@ -260,6 +311,20 @@ class HWPControlEquation: HWPControl(HWPCtrlHeaderGso(HWPControlType.Equation)) 
         this.caption?.run { it.caption = this.copy() }
         it.eqEdit = this.eqEdit.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlEquation] 생성된 객체 반환
+         */
+        fun build(caption: HWPCaption? = null,
+                  eqEdit: HWPEQEdit = HWPEQEdit.build())
+                : HWPControlEquation = HWPControlEquation().apply {
+            this.caption = caption
+            this.eqEdit = eqEdit
+        }
+    }
 }
 
 /**
@@ -273,6 +338,7 @@ class HWPControlEquation: HWPControl(HWPCtrlHeaderGso(HWPControlType.Equation)) 
  * @constructor [HWPCtrlHeaderField(ctrlId)]로 헤더를 설정한다.
  */
 class HWPControlField: HWPControl {
+    var fieldName: String? = getName()
     constructor() : super(HWPCtrlHeaderField())
     constructor(ctrlId: Long) : super(HWPCtrlHeaderField(ctrlId))
 
@@ -308,6 +374,15 @@ class HWPControlField: HWPControl {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlField] 생성된 객체 반환
+         */
+        fun build(ctrlId: Long = 0) : HWPControlField = HWPControlField(ctrlId)
+    }
 }
 
 /**
@@ -341,6 +416,20 @@ class HWPControlFooter: HWPControl(HWPCtrlHeaderFooter()) {
         it.header = getHeader().copy()
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlFooter] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForHeaderFooter = ListHeaderForHeaderFooter.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPControlFooter = HWPControlFooter().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
     }
 }
 
@@ -376,6 +465,20 @@ class HWPControlFootnote: HWPControl(HWPCtrlHeaderFootnote()) {
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlFootnote] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForFootnoteEndnote = ListHeaderForFootnoteEndnote.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPControlFootnote = HWPControlFootnote().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
+    }
 }
 
 /**
@@ -410,6 +513,20 @@ class HWPControlHeader: HWPControl(HWPCtrlHeaderHeader()) {
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlHeader] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForHeaderFooter = ListHeaderForHeaderFooter.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPControlHeader = HWPControlHeader().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
+    }
 }
 
 /**
@@ -438,6 +555,20 @@ class HWPControlHiddenComment: HWPControl(HWPCtrlHeader(HWPControlType.HiddenCom
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlHiddenComment] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForHiddenComment = ListHeaderForHiddenComment.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPControlHiddenComment = HWPControlHiddenComment().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
+    }
 }
 
 /**
@@ -463,6 +594,15 @@ class HWPControlIndexMark: HWPControl(HWPCtrlHeaderIndexMark()) {
     override fun copy(): HWPControlIndexMark = HWPControlIndexMark().also {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlIndexMark] 생성된 객체 반환
+         */
+        fun build() : HWPControlIndexMark = HWPControlIndexMark()
     }
 }
 
@@ -490,6 +630,15 @@ class HWPControlNewNumber: HWPControl(HWPCtrlHeaderNewNumber()) {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlNewNumber] 생성된 객체 반환
+         */
+        fun build() : HWPControlNewNumber = HWPControlNewNumber()
+    }
 }
 
 /**
@@ -515,6 +664,15 @@ class HWPControlOverlappingLetter: HWPControl(HWPCtrlHeaderOverlappingLetter()) 
     override fun copy(): HWPControlOverlappingLetter = HWPControlOverlappingLetter().also {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlOverlappingLetter] 생성된 객체 반환
+         */
+        fun build() : HWPControlOverlappingLetter = HWPControlOverlappingLetter()
     }
 }
 
@@ -542,6 +700,15 @@ class HWPControlPageHide: HWPControl(HWPCtrlHeaderPageHide()) {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlPageHide] 생성된 객체 반환
+         */
+        fun build() : HWPControlPageHide = HWPControlPageHide()
+    }
 }
 
 /**
@@ -568,6 +735,15 @@ class HWPControlPageOddEvenAdjust: HWPControl(HWPCtrlHeaderPageOddEvenAdjust()) 
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlPageOddEvenAdjust] 생성된 객체 반환
+         */
+        fun build() : HWPControlPageOddEvenAdjust = HWPControlPageOddEvenAdjust()
+    }
 }
 
 /**
@@ -593,6 +769,15 @@ class HWPControlPageNumberPosition: HWPControl(HWPCtrlHeaderPageNumberPosition()
     override fun copy(): HWPControlPageNumberPosition = HWPControlPageNumberPosition().also {
         it.setCtrlData(super.copy().getCtrlData())
         it.header = getHeader().copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlPageNumberPosition] 생성된 객체 반환
+         */
+        fun build() : HWPControlPageNumberPosition = HWPControlPageNumberPosition()
     }
 }
 
@@ -649,6 +834,30 @@ class HWPControlSectionDefine: HWPControl(HWPCtrlHeaderSectionDefine()) {
         it.evenPageBorderFill = this.evenPageBorderFill.copy()
         it.oddPageBorderFill = this.oddPageBorderFill.copy()
         for (batangPage in this.batangPageInfoList) it.batangPageInfoList.add(batangPage.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlSectionDefine] 생성된 객체 반환
+         */
+        fun build(pageDef: HWPPageDef = HWPPageDef.build(),
+                  footnoteShape: HWPFootEndNoteShape = HWPFootEndNoteShape.build(),
+                  endnoteShape: HWPFootEndNoteShape = HWPFootEndNoteShape.build(),
+                  bothPageBorderFill: HWPPageBorderFill = HWPPageBorderFill.build(),
+                  evenPageBorderFill: HWPPageBorderFill = HWPPageBorderFill.build(),
+                  oddPageBorderFill: HWPPageBorderFill = HWPPageBorderFill.build(),
+                  batangPageGenerator: () -> ArrayList<HWPBatangPageInfo> = {ArrayList()})
+                : HWPControlSectionDefine = HWPControlSectionDefine().apply {
+            this.pageDef = pageDef
+            this.footnoteShape = footnoteShape
+            this.endnoteShape = endnoteShape
+            this.bothPageBorderFill = bothPageBorderFill
+            this.evenPageBorderFill = evenPageBorderFill
+            this.oddPageBorderFill = oddPageBorderFill
+            this.batangPageInfoList = batangPageGenerator()
+        }
     }
 }
 
@@ -710,6 +919,22 @@ class HWPControlTable: HWPControl {
         it.table = this.table.copy()
         for (row in this.rowList) it.rowList.add(row.copy())
         this.caption?.run { it.caption = this.copy() }
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlTable] 생성된 객체 반환
+         */
+        fun build(table: HWPTable = HWPTable.build(),
+                  rowGenerator: () -> ArrayList<HWPRow> = {ArrayList()},
+                  caption: HWPCaption? = null)
+                : HWPControlTable = HWPControlTable(HWPCtrlHeaderGso(HWPControlType.Table)).apply {
+            this.table = table
+            this.rowList = rowGenerator()
+            this.caption = caption
+        }
     }
 }
 

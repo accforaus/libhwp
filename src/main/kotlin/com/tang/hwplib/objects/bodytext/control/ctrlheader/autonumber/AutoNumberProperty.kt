@@ -1,5 +1,6 @@
 package com.tang.hwplib.objects.bodytext.control.ctrlheader.autonumber
 
+import com.tang.hwplib.objects.bodytext.control.ctrlheader.newnumber.HWPNewNumberHeaderProperty
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPNumberShape
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
@@ -119,5 +120,30 @@ class HWPAutoNumberHeaderProperty {
      */
     fun setSuperScript(superScript: Boolean) {
         value = set(value, 12, superScript)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPAutoNumberHeaderProperty] 생성된 객체 반환
+         */
+        fun build(numberSort: HWPNumberSort = HWPNumberSort.Page,
+                  numberShape: HWPNumberShape = HWPNumberShape.Type0,
+                  superScript: Boolean = false)
+                : HWPAutoNumberHeaderProperty = HWPAutoNumberHeaderProperty().apply {
+            setNumberSort(numberSort)
+            setNumberShape(numberShape)
+            setSuperScript(superScript)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPAutoNumberHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPAutoNumberHeaderProperty = HWPAutoNumberHeaderProperty().apply {
+            this.value = value
+        }
     }
 }

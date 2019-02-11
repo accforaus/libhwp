@@ -100,6 +100,18 @@ class HWPColumnInfo {
         it.width = this.width
         it.gap = this.gap
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPColumnInfo] 생성된 객체 반환
+         */
+        fun build(width: Int = 0, gap: Int = 0) : HWPColumnInfo = HWPColumnInfo().apply {
+            this.width = width
+            this.gap = gap
+        }
+    }
 }
 
 /**
@@ -182,5 +194,32 @@ class HWPColumnDefineHeaderProperty {
      */
     fun setSameWidth(sameWidth: Boolean) {
         value = set(value, 12, sameWidth)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPColumnDefineHeaderProperty] 생성된 객체 반환
+         */
+        fun build(columnSort: HWPColumnSort = HWPColumnSort.Normal,
+                  columnCount: Short = 0,
+                  columnDirection: HWPColumnDirection = HWPColumnDirection.FromLeft,
+                  sameWidth: Boolean = false)
+                : HWPColumnDefineHeaderProperty = HWPColumnDefineHeaderProperty().apply {
+            setColumnSort(columnSort)
+            setColumnCount(columnCount)
+            setColumnDirection(columnDirection)
+            setSameWidth(sameWidth)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPColumnDefineHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Int = 0) : HWPColumnDefineHeaderProperty = HWPColumnDefineHeaderProperty().apply {
+            this.value = value
+        }
     }
 }

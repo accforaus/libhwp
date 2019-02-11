@@ -25,6 +25,18 @@ class HWPColorEffect {
         it.sort = this.sort
         it.value = this.value
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPColorEffect] 생성된 객체 반환
+         */
+        fun build(sort: Int = 0, value: Float = 0f) : HWPColorEffect = HWPColorEffect().apply {
+            this.sort = sort
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -59,6 +71,21 @@ class HWPColorWithEffect {
         it.color = this.color?.copyOf()
         for (colorEffect in this.colorEffectList) it.colorEffectList.add(colorEffect.copy())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPColorWithEffect] 생성된 객체 반환
+         */
+        fun build(type: Int = 0, color: ByteArray? = null,
+                  colorEffectGenerator: () -> ArrayList<HWPColorEffect> = {ArrayList()})
+                : HWPColorWithEffect = HWPColorWithEffect().apply {
+            this.type = type
+            this.color = color
+            this.colorEffectList = colorEffectGenerator()
+        }
+    }
 }
 
 /**
@@ -89,6 +116,21 @@ class HWPInnerMargin {
         it.top = this.top
         it.bottom = this.bottom
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPInnerMargin] 생성된 객체 반환
+         */
+        fun build(left: Int = 0, right: Int = 0, top: Int = 0, bottom: Int = 0)
+                : HWPInnerMargin = HWPInnerMargin().apply {
+            this.left = left
+            this.right = right
+            this.top = top
+            this.bottom = bottom
+        }
+    }
 }
 
 /**
@@ -115,6 +157,20 @@ class HWPNeonEffect {
         it.transparency = this.transparency
         it.radius = this.radius
         it.color = this.color.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPNeonEffect] 생성된 객체 반환
+         */
+        fun build(transparency: Float = 0f, radius: Float = 0f, color: HWPColorWithEffect = HWPColorWithEffect.build())
+                : HWPNeonEffect = HWPNeonEffect().apply {
+            this.transparency = transparency
+            this.radius = radius
+            this.color = color
+        }
     }
 }
 
@@ -200,6 +256,33 @@ class HWPPictureEffectProperty {
     fun setReflectionEffect(reflectionEffect: Boolean) {
         value = set(value, 3, reflectionEffect)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPictureEffectProperty] 생성된 객체 반환
+         */
+        fun build(shadowEffect: Boolean = false,
+                  neonEffect: Boolean = false,
+                  softBorderEffect: Boolean = false,
+                  reflectionEffect: Boolean = false)
+                : HWPPictureEffectProperty = HWPPictureEffectProperty().apply {
+            setShadowEffect(shadowEffect)
+            setNeonEffect(neonEffect)
+            setSoftBorderEffect(softBorderEffect)
+            setReflectionEffect(reflectionEffect)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPictureEffectProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPPictureEffectProperty = HWPPictureEffectProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -260,6 +343,37 @@ class HWPReflectionEffect {
         it.endPosition = this.endPosition
         it.offsetDirection = this.offsetDirection
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPReflectionEffect] 생성된 객체 반환
+         */
+        fun build(style: Int = 0, radius: Float = 0f,
+                  direction: Float = 0f, distance: Float = 0f,
+                  tiltAngleX: Float = 0f, tiltAngleY: Float = 0f,
+                  zoomRateX: Float = 0f, zoomRateY: Float = 0f,
+                  rotationStyle: Int = 0, startTransparency: Float = 0f,
+                  endTransparency: Float = 0f, startPosition: Float = 0f,
+                  endPosition: Float = 0f, offsetDirection: Float = 0f)
+                : HWPReflectionEffect = HWPReflectionEffect().apply {
+            this.style = style
+            this.radius = radius
+            this.direction = direction
+            this.distance = distance
+            this.tiltAngleX = tiltAngleX
+            this.tiltAngleY = tiltAngleY
+            this.zoomRateX = zoomRateX
+            this.zoomRateY = zoomRateY
+            this.rotationStyle = rotationStyle
+            this.startTransparency = startTransparency
+            this.startPosition = startPosition
+            this.endTransparency = endTransparency
+            this.endPosition = endPosition
+            this.offsetDirection = offsetDirection
+        }
+    }
 }
 
 /**
@@ -314,6 +428,34 @@ class HWPShadowEffect {
         it.rotateWithShape = this.rotateWithShape
         it.color = this.color.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShadowEffect] 생성된 객체 반환
+         */
+        fun build(style: Int = 0, transparency: Float = 0f,
+                  cloudy: Float = 0f, direction: Float = 0f,
+                  distance: Float = 0f, sort: Int = 0,
+                  tiltAngleX: Float = 0f, tiltAngleY: Float = 0f,
+                  zoomRateX: Float = 0f, zoomRateY: Float = 0f,
+                  rotateWithShape: Int = 0, color: HWPColorWithEffect = HWPColorWithEffect.build())
+                : HWPShadowEffect = HWPShadowEffect().apply {
+            this.style = style
+            this.transparency = transparency
+            this.cloudy = cloudy
+            this.direction = direction
+            this.distance = distance
+            this.sort = sort
+            this.tiltAngleX = tiltAngleX
+            this.tiltAngleY = tiltAngleY
+            this.zoomRateX = zoomRateX
+            this.zoomRateY = zoomRateY
+            this.rotateWithShape = rotateWithShape
+            this.color = color
+        }
+    }
 }
 
 /**
@@ -334,6 +476,17 @@ class HWPSoftEdgeEffect {
      */
     fun copy() : HWPSoftEdgeEffect = HWPSoftEdgeEffect().also {
         it.radius = this.radius
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPSoftEdgeEffect] 생성된 객체 반환
+         */
+        fun build(radius: Float = 0f) : HWPSoftEdgeEffect = HWPSoftEdgeEffect().apply {
+            this.radius = radius
+        }
     }
 }
 
@@ -407,5 +560,25 @@ class HWPPictureEffect {
         this.neonEffect?.run { it.neonEffect = this.copy() }
         this.softEdgeEffect?.run { it.softEdgeEffect = this.copy() }
         this.reflectionEffect?.run { it.reflectionEffect = this.copy() }
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPictureEffect] 생성된 객체 반환
+         */
+        fun build(property: HWPPictureEffectProperty = HWPPictureEffectProperty.build(),
+                  shadowEffect: HWPShadowEffect? = null,
+                  neonEffect: HWPNeonEffect? = null,
+                  softEdgeEffect: HWPSoftEdgeEffect? = null,
+                  reflectionEffect: HWPReflectionEffect? = null)
+                : HWPPictureEffect = HWPPictureEffect().apply {
+            this.property = property
+            this.shadowEffect = shadowEffect
+            this.neonEffect = neonEffect
+            this.softEdgeEffect = softEdgeEffect
+            this.reflectionEffect = reflectionEffect
+        }
     }
 }

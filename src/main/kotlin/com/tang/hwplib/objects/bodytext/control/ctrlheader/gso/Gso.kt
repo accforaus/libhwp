@@ -613,4 +613,51 @@ class HWPGsoHeaderProperty {
     fun setObjectNumberSort(objectNumberSort: HWPObjectNumberSort) {
         value = set(value, 26, 28, objectNumberSort.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPGsoHeaderProperty] 생성된 객체 반환
+         */
+        fun build(likeWord: Boolean = false,
+                  applyLineSpace: Boolean = false,
+                  vertRelTo: HWPVertRelTo = HWPVertRelTo.Page,
+                  vertRelativeArrange: HWPRelativeArrange = HWPRelativeArrange.TopOfLeft,
+                  horzRelTo: HWPHorzRelTo = HWPHorzRelTo.Page,
+                  horzRelativeArrange: HWPRelativeArrange = HWPRelativeArrange.TopOfLeft,
+                  vertRelToParaLimit: Boolean = false,
+                  allowOverlap: Boolean = false,
+                  widthCriterion: HWPWidthCriterion = HWPWidthCriterion.Page,
+                  heightCriterion: HWPHeightCriterion = HWPHeightCriterion.Page,
+                  protectSize: Boolean = false,
+                  textFlowMethod: HWPTextFlowMethod = HWPTextFlowMethod.Square,
+                  textHorzArrange: HWPTextHorzArrange = HWPTextHorzArrange.BothSides,
+                  objectNumberSort: HWPObjectNumberSort = HWPObjectNumberSort.None)
+                : HWPGsoHeaderProperty = HWPGsoHeaderProperty().apply {
+            setLikeWord(likeWord)
+            setApplyLineSpace(applyLineSpace)
+            setVertRelTo(vertRelTo)
+            setVertRelativeArrange(vertRelativeArrange)
+            setHorzRelTo(horzRelTo)
+            setHorzRelativeArrange(horzRelativeArrange)
+            setVertRelToParaLimit(vertRelToParaLimit)
+            setAllowOverlap(allowOverlap)
+            setWidthCriterion(widthCriterion)
+            setHeightCriterion(heightCriterion)
+            setProtectSize(protectSize)
+            setTextFlowMethod(textFlowMethod)
+            setTextHorzArrange(textHorzArrange)
+            setObjectNumberSort(objectNumberSort)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPGsoHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPGsoHeaderProperty = HWPGsoHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }

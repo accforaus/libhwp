@@ -23,4 +23,13 @@ class ListHeaderForFootnoteEndnote {
         it.paraCount = this.paraCount
         it.property.value = this.property.value
     }
+
+    companion object {
+        fun build(paraCount: Int = 0,
+                  property: HWPListHeaderProperty = HWPListHeaderProperty.build())
+                : ListHeaderForFootnoteEndnote = ListHeaderForFootnoteEndnote().apply {
+            this.paraCount = paraCount
+            this.property = property
+        }
+    }
 }

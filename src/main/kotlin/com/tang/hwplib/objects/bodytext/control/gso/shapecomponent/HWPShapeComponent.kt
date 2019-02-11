@@ -1,5 +1,6 @@
 package com.tang.hwplib.objects.bodytext.control.gso.shapecomponent
 
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.line.HWPLineInfo
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.render.HWPRenderingInfo
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.render.HWPScaleRotateMatrixPair
@@ -94,6 +95,35 @@ open class HWPShapeComponent {
         pair.rotateMatrix.setValue(4, 1.0f.toDouble())
         pair.rotateMatrix.setValue(5, 0.0f.toDouble())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponent] 생성된 객체 반환
+         */
+        fun build(gsoId: Long? = null, offsetX: Int = 0, offsetY: Int = 0,
+                  groupingCount: Int = 0, localFileVersion: Int = 0, widthAtCreate: Long = 0,
+                  heightAtCreate: Long = 0, widthAtCurrent: Long = 0, heightAtCurrent: Long = 0,
+                  property: Long = 0, rotateAngle: Int = 0, rotateXCenter: Int = 0,
+                  rotateYCenter: Int = 0, renderingInfo: HWPRenderingInfo = HWPRenderingInfo.build())
+                : HWPShapeComponent = HWPShapeComponent().apply {
+            this.gsoId = gsoId
+            this.offsetX = offsetX
+            this.offsetY = offsetY
+            this.groupingCount = groupingCount
+            this.localFileVersion = localFileVersion
+            this.widthAtCreate = widthAtCreate
+            this.heightAtCreate = heightAtCreate
+            this.widthAtCurrent = widthAtCurrent
+            this.heightAtCurrent = heightAtCurrent
+            this.property = property
+            this.rotateAngle = rotateAngle
+            this.rotateXCenter = rotateXCenter
+            this.rotateYCenter = rotateYCenter
+            this.renderingInfo = renderingInfo
+        }
+    }
 }
 
 /**
@@ -174,6 +204,39 @@ class HWPShapeComponentNormal: HWPShapeComponent() {
         this.fillInfo?.run { it.fillInfo = this.copy() }
         this.shadowInfo?.run { it.shadowInfo = this.copy() }
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentNormal] 생성된 객체 반환
+         */
+        fun build(shapeComponent: HWPShapeComponent = HWPShapeComponent.build(),
+                  lineInfo: HWPLineInfo = HWPLineInfo.build(),
+                  fillInfo: HWPFillInfo = HWPFillInfo.build(),
+                  shadowInfo: HWPShadowInfo = HWPShadowInfo.build())
+                : HWPShapeComponentNormal = HWPShapeComponentNormal().apply {
+            shapeComponent.let {
+                this.gsoId = it.gsoId
+                this.offsetX = it.offsetX
+                this.offsetY = it.offsetY
+                this.groupingCount = it.groupingCount
+                this.localFileVersion = it.localFileVersion
+                this.widthAtCreate = it.widthAtCreate
+                this.heightAtCreate = it.heightAtCreate
+                this.widthAtCurrent = it.widthAtCurrent
+                this.heightAtCurrent = it.heightAtCurrent
+                this.property = it.property
+                this.rotateAngle = it.rotateAngle
+                this.rotateXCenter = it.rotateXCenter
+                this.rotateYCenter = it.rotateYCenter
+                this.renderingInfo = it.renderingInfo
+            }
+            this.lineInfo = lineInfo
+            this.fillInfo = fillInfo
+            this.shadowInfo = shadowInfo
+        }
+    }
 }
 
 /**
@@ -217,5 +280,34 @@ class HWPShapeComponentContainer: HWPShapeComponent() {
             it.renderingInfo = this.renderingInfo.copy()
         }
         for (childControlId in this.childControlIdList) it.childControlIdList.add(childControlId)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentContainer] 생성된 객체 반환
+         */
+        fun build(shapeComponent: HWPShapeComponent = HWPShapeComponent.build(),
+                  childControlIDGenerator: () -> ArrayList<Long> = {ArrayList()})
+                : HWPShapeComponentContainer = HWPShapeComponentContainer().apply {
+            shapeComponent.let {
+                this.gsoId = it.gsoId
+                this.offsetX = it.offsetX
+                this.offsetY = it.offsetY
+                this.groupingCount = it.groupingCount
+                this.localFileVersion = it.localFileVersion
+                this.widthAtCreate = it.widthAtCreate
+                this.heightAtCreate = it.heightAtCreate
+                this.widthAtCurrent = it.widthAtCurrent
+                this.heightAtCurrent = it.heightAtCurrent
+                this.property = it.property
+                this.rotateAngle = it.rotateAngle
+                this.rotateXCenter = it.rotateXCenter
+                this.rotateYCenter = it.rotateYCenter
+                this.renderingInfo = it.renderingInfo
+            }
+            this.childControlIdList = childControlIDGenerator()
+        }
     }
 }

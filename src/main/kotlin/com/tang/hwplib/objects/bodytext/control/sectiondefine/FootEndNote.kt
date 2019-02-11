@@ -197,6 +197,37 @@ class HWPFootnoteShapeProperty {
     fun setContinueFromText(continueFromText: Boolean) {
         value = set(value, 13, continueFromText)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFootnoteShapeProperty] 생성된 객체 반환
+         */
+        fun build(numberShape: HWPNumberShape = HWPNumberShape.Type0,
+                  footnoteDisplayMethod: HWPFootnoteDisplayMethod = HWPFootnoteDisplayMethod.EachColumn,
+                  endnoteDisplayMethod: HWPEndnoteDisplayMethod = HWPEndnoteDisplayMethod.DocumentEnd,
+                  numberingMethod: HWPNumberingMethod = HWPNumberingMethod.Continue,
+                  displayWithSupscript: Boolean = false,
+                  continueFromText: Boolean = false)
+                : HWPFootnoteShapeProperty = HWPFootnoteShapeProperty().apply {
+            setNumberShape(numberShape)
+            setFootnoteDisplayMethod(footnoteDisplayMethod)
+            setEndnoteDisplayMethod(endnoteDisplayMethod)
+            setNumberingMethod(numberingMethod)
+            setDisplayWithSupscript(displayWithSupscript)
+            setContinueFromText(continueFromText)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFootnoteShapeProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPFootnoteShapeProperty = HWPFootnoteShapeProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -251,5 +282,39 @@ class HWPFootEndNoteShape {
         it.divideLineSort = HWPBorderType.valueOf(this.divideLineSort.value)
         it.divideLineThickness = HWPBorderThickness.valueOf(this.divideLineThickness.value)
         it.divideLineColor.value = this.divideLineColor.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFootEndNoteShape] 생성된 객체 반환
+         */
+        fun build(property: HWPFootnoteShapeProperty = HWPFootnoteShapeProperty.build(),
+                  userSymbol: String? = null,
+                  beforeDecorativeLetter: String? = null,
+                  afterDecorativeLetter: String? = null,
+                  startNumber: Int = 0,
+                  divideLineLength: Long = 0,
+                  divideLineTopMargin: Int = 0,
+                  divideLineBottomMargin: Int = 0,
+                  betweenNotesMargin: Int = 0,
+                  divideLineSort: HWPBorderType = HWPBorderType.Solid,
+                  divideLineThickness: HWPBorderThickness = HWPBorderThickness.MM0_1,
+                  divideLineColor: Color4Byte = Color4Byte.build())
+                : HWPFootEndNoteShape = HWPFootEndNoteShape().apply {
+            this.property = property
+            this.userSymbol = userSymbol
+            this.beforeDecorativeLetter = beforeDecorativeLetter
+            this.afterDecorativeLetter = afterDecorativeLetter
+            this.startNumber = startNumber
+            this.divideLineLength = divideLineLength
+            this.divideLineTopMargin = divideLineTopMargin
+            this.divideLineBottomMargin = divideLineBottomMargin
+            this.betweenNotesMargin = betweenNotesMargin
+            this.divideLineSort = divideLineSort
+            this.divideLineThickness = divideLineThickness
+            this.divideLineColor = divideLineColor
+        }
     }
 }

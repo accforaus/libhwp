@@ -103,4 +103,33 @@ class HWPPageHideHeaderProperty {
     fun setHidePageNumber(hidePageNumder: Boolean) {
         value = set(value, 4, hidePageNumder)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageHideHeaderProperty] 생성된 객체 반환
+         */
+        fun build(hideHeader: Boolean = false,
+                  hideFooter: Boolean = false,
+                  hideBatangPage: Boolean = false,
+                  hideBorder: Boolean = false,
+                  hidePageNumder: Boolean = false)
+                : HWPPageHideHeaderProperty = HWPPageHideHeaderProperty().apply {
+            setHideHeader(hideHeader)
+            setHideFooter(hideFooter)
+            setHideBatangPage(hideBatangPage)
+            setHideBorder(hideBorder)
+            setHidePageNumber(hidePageNumder)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageHideHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPPageHideHeaderProperty = HWPPageHideHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }

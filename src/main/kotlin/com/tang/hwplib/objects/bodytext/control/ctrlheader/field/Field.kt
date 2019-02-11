@@ -103,4 +103,33 @@ class HWPFieldHeaderProperty {
     fun setModifiedContent(modifiedContent: Boolean) {
         value = set(value, 15, modifiedContent)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFieldHeaderProperty] 생성된 객체 반환
+         */
+        fun build(modifyReadOnlyProperty: Boolean = false,
+                  updateTextPropertyAtUpdatingHyperlinkNotOpened: Boolean = false,
+                  updateTextPropertyAtUpdatingHyperlinkOpened: Boolean = false,
+                  updateTextPropertyAtUpdatingHyperlinkCreating: Boolean = false,
+                  modifiedContent: Boolean = false)
+                : HWPFieldHeaderProperty = HWPFieldHeaderProperty().apply {
+            setModifyInReadOnlyState(modifyReadOnlyProperty)
+            setUpdateTextPropertyAtUpdatingHyperlinkNotOpened(updateTextPropertyAtUpdatingHyperlinkNotOpened)
+            setUpdateTextPropertyAtUpdatingHyperlinkOpened(updateTextPropertyAtUpdatingHyperlinkOpened)
+            setUpdateTextPropertyAtUpdatingHyperlinkCreating(updateTextPropertyAtUpdatingHyperlinkCreating)
+            setModifiedContent(modifiedContent)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPFieldHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long) : HWPFieldHeaderProperty = HWPFieldHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }

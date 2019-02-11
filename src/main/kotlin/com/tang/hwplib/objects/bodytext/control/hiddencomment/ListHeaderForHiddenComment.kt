@@ -24,4 +24,18 @@ class ListHeaderForHiddenComment {
         it.paraCount = this.paraCount
         it.property.value = this.property.value
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderForHiddenComment] 생성된 객체 반환
+         */
+        fun build(paraCount: Int = 0,
+                  property: HWPListHeaderProperty = HWPListHeaderProperty.build())
+                : ListHeaderForHiddenComment = ListHeaderForHiddenComment().apply {
+            this.paraCount = paraCount
+            this.property = property
+        }
+    }
 }

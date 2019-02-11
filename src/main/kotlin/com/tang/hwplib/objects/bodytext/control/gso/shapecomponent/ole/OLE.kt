@@ -177,4 +177,30 @@ class HWPShapeComponentOLEProperty {
     fun setObjectSort(objectSort: HWPObjectSort) {
         value = set(value, 16, 21, objectSort.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentOLEProperty] 생성된 객체 반환
+         */
+        fun build(dvaspect: DVASPECT = DVASPECT.CONTENT,
+                  moniker: Boolean = false, baseLine: Byte = 0,
+                  objectSort: HWPObjectSort = HWPObjectSort.Unknown)
+                : HWPShapeComponentOLEProperty = HWPShapeComponentOLEProperty().apply {
+            setDVASPECT(dvaspect)
+            setMoniker(moniker)
+            setBaseLine(baseLine)
+            setObjectSort(objectSort)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentOLEProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0): HWPShapeComponentOLEProperty = HWPShapeComponentOLEProperty().apply {
+            this.value = value
+        }
+    }
 }

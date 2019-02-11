@@ -28,10 +28,10 @@ class HWPShapeComponentEllipseProperty {
      * (interval - 원 위에 존재하는 두 점 사이의 거리)
      * bit 0
      *
-     * @param [recalcurateIntervalWhenChangingArc] [Boolean] 호(ARC)로 바뀌었을 때, interval을 다시 계산해야 할 필요가 있는지 여부값
+     * @param [recalculateIntervalWhenChangingArc] [Boolean] 호(ARC)로 바뀌었을 때, interval을 다시 계산해야 할 필요가 있는지 여부값
      */
-    fun setRecalculateIntervalWhenChanginArc(recalcurateIntervalWhenChangingArc: Boolean) {
-        value = set(value, 0, recalcurateIntervalWhenChangingArc)
+    fun setRecalculateIntervalWhenChangingArc(recalculateIntervalWhenChangingArc: Boolean) {
+        value = set(value, 0, recalculateIntervalWhenChangingArc)
     }
 
     /**
@@ -68,5 +68,29 @@ class HWPShapeComponentEllipseProperty {
      */
     fun setArcSort(arcSort: Short) {
         value = set(value, 2, 9, arcSort.toInt())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentEllipseProperty] 생성된 객체 반환
+         */
+        fun build(recalculateIntervalWhenChangingArc: Boolean = false,
+                  changeArc: Boolean = false, arcSort: Short = 0)
+                : HWPShapeComponentEllipseProperty = HWPShapeComponentEllipseProperty().apply {
+            setRecalculateIntervalWhenChangingArc(recalculateIntervalWhenChangingArc)
+            setChangeArc(changeArc)
+            setArcSort(arcSort)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentEllipseProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPShapeComponentEllipseProperty = HWPShapeComponentEllipseProperty().apply {
+            this.value = value
+        }
     }
 }

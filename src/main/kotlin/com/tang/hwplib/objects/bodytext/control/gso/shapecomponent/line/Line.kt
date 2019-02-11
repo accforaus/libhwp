@@ -388,7 +388,7 @@ class HWPLineInfoProperty {
      *
      * @param [endArrowShape] [HWPLineArrowSize] 화살표 끝 크기값
      */
-    fun setEndArrowSize(endArrowShape: HWPLineArrowShape) {
+    fun setEndArrowSize(endArrowShape: HWPLineArrowSize) {
         value = set(value, 26, 29, endArrowShape.value.toInt())
     }
 
@@ -427,6 +427,40 @@ class HWPLineInfoProperty {
     fun setFillEndArrow(fillEndArrow: Boolean) {
         value = set(value, 31, fillEndArrow)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLineInfoProperty] 생성된 객체 반환
+         */
+        fun build(lineType: HWPLineType = HWPLineType.None,
+                  lineEndShape: HWPLineEndShape = HWPLineEndShape.Round,
+                  startArrowShape: HWPLineArrowShape = HWPLineArrowShape.None,
+                  endArrowShape: HWPLineArrowShape = HWPLineArrowShape.None,
+                  startArrowSize: HWPLineArrowSize = HWPLineArrowSize.SmallSmall,
+                  endArrowSize: HWPLineArrowSize = HWPLineArrowSize.SmallSmall,
+                  fillStartArrow: Boolean = false, fillEndArrow: Boolean = false)
+                : HWPLineInfoProperty = HWPLineInfoProperty().apply {
+            setLineType(lineType)
+            setLineEndShape(lineEndShape)
+            setStartArrowShape(startArrowShape)
+            setEndArrowShape(endArrowShape)
+            setStartArrowSize(startArrowSize)
+            setEndArrowSize(endArrowSize)
+            setFillStartArrow(fillStartArrow)
+            setFillEndArrow(fillEndArrow)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLineInfoProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPLineInfoProperty = HWPLineInfoProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -456,5 +490,23 @@ class HWPLineInfo {
         it.thickness = this.thickness
         it.property.value = this.property.value
         it.outlineStyle.value = this.outlineStyle.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPLineInfo] 생성된 객체 반환
+         */
+        fun build(color: Color4Byte = Color4Byte.build(),
+                  thickness: Int = 0,
+                  property: HWPLineInfoProperty = HWPLineInfoProperty.build(),
+                  outlineStyle: HWPOutlineStyle = HWPOutlineStyle.Normal)
+                : HWPLineInfo = HWPLineInfo().apply {
+            this.color = color
+            this.thickness = thickness
+            this.property = property
+            this.outlineStyle = outlineStyle
+        }
     }
 }

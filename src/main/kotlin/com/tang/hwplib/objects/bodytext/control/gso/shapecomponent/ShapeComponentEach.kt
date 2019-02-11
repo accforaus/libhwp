@@ -51,6 +51,27 @@ class HWPShapeComponentArc {
         it.axis2X = this.axis2X
         it.axis2Y = this.axis2Y
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentArc] 생성된 객체 반환
+         */
+        fun build(arcBorder: HWPArcBorder = HWPArcBorder.Arc,
+                  centerX: Int = 0, centerY: Int = 0,
+                  axis1X: Int = 0, axis1Y: Int = 0,
+                  axis2X: Int = 0, axis2Y: Int = 0)
+                : HWPShapeComponentArc = HWPShapeComponentArc().apply {
+            this.arcBorder = arcBorder
+            this.centerX = centerX
+            this.centerY = centerY
+            this.axis1X = axis1X
+            this.axis1Y = axis1Y
+            this.axis2X = axis2X
+            this.axis2Y = axis2Y
+        }
+    }
 }
 
 /**
@@ -90,6 +111,22 @@ class HWPShapeComponentCurve {
     fun copy() : HWPShapeComponentCurve = HWPShapeComponentCurve().also {
         for (position in this.positionList) it.positionList.add(position.copy())
         for (segmentType in this.segmentTypeList) it.segmentTypeList.add(HWPCurveSegmentType.valueOf(segmentType.value))
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentCurve] 생성된 객체 반환
+         */
+        fun build(
+                positionGenerator: () -> ArrayList<HWPPositionXY> = {ArrayList()},
+                segmentTypeGenerator: () -> ArrayList<HWPCurveSegmentType> = {ArrayList()}
+        )
+                : HWPShapeComponentCurve = HWPShapeComponentCurve().apply {
+            this.positionList = positionGenerator()
+            this.segmentTypeList = segmentTypeGenerator()
+        }
     }
 }
 
@@ -154,6 +191,36 @@ class HWPShapeComponentEllipse {
         it.endX2 = this.endX2
         it.endY2 = this.endY2
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentEllipse] 생성된 객체 반환
+         */
+        fun build(property: HWPShapeComponentEllipseProperty = HWPShapeComponentEllipseProperty.build(),
+                  centerX: Int = 0, centerY: Int = 0, axis1X: Int = 0, axis1Y: Int = 0,
+                  axis2X: Int = 0, axis2Y: Int = 0, startX: Int = 0, startY: Int = 0,
+                  endX: Int = 0, endY: Int = 0, startX2: Int = 0, startY2: Int = 0,
+                  endX2: Int = 0, endY2: Int = 0)
+                : HWPShapeComponentEllipse = HWPShapeComponentEllipse().apply {
+            this.property = property
+            this.centerX = centerX
+            this.centerY = centerY
+            this.axis1X = axis1X
+            this.axis1Y = axis1Y
+            this.axis2X = axis2X
+            this.axis2Y = axis2Y
+            this.startX = startX
+            this.startY = startY
+            this.endX = endX
+            this.endY = endY
+            this.startX2 = startX2
+            this.startY2 = startY2
+            this.endX2 = endX2
+            this.endY2 = endY2
+        }
+    }
 }
 
 /**
@@ -187,6 +254,24 @@ class HWPShapeComponentLine {
         it.endY = this.endY
         it.startedRightOrBottom = this.startedRightOrBottom
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentLine] 생성된 객체 반환
+         */
+        fun build(startX: Int = 0, startY: Int = 0,
+                  endX: Int = 0, endY: Int = 0,
+                  startedRightOrBottom: Boolean = false)
+                : HWPShapeComponentLine = HWPShapeComponentLine().apply {
+            this.startX = startX
+            this.startY = startY
+            this.endX = endX
+            this.endY = endY
+            this.startedRightOrBottom = startedRightOrBottom
+        }
+    }
 }
 
 /**
@@ -219,6 +304,23 @@ class HWPShapeComponentLineForObjectLinkLine {
         it.endX = this.endX
         it.endY = this.endY
         it.unknown = this.unknown?.copyOf()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentLineForObjectLinkLine] 생성된 객체 반환
+         */
+        fun build(startX: Int = 0, startY: Int = 0,
+                  endX: Int = 0, endY: Int = 0, unknown: ByteArray? = null)
+                : HWPShapeComponentLineForObjectLinkLine = HWPShapeComponentLineForObjectLinkLine().apply {
+            this.startX = startX
+            this.startY = startY
+            this.endX = endX
+            this.endY = endY
+            this.unknown = unknown
+        }
     }
 }
 
@@ -258,6 +360,27 @@ class HWPShapeComponentOLE {
         it.borderColor.value = this.borderColor.value
         it.borderThickness = this.borderThickness
         it.borderProperty.value = this.borderProperty.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentOLE] 생성된 객체 반환
+         */
+        fun build(property: HWPShapeComponentOLEProperty = HWPShapeComponentOLEProperty.build(),
+                  extentWidth: Int = 0, extentHeight: Int = 0,
+                  binDataId: Int = 0, borderColor: Color4Byte = Color4Byte.build(),
+                  borderThickness: Int = 0, borderProperty: HWPLineInfoProperty = HWPLineInfoProperty.build())
+                : HWPShapeComponentOLE = HWPShapeComponentOLE().apply {
+            this.property = property
+            this.extentWidth = extentWidth
+            this.extentHeight = extentHeight
+            this.binDataId = binDataId
+            this.borderColor = borderColor
+            this.borderThickness = borderThickness
+            this.borderProperty = borderProperty
+        }
     }
 }
 
@@ -334,6 +457,45 @@ class HWPShapeComponentPicture {
         it.imageHeight = this.imageHeight
         it.imageTransparency = this.imageTransparency
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentPicture] 생성된 객체 반환
+         */
+        fun build(borderColor: Color4Byte = Color4Byte.build(),
+                  borderThickness: Int = 0, borderProperty: HWPLineInfoProperty = HWPLineInfoProperty.build(),
+                  leftTop: HWPPositionXY = HWPPositionXY.build(),
+                  rightTop: HWPPositionXY = HWPPositionXY.build(),
+                  leftBottom: HWPPositionXY = HWPPositionXY.build(),
+                  rightBottom: HWPPositionXY = HWPPositionXY.build(),
+                  leftAfterCutting: Int = 0, topAfterCutting: Int = 0, rightAfterCutting: Int = 0,
+                  bottomAfterCutting: Int = 0, innerMargin: HWPInnerMargin = HWPInnerMargin.build(),
+                  pictureInfo: HWPPictureInfo = HWPPictureInfo.build(),
+                  borderTransparency: Short = 0, pictureEffect: HWPPictureEffect = HWPPictureEffect.build(),
+                  imageWidth: Long = 0, imageHeight: Long = 0, imageTransparency: Byte = 0)
+                : HWPShapeComponentPicture = HWPShapeComponentPicture().apply {
+            this.borderColor = borderColor
+            this.borderThickness = borderThickness
+            this.borderProperty = borderProperty
+            this.leftTop = leftTop
+            this.rightTop = rightTop
+            this.leftBottom = leftBottom
+            this.rightBottom = rightBottom
+            this.leftAfterCutting = leftAfterCutting
+            this.topAfterCutting = topAfterCutting
+            this.rightAfterCutting = rightAfterCutting
+            this.bottomAfterCutting = bottomAfterCutting
+            this.innerMargin = innerMargin
+            this.pictureInfo = pictureInfo
+            this.borderTransparency = borderTransparency
+            this.pictureEffect = pictureEffect
+            this.imageWidth = imageWidth
+            this.imageHeight = imageHeight
+            this.imageTransparency = imageTransparency
+        }
+    }
 }
 
 /**
@@ -361,6 +523,19 @@ class HWPShapeComponentPolygon {
      */
     fun copy() : HWPShapeComponentPolygon = HWPShapeComponentPolygon().also {
         for (position in this.positionList) it.positionList.add(position.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentPolygon] 생성된 객체 반환
+         */
+        fun build(
+                positionGenerator: () -> ArrayList<HWPPositionXY> = {ArrayList()}
+        ) : HWPShapeComponentPolygon = HWPShapeComponentPolygon().apply {
+            this.positionList = positionGenerator()
+        }
     }
 }
 
@@ -405,6 +580,26 @@ class HWPShapeComponentRectangle {
         it.y3 = this.y3
         it.x4 = this.x4
         it.y4 = this.y4
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPShapeComponentRectangle] 생성된 객체 반환
+         */
+        fun build(x1: Int = 0, y1: Int = 0, x2: Int = 0, y2: Int = 0,
+                  x3: Int = 0, y3: Int = 0, x4: Int = 0, y4: Int = 0)
+                : HWPShapeComponentRectangle = HWPShapeComponentRectangle().apply {
+            this.x1 = x1
+            this.y1 = y1
+            this.x2 = x2
+            this.y2 = y2
+            this.x3 = x3
+            this.y3 = y3
+            this.x4 = x4
+            this.y4 = y4
+        }
     }
 }
 

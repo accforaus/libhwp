@@ -120,6 +120,22 @@ class HWPControlArc: HWPGsoControl {
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
         it.shapeComponentArc = this.shapeComponentArc.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlArc] 생성된 객체 반환
+         */
+        fun build(textBox: HWPTextBox? = null,
+                  shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentArc: HWPShapeComponentArc = HWPShapeComponentArc.build())
+                : HWPControlArc = HWPControlArc(HWPCtrlHeaderGso()).apply {
+            this.textBox = textBox
+            this.shapeComponent = shapeComponent
+            this.shapeComponentArc = shapeComponentArc
+        }
+    }
 }
 
 /**
@@ -167,6 +183,20 @@ class HWPControlContainer: HWPGsoControl {
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentContainer).copy()
         for (childControl in this.childControlList)
             it.childControlList.add(childControl.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlContainer] 생성된 객체 반환
+         */
+        fun build(childControlGenerator: () -> ArrayList<HWPGsoControl> = {ArrayList()},
+                  shapeComponent: HWPShapeComponentContainer = HWPShapeComponentContainer.build())
+                : HWPControlContainer = HWPControlContainer(HWPCtrlHeaderGso()).apply {
+            this.shapeComponent = shapeComponent
+            this.childControlList = childControlGenerator()
+        }
     }
 }
 
@@ -218,6 +248,22 @@ class HWPControlCurve: HWPGsoControl {
         this.textBox?.run { it.textBox = this.copy() }
         it.shapeComponentCurve = this.shapeComponentCurve.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlCurve] 생성된 객체 반환
+         */
+        fun build(textBox: HWPTextBox? = null,
+                  shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentCurve: HWPShapeComponentCurve = HWPShapeComponentCurve.build())
+                : HWPControlCurve = HWPControlCurve(HWPCtrlHeaderGso()).apply {
+            this.textBox = textBox
+            this.shapeComponent = shapeComponent
+            this.shapeComponentCurve = shapeComponentCurve
+        }
+    }
 }
 
 /**
@@ -268,6 +314,22 @@ class HWPControlEllipse: HWPGsoControl {
         this.textBox?.run { it.textBox = this.copy() }
         it.shapeComponentEllipse = this.shapeComponentEllipse.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlEllipse] 생성된 객체 반환
+         */
+        fun build(textBox: HWPTextBox? = null,
+                  shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentEllipse: HWPShapeComponentEllipse = HWPShapeComponentEllipse.build())
+                : HWPControlEllipse = HWPControlEllipse(HWPCtrlHeaderGso()).apply {
+            this.textBox = textBox
+            this.shapeComponent = shapeComponent
+            this.shapeComponentEllipse = shapeComponentEllipse
+        }
+    }
 }
 
 /**
@@ -304,6 +366,20 @@ class HWPControlLine: HWPGsoControl {
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
         it.shapeComponentLine = this.shapeComponentLine.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlLine] 생성된 객체 반환
+         */
+        fun build(shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentLine: HWPShapeComponentLine = HWPShapeComponentLine.build())
+                : HWPControlLine = HWPControlLine(HWPCtrlHeaderGso()).apply {
+            this.shapeComponent = shapeComponent
+            this.shapeComponentLine = shapeComponentLine
+        }
+    }
 }
 
 /**
@@ -339,6 +415,20 @@ class HWPControlObjectLinkLine: HWPGsoControl {
         if (it.shapeComponent is HWPShapeComponentNormal)
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
         it.shapeComponentObjectLinkLine = this.shapeComponentObjectLinkLine
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlObjectLinkLine] 생성된 객체 반환
+         */
+        fun build(shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentObjectLinkLine: HWPShapeComponentLineForObjectLinkLine = HWPShapeComponentLineForObjectLinkLine.build())
+                : HWPControlObjectLinkLine = HWPControlObjectLinkLine(HWPCtrlHeaderGso()).apply {
+            this.shapeComponent = shapeComponent
+            this.shapeComponentObjectLinkLine = shapeComponentObjectLinkLine
+        }
     }
 }
 
@@ -377,6 +467,20 @@ class HWPControlOLE: HWPGsoControl {
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
         it.shapeComponentOLE = this.shapeComponentOLE.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlOLE] 생성된 객체 반환
+         */
+        fun build(shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentOLE: HWPShapeComponentOLE = HWPShapeComponentOLE.build())
+                : HWPControlOLE = HWPControlOLE(HWPCtrlHeaderGso()).apply {
+            this.shapeComponent = shapeComponent
+            this.shapeComponentOLE = shapeComponentOLE
+        }
+    }
 }
 
 /**
@@ -413,6 +517,20 @@ class HWPControlPicture: HWPGsoControl {
         if (it.shapeComponent is HWPShapeComponentNormal)
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
         it.shapeComponentPicture = this.shapeComponentPicture.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlPicture] 생성된 객체 반환
+         */
+        fun build(shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentPicture: HWPShapeComponentPicture = HWPShapeComponentPicture.build())
+                : HWPControlPicture = HWPControlPicture(HWPCtrlHeaderGso()).apply {
+            this.shapeComponent = shapeComponent
+            this.shapeComponentPicture = shapeComponentPicture
+        }
     }
 }
 
@@ -464,6 +582,22 @@ class HWPControlPolygon: HWPGsoControl {
         this.textBox?.run { it.textBox = this.copy() }
         it.shapeComponentPolygon = this.shapeComponentPolygon.copy()
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlPolygon] 생성된 객체 반환
+         */
+        fun build(textBox: HWPTextBox? = null,
+                  shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentPolygon: HWPShapeComponentPolygon = HWPShapeComponentPolygon.build())
+                : HWPControlPolygon = HWPControlPolygon(HWPCtrlHeaderGso()).apply {
+            this.textBox = textBox
+            this.shapeComponent = shapeComponent
+            this.shapeComponentPolygon = shapeComponentPolygon
+        }
+    }
 }
 
 /**
@@ -513,6 +647,22 @@ class HWPControlRectangle: HWPGsoControl {
             it.shapeComponent = (this.shapeComponent as HWPShapeComponentNormal).copy()
         this.textBox?.run { it.textBox = this.copy() }
         it.shapeComponentRectangle = this.shapeComponentRectangle.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPControlRectangle] 생성된 객체 반환
+         */
+        fun build(textBox: HWPTextBox? = null,
+                  shapeComponent: HWPShapeComponentNormal = HWPShapeComponentNormal.build(),
+                  shapeComponentRectangle: HWPShapeComponentRectangle = HWPShapeComponentRectangle.build())
+                : HWPControlRectangle = HWPControlRectangle(HWPCtrlHeaderGso()).apply {
+            this.textBox = textBox
+            this.shapeComponent = shapeComponent
+            this.shapeComponentRectangle = shapeComponentRectangle
+        }
     }
 }
 

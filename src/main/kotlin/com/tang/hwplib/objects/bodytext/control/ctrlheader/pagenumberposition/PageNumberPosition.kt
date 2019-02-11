@@ -121,4 +121,26 @@ class PageNumberPositionHeaderProperty {
         value = set(value, 8, 11, numberPosition.value.toInt())
     }
 
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [PageNumberPositionHeaderProperty] 생성된 객체 반환
+         */
+        fun build(numberShape: HWPNumberShape = HWPNumberShape.Type0,
+                  numberPosition: HWPNumberPosition = HWPNumberPosition.None)
+                : PageNumberPositionHeaderProperty = PageNumberPositionHeaderProperty().apply {
+            setNumberShape(numberShape)
+            setNumberPosition(numberPosition)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [PageNumberPositionHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : PageNumberPositionHeaderProperty = PageNumberPositionHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }

@@ -42,4 +42,28 @@ class HWPEQEdit {
         it.fontName = this.fontName
         it.unknown = this.unknown
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPEQEdit] 생성된 객체 반환
+         */
+        fun build(property: Long = 0,
+                  script: String? = null,
+                  letterSize: Long = 0,
+                  letterColor: Color4Byte = Color4Byte.build(),
+                  baseLine: Short = 0, versionInfo: String? = null,
+                  fontName: String? = null, unknown: String? = null)
+                : HWPEQEdit = HWPEQEdit().apply {
+            this.property = property
+            this.script = script
+            this.letterSize = letterSize
+            this.letterColor = letterColor
+            this.baseLine = baseLine
+            this.versionInfo = versionInfo
+            this.fontName = fontName
+            this.unknown = unknown
+        }
+    }
 }

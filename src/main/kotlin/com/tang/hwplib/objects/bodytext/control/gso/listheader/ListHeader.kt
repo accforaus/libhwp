@@ -70,4 +70,29 @@ class HWPListHeaderProperty {
     fun setTextVerticalAlignment(textVerticalAlignment: HWPTextVerticalAlignment) {
         value = set(value, 5, 6, textVerticalAlignment.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPTextDirection] 생성된 객체 반환
+         */
+        fun build(textDirection: HWPTextDirection = HWPTextDirection.Horizontal,
+                  lineChange: HWPLineChange = HWPLineChange.Normal,
+                  textVerticalAlignment: HWPTextVerticalAlignment = HWPTextVerticalAlignment.Top)
+                : HWPListHeaderProperty = HWPListHeaderProperty().apply {
+            setTextDirection(textDirection)
+            setLineChange(lineChange)
+            setTextVerticalAlignment(textVerticalAlignment)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPListHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long) : HWPListHeaderProperty = HWPListHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }

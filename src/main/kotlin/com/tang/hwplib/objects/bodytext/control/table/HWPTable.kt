@@ -87,6 +87,29 @@ class TableProperty {
     fun setAutoRepeatTitleRow(autoRepeatTitleRow: Boolean) {
         value = set(value, 2, autoRepeatTitleRow)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [TableProperty] 생성된 객체 반환
+         */
+        fun build(divideAtPageBoundary: DivideAtPageBoundary = DivideAtPageBoundary.NoDivide,
+                  autoRepeatTitleRow: Boolean = false)
+                : TableProperty = TableProperty().apply {
+            setDivideAtPageBoundary(divideAtPageBoundary)
+            setAutoRepeatTitleRow(autoRepeatTitleRow)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [TableProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : TableProperty = TableProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -153,5 +176,33 @@ class HWPTable {
         for (int in this.cellCountOfRowList) it.cellCountOfRowList.add(int)
         it.borderFillId = this.borderFillId
         for (zoneInfo in this.zoneInfoList) it.zoneInfoList.add(zoneInfo.copy())
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPTable] 생성된 객체 반환
+         */
+        fun build(property: TableProperty = TableProperty.build(),
+                  rowCount: Int = 0, columnCount: Int = 0,
+                  cellSpacing: Int = 0, leftInnerMargin: Int = 0,
+                  rightInnerMargin: Int = 0, topInnerMargin: Int = 0,
+                  bottomInnerMargin: Int = 0, borderFillId: Int = 0,
+                  cellCountOfRowGenerator: () -> ArrayList<Int> = {ArrayList()},
+                  zoneInfoGenerator: () -> ArrayList<HWPZoneInfo> = {ArrayList()})
+                : HWPTable = HWPTable().apply {
+            this.property = property
+            this.rowCount = rowCount
+            this.columnCount = columnCount
+            this.cellSpacing = cellSpacing
+            this.leftInnerMargin = leftInnerMargin
+            this.rightInnerMargin = rightInnerMargin
+            this.topInnerMargin = topInnerMargin
+            this.bottomInnerMargin = bottomInnerMargin
+            this.cellCountOfRowList = cellCountOfRowGenerator()
+            this.borderFillId = borderFillId
+            this.zoneInfoList = zoneInfoGenerator()
+        }
     }
 }

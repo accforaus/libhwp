@@ -162,6 +162,33 @@ class HWPPageBorderFillProperty {
     fun setFillArea(fillArea: HWPFillArea) {
         value = set(value, 3, 4, fillArea.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageBorderFillProperty] 생성된 객체 반환
+         */
+        fun build(positionCriterion: HWPPositionCriterion = HWPPositionCriterion.MainText,
+                  includeHeader: Boolean = false,
+                  includeFooter: Boolean = false,
+                  fillArea: HWPFillArea = HWPFillArea.Paper)
+                : HWPPageBorderFillProperty = HWPPageBorderFillProperty().apply {
+            setPositionCriterion(positionCriterion)
+            setIncludeHeader(includeHeader)
+            setIncludeFooter(includeFooter)
+            setFillArea(fillArea)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageBorderFillProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPPageBorderFillProperty = HWPPageBorderFillProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -198,6 +225,25 @@ class HWPPageBorderFill {
         it.topGap = this.topGap
         it.bottomGap = this.bottomGap
         it.borderFillId = this.borderFillId
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageBorderFill] 생성된 객체 반환
+         */
+        fun build(property: HWPPageBorderFillProperty = HWPPageBorderFillProperty.build(),
+                  leftGap: Int = 0, rightGap: Int = 0, topGap: Int = 0, bottomGap: Int = 0,
+                  borderFillId: Int = 0)
+                : HWPPageBorderFill = HWPPageBorderFill().apply {
+            this.property = property
+            this.leftGap = leftGap
+            this.rightGap = rightGap
+            this.topGap = topGap
+            this.bottomGap = bottomGap
+            this.borderFillId = borderFillId
+        }
     }
 }
 
@@ -325,6 +371,29 @@ class HWPPageDefProperty {
     fun setMakingBookMethod(makingBookMethod: HWPMakingBookMethod) {
         value = set(value, 1, 2, makingBookMethod.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageDefProperty] 생성된 객체 반환
+         */
+        fun build(paperDirection: HWPPaperDirection = HWPPaperDirection.Portrait,
+                  makingBookMethod: HWPMakingBookMethod = HWPMakingBookMethod.OneSideEditing)
+                : HWPPageDefProperty = HWPPageDefProperty().apply {
+            setPaperDirection(paperDirection)
+            setMakingBookMethod(makingBookMethod)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageDefProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPPageDefProperty = HWPPageDefProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -373,5 +442,31 @@ class HWPPageDef {
         it.footerMargin = this.footerMargin
         it.gutterMargin = this.gutterMargin
         it.property.value = this.property.value
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPPageDef] 생성된 객체 반환
+         */
+        fun build(paperWidth: Long = 0, paperHeight: Long = 0,
+                  leftMargin: Long = 0, rightMargin: Long = 0,
+                  topMargin: Long = 0, bottomMargin: Long = 0,
+                  headerMargin: Long = 0, footerMargin: Long = 0,
+                  gutterMargin: Long = 0,
+                  property: HWPPageDefProperty = HWPPageDefProperty.build())
+                : HWPPageDef = HWPPageDef().apply {
+            this.paperWidth = paperWidth
+            this.paperHeight = paperHeight
+            this.leftMargin = leftMargin
+            this.rightMargin = rightMargin
+            this.topMargin = topMargin
+            this.bottomMargin = bottomMargin
+            this.headerMargin = headerMargin
+            this.footerMargin = footerMargin
+            this.gutterMargin = gutterMargin
+            this.property = property
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.tang.hwplib.objects.bodytext.control.ctrlheader.sectiondefine
 
+import com.tang.hwplib.objects.bodytext.HWPSection
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
 
@@ -267,5 +268,48 @@ class HWPSectionDefineHeaderProperty {
      */
     fun setApplyWongoji(applyWongoji: Boolean) {
         value = set(value, 22, applyWongoji)
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPSectionDefineHeaderProperty] 생성된 객체 반환
+         */
+        fun build(hideHeader: Boolean = false,
+                  hideFooter: Boolean = false,
+                  hideBatangPage: Boolean = false,
+                  hideBorder: Boolean = false,
+                  hideBackground: Boolean = false,
+                  hidePageNumberPosition: Boolean = false,
+                  displayBorderAtFirstPageOfSection: Boolean = false,
+                  displayBackgroundAtFirstPageOfSection: Boolean,
+                  textDirection: HWPTextDirection = HWPTextDirection.Horizontal,
+                  hideEmptyLine: Boolean = false,
+                  applyPageNumberByDivideSection: Boolean = false,
+                  applyWongoji: Boolean = false)
+                : HWPSectionDefineHeaderProperty = HWPSectionDefineHeaderProperty().apply {
+            setHideHeader(hideHeader)
+            setHideFooter(hideFooter)
+            setHideBatangPage(hideBatangPage)
+            setHideBorder(hideBorder)
+            setHideBackground(hideBackground)
+            setHidePageNumberPosition(hidePageNumberPosition)
+            setDisplayBorderAtFirstPageOfSection(displayBorderAtFirstPageOfSection)
+            setDisplayBackgroundAtFirstPageOfSection(displayBackgroundAtFirstPageOfSection)
+            setTextDirection(textDirection)
+            setHideEmptyLine(hideEmptyLine)
+            setApplyPageNumberByDivideSection(applyPageNumberByDivideSection)
+            setApplyWongoji(applyWongoji)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPSectionDefineHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : HWPSectionDefineHeaderProperty = HWPSectionDefineHeaderProperty().apply {
+            this.value = value
+        }
     }
 }

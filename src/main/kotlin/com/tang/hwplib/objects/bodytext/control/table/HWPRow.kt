@@ -23,6 +23,19 @@ class HWPRow {
     fun copy() : HWPRow = HWPRow().also {
         for (cell in this.cellList) it.cellList.add(cell.copy())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPRow] 생성된 객체 반환
+         */
+        fun build(
+                cellGenerator: () -> ArrayList<HWPCell> = {ArrayList()}
+        ) : HWPRow = HWPRow().apply {
+            this.cellList = cellGenerator()
+        }
+    }
 }
 
 /**
@@ -55,5 +68,25 @@ class HWPZoneInfo {
         it.endColumn = this.endColumn
         it.endRow = this.endRow
         it.borderFillId = this.borderFillId
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPZoneInfo] 생성된 객체 반환
+         */
+        fun build(startColumn: Int = 0,
+                  startRow: Int = 0,
+                  endColumn: Int = 0,
+                  endRow: Int = 0,
+                  borderFillId: Int = 0)
+                : HWPZoneInfo = HWPZoneInfo().apply {
+            this.startColumn = startColumn
+            this.startRow = startRow
+            this.endColumn = endColumn
+            this.endRow = endRow
+            this.borderFillId = borderFillId
+        }
     }
 }

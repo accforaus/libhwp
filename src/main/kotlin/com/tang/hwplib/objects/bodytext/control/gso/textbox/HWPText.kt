@@ -48,6 +48,31 @@ class ListHeaderForHWPTextBox {
         it.editableAtFormMode = this.editableAtFormMode
         it.fieldName = this.fieldName
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderForHWPTextBox] 생성된 객체 반환
+         */
+        fun build(paraCount: Int = 0,
+                  property: HWPListHeaderProperty = HWPListHeaderProperty.build(),
+                  leftMargin: Int = 0, rightMargin: Int = 0,
+                  topMargin: Int = 0, bottomMargin: Int = 0,
+                  textWidth: Long = 0, editableAtFormMode: Boolean = false,
+                  fieldName: String? = null)
+                : ListHeaderForHWPTextBox = ListHeaderForHWPTextBox().apply {
+            this.paraCount = paraCount
+            this.property = property
+            this.leftMargin = leftMargin
+            this.rightMargin = rightMargin
+            this.topMargin = topMargin
+            this.bottomMargin = bottomMargin
+            this.textWidth = textWidth
+            this.editableAtFormMode = editableAtFormMode
+            this.fieldName = fieldName
+        }
+    }
 }
 
 /**
@@ -70,5 +95,19 @@ class HWPTextBox {
     fun copy() : HWPTextBox = HWPTextBox().also {
         it.listHeader = this.listHeader.copy()
         it.paragraphList = this.paragraphList.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPTextBox] 생성된 객체 반환
+         */
+        fun build(listHeader: ListHeaderForHWPTextBox = ListHeaderForHWPTextBox.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPTextBox = HWPTextBox().apply {
+            this.listHeader = listHeader
+            this.paragraphList = paragraphList
+        }
     }
 }

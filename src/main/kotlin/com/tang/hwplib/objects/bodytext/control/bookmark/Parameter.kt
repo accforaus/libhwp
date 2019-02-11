@@ -141,6 +141,18 @@ class HWPParameterSet {
             pi.value_BSTR = fieldName
             return ps
         }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParameterSet] 생성된 객체 반환
+         */
+        fun build(id: Int = 0,
+                  parameterItemGenerator: () -> ArrayList<HWPParameterItem> = {ArrayList()})
+                : HWPParameterSet = HWPParameterSet().apply {
+            this.id = id
+            this.parameterItemList = parameterItemGenerator()
+        }
     }
 }
 
@@ -236,6 +248,37 @@ class HWPParameterItem {
     fun createValue_ParameterArray(count: Int) {
         value_ParameterArray = Array(count, init = {HWPParameterItem()})
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParameterItem] 생성된 객체 반환
+         */
+        fun build(id: Long = 0, type: HWPParameterType? = null,
+                  value_BSTR: String? = null, value_I1: Byte = 0,
+                  value_I2: Short = 0, value_I4: Int = 0, value_I: Int = 0,
+                  value_UI1: Short = 0, value_UI2: Int = 0, value_UI4: Long = 0,
+                  value_UI: Long = 0, value_ParameterSet: HWPParameterSet? = null,
+                  value_parameterArray_generator: () -> Array<HWPParameterItem>? = { null },
+                  value_binData: Int = -1)
+                : HWPParameterItem = HWPParameterItem().apply {
+            this.id = id
+            this.type = type
+            this.value_BSTR = value_BSTR
+            this.value_I1 = value_I1
+            this.value_I2 = value_I2
+            this.value_I4 = value_I4
+            this.value_I = value_I
+            this.value_UI1 = value_UI1
+            this.value_UI2 = value_UI2
+            this.value_UI4 = value_UI4
+            this.value_UI = value_UI
+            this.value_ParameterSet = value_ParameterSet
+            this.value_ParameterArray = value_parameterArray_generator()
+            this.value_binData = value_binData
+        }
+    }
 }
 
 /**
@@ -258,5 +301,16 @@ class HWPCtrlData {
      */
     fun copy() : HWPCtrlData = HWPCtrlData().also {
         it.parameterSet = this.parameterSet.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPParameterSet] 생성된 객체 반환
+         */
+        fun build(parameterSet: HWPParameterSet) : HWPCtrlData = HWPCtrlData().apply {
+            this.parameterSet = parameterSet
+        }
     }
 }

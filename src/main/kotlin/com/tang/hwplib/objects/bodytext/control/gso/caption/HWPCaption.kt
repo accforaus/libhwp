@@ -95,6 +95,29 @@ class ListHeaderCaptionProperty {
     fun setIncludeMargin(includeMargin: Boolean) {
         value = set(value, 2, includeMargin)
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderForHWPCaption] 생성된 객체 반환
+         */
+        fun build(direction: HWPCaptionDirection = HWPCaptionDirection.Left,
+                  includeMargin: Boolean = false)
+                : ListHeaderCaptionProperty = ListHeaderCaptionProperty().apply {
+            setDirection(direction)
+            setIncludeMargin(includeMargin)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderCaptionProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : ListHeaderCaptionProperty = ListHeaderCaptionProperty().apply {
+            this.value = value
+        }
+    }
 }
 
 /**
@@ -132,6 +155,26 @@ class ListHeaderForHWPCaption {
         it.spaceBetweenCaptionAndFrame = this.spaceBetweenCaptionAndFrame
         it.textWidth = this.textWidth
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [ListHeaderForHWPCaption] 생성된 객체 반환
+         */
+        fun build(paraCount: Int = 0,
+                  property: HWPListHeaderProperty = HWPListHeaderProperty.build(),
+                  captionProperty: ListHeaderCaptionProperty = ListHeaderCaptionProperty.build(),
+                  captionWidth: Long = 0, spaceBetweenCaptionAndFrame: Int = 0, textWidth: Long = 0)
+                : ListHeaderForHWPCaption = ListHeaderForHWPCaption().apply {
+            this.paraCount = paraCount
+            this.property = property
+            this.captionProperty = captionProperty
+            this.captionWidth = captionWidth
+            this.spaceBetweenCaptionAndFrame = spaceBetweenCaptionAndFrame
+            this.textWidth = textWidth
+        }
+    }
 }
 
 /**
@@ -155,5 +198,19 @@ class HWPCaption {
     fun copy() : HWPCaption = HWPCaption().also {
         it.listHeaderForCaption = this.listHeaderForCaption.copy()
         it.paragraphList = this.paragraphList.copy()
+    }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [HWPCaption] 생성된 객체 반환
+         */
+        fun build(listHeaderForCaption: ListHeaderForHWPCaption = ListHeaderForHWPCaption.build(),
+                  paragraphList: HWPParagraphList = HWPParagraphList.build())
+                : HWPCaption = HWPCaption().apply {
+            this.listHeaderForCaption = listHeaderForCaption
+            this.paragraphList = paragraphList
+        }
     }
 }

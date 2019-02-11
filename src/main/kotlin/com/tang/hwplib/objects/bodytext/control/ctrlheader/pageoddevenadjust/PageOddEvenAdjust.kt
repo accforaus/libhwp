@@ -62,4 +62,25 @@ class PageOddEvenAdjustHeaderProperty {
     fun setOddEvenDivision(oddEvenDivision: HWPOddEvenDivision) {
         value = set(value, 0, 1, oddEvenDivision.value.toInt())
     }
+
+    companion object {
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [PageOddEvenAdjustHeaderProperty] 생성된 객체 반환
+         */
+        fun build(oddEvenDivision: HWPOddEvenDivision = HWPOddEvenDivision.Both)
+                : PageOddEvenAdjustHeaderProperty = PageOddEvenAdjustHeaderProperty().apply {
+            setOddEvenDivision(oddEvenDivision)
+        }
+
+        /**
+         * 객체를 생성하고 반환하는 함수
+         *
+         * @return [PageOddEvenAdjustHeaderProperty] 생성된 객체 반환
+         */
+        fun build(value: Long = 0) : PageOddEvenAdjustHeaderProperty = PageOddEvenAdjustHeaderProperty().apply {
+            this.value = value
+        }
+    }
 }
