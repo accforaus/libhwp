@@ -1,9 +1,6 @@
 package com.tang.hwplib.objects.bodytext.paragraph
 
-import com.tang.hwplib.objects.bodytext.control.HWPControl
-import com.tang.hwplib.objects.bodytext.control.HWPControlType
-import com.tang.hwplib.objects.bodytext.control.copyControl
-import com.tang.hwplib.objects.bodytext.control.createHWPControl
+import com.tang.hwplib.objects.bodytext.control.*
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderGso
 import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
 import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
