@@ -1,5 +1,7 @@
 package com.tang.hwplib.objects.bodytext.paragraph.text
 
+import com.tang.hwplib.objects.bodytext.control.*
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
 import com.tang.hwplib.objects.etc.PARA_TEXT
 
 /**
@@ -116,22 +118,6 @@ class HWPParaText {
     }
 
     /**
-     * 섹션 정의 확장 문자 객체를 추가하는 함수
-     */
-    fun addExtendCharForSectionDefine() {
-        addNewExtendControlChar().run {
-            val addition: ByteArray = ByteArray(12)
-            addition[3] = 's'.toByte()
-            addition[2] = 'e'.toByte()
-            addition[1] = 'c'.toByte()
-            addition[0] = 'd'.toByte()
-            this.code = 0x0002.toShort()
-            this.addition = addition
-        }
-        processEndOfParagraph()
-    }
-
-    /**
      * 문단끝을 조절하는 함수
      */
     private fun processEndOfParagraph() {
@@ -141,86 +127,94 @@ class HWPParaText {
                 break
             }
         }
-        addNewNormalChar().run { this.code = 0x0d.toShort() }
+        addNewCharControlChar().run { this.code = 0x0d.toShort() }
     }
 
-    /**
-     * 단 정의 확장 문자 객체를 추가하는 함수
-     */
-    fun addExtendCharForColumnDefine() {
-        addNewExtendControlChar().run {
-            val addition: ByteArray = ByteArray(12)
-            addition[3] = 'c'.toByte()
-            addition[2] = 'o'.toByte()
-            addition[1] = 'l'.toByte()
-            addition[0] = 'd'.toByte()
-            this.code = 0x0002.toShort()
-            this.addition = addition
+    fun addExtendCharByControl(control: HWPControl) {
+        when (control) {
+            is HWPControlSectionDefine, is HWPControlColumnDefine -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.SectionColumnDefine.value
+                }
+            }
+            is HWPControlField -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getFieldStartAddition(control)
+                    this.code = HWPControlExtendType.FieldStart.value
+                }
+            }
+            is HWPGsoControl -> {
+                addNewExtendControlChar().run {
+                    val addition: ByteArray = ByteArray(12)
+                    addition[3] = 'g'.toByte()
+                    addition[2] = 's'.toByte()
+                    addition[1] = 'o'.toByte()
+                    addition[0] = ' '.toByte()
+                    this.addition = addition
+                    this.code = HWPControlExtendType.GsoControl.value
+                }
+            }
+            is HWPControlHiddenComment -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.HiddenComment.value
+                }
+            }
+            is HWPControlHeader, is HWPControlFooter -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.HeaderFooter.value
+                }
+            }
+            is HWPControlFootnote, is HWPControlEndNote -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.FootEndNote.value
+                }
+            }
+            is HWPControlAutoNumber -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.AutoNumber.value
+                }
+            }
+            is HWPControlPageHide, is HWPControlPageOddEvenAdjust, is HWPControlPageNumberPosition -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.PageControl.value
+                }
+            }
+            is HWPControlBookmark, is HWPControlIndexMark -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.BookIndexMark.value
+                }
+            }
+            is HWPControlAdditionalText, is HWPControlOverlappingLetter -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.AdditionalOverlappingText.value
+                }
+            }
         }
         processEndOfParagraph()
     }
 
-    /**
-     * 테이블 확장 문자 객체를 추가하는 함수
-     */
-    fun addExtendCharForTable() {
-        addNewExtendControlChar().run {
-            val addition: ByteArray = ByteArray(12)
-            addition[3] = 't'.toByte()
-            addition[2] = 'b'.toByte()
-            addition[1] = 'l'.toByte()
-            addition[0] = ' '.toByte()
-            this.code = 0x000b.toShort()
-            this.addition = addition
+    fun addControlCharByType(type: HWPControlCharType) {
+        if (type.value != 0.toShort()) {
+            addNewCharControlChar().run {
+                this.code = type.value
+            }
         }
-        processEndOfParagraph()
     }
 
-    /**
-     * GSO 확장 문자 객체를 추가하는 함수
-     */
-    fun addExtendCharForGSO() {
-        addNewExtendControlChar().run {
-            val addition: ByteArray = ByteArray(12)
-            addition[3] = 'g'.toByte()
-            addition[2] = 's'.toByte()
-            addition[1] = 'o'.toByte()
-            addition[0] = ' '.toByte()
-            this.code = 0x000b.toShort()
-            this.addition = addition
+    fun addInlineCharByType(type: HWPControlInlineType) {
+        if (type.value != 0.toShort()) {
+            addNewInlineControlChar().run {
+                this.code = type.value
+            }
         }
-        processEndOfParagraph()
-    }
-
-    /**
-     * 하이퍼링크 시작 필드 확장 문자 객체를 추가하는 함수
-     */
-    fun addExtendCharForHyperlinkStart() {
-        addNewExtendControlChar().run {
-            val addition: ByteArray = ByteArray(12)
-            addition[3] = '%'.toByte()
-            addition[2] = 'h'.toByte()
-            addition[1] = 'l'.toByte()
-            addition[0] = 'k'.toByte()
-            this.code = 0x0003.toShort()
-            this.addition = addition
-        }
-        processEndOfParagraph()
-    }
-
-    /**
-     * 하이퍼링크 끝 필드 확장 문자를 추가하는 함수
-     */
-    fun addExtendCharForHyperlinkEnd() {
-        addNewExtendControlChar().run {
-            val addition: ByteArray = ByteArray(12)
-            addition[2] = 'h'.toByte()
-            addition[1] = 'l'.toByte()
-            addition[0] = 'k'.toByte()
-            this.code = 0x0004.toShort()
-            this.addition = addition
-        }
-        processEndOfParagraph()
     }
 
     /**
