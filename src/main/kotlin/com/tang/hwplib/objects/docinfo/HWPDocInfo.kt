@@ -38,57 +38,31 @@ import com.tang.hwplib.objects.etc.UnknownRecord
  */
 class HWPDocInfo {
     var documentProperties: HWPDocumentProperties = HWPDocumentProperties()
-        private set
     var idMappings: HWPIDMappings = HWPIDMappings()
-        private set
     var binDataList: ArrayList<HWPBinData> = ArrayList()
-        private set
     var hangulFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var englishFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var hanjaFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var japaneseFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var etcFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var symbolFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var userFaceNameList: ArrayList<HWPFaceName> = ArrayList()
-        private set
     var borderFillList: ArrayList<HWPBorderFill> = ArrayList()
-        private set
     var charShapeList: ArrayList<HWPCharShape> = ArrayList()
-        private set
     var tabDefList: ArrayList<HWPTabDef> = ArrayList()
-        private set
     var numberingList: ArrayList<HWPNumbering> = ArrayList()
-        private set
     var bulletList: ArrayList<HWPBullet> = ArrayList()
-        private set
     var paraShapeList: ArrayList<HWPParaShape> = ArrayList()
-        private set
     var styleList: ArrayList<HWPStyle> = ArrayList()
-        private set
     var docData: UnknownRecord? = null
-        private set
     var distributeDocData: UnknownRecord? = null
-        private set
     var compatibleDocument: HWPCompatibleDocument? = null
-        private set
     var layoutCompatibility: HWPLayoutCompatibility? = null
-        private set
     var trackChange: UnknownRecord? = null
-        private set
     var memoShapeList: ArrayList<UnknownRecord> = ArrayList()
-        private set
     var forbiddenChar: UnknownRecord? = null
-        private set
     var trackChange2List: ArrayList<UnknownRecord> = ArrayList()
-        private set
     var trackChangeAuthorList: ArrayList<UnknownRecord> = ArrayList()
-        private set
 
     /**
      * 바이너리 데이터를 추가하고 반환하는 함수
