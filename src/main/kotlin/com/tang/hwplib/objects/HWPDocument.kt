@@ -1,6 +1,9 @@
 package com.tang.hwplib.objects
 
+import com.tang.hwplib.builder.bodytext.buildEmptyBodyText
 import com.tang.hwplib.builder.buildEmptyHWPDocument
+import com.tang.hwplib.builder.docinfo.buildEmptyDocInfo
+import com.tang.hwplib.builder.fileheader.buildEmptyFileHeader
 import com.tang.hwplib.objects.bindata.HWPBinData
 import com.tang.hwplib.objects.bodytext.HWPBodyText
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
@@ -31,12 +34,9 @@ class HWPDocument {
     var binData: HWPBinData = HWPBinData()
 
     constructor() {
-        buildEmptyHWPDocument().let {
-            this.fileHeader = it.fileHeader
-            this.docInfo = it.docInfo
-            this.bodyText = it.bodyText
-            this.binData = it.binData
-        }
+        this.fileHeader = buildEmptyFileHeader()
+        buildEmptyDocInfo(this.docInfo)
+        this.bodyText = buildEmptyBodyText()
     }
 
     constructor(path: String) {
