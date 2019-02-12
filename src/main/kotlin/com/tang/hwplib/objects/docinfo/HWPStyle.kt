@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.docinfo
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.style.HWPStyleProperty
 import com.tang.hwplib.objects.docinfo.style.HWPStyleSort
 import com.tang.hwplib.objects.etc.STYLE
@@ -19,13 +22,15 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
  * @property [paraShapeId] [Int], 문단 모양[HWPParaShape] 참조값(문단 모양의 아이디 속성) 스타일의 종류가 문단인 경우 반드시 지정해야 한다. (UINT16 - unsigned 2 bytes)
  * @property [charShapeId] [Int], 글자 모양[HWPCharShape] 참조값(글자 모양의 아이디 속성) 스타일의 종류가 글자인 경우 반드시 지정해야 한다. (UINT16 - unsigned 2 bytes)
  */
-class HWPStyle {
+@LinkID class HWPStyle {
     var hangulName: String? = null
     var englishName: String? = null
     var property: HWPStyleProperty = HWPStyleProperty()
     var nextStyleId: Short = 0
     var languageId: Short = 0
+    @ID(IDTypes.ParaShape)
     var paraShapeId: Int = 0
+    @ID(IDTypes.CharShape)
     var charShapeId: Int = 0
 
     /**

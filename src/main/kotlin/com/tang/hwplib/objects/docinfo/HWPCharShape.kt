@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.docinfo
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.charshape.*
 import com.tang.hwplib.objects.etc.Color4Byte
 import com.tang.hwplib.objects.etc.CHAR_SHAPE
@@ -26,7 +29,8 @@ import com.tang.hwplib.objects.etc.CHAR_SHAPE
  * @property [borderFillId] [Int], 글자 테두리/배경 ID(CharShapeBorderFill) 참조 값 [>=5.0.2.1] (UINT16 - unsigned 2 bytes)
  * @property [strikeLineColor] [Color4Byte], 취소선 색 [>=5.0.3.0] (COLORREF - unsigned 4 bytes)
  */
-class HWPCharShape {
+@LinkID class HWPCharShape {
+    @ID(IDTypes.FaceName)
     var faceNameIds: HWPFaceNameIds = HWPFaceNameIds()
     var ratios: HWPRatios = HWPRatios()
     var charSpaces: HWPCharSpaces = HWPCharSpaces()

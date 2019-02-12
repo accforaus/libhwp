@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.control.ctrlheader
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.additionaltext.HWPAdditionalTextPosition
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.autonumber.HWPAutoNumberHeaderProperty
@@ -61,12 +64,13 @@ open class HWPCtrlHeader(var ctrlId: Long) {
  * @property [styleId] [Long], HWPStyle Number (UINT32 - unsigned 4 bytes)
  * @property [alignment] [HWPAlignment], 정렬 기준 (UINT32 - unsigned 4 bytes)
  */
-class HWPCtrlHeaderAdditionalText : HWPCtrlHeader(HWPControlType.AdditionalText.ctrlId) {
+@LinkID class HWPCtrlHeaderAdditionalText : HWPCtrlHeader(HWPControlType.AdditionalText.ctrlId) {
     var mainText: String? = null
     var subText: String? = null
     var position: HWPAdditionalTextPosition? = null
     var fsizeratio: Long = 0
     var option: Long = 0
+    @ID(IDTypes.Style)
     var styleId: Long = 0
     var alignment: HWPAlignment? = null
 
@@ -718,11 +722,12 @@ class HWPCtrlHeaderPageOddEvenAdjust: HWPCtrlHeader(HWPControlType.PageOddEvenAd
  * @property [expendInsideLetter] [Short], 테두리 내부 글자 펼침 (UINT8 - unsigned 1 byte)
  * @property [charShapeIdList] [ArrayList], 테두리 네부 글자의 HWPCharShape[HWPCharShape] ID 리스트
  */
-class HWPCtrlHeaderOverlappingLetter: HWPCtrlHeader(HWPControlType.OverlappingLetter.ctrlId) {
+@LinkID class HWPCtrlHeaderOverlappingLetter: HWPCtrlHeader(HWPControlType.OverlappingLetter.ctrlId) {
     var overlappingLetterList: ArrayList<String> = ArrayList()
     var borderType: Short = 0
     var internalFontSize: Byte = 0
     var expendInsideLetter: Short = 0
+    @ID(IDTypes.CharShape)
     var charShapeIdList: ArrayList<Long> = ArrayList()
 
     /**

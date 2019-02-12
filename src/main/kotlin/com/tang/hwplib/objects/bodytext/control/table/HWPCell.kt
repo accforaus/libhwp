@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.control.table
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.sectiondefine.HWPTextDirection
 import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPLineChange
 import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPTextVerticalAlignment
@@ -151,7 +154,7 @@ class ListHeaderPropertyForCell {
  * @property [textWidth] [Long], 텍스트의 최대 길이 (=개체의 폭) (HWPUNIT - unsigned 4 bytes)
  * @property [fieldName] [String], 필드 이름 (WCHAR array[n])
  */
-class ListHeaderForCell {
+@LinkID class ListHeaderForCell {
     var paraCount: Int = 0
     var property: ListHeaderPropertyForCell = ListHeaderPropertyForCell()
     var colIndex: Int = 0
@@ -164,6 +167,7 @@ class ListHeaderForCell {
     var rightMargin: Int = 0
     var topMargin: Int = 0
     var bottomMargin: Int = 0
+    @ID(IDTypes.BorderFill)
     var borderFillId: Int = 0
     var textWidth: Long = 0
     var fieldName: String? = null

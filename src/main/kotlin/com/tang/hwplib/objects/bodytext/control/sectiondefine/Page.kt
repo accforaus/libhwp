@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.control.sectiondefine
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.HWPBorderFill
 import com.tang.hwplib.objects.etc.*
 import com.tang.hwplib.util.binary.get
@@ -205,12 +208,13 @@ class HWPPageBorderFillProperty {
  * @property [bottomGap] [Int], 테두리/배걍 위치 아래쪽 긴격 (HWPUNIT16 - unsigned 2 bytes)
  * @property [borderFillId] [Int], 테두리/배경[HWPBorderFill] ID (UINT16 - unsigned 2 bytes)
  */
-class HWPPageBorderFill {
+@LinkID class HWPPageBorderFill {
     var property: HWPPageBorderFillProperty = HWPPageBorderFillProperty()
     var leftGap: Int = 0
     var rightGap: Int = 0
     var topGap: Int = 0
     var bottomGap: Int = 0
+    @ID(IDTypes.BorderFill)
     var borderFillId: Int = 0
 
     /**

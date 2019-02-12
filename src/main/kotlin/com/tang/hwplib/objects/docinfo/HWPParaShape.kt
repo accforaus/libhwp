@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.docinfo
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.parashape.HWPParaShapeProperty1
 import com.tang.hwplib.objects.docinfo.parashape.HWPParaShapeProperty2
 import com.tang.hwplib.objects.docinfo.parashape.HWPParaShapeProperty3
@@ -30,7 +33,7 @@ import com.tang.hwplib.objects.etc.PARA_SHAPE
  * @property [lineSpace2] [Long], 줄 간격 [>=5.0.2.5] (UINT32 - unsigned 4 bytes)
  * @property [unknown] [Long], 알 수 없는 값 (UINT32 - unsigned 4 bytes)
  */
-class HWPParaShape {
+@LinkID class HWPParaShape {
     var property1: HWPParaShapeProperty1 = HWPParaShapeProperty1()
     var leftMargin: Int = 0
     var rightMargin: Int = 0
@@ -38,8 +41,11 @@ class HWPParaShape {
     var topParaSpace: Int = 0
     var bottomParaSpace: Int = 0
     var lineSpace: Int = 0
+    @ID(IDTypes.TabDef)
     var tabDefId: Int = 0
+    @ID(IDTypes.Numbering)
     var paraHeadId: Int = 0
+    @ID(IDTypes.BorderFill)
     var borderFillId: Int = 0
     var leftBorderSpace: Short = 0
     var rightBorderSpace: Short = 0

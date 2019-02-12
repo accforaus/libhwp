@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.control.gso.shapecomponent
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.arc.HWPArcBorder
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.curve.HWPCurveSegmentType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.ellipse.HWPShapeComponentEllipseProperty
@@ -338,10 +341,11 @@ class HWPShapeComponentLineForObjectLinkLine {
  * @property [borderThickness] [Int], 테두리 두께 (INT32 - signed 4 bytes)
  * @property [borderProperty] [HWPLineInfoProperty], 테두리 속성 (UINT32 - unsigned 4 bytes)
  */
-class HWPShapeComponentOLE {
+@LinkID class HWPShapeComponentOLE {
     var property: HWPShapeComponentOLEProperty = HWPShapeComponentOLEProperty()
     var extentWidth: Int = 0
     var extentHeight: Int = 0
+    @ID(IDTypes.BinData)
     var binDataId: Int = 0
     var borderColor: Color4Byte = Color4Byte()
     var borderThickness: Int = 0

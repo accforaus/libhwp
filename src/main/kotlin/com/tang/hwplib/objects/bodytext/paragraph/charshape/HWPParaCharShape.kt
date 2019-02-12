@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.paragraph.charshape
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.HWPCharShape
 import com.tang.hwplib.objects.etc.PARA_CHAR_SHAPE
 /**
@@ -11,7 +14,7 @@ import com.tang.hwplib.objects.etc.PARA_CHAR_SHAPE
  * @property [position] [Long], 글자 모양[HWPCharShape]이 바뀌는 시작 위치 (UINT32 - unsigned 4 bytes)
  * @property [shapeId] [Long], 글자 모양[HWPCharShape] ID (UINT32 - unsigned 4 bytes)
  */
-open class HWPCharPositionShapeIdPair(var position: Long, var shapeId: Long) {
+@LinkID open class HWPCharPositionShapeIdPair(var position: Long, @ID(IDTypes.CharShape) var shapeId: Long) {
     /**
      * 객체를 복사한 후 반환하는 함수
      *

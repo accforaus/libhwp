@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.docinfo.borderfill.fillinfo
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.HWPBinData
 
 /**
@@ -56,10 +59,11 @@ enum class HWPPictureEffect(v: Byte) {
  * @property [effect] [HWPPictureEffect], 그림 효과 (BYTE - unsigned 1 byte)
  * @property [binItemID] [Int], BinItem[HWPBinData]의 아이디 참조값 (UINT16 - unsigned 2 bytes)
  */
-class HWPPictureInfo {
+@LinkID class HWPPictureInfo {
     var brightness: Byte = 0
     var contrast: Byte = 0
     var effect: HWPPictureEffect = HWPPictureEffect.RealPicture
+    @ID(IDTypes.BinData)
     var binItemID: Int = 0
 
     /**

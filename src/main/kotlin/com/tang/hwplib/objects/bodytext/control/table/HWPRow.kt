@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.control.table
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.HWPBorderFill
 
 /**
@@ -50,11 +53,12 @@ class HWPRow {
  * @property [endRow] [Int], 끝 행 주소 (UINT16 - unsigned 2 bytes)
  * @property [borderFillId] [Int], 테두리 채우기[HWPBorderFill] ID
  */
-class HWPZoneInfo {
+@LinkID class HWPZoneInfo {
     var startColumn: Int = 0
     var startRow: Int = 0
     var endColumn: Int = 0
     var endRow: Int = 0
+    @ID(IDTypes.BorderFill)
     var borderFillId: Int = 0
 
     /**

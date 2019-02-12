@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.docinfo.numbering
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.HWPCharShape
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
@@ -203,10 +206,11 @@ class HWPParagraphHeadInfoProperty {
  * @property [distanceFromBody] [Short], 본문과의 거리 (HWPUINT16 - unsigned 2 bytes)
  * @property [charShapeID] [Long], 글자 모양[HWPCharShape] 아이디 참조 (UINT - unsigned 4 bytes)
  */
-class HWPParagraphHeadInfo {
+@LinkID class HWPParagraphHeadInfo {
     var property: HWPParagraphHeadInfoProperty = HWPParagraphHeadInfoProperty()
     var correctionValueForWidth: Short = 0
     var distanceFromBody: Short = 0
+    @ID(IDTypes.CharShape)
     var charShapeID: Long = 0
 
     /**

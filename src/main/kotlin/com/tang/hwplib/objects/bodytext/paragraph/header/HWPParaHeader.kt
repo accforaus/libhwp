@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.paragraph.header
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.etc.PARA_HEADER
 import com.tang.hwplib.objects.docinfo.*
 import com.tang.hwplib.objects.bodytext.paragraph.rangetag.HWPParaRangeTag
@@ -24,11 +27,13 @@ import com.tang.hwplib.objects.bodytext.paragraph.rangetag.HWPParaRangeTag
  *
  * 텍스트 수가 1 이상이면 문자 수만큼 텍스트를 로드하고 그렇지 않으면 PARA_BREAK로 문단을 생성한다
  */
-class HWPParaHeader {
+@LinkID class HWPParaHeader {
     var lastInList: Boolean = false
     var characterCount: Long = 0
     var controlMask: HWPControlMask = HWPControlMask()
+    @ID(IDTypes.ParaShape)
     var paraShapeId: Int = 0
+    @ID(IDTypes.Style)
     var styleId: Short = 0
     var divideSort: HWPDivideSort = HWPDivideSort()
     var charShapeCount: Int = 0

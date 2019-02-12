@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.docinfo
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataProperty
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataType
 import com.tang.hwplib.objects.etc.BIN_DATA
@@ -18,10 +21,11 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
  * @property [binDataID] [Int], Type이 "EMBEDDING"이거나 "STORAGE"일 때, BINDATASTORAGE에 저장된 바이너리 데이터 아이디 (UINT16 - unsigned 2 bytes)
  * @property [extensionForEmbedding] [String], Tyype이 EMBEDDING일 때 extension("." 제외) 그림(jpg, bmp, gif) OLE(ole) (WCHAR array - unsigned 4 bytes)
  */
-class HWPBinData {
+@LinkID class HWPBinData {
     var property: HWPBinDataProperty = HWPBinDataProperty()
     var absolutePathForLink: String? = null
     var relativePathForLink: String? = null
+    @ID(IDTypes.BinData)
     var binDataID: Int = 0
     var extensionForEmbedding: String? = null
 

@@ -1,5 +1,8 @@
 package com.tang.hwplib.objects.bodytext.control.table
 
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.IDTypes
+import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
 import com.tang.hwplib.objects.docinfo.HWPBorderFill
@@ -130,7 +133,7 @@ class TableProperty {
  * @property [borderFillId] [Int], Border Fill[HWPBorderFill] ID
  * @property [zoneInfoList] [HWPZoneInfo], 영역 속성 [>=5.0.1.0]
  */
-class HWPTable {
+@LinkID class HWPTable {
     var property: TableProperty = TableProperty()
     var rowCount: Int = 0
     var columnCount: Int = 0
@@ -140,6 +143,7 @@ class HWPTable {
     var topInnerMargin: Int = 0
     var bottomInnerMargin: Int = 0
     var cellCountOfRowList: ArrayList<Int> = ArrayList()
+    @ID(IDTypes.BorderFill)
     var borderFillId: Int = 0
     var zoneInfoList: ArrayList<HWPZoneInfo> = ArrayList()
 
