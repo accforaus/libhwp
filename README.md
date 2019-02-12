@@ -35,6 +35,15 @@ val copied: HWPDocument = hwp.copy() // 한글 문서 복사하기
 // do something...
 ```
 
+* 빈 문서 (Empty Document)
+    * 한글 프로그램을 실행시키면 나오는 빈 문서를 제어할 수 있습니다.
+    * 기본 생성자를 이용 합니다.
+```kotlin
+val hwp: HWPDocument = HWPDocument() // basic constructor makes empty document
+
+// do someing...
+```
+
 ## Credits for [hwplib](https://github.com/neolord0/hwplib)
 A huge thanks to the author of hwplib for most of the work on libhwp.
 
