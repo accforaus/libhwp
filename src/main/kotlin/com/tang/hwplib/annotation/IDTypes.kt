@@ -6,6 +6,7 @@ enum class IDTypes {
     Numbering,
     Bullet,
     BorderFill,
+    FaceName,
     CharShape,
     ParaShape,
     Style
