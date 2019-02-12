@@ -1,5 +1,6 @@
 package com.tang.hwplib.objects
 
+import com.tang.hwplib.builder.buildEmptyHWPDocument
 import com.tang.hwplib.objects.bindata.HWPBinData
 import com.tang.hwplib.objects.bodytext.HWPBodyText
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
@@ -14,6 +15,7 @@ import java.net.URL
  *
  * @author accforaus
  *
+ * @constructor 빈 문서를 만든다.
  * @constructor 로컬 파일을 읽는다
  * @constructor URL 경로 파일을 읽는다
  *
@@ -28,7 +30,14 @@ class HWPDocument {
     var bodyText: HWPBodyText = HWPBodyText()
     var binData: HWPBinData = HWPBinData()
 
-    constructor()
+    constructor() {
+        buildEmptyHWPDocument().let {
+            this.fileHeader = it.fileHeader
+            this.docInfo = it.docInfo
+            this.bodyText = it.bodyText
+            this.binData = it.binData
+        }
+    }
 
     constructor(path: String) {
         fromFile(path).let {
