@@ -109,7 +109,7 @@ class HWPDocument {
      * @return [HWPDocument] 이어 붙혀진 문서
      */
     operator fun plus(hwpDocument: HWPDocument) : HWPDocument {
-        HWPDocumentCopyTo(hwpDocument, this)
+        HWPDocumentCopyTo(this, hwpDocument)
         return hwpDocument
     }
 }
