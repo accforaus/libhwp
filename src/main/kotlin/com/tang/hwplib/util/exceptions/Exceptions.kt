@@ -60,3 +60,14 @@ class HWPBuildException: RuntimeException {
     constructor(msg: String) : super(msg)
     constructor(msg: String, cause: Throwable) : super(msg, cause)
 }
+
+/**
+ * HWP 문서 붙혀넣기 예외를 나타내는 객체
+ * @see [RuntimeException]
+ *
+ * @author accforaus
+ */
+class HWPCopyToExcention: RuntimeException {
+    constructor(msg: String) : super(msg)
+    constructor(msg: String, cause: Throwable) : super(msg, cause)
+}
