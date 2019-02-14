@@ -1,8 +1,11 @@
 package com.tang.hwplib.reader
 
 import com.tang.hwplib.objects.HWPDocument
+import com.tang.hwplib.objects.bodytext.HWPBodyText
 import com.tang.hwplib.objects.docinfo.HWPBinData
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataCompress
+import com.tang.hwplib.objects.fileheader.HWPFileHeader
 import com.tang.hwplib.objects.fileheader.HWPFileVersion
 import com.tang.hwplib.reader.bodytext.forSection
 import com.tang.hwplib.reader.docinfo.forDocInfo
@@ -22,7 +25,12 @@ import java.net.URL
  * @return [HWPDocument] 생성된 HWP 문서
  */
 private fun fromInputStream(inputStream: InputStream) : HWPDocument {
-    val hwpDocument: HWPDocument = HWPDocument()
+    val hwpDocument: HWPDocument = HWPDocument().apply {
+        this.fileHeader = HWPFileHeader()
+        this.bodyText = HWPBodyText()
+        this.binData = com.tang.hwplib.objects.bindata.HWPBinData()
+        this.docInfo = HWPDocInfo()
+    }
     val cfr: CompoundFileReader = CompoundFileReader(inputStream)
 
     val isCompressed = fun(): Boolean = hwpDocument.fileHeader.compressed
