@@ -44,6 +44,26 @@ val hwp: HWPDocument = HWPDocument() // basic constructor makes empty document
 // do someing...
 ```
 
+
+* 한글문서(HWP) 이어 붙히기
+```kotlin
+val original_hwp: HWPDocument = HWPDocument('...') // will be appended
+
+val target_hwp: HWPDocument = HWPDocument('...') // target HWP Document
+
+target_hwp + original_hwp
+//or
+target_hwp = target_hwp + original_hwp
+//or
+target_hwp = target_hwp.plus(original_hwp)
+
+target_hwp.addParagraph(some_paragraph, original_hwp) // add paragraph in target_hwp
+
+target_hwp.addParagraphs(some_paragraphs, original_hwp) // add paragraph list in target_hwp
+
+// do something
+```
+
 ## Credits for [hwplib](https://github.com/neolord0/hwplib)
 A huge thanks to the author of hwplib for most of the work on libhwp.
 
