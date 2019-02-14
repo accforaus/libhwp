@@ -17,19 +17,19 @@ import com.tang.hwplib.objects.docinfo.numbering.HWPLevelNumbering
  * @property [extendStartNumberForLevel] [LongArray] 확장 수준별 시작번호 [>=5.1.0.0] (UINT - unsigned 4 bytes)
  */
 class HWPNumbering {
-    private var levelNumberingList: ArrayList<HWPLevelNumbering> = Unit.run {
+    var levelNumberingList: ArrayList<HWPLevelNumbering> = Unit.run {
         val temp: ArrayList<HWPLevelNumbering> = ArrayList()
         for (index in 0 until 7) HWPLevelNumbering().let { temp.add(it) }
         temp
     }
     var startNumber: Int = 0
-    private var startNumberForLevel: LongArray = LongArray(7)
-    private var extendLevelNumberingList: ArrayList<HWPExtendNumbering> = Unit.run {
+    var startNumberForLevel: LongArray = LongArray(7)
+    var extendLevelNumberingList: ArrayList<HWPExtendNumbering> = Unit.run {
         val temp: ArrayList<HWPExtendNumbering> = ArrayList()
         for (index in 0 until 3) HWPExtendNumbering().let { temp.add(it) }
         temp
     }
-    private var extendStartNumberForLevel: LongArray = LongArray(3)
+    var extendStartNumberForLevel: LongArray = LongArray(3)
 
 
     /**
