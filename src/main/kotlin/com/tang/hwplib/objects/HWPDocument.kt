@@ -4,8 +4,11 @@ import com.tang.hwplib.builder.bodytext.buildEmptyBodyText
 import com.tang.hwplib.builder.buildEmptyHWPDocument
 import com.tang.hwplib.builder.docinfo.buildEmptyDocInfo
 import com.tang.hwplib.builder.fileheader.buildEmptyFileHeader
+import com.tang.hwplib.copyto.HWPDocumentCopyTo
+import com.tang.hwplib.copyto.appendParagraph
 import com.tang.hwplib.objects.bindata.HWPBinData
 import com.tang.hwplib.objects.bodytext.HWPBodyText
+import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.fileheader.HWPFileHeader
 import com.tang.hwplib.reader.fromFile
@@ -76,5 +79,37 @@ class HWPDocument {
         it.docInfo = this.docInfo.copy()
         it.bodyText = this.bodyText.copy()
         it.binData = this.binData.copy()
+    }
+
+    /**
+     * 문단 (Paragraph)을 추가하는 함수
+     *
+     * @param [paragraph] [HWPParagraph], 추가 할 문단
+     * @param [originalHWP] [HWPDocument], 추가 할 문단을 가진 문서
+     */
+    fun addParagraph(paragraph: HWPParagraph, originalHWP: HWPDocument) {
+        appendParagraph(paragraph, this, originalHWP)
+    }
+
+    /**
+     * 문단 (Paragraph) 리스트를 추가하는 함수
+     *
+     * @param [paragraphs] [ArrayList], 추가 할 문단 리스트
+     * @param [originalHWP] [HWPDocument], 추가 할 문단을 가진 문서
+     */
+    fun addParagraphs(paragraphs: ArrayList<HWPParagraph>, originalHWP: HWPDocument) {
+        for (paragraph in paragraphs)
+            addParagraph(paragraph, originalHWP)
+    }
+
+    /**
+     * 문서를 이어 붙히는 함수
+     *
+     * @param [hwpDocument] [HWPDocument] 이어 붙힐 문서
+     * @return [HWPDocument] 이어 붙혀진 문서
+     */
+    operator fun plus(hwpDocument: HWPDocument) : HWPDocument {
+        HWPDocumentCopyTo(hwpDocument, this)
+        return hwpDocument
     }
 }
