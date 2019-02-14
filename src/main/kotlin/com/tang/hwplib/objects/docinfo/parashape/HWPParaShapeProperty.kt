@@ -13,6 +13,43 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPParaShapeProperty1 {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _lineSpaceSort = getLineSpaceSort()
+            _alignment = getAlignment()
+            _lineDivideForEnglish = getLineDivideForEnglish()
+            _lineDivideForHangul = getLineDivideForHangul()
+            _useGrid = isUseGrid()
+            _minimumSpace = getMinimumSpace()
+            _protectLonger = isProtectLonger()
+            _togetherNextPara = isTogetherNextPara()
+            _protectPara = isProtectPara()
+            _splitPageBeforePara = isSplitPageBeforePara()
+            _verticalAlignment = getVerticalAlignment()
+            _lineHeightForFont = isLineHeightForFont()
+            _paraHeadShape = getParaHeadShape()
+            _paraLevel = getParaLevel()
+            _linkBorder = isLinkBorder()
+            _ignoreParaMargin = isIgnoreParaMargin()
+            _paraTailShape = getParaTailShape()
+        }
+    private var _lineSpaceSort: HWPLineSpaceSort = HWPLineSpaceSort.RatioForLetter
+    private var _alignment: HWPAlignment = HWPAlignment.Justify
+    private var _lineDivideForEnglish: HWPLineDivideForEnglish = HWPLineDivideForEnglish.ByWord
+    private var _lineDivideForHangul: HWPLineDivideForHangul = HWPLineDivideForHangul.ByWord
+    private var _useGrid: Boolean = false
+    private var _minimumSpace: Byte = 0
+    private var _protectLonger: Boolean = false
+    private var _togetherNextPara: Boolean = false
+    private var _protectPara: Boolean = false
+    private var _splitPageBeforePara: Boolean = false
+    private var _verticalAlignment: HWPVerticalAlignment = HWPVerticalAlignment.ByFont
+    private var _lineHeightForFont: Boolean = false
+    private var _paraHeadShape: HWPParaHeadShape = HWPParaHeadShape.Bullet
+    private var _paraLevel: Byte = 0
+    private var _linkBorder: Boolean = false
+    private var _ignoreParaMargin: Boolean = false
+    private var _paraTailShape: Boolean = false
 
     /**
      * 줄 간격 종류를 반환하는 함수
@@ -378,7 +415,15 @@ class HWPParaShapeProperty1 {
  */
 class HWPParaShapeProperty2 {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _inputSingleLine = isInputSingleLine()
+            _autoAdjustGapHangulEnglish = isAutoAdjustGapHangulEnglish()
+            _autoAdjustGapHangulNumber = isAutoAdjustGapHangulNumber()
+        }
+    private var _inputSingleLine: Boolean = false
+    private var _autoAdjustGapHangulEnglish: Boolean = false
+    private var _autoAdjustGapHangulNumber: Boolean = false
     /**
      * 한 줄로 입력 여부를 반환하는 함수
      * bit 0-1
@@ -469,6 +514,11 @@ class HWPParaShapeProperty2 {
  */
 class HWPParaShapeProperty3 {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _lineSpaceSort = getLineSpaceSort()
+        }
+    private var _lineSpaceSort: HWPLineSpaceSort = HWPLineSpaceSort.RatioForLetter
 
     /**
      * 줄 간격을 반환하는 함수

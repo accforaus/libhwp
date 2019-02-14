@@ -48,6 +48,11 @@ enum class HWPStyleSort(v: Byte) {
  */
 class HWPStyleProperty {
     var value: Short = 0
+        set(newValue) {
+            field = newValue
+            _styleSort = getStyleSort()
+        }
+    private var _styleSort: HWPStyleSort = HWPStyleSort.CharStyle
 
     /**
      * 스타일 종류를 반환하는 함수

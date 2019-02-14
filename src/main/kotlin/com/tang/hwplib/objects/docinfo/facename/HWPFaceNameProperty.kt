@@ -13,7 +13,15 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPFaceNameProperty {
     var value: Short = 0
-
+        set(newValue) {
+            field = newValue
+            _substituteFont = hasSubstituteFont()
+            _fontInfo = hasFontInfo()
+            _baseFont = hasBaseFont()
+        }
+    private var _substituteFont: Boolean = false
+    private var _fontInfo: Boolean = false
+    private var _baseFont: Boolean = false
     /**
      * 대체 글꼴 존재 여부를 반환하는 함수 (0x80)
      *

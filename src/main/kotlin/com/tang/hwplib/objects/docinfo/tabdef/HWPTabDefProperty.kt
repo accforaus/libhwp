@@ -13,6 +13,13 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPTabDefProperty {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _autoTabAtParagraphLeftEnd = isAutoTabAtParagraphLeftEnd()
+            _autoTabAtParagraphRightEnd = isAutoTabAtParagraphRightEnd()
+        }
+    private var _autoTabAtParagraphLeftEnd: Boolean = false
+    private var _autoTabAtParagraphRightEnd: Boolean = false
 
     /**
      * 문단 왼쪽 끝 자동 탭 유무를 반환하는 함수
@@ -32,6 +39,7 @@ class HWPTabDefProperty {
      */
     fun setAutoTabAtParagraphLeftEnd(autoTabAtParagraphLeftEnd: Boolean) {
         value = set(value, 0, autoTabAtParagraphLeftEnd)
+        this._autoTabAtParagraphLeftEnd = autoTabAtParagraphLeftEnd
     }
 
     /**
@@ -50,6 +58,7 @@ class HWPTabDefProperty {
      */
     fun setAutoTabAtParagraphRightEnd(autoTabAtParagraphRightEnd: Boolean) {
         value = set(value, 1, autoTabAtParagraphRightEnd)
+        this._autoTabAtParagraphRightEnd = autoTabAtParagraphRightEnd
     }
 
     companion object {

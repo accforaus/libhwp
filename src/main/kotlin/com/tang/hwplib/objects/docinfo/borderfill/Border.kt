@@ -240,7 +240,27 @@ class HWPEachBorder {
  */
 class HWPBorderFillProperty {
     var value: Int = 0
-
+        set(newValue) {
+            field = newValue
+            _3DEffect = is3DEffect()
+            _shadowEffect = isShadowEffect()
+            _slashDiagonalShape = getSlashDiagonalShape()
+            _backSlashDiagonalShape = getBackSlashDiagonalShape()
+            _brokenSlashDiagonal = isBrokenSlashDiagonal()
+            _brokenBackSlashDiagonal = isBrokenBackSlashDiagonal()
+            _rotateSlashDiagonal180 = isRotateSlashDiagonal180()
+            _rotateBackSlashDiagonal180 = isRotateBackSlashDiagonal180()
+            _centerLine = hasCenterLine()
+        }
+    private var _3DEffect: Boolean = false
+    private var _shadowEffect: Boolean = false
+    private var _slashDiagonalShape: HWPSlashDiagonalShape = HWPSlashDiagonalShape.None
+    private var _backSlashDiagonalShape: HWPBackSlashDiagonalShape = HWPBackSlashDiagonalShape.None
+    private var _brokenSlashDiagonal: Boolean = false
+    private var _brokenBackSlashDiagonal: Boolean = false
+    private var _rotateSlashDiagonal180: Boolean = false
+    private var _rotateBackSlashDiagonal180: Boolean = false
+    private var _centerLine: Boolean = false
     /**
      * 3D효과의 유무를 반환하는 함수
      * bit 0
@@ -417,7 +437,7 @@ class HWPBorderFillProperty {
          */
         fun build(is3DEffect: Boolean = false,
                   isShadowEffect: Boolean = false,
-                  SlashDiagonalShape: HWPSlashDiagonalShape = HWPSlashDiagonalShape.None,
+                  slashDiagonalShape: HWPSlashDiagonalShape = HWPSlashDiagonalShape.None,
                   backSlashDiagonalShape: HWPBackSlashDiagonalShape = HWPBackSlashDiagonalShape.None,
                   isBrokenSlashDiagonal: Boolean = false,
                   isBrokenBackSlashDiagonal: Boolean = false,
@@ -427,7 +447,7 @@ class HWPBorderFillProperty {
                 : HWPBorderFillProperty = HWPBorderFillProperty().apply {
             set3DEffect(is3DEffect)
             setShadowEffect(isShadowEffect)
-            setSlashDiagonalShape(SlashDiagonalShape)
+            setSlashDiagonalShape(slashDiagonalShape)
             setBackSlashDiagonalShape(backSlashDiagonalShape)
             setBrokenSlashDiagonal(isBrokenSlashDiagonal)
             setBrokenBackSlashDiagonal(isBrokenBackSlashDiagonal)

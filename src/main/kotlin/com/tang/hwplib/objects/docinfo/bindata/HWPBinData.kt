@@ -131,7 +131,15 @@ enum class HWPBinDataState(v: Byte) {
  */
 class HWPBinDataProperty {
     var value: Int = 0
-
+        set(newValue) {
+            field = newValue
+            _type = getType()
+            _compress = getCompress()
+            _state = getState()
+        }
+    private var _type: HWPBinDataType = HWPBinDataType.Storage
+    private var _compress: HWPBinDataCompress = HWPBinDataCompress.Compress
+    private var _state: HWPBinDataState = HWPBinDataState.NotAccess
     /**
      * 바이너리 데이터 타입을 반환하는 함수
      * bit 0-3
@@ -182,7 +190,9 @@ class HWPBinDataProperty {
      *
      * @param [state] [HWPBinDataState], 바이너리 데이터 상태를 가진 데이터
      */
-    fun setState(state: HWPBinDataState) { value = set(value,8, 9, state.value.toInt()) }
+    fun setState(state: HWPBinDataState) {
+        value = set(value,8, 9, state.value.toInt())
+    }
 
     companion object {
         /**

@@ -91,6 +91,17 @@ enum class HWPParagraphAlignment(v: Byte) {
  */
 class HWPParagraphHeadInfoProperty {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _paragraphAlignment = getParagraphAlignment()
+            _followStringWidth = isFollowStringWidth()
+            _autoIndent = isAutoIndent()
+            _valueTypeForDistanceFromBody = getValueTypeForDistanceFromBody()
+        }
+    private var _paragraphAlignment: HWPParagraphAlignment = HWPParagraphAlignment.Left
+    private var _followStringWidth: Boolean = false
+    private var _autoIndent: Boolean = false
+    private var _valueTypeForDistanceFromBody: HWPValueType = HWPValueType.RatioForLetter
 
     /**
      * 문단의 정렬 종류를 반환하는 함수

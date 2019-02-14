@@ -16,7 +16,15 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
  */
 class HWPFillType {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _patternFill = hasPatternFill()
+            _imageFill = hasImageFill()
+            _gradientFill = hasGradientFill()
+        }
+    private var _patternFill: Boolean = false
+    private var _imageFill: Boolean = false
+    private var _gradientFill: Boolean = false
     /**
      * 단색 채우기 유무를 반환하는 함수
      * type & 0x0000001 != 0 - 단색 채우기
@@ -70,7 +78,6 @@ class HWPFillType {
     fun setGradientFill(gradientFill: Boolean) {
         value = set(value, 2, gradientFill)
     }
-
     companion object {
         /**
          * 객체를 생성하고 반환하는 함수

@@ -177,7 +177,39 @@ class HWPCharOffsets {
  */
 class HWPCharShapeProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _italic = isItalic()
+            _bold = isBold()
+            _underLineSort = getUnderLineSort()
+            _underLineShape = getUnderLineShape()
+            _outerLineSort = getOuterLineSort()
+            _shadowSort = getShadowSort()
+            _emboss = isEmboss()
+            _engrave = isEngrave()
+            _superScript = isSuperScript()
+            _subScript = isSubScript()
+            _strikeLine = isStrikeLine()
+            _emphasisSort = getEmphasisSort()
+            _usingSpaceAppropriateForFont = isUsingSpaceAppropriateForFont()
+            _strikeLineShape = getStrikeLineShape()
+            _kerning = isKerning()
+        }
+    private var _italic: Boolean = false
+    private var _bold: Boolean = false
+    private var _underLineSort: HWPUnderLineSort = HWPUnderLineSort.None
+    private var _underLineShape: HWPBorderType = HWPBorderType.Solid
+    private var _outerLineSort: HWPOuterLineSort = HWPOuterLineSort.None
+    private var _shadowSort: HWPShadowSort = HWPShadowSort.None
+    private var _emboss: Boolean = false
+    private var _engrave: Boolean = false
+    private var _superScript: Boolean = false
+    private var _subScript: Boolean = false
+    private var _strikeLine: Boolean = false
+    private var _emphasisSort: HWPEmphasisSort = HWPEmphasisSort.None
+    private var _usingSpaceAppropriateForFont: Boolean = false
+    private var _strikeLineShape: HWPBorderType = HWPBorderType.Solid
+    private var _kerning: Boolean = false
     /**
      * 기울임 여부를 반환하는 함수
      * bit 0
@@ -390,7 +422,7 @@ class HWPCharShapeProperty {
      *
      * @param [emphasisSort] [HWPBorderType], 강조점 종류 값을 가진 데이터
      */
-    fun setEmpasisSort(emphasisSort: HWPEmphasisSort) {
+    fun setEmphasisSort(emphasisSort: HWPEmphasisSort) {
         value = set(value, 21, 24, emphasisSort.value.toInt())
     }
 
@@ -481,7 +513,7 @@ class HWPCharShapeProperty {
             setSuperScript(isSuperScript)
             setSubScript(isSubScript)
             setStrikeLine(isStrikeLine)
-            setEmpasisSort(emphasisSort)
+            setEmphasisSort(emphasisSort)
             setUsingSpaceAppropriateForFont(isUsingSpaceAppropriateForFont)
             setStrikeLineShape(strikeLineShape)
             setKerning(isKerning)
