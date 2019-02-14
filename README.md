@@ -1,6 +1,6 @@
 ## HWP File Format Library
 
-<p align="center">
+<p align="center" style="padding: 45px;">
     <img src="/img/hancomImg.png">
 </p>
 
