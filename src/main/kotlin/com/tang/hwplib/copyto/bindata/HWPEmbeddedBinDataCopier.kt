@@ -7,27 +7,27 @@ import com.tang.hwplib.objects.docinfo.numbering.HWPExtendNumbering
 import com.tang.hwplib.util.exceptions.HWPCopyToExcention
 import kotlin.math.E
 
-fun proceedEmbeddedBinData(originalIndex: Int, targetData: HWPBinData, sourceData: HWPBinData) : Int {
-    fun getBinDataName(lastIndex: Int, extend: String? = null) : String = StringBuilder("BIN").run {
-        val number: String = lastIndex.toString(radix = 16).toUpperCase()
-        when (number.length) {
-            1 -> {
-                for(i in 0..2) this.append("0")
-                this.append(number)
-            }
-            2 -> {
-                for (i in 0..1) this.append("0")
-                this.append(number)
-            }
-            3 -> this.append("0").append(number)
-            4 -> this.append(number)
+fun getBinDataName(lastIndex: Int, extend: String? = null) : String = StringBuilder("BIN").run {
+    val number: String = lastIndex.toString(radix = 16).toUpperCase()
+    when (number.length) {
+        1 -> {
+            for(i in 0..2) this.append("0")
+            this.append(number)
         }
-        extend?.let {
-            this.append(".").append(it)
+        2 -> {
+            for (i in 0..1) this.append("0")
+            this.append(number)
         }
-        this.toString()
+        3 -> this.append("0").append(number)
+        4 -> this.append(number)
     }
+    extend?.let {
+        this.append(".").append(it)
+    }
+    this.toString()
+}
 
+fun proceedEmbeddedBinData(originalIndex: Int, targetData: HWPBinData, sourceData: HWPBinData) : Int {
     fun copy(index: Int, source: HWPEmbeddedBinaryData) : HWPEmbeddedBinaryData = source.copy().apply {
         this.name = getBinDataName(index, source.name.substring(8))
     }
