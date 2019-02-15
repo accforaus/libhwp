@@ -117,11 +117,8 @@ class HWPFillType {
 class HWPFillInfo {
     var type: HWPFillType = HWPFillType()
     var patternFill: HWPPatternFill? = null
-        private set
     var gradientFill: HWPGradientFill? = null
-        private set
     var imageFill: HWPImageFill? = null
-        private set
 
     /**
      * 단색 채우기를 생성하는 함수
