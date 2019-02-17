@@ -90,6 +90,17 @@ enum class HWPFillArea(v: Byte) {
  */
 class HWPPageBorderFillProperty {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _positionCriterion = getPositionCriterion()
+            _isIncludeHeader = isIncludeHeader()
+            _isIncludeFooter = isIncludeFooter()
+            _fillArea = getFillArea()
+        }
+    private var _positionCriterion: HWPPositionCriterion = HWPPositionCriterion.MainText
+    private var _isIncludeHeader: Boolean = false
+    private var _isIncludeFooter: Boolean = false
+    private var _fillArea: HWPFillArea = HWPFillArea.Paper
 
     /**
      * 위치 기준을 반환하는 함수
@@ -333,7 +344,13 @@ enum class HWPMakingBookMethod(v: Byte) {
  */
 class HWPPageDefProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _paperDirection = getPaperDirection()
+            _makingBookMethod = getMakingBookMethod()
+        }
+    private var _paperDirection: HWPPaperDirection = HWPPaperDirection.Portrait
+    private var _makingBookMethod: HWPMakingBookMethod = HWPMakingBookMethod.OneSideEditing
     /**
      * 용지 방향을 반환하는 함수
      * bit 0

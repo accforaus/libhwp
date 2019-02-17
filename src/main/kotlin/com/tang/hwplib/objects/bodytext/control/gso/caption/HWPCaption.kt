@@ -59,7 +59,13 @@ enum class HWPCaptionDirection(v: Byte) {
  */
 class ListHeaderCaptionProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _direction = getDirection()
+            _isIncludeMargin = isIncludeMargin()
+        }
+    private var _direction: HWPCaptionDirection = HWPCaptionDirection.Left
+    private var _isIncludeMargin: Boolean = false
     /**
      * 캡션 방향을 반환하는 함수
      * bit 0-1

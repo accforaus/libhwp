@@ -13,6 +13,17 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPDivideSort {
     var value: Short = 0
+        set(newValue) {
+            field = newValue
+            _isDivideMultiColumn = isDivideMultiColumn()
+            _isDivideColumn = isDivideColumn()
+            _isDividePage = isDividePage()
+            _isDivideSection = isDivideSection()
+        }
+    private var _isDivideSection: Boolean = false
+    private var _isDivideMultiColumn: Boolean = false
+    private var _isDividePage: Boolean = false
+    private var _isDivideColumn: Boolean = false
 
     /**
      * 구역 나누기 여부를 반환하는 함수

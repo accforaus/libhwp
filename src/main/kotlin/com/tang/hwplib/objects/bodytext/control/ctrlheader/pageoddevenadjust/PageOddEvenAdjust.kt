@@ -44,7 +44,11 @@ enum class HWPOddEvenDivision(v: Byte) {
  */
 class PageOddEvenAdjustHeaderProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _oddEvenDivision = getOddEvenDivision()
+        }
+    private var _oddEvenDivision: HWPOddEvenDivision = HWPOddEvenDivision.Even
     /**
      * 홀/짝수 구분을 반환하는 함수
      * bit 0-1

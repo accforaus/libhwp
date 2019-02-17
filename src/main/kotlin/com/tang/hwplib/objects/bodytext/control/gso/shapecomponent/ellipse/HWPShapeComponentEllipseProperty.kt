@@ -13,7 +13,15 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPShapeComponentEllipseProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _isRecalculateIntervalWhenChangingArc = isRecalculateIntervalWhenChangingArc()
+            _isChangeArc = isChangeArc()
+            _arcSort = getArcSort()
+        }
+    private var _isRecalculateIntervalWhenChangingArc: Boolean = false
+    private var _isChangeArc: Boolean = false
+    private var _arcSort: Short = 0
     /**
      * 호(ARC)로 바뀌었을 때, interval을 다시 계산해야 할 필요가 있는지 여부를 반환하는 함수
      * (interval - 원 위에 존재하는 두 점 사이의 거리)

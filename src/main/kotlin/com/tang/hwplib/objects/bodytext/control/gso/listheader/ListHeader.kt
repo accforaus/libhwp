@@ -16,7 +16,15 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPListHeaderProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _textDirection = getTextDirection()
+            _lineChange = getLineChange()
+            _textVerticalAlignment = getTextVerticalAlignment()
+        }
+    private var _textDirection : HWPTextDirection = HWPTextDirection.Horizontal
+    private var _lineChange: HWPLineChange = HWPLineChange.Normal
+    private var _textVerticalAlignment: HWPTextVerticalAlignment = HWPTextVerticalAlignment.Top
     /**
      * 텍스트 방향을 반환하는 함수
      * bit 0-2

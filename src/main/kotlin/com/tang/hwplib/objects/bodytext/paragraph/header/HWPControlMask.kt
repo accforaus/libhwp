@@ -1,6 +1,5 @@
 package com.tang.hwplib.objects.bodytext.paragraph.header
 
-import com.sun.org.apache.xpath.internal.operations.Bool
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
 
@@ -14,6 +13,45 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPControlMask {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _hasSectColDef = hasSectColDef()
+            _hasFieldStart = hasFieldStart()
+            _hasFieldEnd = hasFieldEnd()
+            _hasTitleMark = hasTitleMark()
+            _hasTab = hasTab()
+            _hasLineBreak = hasLineBreak()
+            _hasGsoTable = hasGsoTable()
+            _hasParaBreak = hasParaBreak()
+            _hasHiddenComment = hasHiddenComment()
+            _hasHeaderFooter = hasHeaderFooter()
+            _hasFootnoteEndnote = hasFootnoteEndnote()
+            _hasAutoNumber = hasAutoNumber()
+            _hasPageControl = hasPageControl()
+            _hasBookmark = hasBookmark()
+            _hasAdditionalTextOverlappingLetter = hasAdditionalTextOverlappingLetter()
+            _hasHyphen = hasHyphen()
+            _hasBundleBlank = hasBundleBlank()
+            _hasFixWidthBlank = hasFixWidthBlank()
+        }
+    private var _hasSectColDef: Boolean = false
+    private var _hasFieldStart: Boolean = false
+    private var _hasFieldEnd: Boolean = false
+    private var _hasTitleMark: Boolean = false
+    private var _hasTab: Boolean = false
+    private var _hasLineBreak: Boolean = false
+    private var _hasGsoTable: Boolean = false
+    private var _hasParaBreak: Boolean = false
+    private var _hasHiddenComment: Boolean = false
+    private var _hasHeaderFooter: Boolean = false
+    private var _hasFootnoteEndnote: Boolean = false
+    private var _hasAutoNumber: Boolean = false
+    private var _hasPageControl: Boolean = false
+    private var _hasBookmark: Boolean = false
+    private var _hasAdditionalTextOverlappingLetter: Boolean = false
+    private var _hasHyphen: Boolean = false
+    private var _hasBundleBlank: Boolean = false
+    private var _hasFixWidthBlank: Boolean = false
 
     /**
      * 문단이 구역/단 정의 컨트롤을 가졌는지 여부를 반환하는 함수

@@ -89,6 +89,21 @@ enum class HWPEndnoteDisplayMethod(v: Byte) {
  */
 class HWPFootnoteShapeProperty {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _numberShape = getNumberShape()
+            _footnoteDisplayMethod = getFootnoteDisplayMethod()
+            _endnoteDisplayMethod = getEndnoteDisplayMethod()
+            _numberingMethod = getNumberingMethod()
+            _isDisplayWithSupscript = isDisplayWithSupscript()
+            _isContinueFromText = isContinueFromText()
+        }
+    private var _numberShape: HWPNumberShape = HWPNumberShape.Type0
+    private var _footnoteDisplayMethod: HWPFootnoteDisplayMethod = HWPFootnoteDisplayMethod.EachColumn
+    private var _endnoteDisplayMethod: HWPEndnoteDisplayMethod = HWPEndnoteDisplayMethod.DocumentEnd
+    private var _numberingMethod: HWPNumberingMethod = HWPNumberingMethod.Continue
+    private var _isDisplayWithSupscript: Boolean = false
+    private var _isContinueFromText: Boolean = false
 
     /**
      * 번호모양을 반환하는 함수

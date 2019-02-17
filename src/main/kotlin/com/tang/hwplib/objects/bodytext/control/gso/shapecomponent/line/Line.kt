@@ -283,7 +283,25 @@ enum class HWPOutlineStyle(v: Byte) {
  */
 class HWPLineInfoProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _lineType = getLineType()
+            _lineEndShape = getLineEndShape()
+            _startArrowShape = getStartArrowShape()
+            _endArrowShape = getEndArrowShape()
+            _startArrowSize = getStartArrowSize()
+            _endArrowSize = getEndArrowSize()
+            _isFillStartArrow = isFillStartArrow()
+            _isFillEndArrow = isFillEndArrow()
+        }
+    private var _lineType: HWPLineType = HWPLineType.None
+    private var _lineEndShape: HWPLineEndShape = HWPLineEndShape.Round
+    private var _startArrowShape: HWPLineArrowShape = HWPLineArrowShape.Arrow
+    private var _endArrowShape: HWPLineArrowShape = HWPLineArrowShape.Arrow
+    private var _startArrowSize: HWPLineArrowSize = HWPLineArrowSize.SmallSmall
+    private var _endArrowSize: HWPLineArrowSize = HWPLineArrowSize.SmallSmall
+    private var _isFillStartArrow: Boolean = false
+    private var _isFillEndArrow: Boolean = false
     /**
      * 선 종류를 반환하는 함수
      * bit 0-5

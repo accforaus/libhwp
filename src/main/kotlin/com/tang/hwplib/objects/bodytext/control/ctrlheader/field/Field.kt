@@ -13,7 +13,19 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPFieldHeaderProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _canModifyReadOnlyState = canModifyInReadOnlyState()
+            _isUpdateTextPropertyAtUpdatingHyperlinkNotOpened = isUpdateTextPropertyAtUpdatingHyperlinkNotOpened()
+            _isUpdateTextPropertyAtUpdatingHyperlinkOpened = isUpdateTextPropertyAtUpdatingHyperlinkOpened()
+            _isUpdateTextPropertyAtUpdatingHyperlinkCreating = isUpdateTextPropertyAtUpdatingHyperlinkCreating()
+            _isModifiedContent = isModifiedContent()
+        }
+    private var _canModifyReadOnlyState: Boolean = false
+    private var _isUpdateTextPropertyAtUpdatingHyperlinkNotOpened: Boolean = false
+    private var _isUpdateTextPropertyAtUpdatingHyperlinkOpened: Boolean = false
+    private var _isUpdateTextPropertyAtUpdatingHyperlinkCreating: Boolean = false
+    private var _isModifiedContent: Boolean = false
     /**
      * 읽기 전용 상태에서도 수정 가능한지 여부를 반환하는 함수
      * bit 0

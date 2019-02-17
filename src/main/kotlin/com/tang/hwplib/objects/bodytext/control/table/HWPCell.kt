@@ -21,6 +21,19 @@ import com.tang.hwplib.util.binary.set
  */
 class ListHeaderPropertyForCell {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _textDirection = getTextDirection()
+            _lineChange = getLineChange()
+            _textVerticalMethod = getTextVerticalAlignment()
+            _isProtectCell = isProtectCell()
+            _isEditableAtFormMode = isEditableAtFormMode()
+        }
+    private var _textDirection: HWPTextDirection = HWPTextDirection.Horizontal
+    private var _lineChange: HWPLineChange = HWPLineChange.Normal
+    private var _textVerticalMethod: HWPTextVerticalAlignment = HWPTextVerticalAlignment.Top
+    private var _isProtectCell: Boolean = false
+    private var _isEditableAtFormMode: Boolean = false
 
     /**
      * 텍스트 방향을 반환하는 함수

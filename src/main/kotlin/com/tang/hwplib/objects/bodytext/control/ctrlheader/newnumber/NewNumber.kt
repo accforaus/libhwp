@@ -14,7 +14,11 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPNewNumberHeaderProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _numberSort = getNumberSort()
+        }
+    private var _numberSort: HWPNumberSort = HWPNumberSort.Page
     /**
      * 번호 종류를 반환하는 함수
      * bit 0-3

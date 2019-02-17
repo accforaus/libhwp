@@ -13,6 +13,19 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPPageHideHeaderProperty {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _isHideHeader = isHideHeader()
+            _isHideFooter = isHideFooter()
+            _isHideBatangPage = isHideBatangPage()
+            _isHideBorder = isHideBorder()
+            _isHidePageNumber = isHidePageNumber()
+        }
+    private var _isHideHeader: Boolean = false
+    private var _isHideFooter: Boolean = false
+    private var _isHideBatangPage: Boolean = false
+    private var _isHideBorder: Boolean = false
+    private var _isHidePageNumber: Boolean = false
 
     /**
      * 머리말 감춤 여부를 반환하는 함수

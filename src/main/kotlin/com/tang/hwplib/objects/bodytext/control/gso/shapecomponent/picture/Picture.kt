@@ -184,7 +184,17 @@ class HWPNeonEffect {
  */
 class HWPPictureEffectProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _hasShadowEffect = hasShadowEffect()
+            _hasNeonEffect = hasNeonEffect()
+            _hasSoftBorderEffect = hasSoftBorderEffect()
+            _hasReflectionEffect = hasReflectionEffect()
+        }
+    private var _hasShadowEffect: Boolean = false
+    private var _hasNeonEffect: Boolean = false
+    private var _hasSoftBorderEffect: Boolean = false
+    private var _hasReflectionEffect: Boolean = false
     /**
      * 그림자 효과의 유무를 반환하는 함수
      * bit 0

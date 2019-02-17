@@ -123,7 +123,17 @@ class HWPColumnInfo {
  */
 class HWPColumnDefineHeaderProperty {
     var value: Int = 0
-
+        set(newValue) {
+            field = newValue
+            _columnSort = getColumnSort()
+            _columnCount = getColumnCount()
+            _columnDirection = getColumnDirection()
+            _isSameWidth = isSameWidth()
+        }
+    private var _columnSort: HWPColumnSort = HWPColumnSort.Normal
+    private var _columnCount: Short = 0
+    private var _columnDirection: HWPColumnDirection = HWPColumnDirection.FromLeft
+    private var _isSameWidth: Boolean = false
     /**
      * 단 종류를 반환하는 함수
      * bit 0-1

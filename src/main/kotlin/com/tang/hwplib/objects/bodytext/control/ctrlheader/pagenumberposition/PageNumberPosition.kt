@@ -84,7 +84,13 @@ enum class HWPNumberPosition(v: Byte) {
  */
 class PageNumberPositionHeaderProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _numberShape = getNumberShape()
+            _numberPosition = getNumberPosition()
+        }
+    private var _numberShape: HWPNumberShape = HWPNumberShape.Type0
+    private var _numberPosition: HWPNumberPosition = HWPNumberPosition.None
     /**
      * 번호 모양을 반환하는 함수
      * bit 0-7

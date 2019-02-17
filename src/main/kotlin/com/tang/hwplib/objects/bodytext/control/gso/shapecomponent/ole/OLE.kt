@@ -101,7 +101,17 @@ enum class HWPObjectSort(v: Byte) {
  */
 class HWPShapeComponentOLEProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _dvasoect = getDVASPECT()
+            _isMoniker = isMoniker()
+            _baseLine = getBaseLine()
+            _objectSort = getObjectSort()
+        }
+    private var _dvasoect: DVASPECT = DVASPECT.CONTENT
+    private var _isMoniker: Boolean = false
+    private var _baseLine: Byte = 0
+    private var _objectSort: HWPObjectSort = HWPObjectSort.Unknown
     /**
      * DVASPECT 종류를 반환하는 함수
      * bit 0-7

@@ -13,6 +13,27 @@ import com.tang.hwplib.util.binary.set
  */
 class HWPLineSegItemTag {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _isFirstLineAtPage = isFirstLineAtPage()
+            _isFirstLineAtColumn = isFirstLineAtColumn()
+            _isEmptySegment = isEmptySegment()
+            _isFirstSegmentAtLine = isFirstSegmentAtLine()
+            _isLastSegmentAtLine = isLastSegmentAtLine()
+            _isAutoHyphenation = isAutoHyphenation()
+            _isAdjustIndentation = isAdjustIndentation()
+            _isAdjustBullet = isAdjustBullet()
+            _bit31 = getBit31()
+        }
+    private var _isFirstLineAtPage: Boolean = false
+    private var _isFirstLineAtColumn: Boolean = false
+    private var _isEmptySegment: Boolean = false
+    private var _isFirstSegmentAtLine: Boolean = false
+    private var _isLastSegmentAtLine: Boolean = false
+    private var _isAutoHyphenation: Boolean = false
+    private var _isAdjustIndentation: Boolean = false
+    private var _isAdjustBullet: Boolean = false
+    private var _bit31: Boolean = false
 
     /**
      * 페이지의 첫 줄인지 여부를 반환하는 함수

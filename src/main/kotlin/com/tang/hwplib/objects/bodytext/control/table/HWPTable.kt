@@ -54,7 +54,13 @@ enum class DivideAtPageBoundary(v: Byte) {
  */
 class TableProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _divideAtPageBoundary = getDivideAtPageBoundary()
+            _isAutoRepeatTitleRow = isAutoRepeatTitleRow()
+        }
+    private var _divideAtPageBoundary: DivideAtPageBoundary = DivideAtPageBoundary.NoDivide
+    private var _isAutoRepeatTitleRow: Boolean = false
     /**
      * 쪽 경계에서 나눔 종류를 반환하는 함수
      * bit 0-1

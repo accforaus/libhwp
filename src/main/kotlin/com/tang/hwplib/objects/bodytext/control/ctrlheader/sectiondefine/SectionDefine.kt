@@ -52,6 +52,33 @@ enum class HWPTextDirection(v: Byte) {
  */
 class HWPSectionDefineHeaderProperty {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _isHideHeader = isHideHeader()
+            _isHideFooter = isHideFooter()
+            _isHideBatangPage = isHideBatangPage()
+            _isHideBackground = isHideBackground()
+            _isHideBorder = isHideBorder()
+            _isHidePageNumberPosition = isHidePageNumberPosition()
+            _isDisplayBackgroundAtFirstPageOfSection = isDisplayBackgroundAtFirstPageOfSection()
+            _isDisplayBorderAtFirstPageOfSection = isDisplayBorderAtFirstPageOfSection()
+            _textDirection = getTextDirection()
+            _isHideEmptyLine = isHideEmptyLine()
+            _isApplyPageNumberByDivideSection = isApplyPageNumberByDivideSection()
+            _isApplyWongoji = isApplyWongoji()
+        }
+    private var _isHideHeader: Boolean = false
+    private var _isHideFooter: Boolean = false
+    private var _isHideBatangPage: Boolean = false
+    private var _isHideBorder: Boolean = false
+    private var _isHideBackground: Boolean = false
+    private var _isHidePageNumberPosition: Boolean = false
+    private var _isDisplayBorderAtFirstPageOfSection: Boolean = false
+    private var _isDisplayBackgroundAtFirstPageOfSection: Boolean = false
+    private var _textDirection: HWPTextDirection = HWPTextDirection.Horizontal
+    private var _isHideEmptyLine: Boolean = false
+    private var _isApplyPageNumberByDivideSection: Boolean = false
+    private var _isApplyWongoji: Boolean = false
 
     /**
      * 머리말을 감출지 여부를 반환하는 함수

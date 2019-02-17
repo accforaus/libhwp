@@ -48,6 +48,12 @@ enum class HWPKOGLLicenceSupportCountry(v: Byte) {
  */
 class HWPKOGLCCLInfo {
     var value: Long = 0
+        set(newValue) {
+            field = newValue
+            _koglCclInfo = getKoglCclInfo()
+            _isPreventCopy = isPreventCopy()
+            _isPermitCopy = isPermitCopy()
+        }
     private var _koglCclInfo: Boolean = false
     private var _isPreventCopy: Boolean = false
     private var _isPermitCopy: Boolean = false

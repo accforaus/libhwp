@@ -373,7 +373,37 @@ enum class HWPTextHorzArrange(v: Byte) {
  */
 class HWPGsoHeaderProperty {
     var value: Long = 0
-
+        set(newValue) {
+            field = newValue
+            _isLikeWord = isLikeWord()
+            _isApplyLineSpace = isApplyLineSpace()
+            _vertRelTo = getVertRelTo()
+            _vertRelativeArrange = getVertRelativeArrange()
+            _horzRelTo = getHorzRelTo()
+            _horzRelativeArrange = getHorzRelativeArrange()
+            _isVertRelToParaLimit = isVertRelToParaLimit()
+            _isAllowOverlap = isAllowOverlap()
+            _widthCriterion = getWidthCriterion()
+            _heightCriterion = getHeightCriterion()
+            _isProtectSize = isProtectSize()
+            _textFlowMethod = getTextFlowMethod()
+            _textHorzArrange = getTextHorzArrange()
+            _objectNumberSort = getObjectNumberSort()
+        }
+    private var _isLikeWord: Boolean = false
+    private var _isApplyLineSpace: Boolean = false
+    private var _vertRelTo: HWPVertRelTo = HWPVertRelTo.Page
+    private var _vertRelativeArrange: HWPRelativeArrange = HWPRelativeArrange.TopOfLeft
+    private var _horzRelTo: HWPHorzRelTo = HWPHorzRelTo.Page
+    private var _horzRelativeArrange: HWPRelativeArrange = HWPRelativeArrange.TopOfLeft
+    private var _isVertRelToParaLimit: Boolean = false
+    private var _isAllowOverlap: Boolean = false
+    private var _widthCriterion: HWPWidthCriterion = HWPWidthCriterion.Page
+    private var _heightCriterion: HWPHeightCriterion = HWPHeightCriterion.Page
+    private var _isProtectSize: Boolean = false
+    private var _textFlowMethod: HWPTextFlowMethod = HWPTextFlowMethod.BehindText
+    private var _textHorzArrange: HWPTextHorzArrange = HWPTextHorzArrange.BothSides
+    private var _objectNumberSort: HWPObjectNumberSort = HWPObjectNumberSort.None
     /**
      * 글자처럼 취급 여부를 반환하는 함수
      * bit 0
