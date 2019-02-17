@@ -38,6 +38,10 @@ class HWPCtrlHeaderNewNumberBuilder : HWPBuilder<HWPCtrlHeaderNewNumber> {
 class HWPNewNumberPropertyBuilder : HWPBuilder<HWPNewNumberHeaderProperty> {
     private val property : HWPNewNumberHeaderProperty = HWPNewNumberHeaderProperty.build(0)
 
+    fun setValue(value: Long) : HWPNewNumberPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setNumberSort(numberSort: HWPNumberSort) : HWPNewNumberPropertyBuilder = this.apply {
         property.setNumberSort(numberSort)
     }

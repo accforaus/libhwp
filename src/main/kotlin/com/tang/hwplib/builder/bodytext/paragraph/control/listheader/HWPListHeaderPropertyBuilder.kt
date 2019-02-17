@@ -9,6 +9,10 @@ import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPTextVerticalAlign
 class HWPListHeaderPropertyBuilder : HWPBuilder<HWPListHeaderProperty> {
     private val header: HWPListHeaderProperty = HWPListHeaderProperty.build()
 
+    fun setValue(value: Long) : HWPListHeaderPropertyBuilder = this.apply {
+        header.value = value
+    }
+
     fun setTextDirection(textDirection: HWPTextDirection) : HWPListHeaderPropertyBuilder = this.apply {
         header.setTextDirection(textDirection)
     }

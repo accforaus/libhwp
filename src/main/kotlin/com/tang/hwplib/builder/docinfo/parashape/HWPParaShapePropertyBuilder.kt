@@ -6,6 +6,10 @@ import com.tang.hwplib.objects.docinfo.parashape.*
 class HWPParaShapeProperty1Builder : HWPBuilder<HWPParaShapeProperty1> {
     private val property: HWPParaShapeProperty1 = HWPParaShapeProperty1.build()
 
+    fun setValue(value: Long) : HWPParaShapeProperty1Builder = this.apply {
+        property.value = value
+    }
+
     fun setLineSpaceSort(lineSpaceSort: HWPLineSpaceSort) : HWPParaShapeProperty1Builder = this.apply {
         property.setLineSpaceSort(lineSpaceSort)
     }
@@ -80,6 +84,10 @@ class HWPParaShapeProperty1Builder : HWPBuilder<HWPParaShapeProperty1> {
 class HWPParaShapeProperty2Builder : HWPBuilder<HWPParaShapeProperty2> {
     private val property: HWPParaShapeProperty2 = HWPParaShapeProperty2.build()
 
+    fun setValue(value: Long) : HWPParaShapeProperty2Builder = this.apply {
+        property.value = value
+    }
+
     fun setInputSingleLine(inputSingleLine: Boolean) : HWPParaShapeProperty2Builder = this.apply {
         property.setInputSingleLine(inputSingleLine)
     }
@@ -97,6 +105,10 @@ class HWPParaShapeProperty2Builder : HWPBuilder<HWPParaShapeProperty2> {
 
 class HWPParaShapeProperty3Builder : HWPBuilder<HWPParaShapeProperty3> {
     private val property: HWPParaShapeProperty3 = HWPParaShapeProperty3.build(0)
+
+    fun setValue(value: Long) : HWPParaShapeProperty3Builder = this.apply {
+        property.value = value
+    }
 
     fun setLineSpaceSort(lineSpaceSort: HWPLineSpaceSort) : HWPParaShapeProperty3Builder = this.apply {
         property.setLineSpaceSort(lineSpaceSort)

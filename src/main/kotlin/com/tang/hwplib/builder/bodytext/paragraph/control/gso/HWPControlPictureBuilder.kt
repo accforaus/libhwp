@@ -149,6 +149,10 @@ class HWPPictureEffectBuilder : HWPBuilder<HWPPictureEffect> {
 class HWPPictureEffectPropertyBuilder : HWPBuilder<HWPPictureEffectProperty> {
     private val property : HWPPictureEffectProperty = HWPPictureEffectProperty.build()
 
+    fun setValue(value: Long) : HWPPictureEffectPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setShadowEffect(shadowEffect: Boolean) : HWPPictureEffectPropertyBuilder = this.apply {
         property.setShadowEffect(shadowEffect)
     }

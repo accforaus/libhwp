@@ -7,6 +7,10 @@ import com.tang.hwplib.objects.docinfo.charshape.*
 class HWPCharShapePropertyBuilder : HWPBuilder<HWPCharShapeProperty> {
     private val property: HWPCharShapeProperty = HWPCharShapeProperty.build()
 
+    fun setValue(value: Long) : HWPCharShapePropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setItalic(italic: Boolean) : HWPCharShapePropertyBuilder = this.apply {
         property.setItalic(italic)
     }

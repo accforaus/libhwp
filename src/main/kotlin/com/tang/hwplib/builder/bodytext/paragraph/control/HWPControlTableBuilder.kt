@@ -103,6 +103,10 @@ class HWPCellCountOfRowListBuilder : HWPBuilder<ArrayList<Int>> {
 class TablePropertyBuilder : HWPBuilder<TableProperty> {
     private val property : TableProperty = TableProperty.build()
 
+    fun setValue(value: Long) : TablePropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setDivideAtPageBoundray(divideAtPageBoundary: DivideAtPageBoundary) : TablePropertyBuilder = this.apply {
         property.setDivideAtPageBoundary(divideAtPageBoundary)
     }
@@ -263,6 +267,10 @@ class ListHeaderForCellBuilder : HWPBuilder<ListHeaderForCell> {
 
 class ListHeaderPropertyForCellBuilder : HWPBuilder<ListHeaderPropertyForCell> {
     private val property: ListHeaderPropertyForCell = ListHeaderPropertyForCell.build()
+
+    fun setValue(value: Long) : ListHeaderPropertyForCellBuilder = this.apply {
+        property.value = value
+    }
 
     fun setTextDirection(textDirection: HWPTextDirection) : ListHeaderPropertyForCellBuilder = this.apply {
         property.setTextDirection(textDirection)

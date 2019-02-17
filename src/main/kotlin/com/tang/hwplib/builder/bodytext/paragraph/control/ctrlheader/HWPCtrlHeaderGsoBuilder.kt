@@ -61,6 +61,10 @@ class HWPCtrlHeaderGsoBuilder : HWPBuilder<HWPCtrlHeaderGso> {
 class HWPGsoHeaderPropertyBuilder : HWPBuilder<HWPGsoHeaderProperty> {
     private val property : HWPGsoHeaderProperty = HWPGsoHeaderProperty.build()
 
+    fun setValue(value: Long) : HWPGsoHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setLikeWord(likeWord: Boolean) : HWPGsoHeaderPropertyBuilder = this.apply {
         property.setLikeWord(likeWord)
     }

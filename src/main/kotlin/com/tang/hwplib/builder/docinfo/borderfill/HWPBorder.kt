@@ -25,6 +25,10 @@ class HWPEachBorderBuilder : HWPBuilder<HWPEachBorder> {
 class HWPBorderFillPropertyBuilder : HWPBuilder<HWPBorderFillProperty> {
     private val property: HWPBorderFillProperty = HWPBorderFillProperty.build()
 
+    fun setValue(value: Int) : HWPBorderFillPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun set3DEffect(_3DEffect: Boolean) : HWPBorderFillPropertyBuilder = this.apply {
         property.set3DEffect(_3DEffect)
     }

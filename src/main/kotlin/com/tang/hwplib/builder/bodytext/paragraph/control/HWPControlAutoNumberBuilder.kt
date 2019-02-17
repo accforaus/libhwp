@@ -51,6 +51,10 @@ class HWPCtrlHeaderAutoNumberBuilder : HWPBuilder<HWPCtrlHeaderAutoNumber> {
 class HWPAutoNumberHeaderPropertyBuilder : HWPBuilder<HWPAutoNumberHeaderProperty> {
     private val property : HWPAutoNumberHeaderProperty = HWPAutoNumberHeaderProperty.build()
 
+    fun setValue(value: Long) : HWPAutoNumberHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setNumberSort(numberSort: HWPNumberSort) : HWPAutoNumberHeaderPropertyBuilder = this.apply {
         property.setNumberSort(numberSort)
     }

@@ -33,6 +33,10 @@ class HWPCtrlHeaderPageOddEvenAdjustBuilder : HWPBuilder<HWPCtrlHeaderPageOddEve
 class HWPPageOddEvenAdjustHeaderPropertyBuilder : HWPBuilder<PageOddEvenAdjustHeaderProperty> {
     private val property: PageOddEvenAdjustHeaderProperty = PageOddEvenAdjustHeaderProperty.build(0)
 
+    fun setValue(value: Long) : HWPPageOddEvenAdjustHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setOddEvenDivision(oddEvenDivision: HWPOddEvenDivision) : HWPPageOddEvenAdjustHeaderPropertyBuilder = this.apply {
         property.setOddEvenDivision(oddEvenDivision)
     }

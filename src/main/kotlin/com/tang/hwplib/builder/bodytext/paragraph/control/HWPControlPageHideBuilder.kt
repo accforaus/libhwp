@@ -33,6 +33,10 @@ class HWPCtrlHeaderPageHideBuilder : HWPBuilder<HWPCtrlHeaderPageHide> {
 class HWPPageHideHeaderPropertyBuilder : HWPBuilder<HWPPageHideHeaderProperty> {
     private val property: HWPPageHideHeaderProperty = HWPPageHideHeaderProperty.build()
 
+    fun setValue(value: Long) : HWPPageHideHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setHideHeader(hideHeader: Boolean) : HWPPageHideHeaderPropertyBuilder = this.apply {
         property.setHideHeader(hideHeader)
     }

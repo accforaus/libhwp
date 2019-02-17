@@ -6,6 +6,10 @@ import com.tang.hwplib.objects.etc.Color4Byte
 class Color4ByteBuilder : HWPBuilder<Color4Byte> {
     private val color4Byte: Color4Byte = Color4Byte.build()
 
+    fun setValue(value: Long) : Color4ByteBuilder = this.apply {
+        color4Byte.value = value
+    }
+
     fun setRed(red: Short) : Color4ByteBuilder = this.apply {
         color4Byte.setR(red)
     }

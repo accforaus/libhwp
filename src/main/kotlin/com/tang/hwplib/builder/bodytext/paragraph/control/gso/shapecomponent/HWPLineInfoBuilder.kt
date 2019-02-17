@@ -29,6 +29,10 @@ class HWPLineInfoBuilder : HWPBuilder<HWPLineInfo> {
 class HWPLineInfoPropertyBuilder : HWPBuilder<HWPLineInfoProperty> {
     private val property: HWPLineInfoProperty = HWPLineInfoProperty.build()
 
+    fun setValue(value: Long) : HWPLineInfoPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setLineType(lineType: HWPLineType) : HWPLineInfoPropertyBuilder = this.apply {
         property.setLineType(lineType)
     }

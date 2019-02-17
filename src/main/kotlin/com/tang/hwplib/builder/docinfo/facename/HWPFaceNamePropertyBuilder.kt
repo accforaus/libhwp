@@ -6,6 +6,10 @@ import com.tang.hwplib.objects.docinfo.facename.HWPFaceNameProperty
 class HWPFaceNamePropertyBuilder : HWPBuilder<HWPFaceNameProperty> {
     private val property: HWPFaceNameProperty = HWPFaceNameProperty.build()
 
+    fun setValue(value: Short) : HWPFaceNamePropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setSubstituteFont(substituteFont: Boolean) : HWPFaceNamePropertyBuilder = this.apply {
         property.setSubstituteFont(substituteFont)
     }

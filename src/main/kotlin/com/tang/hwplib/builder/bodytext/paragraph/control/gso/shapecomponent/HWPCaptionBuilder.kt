@@ -55,6 +55,10 @@ class ListHeaderForHWPCaptionBuilder : HWPBuilder<ListHeaderForHWPCaption> {
 class ListHeaderCaptionPropertyBuilder : HWPBuilder<ListHeaderCaptionProperty> {
     private val property : ListHeaderCaptionProperty = ListHeaderCaptionProperty.build()
 
+    fun setValue(value: Long) : ListHeaderCaptionPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setDirection(direction : HWPCaptionDirection) : ListHeaderCaptionPropertyBuilder = this.apply {
         property.setDirection(direction)
     }

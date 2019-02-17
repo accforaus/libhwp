@@ -45,6 +45,10 @@ class HWPLineSegItemBuilder : HWPBuilder<HWPLineSegItem> {
 class HWPLineSegItemTagBuilder: HWPBuilder<HWPLineSegItemTag> {
     private val lineSegItemTag: HWPLineSegItemTag = HWPLineSegItemTag.build()
 
+    fun setValue(value: Long) : HWPLineSegItemTagBuilder = this.apply {
+        lineSegItemTag.value = value
+    }
+
     fun setFirstLineAtPage(firstLineAtPage: Boolean) : HWPLineSegItemTagBuilder = this.apply {
         lineSegItemTag.setFirstLineAtPage(firstLineAtPage)
     }

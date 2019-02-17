@@ -64,6 +64,10 @@ class HWPCtrlHeaderColumnDefineBuilder : HWPBuilder<HWPCtrlHeaderColumnDefine> {
 class HWPColumnDefineHeaderPropertyBuilder : HWPBuilder<HWPColumnDefineHeaderProperty> {
     private val property: HWPColumnDefineHeaderProperty = HWPColumnDefineHeaderProperty.build()
 
+    fun setValue(value: Int) : HWPColumnDefineHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setColumnSort(columnSort: HWPColumnSort) : HWPColumnDefineHeaderPropertyBuilder = this.apply {
         property.setColumnSort(columnSort)
     }

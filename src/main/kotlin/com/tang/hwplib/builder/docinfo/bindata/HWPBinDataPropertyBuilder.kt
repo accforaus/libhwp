@@ -9,6 +9,10 @@ import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataType
 class HWPBinDataPropertyBuilder : HWPBuilder<HWPBinDataProperty> {
     private val property : HWPBinDataProperty = HWPBinDataProperty.build()
 
+    fun setValue(value: Int) : HWPBinDataPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setType(type: HWPBinDataType) : HWPBinDataPropertyBuilder = this.apply {
         property.setType(type)
     }

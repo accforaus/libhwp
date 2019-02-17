@@ -9,6 +9,10 @@ import com.tang.hwplib.objects.docinfo.numbering.HWPValueType
 class HWPParagraphHeadInfoPropertyBuilder : HWPBuilder<HWPParagraphHeadInfoProperty> {
     private val property: HWPParagraphHeadInfoProperty = HWPParagraphHeadInfoProperty.build()
 
+    fun setValue(value: Long) : HWPParagraphHeadInfoPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setParagraphAlignment(paragraphAlignment: HWPParagraphAlignment) : HWPParagraphHeadInfoPropertyBuilder = this.apply {
         property.setParagraphAlignment(paragraphAlignment)
     }

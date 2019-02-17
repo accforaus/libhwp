@@ -7,6 +7,10 @@ import com.tang.hwplib.objects.docinfo.style.HWPStyleSort
 class HWPStylePropertyBuilder : HWPBuilder<HWPStyleProperty> {
     private val property: HWPStyleProperty = HWPStyleProperty.build(0)
 
+    fun setValue(value: Short) : HWPStylePropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setStyleSort(styleSort: HWPStyleSort) : HWPStylePropertyBuilder = this.apply {
         property.setStyleSort(styleSort)
     }

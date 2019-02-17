@@ -6,6 +6,10 @@ import com.tang.hwplib.objects.bodytext.paragraph.header.HWPDivideSort
 class HWPDivideSortBuilder : HWPBuilder<HWPDivideSort> {
     private val divideSort: HWPDivideSort = HWPDivideSort.build()
 
+    fun setValue(value: Short) : HWPDivideSortBuilder = this.apply {
+        divideSort.value = value
+    }
+
     fun setDivideMultiColumn(divideMultiColumn: Boolean) : HWPDivideSortBuilder = this.apply {
         divideSort.setDivideMultiColumn(divideMultiColumn)
     }

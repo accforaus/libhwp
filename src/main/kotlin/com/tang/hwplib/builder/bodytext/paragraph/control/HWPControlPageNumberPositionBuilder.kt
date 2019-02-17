@@ -43,6 +43,10 @@ class HWPCtrlHeaderPageNumberPositionBuilder : HWPBuilder<HWPCtrlHeaderPageNumbe
 class PageNumberPositionHeaderPropertyBuilder : HWPBuilder<PageNumberPositionHeaderProperty> {
     private val property: PageNumberPositionHeaderProperty = PageNumberPositionHeaderProperty.build()
 
+    fun setValue(value: Long) : PageNumberPositionHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setNumberShape(numberShape: HWPNumberShape) : PageNumberPositionHeaderPropertyBuilder = this.apply {
         property.setNumberShape(numberShape)
     }

@@ -81,6 +81,10 @@ class HWPShapeComponentOLEBuilder : HWPBuilder<HWPShapeComponentOLE> {
 class HWPShapeComponentOLEPropertyBuilder : HWPBuilder<HWPShapeComponentOLEProperty> {
     private val property : HWPShapeComponentOLEProperty = HWPShapeComponentOLEProperty.build()
 
+    fun setValue(value: Long) : HWPShapeComponentOLEPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setDVASPECT(dvaspect: DVASPECT) : HWPShapeComponentOLEPropertyBuilder = this.apply {
         property.setDVASPECT(dvaspect)
     }

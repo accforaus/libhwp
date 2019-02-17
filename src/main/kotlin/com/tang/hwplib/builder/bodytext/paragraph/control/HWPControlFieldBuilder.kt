@@ -45,6 +45,10 @@ class HWPCtrlHeaderFieldBuilder : HWPBuilder<HWPCtrlHeaderField> {
 class HWPFieldHeaderPropertyBuilder : HWPBuilder<HWPFieldHeaderProperty> {
     private val property : HWPFieldHeaderProperty = HWPFieldHeaderProperty.build()
 
+    fun setValue(value: Long) : HWPFieldHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setModifyInReadOnlyState(modifyInReadOnlyState: Boolean) : HWPFieldHeaderPropertyBuilder = this.apply {
         property.setModifyInReadOnlyState(modifyInReadOnlyState)
     }

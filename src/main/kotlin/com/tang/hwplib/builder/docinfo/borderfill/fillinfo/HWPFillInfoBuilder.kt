@@ -43,6 +43,10 @@ class HWPFillInfoBuilder : HWPBuilder<HWPFillInfo> {
 class HWPFillTypeBuilder : HWPBuilder<HWPFillType> {
     private val fillType: HWPFillType = HWPFillType.build()
 
+    fun setValue(value: Long) : HWPFillTypeBuilder = this.apply {
+        fillType.value = value
+    }
+
     fun setPatternFill(patternFill: Boolean) : HWPFillTypeBuilder = this.apply {
         fillType.setPatternFill(patternFill)
     }

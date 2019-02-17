@@ -113,6 +113,10 @@ class HWPShapeComponentEllipseBuilder : HWPBuilder<HWPShapeComponentEllipse> {
 class HWPShapeComponentEllipsePropertyBuilder : HWPBuilder<HWPShapeComponentEllipseProperty> {
     private val property: HWPShapeComponentEllipseProperty = HWPShapeComponentEllipseProperty.build()
 
+    fun setValue(value: Long) : HWPShapeComponentEllipsePropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setRecalculateIntervalWhenChangingArc(recalculateIntervalWhenChangingArc: Boolean) : HWPShapeComponentEllipsePropertyBuilder = this.apply {
         property.setRecalculateIntervalWhenChangingArc(recalculateIntervalWhenChangingArc)
     }

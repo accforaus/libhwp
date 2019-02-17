@@ -106,6 +106,10 @@ class HWPCtrlHeaderSectionDefineBuilder : HWPBuilder<HWPCtrlHeaderSectionDefine>
 class HWPSectionDefineHeaderPropertyBuilder : HWPBuilder<HWPSectionDefineHeaderProperty> {
     private val property : HWPSectionDefineHeaderProperty = HWPSectionDefineHeaderProperty.build()
 
+    fun setValue(value: Long) : HWPSectionDefineHeaderPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setHideHeader(hideHeader: Boolean) : HWPSectionDefineHeaderPropertyBuilder = this.apply {
         property.setHideHeader(hideHeader)
     }
@@ -206,6 +210,10 @@ class HWPPageDefBuilder : HWPBuilder<HWPPageDef> {
 class HWPPageDefPropertyBuilder : HWPBuilder<HWPPageDefProperty> {
     private val property : HWPPageDefProperty = HWPPageDefProperty.build()
 
+    fun setValue(value: Long) : HWPPageDefPropertyBuilder = this.apply {
+        property.value = value
+    }
+
     fun setPaperDirection(paperDirection: HWPPaperDirection) : HWPPageDefPropertyBuilder = this.apply {
         property.setPaperDirection(paperDirection)
     }
@@ -249,6 +257,10 @@ class HWPPageBorderFillBuilder : HWPBuilder<HWPPageBorderFill> {
 
 class HWPPageBorderFillPropertyBuilder : HWPBuilder<HWPPageBorderFillProperty> {
     private val property : HWPPageBorderFillProperty = HWPPageBorderFillProperty.build()
+
+    fun setValue(value: Long) : HWPPageBorderFillPropertyBuilder = this.apply {
+        property.value = value
+    }
 
     fun setPositionCriterion(positionCriterion: HWPPositionCriterion) : HWPPageBorderFillPropertyBuilder = this.apply {
         property.setPositionCriterion(positionCriterion)
@@ -371,6 +383,10 @@ class HWPFootEndNoteShapeBuilder : HWPBuilder<HWPFootEndNoteShape> {
 
 class HWPFootnoteShapePropertyBuilder : HWPBuilder<HWPFootnoteShapeProperty> {
     private val property : HWPFootnoteShapeProperty = HWPFootnoteShapeProperty.build()
+
+    fun setValue(value: Long) : HWPFootnoteShapePropertyBuilder = this.apply {
+        property.value = value
+    }
 
     fun setNumberShape(numberShape: HWPNumberShape) : HWPFootnoteShapePropertyBuilder = this.apply {
         property.setNumberShape(numberShape)
