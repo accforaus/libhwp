@@ -39,7 +39,9 @@ internal fun forFileHeader(fh: HWPFileHeader, sr: StreamReader) {
      *
      * @param [koglcclInfo] [HWPKOGLCCLInfo], 빈 공공 누리 정보 객체
      */
-    fun koglCclInfo(koglcclInfo: HWPKOGLCCLInfo): Unit = koglcclInfo.setValue(sr.readDWord())
+    fun koglCclInfo(koglcclInfo: HWPKOGLCCLInfo) {
+        koglcclInfo.value = sr.readDWord()
+    }
 
     /**
      * 속성을 읽는 함수

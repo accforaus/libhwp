@@ -41,7 +41,7 @@ internal fun forFileHeader(fh: HWPFileHeader, sw: StreamWriter) {
         properties = set(properties, 16, hasVideoControl)
         properties = set(properties, 17, hasOrderFieldControl)
         sw.writeDWord(properties)
-        sw.writeDWord(koglCCLInfo.getValue())
+        sw.writeDWord(koglCCLInfo.value)
         sw.writeDWord(encryptVersionType.value)
         sw.writeByte(koglLicenceSupportCountry.value.toShort())
     }

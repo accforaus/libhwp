@@ -47,33 +47,24 @@ enum class HWPKOGLLicenceSupportCountry(v: Byte) {
  * @property [isPermitCopy] [Boolean], 동일 조건 하에 복제 허가 여부 (복제 제한인 경우 무시)
  */
 class HWPKOGLCCLInfo {
-    var koglCclInfo: Boolean = false
-    var isPreventCopy: Boolean = false
-    var isPermitCopy: Boolean = false
+    var value: Long = 0
+    private var _koglCclInfo: Boolean = false
+    private var _isPreventCopy: Boolean = false
+    private var _isPermitCopy: Boolean = false
 
-    /**
-     * 데이터를 설정해주는 함수
-     *
-     * @param [value] [Long], 데이터 값
-     * @return [Unit]
-     */
-    fun setValue(value: Long) {
-        koglCclInfo = get(value, 0)
-        isPreventCopy = get(value, 1)
-        isPermitCopy = get(value, 2)
+    fun getKoglCclInfo() : Boolean = get(value, 0)
+    fun setKoglCclInfo(koglCclInfo: Boolean) {
+        value = set(value, 0, koglCclInfo)
     }
 
-    /**
-     * 데이터를 반환해주는 함수
-     *
-     * @return [Long] 데이터 값
-     */
-    fun getValue(): Long {
-        var value: Long = 0
-        value = set(value, 0, koglCclInfo)
-        value = set(value, 1, isPreventCopy)
-        value = set(value, 2, isPermitCopy)
-        return value
+    fun isPreventCopy() : Boolean = get(value, 1)
+    fun setPreventCopy(preventCopy: Boolean) {
+        value = set(value, 1, preventCopy)
+    }
+
+    fun isPermitCopy() : Boolean = get(value, 2)
+    fun setPermitCopy(permitCopy: Boolean) {
+        value = set(value, 1, permitCopy)
     }
 
     /**
@@ -82,9 +73,7 @@ class HWPKOGLCCLInfo {
      * @return [HWPKOGLCCLInfo] 복사된 객체 반환
      */
     fun copy() : HWPKOGLCCLInfo = HWPKOGLCCLInfo().also {
-        it.koglCclInfo = this.koglCclInfo
-        it.isPreventCopy = this.isPreventCopy
-        it.isPermitCopy = this.isPermitCopy
+        it.value = this.value
     }
 
     companion object {
@@ -97,9 +86,9 @@ class HWPKOGLCCLInfo {
                   isPreventCopy: Boolean = false,
                   isPermitCopy: Boolean = false):
                 HWPKOGLCCLInfo = HWPKOGLCCLInfo().apply {
-            this.koglCclInfo = koglCclInfo
-            this.isPreventCopy = isPreventCopy
-            this.isPermitCopy = isPermitCopy
+            setKoglCclInfo(koglCclInfo)
+            setPreventCopy(isPreventCopy)
+            setPermitCopy(isPermitCopy)
         }
     }
 }
