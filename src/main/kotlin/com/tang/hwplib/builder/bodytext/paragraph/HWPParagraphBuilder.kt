@@ -2,8 +2,10 @@ package com.tang.hwplib.builder.bodytext.paragraph
 
 import com.tang.hwplib.builder.bodytext.paragraph.charshape.HWPParaCharShapeBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.charshape.buildEmptyParaCharShape
+import com.tang.hwplib.builder.bodytext.paragraph.control.HWPControlListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.buildEmptyColumnDefine
 import com.tang.hwplib.builder.bodytext.paragraph.control.buildEmptySectionDefine
+import com.tang.hwplib.builder.bodytext.paragraph.control.gso.ChildControlListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.header.HWPParaHeadBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.header.buildEmptyParaHeader
 import com.tang.hwplib.builder.bodytext.paragraph.lineseg.HWPParaLineSegBuilder
@@ -46,6 +48,10 @@ class HWPParagraphBuilder : HWPBuilder<HWPParagraph> {
 
     fun setParaText(paraTextBuilder: HWPParaTextBuilder) : HWPParagraphBuilder = this.apply {
         paragraph.text = paraTextBuilder.build()
+    }
+
+    fun setControlList(controlListBuilder: HWPControlListBuilder) : HWPParagraphBuilder = this.apply {
+        paragraph.controlList = controlListBuilder.build()
     }
 
     override fun build(): HWPParagraph = paragraph

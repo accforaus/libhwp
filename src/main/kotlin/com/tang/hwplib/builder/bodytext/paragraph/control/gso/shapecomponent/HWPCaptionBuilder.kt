@@ -1,4 +1,4 @@
-package com.tang.hwplib.builder.bodytext.paragraph.control.gso
+package com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent
 
 import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.listheader.HWPListHeaderPropertyBuilder

@@ -8,32 +8,27 @@ import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataCompress
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 class HWPEmbeddedBinDataBuilder(private val binData: HWPBinData) : HWPBuilder<HWPEmbeddedBinaryData> {
-    private var name: String = ""
-    private var data: ByteArray? = null
-    private var compressMethod: HWPBinDataCompress? = null
+    private val embeddedBinData : HWPEmbeddedBinaryData = HWPEmbeddedBinaryData.build()
 
-    fun setExtension(extension: String) : HWPEmbeddedBinDataBuilder {
-        this.name = getBinDataName(binData.embeddedBinaryDataList.size, extension)
-        return this
+    fun setExtension(extension: String) : HWPEmbeddedBinDataBuilder = this.apply {
+        embeddedBinData.name = getBinDataName(binData.embeddedBinaryDataList.size, extension)
     }
 
-    fun setData(data: ByteArray) : HWPEmbeddedBinDataBuilder {
-        this.data = data
-        return this
+    fun setData(data: ByteArray) : HWPEmbeddedBinDataBuilder = this.apply {
+        embeddedBinData.data = data
     }
 
-    fun setCompressMethod(compress: HWPBinDataCompress) : HWPEmbeddedBinDataBuilder {
-        this.compressMethod = compress
-        return this
+    fun setCompressMethod(compress: HWPBinDataCompress) : HWPEmbeddedBinDataBuilder = this.apply {
+        embeddedBinData.compressMethod = compress
     }
 
     override fun build(): HWPEmbeddedBinaryData {
-        if (name == "")
+        if (embeddedBinData.name == "")
             throw HWPBuildException("Embedded Binary Data name must have extension")
-        if (data == null)
+        if (embeddedBinData.data == null)
             throw HWPBuildException("Embedded Binary Data must be not null")
-        if (compressMethod == null)
+        if (embeddedBinData.compressMethod == null)
             throw HWPBuildException("Embedded Binary Data Compress Method must be not null")
-        return HWPEmbeddedBinaryData.build(name = name, data = data!!, compressMethod = compressMethod!!)
+        return embeddedBinData
     }
 }

@@ -1,27 +1,29 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHeaderGsoBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.control.gso.HWPCaptionBuilder
+import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlEquation
-import com.tang.hwplib.objects.bodytext.control.ctrlheader.gso.HWPVertRelTo
+import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.equation.HWPEQEdit
 
 class HWPControlEquationBuilder : HWPControlBuilder<HWPControlEquation> {
     private val control : HWPControlEquation = HWPControlEquation.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlEquationBuilder = this.apply {
-        control.header = headerBuilder.build()
-    }
-
-    fun setCaption(captionBuilder: HWPCaptionBuilder) : HWPControlEquationBuilder = this.apply {
-        control.caption = captionBuilder.build()
+        control.header = headerBuilder.build().apply {
+            ctrlId = HWPControlType.Equation.ctrlId
+        }
     }
 
     fun setEQEdit(eqEditBuilder: HWPEQEditBuilder) : HWPControlEquationBuilder = this.apply {
         control.eqEdit = eqEditBuilder.build()
+    }
+
+    fun setCaption(captionBuilder: HWPCaptionBuilder) : HWPControlEquationBuilder = this.apply {
+        control.caption = captionBuilder.build()
     }
 
     fun setCtrlData(ctrlDataBuilder: HWPCtrlDataBuilder) : HWPControlEquationBuilder = this.apply {

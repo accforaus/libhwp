@@ -5,3 +5,5 @@ interface HWPBuilder<T> {
 }
 
 interface HWPControlBuilder<T> : HWPBuilder<T>
+
+interface HWPGsoControlBuilder<T> : HWPControlBuilder<T>

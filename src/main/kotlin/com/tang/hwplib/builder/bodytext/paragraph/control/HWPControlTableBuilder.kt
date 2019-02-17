@@ -1,11 +1,128 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphListBuilder
+import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHeaderGsoBuilder
+import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
+import com.tang.hwplib.builder.interfaces.HWPControlBuilder
+import com.tang.hwplib.objects.bodytext.control.HWPControlTable
+import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.sectiondefine.HWPTextDirection
 import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPLineChange
 import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPTextVerticalAlignment
 import com.tang.hwplib.objects.bodytext.control.table.*
+
+class HWPControlTableBuilder : HWPControlBuilder<HWPControlTable> {
+    private val control : HWPControlTable = HWPControlTable.build()
+
+    fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlTableBuilder = this.apply {
+        control.header = headerBuilder.build().apply {
+            ctrlId = HWPControlType.Table.ctrlId
+        }
+    }
+
+    fun setTable(tableBuilder: HWPTableBuilder) : HWPControlTableBuilder = this.apply {
+        control.table = tableBuilder.build()
+    }
+
+    fun setRowList(rowListBuilder: HWPRowListBuilder) : HWPControlTableBuilder = this.apply {
+        control.rowList = rowListBuilder.build()
+    }
+
+    fun setCaption(captionBuilder: HWPCaptionBuilder) : HWPControlTableBuilder = this.apply {
+        control.caption = captionBuilder.build()
+    }
+
+    fun setCtrlData(ctrlDataBuilder: HWPCtrlDataBuilder) : HWPControlTableBuilder = this.apply {
+        control.setCtrlData(ctrlDataBuilder.build())
+    }
+
+    override fun build(): HWPControlTable = control
+}
+
+class HWPTableBuilder : HWPBuilder<HWPTable> {
+    private val table: HWPTable = HWPTable.build()
+
+    fun setProperty(propertyBuilder: TablePropertyBuilder) : HWPTableBuilder = this.apply {
+        table.property = propertyBuilder.build()
+    }
+
+    fun setRowCount(rowCount: Int) : HWPTableBuilder = this.apply {
+        table.rowCount = rowCount
+    }
+
+    fun setColumnCount(columnCount: Int) : HWPTableBuilder = this.apply {
+        table.columnCount = columnCount
+    }
+
+    fun setCellSpacing(cellSpacing: Int) : HWPTableBuilder =  this.apply {
+        table.cellSpacing = cellSpacing
+    }
+
+    fun setLeftInnerMargin(leftInnerMargin: Int) : HWPTableBuilder = this.apply {
+        table.leftInnerMargin = leftInnerMargin
+    }
+
+    fun setRightInnerMargin(rightInnerMargin: Int) : HWPTableBuilder = this.apply {
+        table.rightInnerMargin = rightInnerMargin
+    }
+
+    fun setTopInnerMargin(topInnerMargin: Int) : HWPTableBuilder =  this.apply {
+        table.topInnerMargin = topInnerMargin
+    }
+
+    fun setBottomInnerMargin(bottomInnerMargin: Int) : HWPTableBuilder = this.apply {
+        table.bottomInnerMargin = bottomInnerMargin
+    }
+
+    fun setCellCountOfRowList(cellCountBuilder: HWPCellCountOfRowListBuilder) : HWPTableBuilder = this.apply {
+        table.cellCountOfRowList = cellCountBuilder.build()
+    }
+
+    fun setBorderFillID(borderFillID: Int) : HWPTableBuilder = this.apply {
+        table.borderFillId = borderFillID
+    }
+
+    fun setZoneInfoList(zoneInfoListBuilder: HWPZoneInfoListBuilder) : HWPTableBuilder = this.apply {
+        table.zoneInfoList = zoneInfoListBuilder.build()
+    }
+
+    override fun build(): HWPTable = table
+}
+
+class HWPCellCountOfRowListBuilder : HWPBuilder<ArrayList<Int>> {
+    private val cellCountList: ArrayList<Int> = ArrayList()
+
+    fun addCellCount(cellCount: Int) : HWPCellCountOfRowListBuilder = this.apply {
+        cellCountList.add(cellCount)
+    }
+
+    override fun build(): ArrayList<Int> = cellCountList
+}
+
+class TablePropertyBuilder : HWPBuilder<TableProperty> {
+    private val property : TableProperty = TableProperty.build()
+
+    fun setDivideAtPageBoundray(divideAtPageBoundary: DivideAtPageBoundary) : TablePropertyBuilder = this.apply {
+        property.setDivideAtPageBoundary(divideAtPageBoundary)
+    }
+
+    fun setAutoRepeatTitleRow(autoRepeatTitleRow: Boolean) : TablePropertyBuilder = this.apply {
+        property.setAutoRepeatTitleRow(autoRepeatTitleRow)
+    }
+
+    override fun build(): TableProperty = property
+}
+
+class HWPRowListBuilder : HWPBuilder<ArrayList<HWPRow>> {
+    private val rowList : ArrayList<HWPRow> = ArrayList()
+
+    fun addRow(rowBuilder: HWPRowBuilder) : HWPRowListBuilder = this.apply {
+        rowList.add(rowBuilder.build())
+    }
+
+    override fun build(): ArrayList<HWPRow> = rowList
+}
 
 class HWPRowBuilder : HWPBuilder<HWPRow> {
     private val row: HWPRow = HWPRow.build()
@@ -15,6 +132,16 @@ class HWPRowBuilder : HWPBuilder<HWPRow> {
     }
 
     override fun build(): HWPRow = row
+}
+
+class HWPZoneInfoListBuilder : HWPBuilder<ArrayList<HWPZoneInfo>> {
+    private val zoneInfoList: ArrayList<HWPZoneInfo> = ArrayList()
+
+    fun addZoneInfo(zoneInfoBuilder: HWPZoneInfoBuilder) : HWPZoneInfoListBuilder = this.apply {
+        zoneInfoList.add(zoneInfoBuilder.build())
+    }
+
+    override fun build(): ArrayList<HWPZoneInfo> = zoneInfoList
 }
 
 
