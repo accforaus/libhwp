@@ -1,9 +1,10 @@
 package com.tang.hwplib.objects
 
-import com.tang.hwplib.builder.bodytext.buildEmptyBodyText
-import com.tang.hwplib.builder.buildEmptyHWPDocument
-import com.tang.hwplib.builder.docinfo.buildEmptyDocInfo
 import com.tang.hwplib.builder.fileheader.buildEmptyFileHeader
+import com.tang.hwplib.builder.template.emptydocument.HWPEmptyDocumentTemplate
+import com.tang.hwplib.builder.template.emptydocument.bodytext.HWPEmptyBodyTextBuilder
+import com.tang.hwplib.builder.template.emptydocument.docinfo.HWPEmptyDocInfoBuilder
+import com.tang.hwplib.builder.template.emptydocument.fileheader.HWPEmptyFileHeaderBuilder
 import com.tang.hwplib.copyto.HWPDocumentCopyTo
 import com.tang.hwplib.copyto.appendParagraph
 import com.tang.hwplib.objects.bindata.HWPBinData
@@ -37,9 +38,9 @@ class HWPDocument {
     var binData: HWPBinData = HWPBinData()
 
     constructor() {
-        this.fileHeader = buildEmptyFileHeader()
-        buildEmptyDocInfo(this.docInfo)
-        this.bodyText = buildEmptyBodyText()
+        this.fileHeader = HWPEmptyFileHeaderBuilder().build()
+        this.docInfo = HWPEmptyDocInfoBuilder().build()
+        this.bodyText = HWPEmptyBodyTextBuilder().build()
     }
 
     constructor(path: String) {
