@@ -56,7 +56,7 @@ internal class HWPWriteException: RuntimeException {
  *
  * @author accforaus
  */
-class HWPBuildException: RuntimeException {
+open class HWPBuildException: RuntimeException {
     constructor(msg: String) : super(msg)
     constructor(msg: String, cause: Throwable) : super(msg, cause)
 }
@@ -67,7 +67,7 @@ class HWPBuildException: RuntimeException {
  *
  * @author accforaus
  */
-class HWPCopyToExcention: RuntimeException {
+class HWPCopyToException: RuntimeException {
     constructor(msg: String) : super(msg)
     constructor(msg: String, cause: Throwable) : super(msg, cause)
 }
