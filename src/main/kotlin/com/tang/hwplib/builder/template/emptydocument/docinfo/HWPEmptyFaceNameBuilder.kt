@@ -2,30 +2,27 @@ package com.tang.hwplib.builder.template.emptydocument.docinfo
 
 import com.tang.hwplib.builder.docinfo.HWPFaceNameBuilder
 import com.tang.hwplib.builder.docinfo.facename.HWPFaceNamePropertyBuilder
+import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.HWPFaceName
 import com.tang.hwplib.objects.docinfo.facename.HWPFaceNameEnum
 
 class HWPEmptyFaceNameBuilder(val docInfo: HWPDocInfo) {
+    private fun getBuilder() : HWPFaceNameBuilder = docInfo.builderFactory(HWPDocInfoBuilderType.All) as HWPFaceNameBuilder
     fun build() {
-        fun addDotum() : HWPFaceNameBuilder = HWPFaceNameBuilder()
-                .setProperty(HWPFaceNamePropertyBuilder().setValue(33))
-                .setName("함초롬돋움")
-                .setBaseFontName("HCR Dotum")
-        fun addBatang() : HWPFaceNameBuilder = HWPFaceNameBuilder()
-                .setProperty(HWPFaceNamePropertyBuilder().setValue(33))
-                .setName("함초롱바탕")
-                .setBaseFontName("HCR Batang")
-
-        docInfo.run {
-            hangulFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
-            englishFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
-            hanjaFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
-            japaneseFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
-            etcFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
-            symbolFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
-            userFaceNameList = arrayListOf(addDotum().build(), addBatang().build())
+        fun addDotum(builder: HWPFaceNameBuilder) {
+            builder.setProperty(HWPFaceNamePropertyBuilder().setValue(33))
+                    .setName("함초롬돋움")
+                    .setBaseFontName("HCR Dotum").build()
         }
+        fun addBatang(builder: HWPFaceNameBuilder) {
+            builder.setProperty(HWPFaceNamePropertyBuilder().setValue(33))
+                    .setName("함초롱바탕")
+                    .setBaseFontName("HCR Batang").build()
+        }
+
+        addDotum(getBuilder())
+        addBatang(getBuilder())
     }
 }
