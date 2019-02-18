@@ -1,6 +1,7 @@
 package com.tang.hwplib.builder.docinfo.borderfill.fillinfo
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPImageFill
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPImageFillType
 

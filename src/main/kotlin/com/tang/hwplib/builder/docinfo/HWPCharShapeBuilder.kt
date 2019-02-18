@@ -4,11 +4,13 @@ import com.tang.hwplib.builder.bodytext.paragraph.charshape.HWPParaCharShapeBuil
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.builder.docinfo.charshape.*
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
+import com.tang.hwplib.copyto.docinfo.IDMappingTypes
 import com.tang.hwplib.objects.docinfo.HWPCharShape
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.charshape.*
 import com.tang.hwplib.objects.etc.Color4Byte
 
-class HWPCharShapeBuilder : HWPBuilder<HWPCharShape> {
+class HWPCharShapeBuilder(private val docInfo : HWPDocInfo) : HWPDocInfoBuilder() {
     private val charShape: HWPCharShape = HWPCharShape.build()
 
     fun setFaceNameIDs(faceNameIdsBuilder: HWPFaceNameIDBuilder) : HWPCharShapeBuilder = this.apply {
@@ -71,7 +73,14 @@ class HWPCharShapeBuilder : HWPBuilder<HWPCharShape> {
         charShape.strikeLineColor = colorBuilder.build()
     }
 
-    override fun build(): HWPCharShape = charShape
+    fun proceed() : Int = build().run {
+        return docInfo.charShapeList.size - 1
+    }
+
+    override fun build(): HWPCharShape = charShape.apply {
+        docInfo.charShapeList.add(this)
+        docInfo.updateIDMappings(IDMappingTypes.CHARSHAPE)
+    }
 }
 
 class HWPCharShapeListBuilder : HWPBuilder<ArrayList<HWPCharShape>> {

@@ -1,6 +1,8 @@
 package com.tang.hwplib.builder.docinfo.numbering
 
+import com.tang.hwplib.builder.docinfo.HWPCharShapeBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.numbering.HWPParagraphAlignment
 import com.tang.hwplib.objects.docinfo.numbering.HWPParagraphHeadInfo
 import com.tang.hwplib.objects.docinfo.numbering.HWPParagraphHeadInfoProperty
@@ -32,7 +34,7 @@ class HWPParagraphHeadInfoPropertyBuilder : HWPBuilder<HWPParagraphHeadInfoPrope
     override fun build(): HWPParagraphHeadInfoProperty = property
 }
 
-class HWPParagraphHeadInfoBuilder : HWPBuilder<HWPParagraphHeadInfo> {
+class HWPParagraphHeadInfoBuilder(private val docInfo : HWPDocInfo) : HWPBuilder<HWPParagraphHeadInfo> {
     private val paragraphHeadInfo: HWPParagraphHeadInfo = HWPParagraphHeadInfo.build()
 
     fun setProperty(propertyBuilder: HWPParagraphHeadInfoPropertyBuilder) : HWPParagraphHeadInfoBuilder = this.apply {
@@ -49,6 +51,10 @@ class HWPParagraphHeadInfoBuilder : HWPBuilder<HWPParagraphHeadInfo> {
 
     fun setCharShapeID(charShapeID: Long) : HWPParagraphHeadInfoBuilder = this.apply {
         paragraphHeadInfo.charShapeID = charShapeID
+    }
+
+    fun setCharShapeID(charShapeBuilder: HWPCharShapeBuilder) : HWPParagraphHeadInfoBuilder = this.apply {
+        paragraphHeadInfo.charShapeID = charShapeBuilder.proceed().toLong()
     }
 
     override fun build(): HWPParagraphHeadInfo = paragraphHeadInfo

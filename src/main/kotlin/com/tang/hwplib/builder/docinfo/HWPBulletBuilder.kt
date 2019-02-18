@@ -3,9 +3,11 @@ package com.tang.hwplib.builder.docinfo
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.builder.docinfo.bullet.HWPImageBulletBuilder
 import com.tang.hwplib.builder.docinfo.numbering.HWPParagraphHeadInfoBuilder
+import com.tang.hwplib.copyto.docinfo.IDMappingTypes
 import com.tang.hwplib.objects.docinfo.HWPBullet
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 
-class HWPBulletBuilder : HWPBuilder<HWPBullet> {
+class HWPBulletBuilder(private val docInfo : HWPDocInfo) : HWPDocInfoBuilder() {
     private val bullet: HWPBullet = HWPBullet.build()
 
     fun setParagraphHeadInfo(paragraphHeadInfoBuilder: HWPParagraphHeadInfoBuilder) : HWPBulletBuilder = this.apply {
@@ -28,7 +30,14 @@ class HWPBulletBuilder : HWPBuilder<HWPBullet> {
         bullet.checkBulletChar = checkBulletChar
     }
 
-    override fun build(): HWPBullet = bullet
+    fun proceed() : Int = build().run {
+        docInfo.bulletList.size
+    }
+
+    override fun build(): HWPBullet = bullet.apply {
+        docInfo.bulletList.add(this)
+        docInfo.updateIDMappings(IDMappingTypes.BULLET)
+    }
 }
 
 class HWPBulletListBuilder : HWPBuilder<ArrayList<HWPBullet>> {

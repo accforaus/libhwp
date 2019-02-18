@@ -3,7 +3,7 @@ package com.tang.hwplib.builder.docinfo
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.docinfo.HWPIDMappings
 
-class HWPIDMappingsBuilder : HWPBuilder<HWPIDMappings> {
+class HWPIDMappingsBuilder : HWPDocInfoBuilder() {
     private val idMappings : HWPIDMappings = HWPIDMappings.build()
 
     fun setBinDataCount(binDataCount: Int) : HWPIDMappingsBuilder = this.apply {

@@ -5,7 +5,9 @@ import com.tang.hwplib.builder.docinfo.borderfill.HWPBorderFillPropertyBuilder
 import com.tang.hwplib.builder.docinfo.borderfill.HWPEachBorderBuilder
 import com.tang.hwplib.builder.docinfo.borderfill.fillinfo.HWPFillInfoBuilder
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
+import com.tang.hwplib.copyto.docinfo.IDMappingTypes
 import com.tang.hwplib.objects.docinfo.HWPBorderFill
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderFillProperty
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderThickness
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
@@ -16,7 +18,7 @@ import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPPatternFill
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPPatternType
 import com.tang.hwplib.objects.etc.Color4Byte
 
-class HWPBorderFillBuilder : HWPBuilder<HWPBorderFill> {
+class HWPBorderFillBuilder(private val docInfo: HWPDocInfo) : HWPDocInfoBuilder() {
     private val borderFill: HWPBorderFill = HWPBorderFill.build()
 
     fun setProperty(propertyBuilder: HWPBorderFillPropertyBuilder) : HWPBorderFillBuilder = this.apply {
@@ -55,7 +57,14 @@ class HWPBorderFillBuilder : HWPBuilder<HWPBorderFill> {
         borderFill.fillInfo = fillInfoBuilder.build()
     }
 
-    override fun build(): HWPBorderFill = borderFill
+    fun proceed() : Int = build().run {
+        docInfo.borderFillList.size
+    }
+
+    override fun build(): HWPBorderFill = borderFill.apply {
+        docInfo.borderFillList.add(this)
+        docInfo.updateIDMappings(IDMappingTypes.BORDERFILL)
+    }
 }
 
 class HWPBorderFillListBuilder : HWPBuilder<ArrayList<HWPBorderFill>> {

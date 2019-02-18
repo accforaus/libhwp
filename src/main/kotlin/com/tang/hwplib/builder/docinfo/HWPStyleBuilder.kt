@@ -2,12 +2,14 @@ package com.tang.hwplib.builder.docinfo
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.builder.docinfo.style.HWPStylePropertyBuilder
+import com.tang.hwplib.copyto.docinfo.IDMappingTypes
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.HWPStyle
 import com.tang.hwplib.objects.docinfo.style.HWPStyleProperty
 import com.tang.hwplib.objects.docinfo.style.HWPStyleSort
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
-class HWPStyleBuilder : HWPBuilder<HWPStyle> {
+class HWPStyleBuilder(private val docInfo : HWPDocInfo) : HWPDocInfoBuilder() {
     private val style: HWPStyle = HWPStyle.build()
 
     fun setHangulName(hangulName: String?) : HWPStyleBuilder = this.apply {
@@ -34,11 +36,23 @@ class HWPStyleBuilder : HWPBuilder<HWPStyle> {
         style.paraShapeId = paraShapeID
     }
 
+    fun setParaShapeId(paraShapeBuilder: HWPParaShapeBuilder) : HWPStyleBuilder = this.apply {
+        style.paraShapeId = paraShapeBuilder.proceed()
+    }
+
     fun setCharShapeID(charShapeID: Int) : HWPStyleBuilder = this.apply {
         style.charShapeId = charShapeID
     }
 
-    override fun build(): HWPStyle {
+    fun setCharShapeID(charShapeBuilder: HWPCharShapeBuilder) : HWPStyleBuilder = this.apply {
+        style.charShapeId = charShapeBuilder.proceed()
+    }
+
+    fun proceed() : Int = build().run {
+        docInfo.styleList.size - 1
+    }
+
+    fun verify() : Boolean {
         style.run {
             when (property.getStyleSort()) {
                 HWPStyleSort.ParaStyle -> {
@@ -51,7 +65,14 @@ class HWPStyleBuilder : HWPBuilder<HWPStyle> {
                 }
             }
         }
-        return style
+        return true
+    }
+
+    override fun build(): HWPStyle = style.apply {
+        if (docInfo.styleList.size != 0)
+            style.nextStyleId = (docInfo.styleList.size - 1).toShort()
+        docInfo.styleList.add(this)
+        docInfo.updateIDMappings(IDMappingTypes.STYLE)
     }
 }
 

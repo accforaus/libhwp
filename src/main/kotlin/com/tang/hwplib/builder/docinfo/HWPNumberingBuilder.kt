@@ -3,12 +3,14 @@ package com.tang.hwplib.builder.docinfo
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.builder.docinfo.numbering.HWPExtendNumberingBuilder
 import com.tang.hwplib.builder.docinfo.numbering.HWPLevelNumberingBuilder
+import com.tang.hwplib.copyto.docinfo.IDMappingTypes
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.HWPNumbering
 import com.tang.hwplib.objects.docinfo.numbering.HWPLevelNumbering
 import com.tang.hwplib.objects.docinfo.numbering.HWPParagraphHeadInfo
 import com.tang.hwplib.objects.docinfo.numbering.HWPParagraphHeadInfoProperty
 
-class HWPNumberingBuilder : HWPBuilder<HWPNumbering> {
+class HWPNumberingBuilder(private val docInfo : HWPDocInfo) : HWPDocInfoBuilder() {
     private val numbering: HWPNumbering = HWPNumbering.build()
 
     fun setLevelNumbering(level: Int, levelNumberingBuilder: HWPLevelNumberingBuilder) : HWPNumberingBuilder = this.apply {
@@ -31,7 +33,14 @@ class HWPNumberingBuilder : HWPBuilder<HWPNumbering> {
         numbering.extendStartNumberForLevel[level] = extendStartNumber
     }
 
-    override fun build(): HWPNumbering = numbering
+    fun proceed() : Int = build().run {
+        docInfo.numberingList.size
+    }
+
+    override fun build(): HWPNumbering = numbering.apply {
+        docInfo.numberingList.add(this)
+        docInfo.updateIDMappings(IDMappingTypes.NUMBERING)
+    }
 }
 
 class HWPNumberingListBuilder : HWPBuilder<ArrayList<HWPNumbering>> {

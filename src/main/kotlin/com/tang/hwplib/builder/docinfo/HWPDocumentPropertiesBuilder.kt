@@ -7,7 +7,7 @@ import com.tang.hwplib.objects.docinfo.HWPDocumentProperties
 import com.tang.hwplib.objects.docinfo.documentproperties.HWPCaretPosition
 import com.tang.hwplib.objects.docinfo.documentproperties.HWPStartNumber
 
-class HWPDocumentPropertiesBuilder : HWPBuilder<HWPDocumentProperties> {
+class HWPDocumentPropertiesBuilder : HWPDocInfoBuilder() {
         private val properties : HWPDocumentProperties = HWPDocumentProperties.build()
 
         fun setSectionCount(sectionCount: Int) : HWPDocumentPropertiesBuilder = this.apply {

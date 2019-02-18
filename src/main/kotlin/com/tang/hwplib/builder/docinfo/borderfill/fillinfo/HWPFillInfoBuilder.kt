@@ -1,11 +1,14 @@
 package com.tang.hwplib.builder.docinfo.borderfill.fillinfo
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPFillInfo
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPFillType
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
-class HWPFillInfoBuilder : HWPBuilder<HWPFillInfo> {
+class HWPFillInfoBuilder(var docInfo: HWPDocInfo) : HWPBuilder<HWPFillInfo> {
+    class HWPFillInfoBuildException(msg: String) : HWPBuildException(msg)
+
     private val fillInfo : HWPFillInfo = HWPFillInfo.build()
 
     fun setFillType(fillTypeBuilder: HWPFillTypeBuilder) : HWPFillInfoBuilder = this.apply {
@@ -24,19 +27,23 @@ class HWPFillInfoBuilder : HWPBuilder<HWPFillInfo> {
         fillInfo.imageFill = imageFillBuilder.build()
     }
 
-    override fun build(): HWPFillInfo {
+    private fun verify() : Boolean {
         fillInfo.run {
             if (type.hasImageFill())
                 if (imageFill == null)
-                    throw HWPBuildException("FillInfo has image fill, ImageFill must be not null")
+                    throw HWPFillInfoBuildException("FillInfo has image fill, ImageFill must be not null")
             if (type.hasGradientFill())
                 if (gradientFill == null)
-                    throw HWPBuildException("FillInfo has gradient fill, GradientFill must be not null")
+                    throw HWPFillInfoBuildException("FillInfo has gradient fill, GradientFill must be not null")
             if (type.hasPatternFill())
                 if (patternFill == null)
-                    throw HWPBuildException("FillInfo has pattern fill, PatternFill must be not null")
+                    throw HWPFillInfoBuildException("FillInfo has pattern fill, PatternFill must be not null")
         }
-        return fillInfo
+        return true
+    }
+
+    override fun build(): HWPFillInfo = fillInfo.apply {
+        verify()
     }
 }
 

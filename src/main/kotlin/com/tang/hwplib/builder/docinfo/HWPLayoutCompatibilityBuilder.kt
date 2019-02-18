@@ -3,7 +3,7 @@ package com.tang.hwplib.builder.docinfo
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.docinfo.HWPLayoutCompatibility
 
-class HWPLayoutCompatibilityBuilder : HWPBuilder<HWPLayoutCompatibility> {
+class HWPLayoutCompatibilityBuilder : HWPDocInfoBuilder() {
     private val layout : HWPLayoutCompatibility = HWPLayoutCompatibility.build()
 
     fun setLetterLevelFormat(letterLevelFormat: Long) : HWPLayoutCompatibilityBuilder = this.apply {
