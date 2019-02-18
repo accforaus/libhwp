@@ -1,8 +1,13 @@
 package com.tang.hwplib.objects.docinfo
 
+import com.tang.hwplib.builder.docinfo.*
+import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
+import com.tang.hwplib.copyto.docinfo.IDMappingTypes
 import com.tang.hwplib.objects.HWPRecordHeader
+import com.tang.hwplib.objects.bindata.HWPEmbeddedBinaryData
 import com.tang.hwplib.objects.docinfo.facename.HWPFaceNameEnum
 import com.tang.hwplib.objects.etc.UnknownRecord
+import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
  * 문서 정보를 나타내는 객체
@@ -63,6 +68,7 @@ class HWPDocInfo {
     var forbiddenChar: UnknownRecord? = null
     var trackChange2List: ArrayList<UnknownRecord> = ArrayList()
     var trackChangeAuthorList: ArrayList<UnknownRecord> = ArrayList()
+    var binData: com.tang.hwplib.objects.bindata.HWPBinData? = null
 
     /**
      * 바이너리 데이터를 추가하고 반환하는 함수
@@ -89,7 +95,38 @@ class HWPDocInfo {
             HWPFaceNameEnum.ETC -> etcFaceNameList.add(it)
             HWPFaceNameEnum.SYMBOL -> symbolFaceNameList.add(it)
             HWPFaceNameEnum.USER -> userFaceNameList.add(it)
-            HWPFaceNameEnum.LATIN -> englishFaceNameList.add(it)
+            HWPFaceNameEnum.ENGLISH -> englishFaceNameList.add(it)
+        }
+    }
+
+    fun proceedBinData(binDataName: String) : Int {
+        fun findIndexByName() : Int {
+            val embeddedList : ArrayList<HWPEmbeddedBinaryData> = binData?.embeddedBinaryDataList ?: throw HWPBuildException("BinData must be not null")
+            for ((index, bin) in embeddedList.withIndex())
+                if (bin.name.contains(binDataName))
+                    return index + 1
+            return -1
+        }
+        return findIndexByName()
+    }
+
+    fun proceedFaceName(name: String, type: HWPFaceNameEnum) : Int {
+        fun findByName(faceNames: ArrayList<HWPFaceName>) : Int {
+            for ((index, faceName) in faceNames.withIndex()) {
+                if (faceName.name == name)
+                    return index
+            }
+            return -1
+        }
+        when (type) {
+            HWPFaceNameEnum.HANGUL -> return findByName(hangulFaceNameList)
+            HWPFaceNameEnum.ENGLISH -> return findByName(englishFaceNameList)
+            HWPFaceNameEnum.HANJA -> return findByName(hanjaFaceNameList)
+            HWPFaceNameEnum.JAPANESE -> return findByName(japaneseFaceNameList)
+            HWPFaceNameEnum.ETC -> return findByName(etcFaceNameList)
+            HWPFaceNameEnum.SYMBOL -> return findByName(symbolFaceNameList)
+            HWPFaceNameEnum.USER -> return findByName(userFaceNameList)
+            HWPFaceNameEnum.ALL -> return findByName(hanjaFaceNameList)
         }
     }
 
@@ -257,6 +294,75 @@ class HWPDocInfo {
      * @return [UnknownRecord] 생성된 객체 번환
      */
     fun addNewTrackChangeAuthor2(rh: HWPRecordHeader) : UnknownRecord = UnknownRecord(rh).also { trackChangeAuthorList.add(it) }
+
+    fun updateIDMappings(type: IDMappingTypes) {
+        when (type) {
+            IDMappingTypes.BINDATA -> {
+                idMappings.binDataCount = idMappings.binDataCount + 1
+            }
+            IDMappingTypes.BULLET -> {
+                idMappings.bulletCount = idMappings.bulletCount + 1
+            }
+            IDMappingTypes.TABDEF -> {
+                idMappings.tabDefCount = idMappings.tabDefCount + 1
+            }
+            IDMappingTypes.CHARSHAPE -> {
+                idMappings.charShapeCount = idMappings.charShapeCount + 1
+            }
+            IDMappingTypes.NUMBERING -> {
+                idMappings.numberingCount = idMappings.numberingCount + 1
+            }
+            IDMappingTypes.PARASHAPE -> {
+                idMappings.paraShapeCount = idMappings.paraShapeCount + 1
+            }
+            IDMappingTypes.BORDERFILL -> {
+                idMappings.borderFillCount = idMappings.borderFillCount + 1
+            }
+            IDMappingTypes.ETC_FACENAME -> {
+                idMappings.etcFaceNameCount = idMappings.etcFaceNameCount + 1
+            }
+            IDMappingTypes.SYMBOL_FACENAME -> {
+                idMappings.symbolFaceNameCount = idMappings.symbolFaceNameCount + 1
+            }
+            IDMappingTypes.USER_FACENAME -> {
+                idMappings.userFaceNameCount = idMappings.userFaceNameCount + 1
+            }
+            IDMappingTypes.HANJA_FACENAME -> {
+                idMappings.hanjaFaceNameCount = idMappings.hanjaFaceNameCount + 1
+            }
+            IDMappingTypes.HANGUL_FACENAME -> {
+                idMappings.hangulFaceNameCount = idMappings.hangulFaceNameCount + 1
+            }
+            IDMappingTypes.ENGLISH_FACENAME -> {
+                idMappings.englishFaceNameCount = idMappings.englishFaceNameCount + 1
+            }
+            IDMappingTypes.JAPANESE_FACENAME -> {
+                idMappings.japaneseFaceNameCount = idMappings.japaneseFaceNameCount + 1
+            }
+            IDMappingTypes.STYLE -> {
+                idMappings.styleCount = idMappings.styleCount + 1
+            }
+        }
+    }
+
+    fun builderFactory(builderType: HWPDocInfoBuilderType) : HWPDocInfoBuilder = when (builderType) {
+        HWPDocInfoBuilderType.BinData -> HWPBinDataBuilder(this)
+        HWPDocInfoBuilderType.BorderFill -> HWPBorderFillBuilder(this)
+        HWPDocInfoBuilderType.CharShape -> HWPCharShapeBuilder(this)
+        HWPDocInfoBuilderType.Numbering -> HWPNumberingBuilder(this)
+        HWPDocInfoBuilderType.ParaShape -> HWPParaShapeBuilder(this)
+        HWPDocInfoBuilderType.Style -> HWPStyleBuilder(this)
+        HWPDocInfoBuilderType.TabDef -> HWPTabDefBuilder(this)
+        HWPDocInfoBuilderType.Bullet -> HWPBulletBuilder(this)
+        HWPDocInfoBuilderType.Hangul -> HWPFaceNameBuilder(this, HWPFaceNameEnum.HANGUL)
+        HWPDocInfoBuilderType.English -> HWPFaceNameBuilder(this, HWPFaceNameEnum.ENGLISH)
+        HWPDocInfoBuilderType.Hanja -> HWPFaceNameBuilder(this, HWPFaceNameEnum.HANJA)
+        HWPDocInfoBuilderType.Japanese -> HWPFaceNameBuilder(this, HWPFaceNameEnum.JAPANESE)
+        HWPDocInfoBuilderType.Etc -> HWPFaceNameBuilder(this, HWPFaceNameEnum.ETC)
+        HWPDocInfoBuilderType.Symbol -> HWPFaceNameBuilder(this, HWPFaceNameEnum.SYMBOL)
+        HWPDocInfoBuilderType.User -> HWPFaceNameBuilder(this, HWPFaceNameEnum.USER)
+        HWPDocInfoBuilderType.All -> HWPFaceNameBuilder(this, HWPFaceNameEnum.ALL)
+    }
 
     /**
      * 객체를 복사한 후 반환하는 함수
