@@ -1,20 +1,19 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control.gso
 
 import com.tang.hwplib.builder.bodytext.paragraph.control.HWPCtrlDataBuilder
+import com.tang.hwplib.builder.bodytext.paragraph.control.HWPGsoControlBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHeaderGsoBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPShapeComponentNormalBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPTextBoxBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
-import com.tang.hwplib.builder.interfaces.HWPGsoControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlCurve
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentCurve
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.curve.HWPCurveSegmentType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.polygon.HWPPositionXY
 
-class HWPControlCurveBuilder : HWPGsoControlBuilder<HWPControlCurve> {
+class HWPControlCurveBuilder : HWPGsoControlBuilder() {
     private val control : HWPControlCurve = HWPControlCurve.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlCurveBuilder = this.apply {

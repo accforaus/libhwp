@@ -24,13 +24,3 @@ class HWPDocumentPropertiesBuilder : HWPBuilder<HWPDocumentProperties> {
 
         override fun build(): HWPDocumentProperties = properties
 }
-
-internal fun buildEmptyDocumentProperties() : HWPDocumentProperties = HWPDocumentProperties.build(
-        sectionCount = 1,
-        startNumber = HWPStartNumber.build(
-                1,1,1,1,1,1
-        ),
-        caretPosition = HWPCaretPosition.build(
-                positionInParagraph = 16
-        )
-)

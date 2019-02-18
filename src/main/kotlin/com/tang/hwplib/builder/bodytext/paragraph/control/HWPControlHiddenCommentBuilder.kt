@@ -3,11 +3,10 @@ package com.tang.hwplib.builder.bodytext.paragraph.control
 import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.listheader.HWPListHeaderPropertyBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlHiddenComment
 import com.tang.hwplib.objects.bodytext.control.hiddencomment.ListHeaderForHiddenComment
 
-class HWPControlHiddenCommentBuilder : HWPControlBuilder<HWPControlHiddenComment> {
+class HWPControlHiddenCommentBuilder : HWPControlBuilder() {
     private val control : HWPControlHiddenComment = HWPControlHiddenComment.build()
 
     fun setListHeader(listHeaderBuilder: ListHeaderForHiddenCommentBuilder) : HWPControlHiddenCommentBuilder = this.apply {

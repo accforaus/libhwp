@@ -1,12 +1,11 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlPageHide
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderPageHide
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.pagehide.HWPPageHideHeaderProperty
 
-class HWPControlPageHideBuilder : HWPControlBuilder<HWPControlPageHide> {
+class HWPControlPageHideBuilder : HWPControlBuilder() {
     private val control : HWPControlPageHide = HWPControlPageHide.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderPageHideBuilder) : HWPControlPageHideBuilder = this.apply {

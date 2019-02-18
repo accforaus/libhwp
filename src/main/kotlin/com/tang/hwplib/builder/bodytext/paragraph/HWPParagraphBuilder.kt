@@ -3,16 +3,11 @@ package com.tang.hwplib.builder.bodytext.paragraph
 import com.tang.hwplib.builder.bodytext.paragraph.charshape.HWPParaCharShapeBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.charshape.buildEmptyParaCharShape
 import com.tang.hwplib.builder.bodytext.paragraph.control.HWPControlListBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.control.buildEmptyColumnDefine
-import com.tang.hwplib.builder.bodytext.paragraph.control.buildEmptySectionDefine
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.ChildControlListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.header.HWPParaHeadBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.header.buildEmptyParaHeader
 import com.tang.hwplib.builder.bodytext.paragraph.lineseg.HWPParaLineSegBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.lineseg.buildEmptyParaLineSeg
 import com.tang.hwplib.builder.bodytext.paragraph.rangetag.HWPParaRangeTagBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.text.HWPParaTextBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.text.buildEmptyParaText
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraphList
@@ -55,16 +50,4 @@ class HWPParagraphBuilder : HWPBuilder<HWPParagraph> {
     }
 
     override fun build(): HWPParagraph = paragraph
-}
-
-internal fun buildEmptyParagraph() : HWPParagraph {
-    val paragraph: HWPParagraph = HWPParagraph()
-    paragraph.run {
-        header = buildEmptyParaHeader()
-        paraCharShape = buildEmptyParaCharShape()
-        lineSeg = buildEmptyParaLineSeg()
-        text = buildEmptyParaText()
-        controlList = arrayListOf(buildEmptySectionDefine(), buildEmptyColumnDefine())
-    }
-    return paragraph
 }

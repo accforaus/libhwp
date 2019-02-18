@@ -1,6 +1,7 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control.gso
 
 import com.tang.hwplib.builder.bodytext.paragraph.control.HWPCtrlDataBuilder
+import com.tang.hwplib.builder.bodytext.paragraph.control.HWPGsoControlBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHeaderGsoBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPLineInfoPropertyBuilder
@@ -8,13 +9,12 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.docinfo.borderfill.fillinfo.HWPPictureInfoBuilder
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPGsoControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlPicture
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentPicture
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.picture.*
 
-class HWPControlPictureBuilder : HWPGsoControlBuilder<HWPControlPicture> {
+class HWPControlPictureBuilder : HWPGsoControlBuilder() {
     private val control : HWPControlPicture = HWPControlPicture.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlPictureBuilder = this.apply {

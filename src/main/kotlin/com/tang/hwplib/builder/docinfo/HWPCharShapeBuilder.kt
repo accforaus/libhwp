@@ -1,5 +1,6 @@
 package com.tang.hwplib.builder.docinfo
 
+import com.tang.hwplib.builder.bodytext.paragraph.charshape.HWPParaCharShapeBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.builder.docinfo.charshape.*
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
@@ -16,6 +17,10 @@ class HWPCharShapeBuilder : HWPBuilder<HWPCharShape> {
 
     fun setRatios(ratiosBuilder: HWPRatiosBuilder) : HWPCharShapeBuilder = this.apply {
         charShape.ratios = ratiosBuilder.build()
+    }
+
+    fun setCharSpaces(charSpaceBuilder: HWPCharSpaceBuilder) : HWPCharShapeBuilder = this.apply {
+        charShape.charSpaces = charSpaceBuilder.build()
     }
 
     fun setRelativeSizes(relativeSizes: HWPRelativeSizeBuilder) : HWPCharShapeBuilder = this.apply {
@@ -69,130 +74,12 @@ class HWPCharShapeBuilder : HWPBuilder<HWPCharShape> {
     override fun build(): HWPCharShape = charShape
 }
 
-internal fun buildEmptyCharShapes() : ArrayList<HWPCharShape> {
-    val charShapes: ArrayList<HWPCharShape> = ArrayList()
+class HWPCharShapeListBuilder : HWPBuilder<ArrayList<HWPCharShape>> {
+    private val charShapeList: ArrayList<HWPCharShape> = ArrayList()
 
-    charShapes.run {
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(1),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(0),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 1000,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 0),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(0),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(0),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 1000,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 0),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(0),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(0),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 900,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 0),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(1),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(0),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 900,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 0),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(0),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(-5),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 900,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 0),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(0),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(0),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 1600,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 11891758),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
-        add(HWPCharShape.build(
-                faceNameIds = HWPFaceNameIds.build(0),
-                ratios = HWPRatios.build(100),
-                charSpaces = HWPCharSpaces.build(0),
-                relativeSizes = HWPRelativeSizes.build(100),
-                charOffsets = HWPCharOffsets.build(0),
-                baseSize = 1100,
-                property = HWPCharShapeProperty.build(0),
-                shadowGap1 = 10,
-                shadowGap2 = 10,
-                charColor = Color4Byte.build(value = 0),
-                underLineColor = Color4Byte.build(value = 0),
-                shadeColor = Color4Byte.build(value = -1),
-                shadowColor = Color4Byte.build(value = 11711154),
-                borderFillId = 2,
-                strikeLineColor = Color4Byte.build(value = 0)
-        ))
+    fun addCharShape(charShapeBuilder: HWPCharShapeBuilder) : HWPCharShapeListBuilder = this.apply {
+        charShapeList.add(charShapeBuilder.build())
     }
 
-    return charShapes
+    override fun build(): ArrayList<HWPCharShape> = charShapeList
 }

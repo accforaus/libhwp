@@ -7,6 +7,10 @@ import com.tang.hwplib.objects.bodytext.paragraph.linesegment.HWPLineSegItemTag
 class HWPLineSegItemBuilder : HWPBuilder<HWPLineSegItem> {
     private val lineSegItem: HWPLineSegItem = HWPLineSegItem.build()
 
+    fun setLineHeight(lineHeight: Int) : HWPLineSegItemBuilder = this.apply {
+        lineSegItem.lineHeight = lineHeight
+    }
+
     fun setTextStartPosition(textStartPosition: Long) : HWPLineSegItemBuilder = this.apply {
         lineSegItem.textStartPosition = textStartPosition
     }

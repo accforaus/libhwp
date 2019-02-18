@@ -3,13 +3,12 @@ package com.tang.hwplib.builder.bodytext.paragraph.control
 import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.listheader.HWPListHeaderPropertyBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlFooter
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderFooter
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.header.HWPHeaderFooterApplyPage
 import com.tang.hwplib.objects.bodytext.control.headerfooter.ListHeaderForHeaderFooter
 
-class HWPControlFooterBuilder : HWPControlBuilder<HWPControlFooter> {
+class HWPControlFooterBuilder : HWPControlBuilder() {
     private val control : HWPControlFooter = HWPControlFooter.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderFooterBuilder) : HWPControlFooterBuilder = this.apply {

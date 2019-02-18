@@ -1,13 +1,12 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlAdditionalText
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderAdditionalText
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.additionaltext.HWPAdditionalTextPosition
 import com.tang.hwplib.objects.docinfo.parashape.HWPAlignment
 
-class HWPControlAdditionalTextBuilder : HWPControlBuilder<HWPControlAdditionalText> {
+class HWPControlAdditionalTextBuilder : HWPControlBuilder() {
     private val control : HWPControlAdditionalText = HWPControlAdditionalText.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderAdditionalTextBuilder) : HWPControlAdditionalTextBuilder = this.apply {

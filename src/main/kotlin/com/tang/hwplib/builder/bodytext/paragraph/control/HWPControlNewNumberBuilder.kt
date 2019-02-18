@@ -1,13 +1,12 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlNewNumber
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderNewNumber
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.autonumber.HWPNumberSort
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.newnumber.HWPNewNumberHeaderProperty
 
-class HWPControlNewNumberBuilder : HWPControlBuilder<HWPControlNewNumber> {
+class HWPControlNewNumberBuilder : HWPControlBuilder() {
     private val control : HWPControlNewNumber = HWPControlNewNumber.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderNewNumberBuilder) : HWPControlNewNumberBuilder = this.apply {

@@ -4,7 +4,6 @@ import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHeaderGsoBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlTable
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.sectiondefine.HWPTextDirection
@@ -12,7 +11,7 @@ import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPLineChange
 import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPTextVerticalAlignment
 import com.tang.hwplib.objects.bodytext.control.table.*
 
-class HWPControlTableBuilder : HWPControlBuilder<HWPControlTable> {
+class HWPControlTableBuilder : HWPControlBuilder() {
     private val control : HWPControlTable = HWPControlTable.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlTableBuilder = this.apply {

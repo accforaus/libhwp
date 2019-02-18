@@ -1,14 +1,13 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlPageNumberPosition
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderPageNumberPosition
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.pagenumberposition.HWPNumberPosition
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.pagenumberposition.PageNumberPositionHeaderProperty
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPNumberShape
 
-class HWPControlPageNumberPositionBuilder : HWPControlBuilder<HWPControlPageNumberPosition> {
+class HWPControlPageNumberPositionBuilder : HWPControlBuilder() {
     private val control : HWPControlPageNumberPosition = HWPControlPageNumberPosition.build()
 
     override fun build(): HWPControlPageNumberPosition = control

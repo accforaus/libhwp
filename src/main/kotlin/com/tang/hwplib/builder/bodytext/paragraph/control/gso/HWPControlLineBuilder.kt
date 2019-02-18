@@ -1,17 +1,17 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control.gso
 
 import com.tang.hwplib.builder.bodytext.paragraph.control.HWPCtrlDataBuilder
+import com.tang.hwplib.builder.bodytext.paragraph.control.HWPGsoControlBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHeaderGsoBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPShapeComponentNormalBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPTextBoxBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPGsoControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlLine
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentLine
 
-class HWPControlLineBuilder : HWPGsoControlBuilder<HWPControlLine> {
+class HWPControlLineBuilder : HWPGsoControlBuilder() {
     private val control : HWPControlLine = HWPControlLine.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlLineBuilder = this.apply {

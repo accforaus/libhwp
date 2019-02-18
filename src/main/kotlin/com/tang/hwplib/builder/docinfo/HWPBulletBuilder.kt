@@ -30,3 +30,13 @@ class HWPBulletBuilder : HWPBuilder<HWPBullet> {
 
     override fun build(): HWPBullet = bullet
 }
+
+class HWPBulletListBuilder : HWPBuilder<ArrayList<HWPBullet>> {
+    private val bulletList: ArrayList<HWPBullet> = ArrayList()
+
+    fun addBullet(bulletBuilder: HWPBulletBuilder) : HWPBulletListBuilder = this.apply {
+        bulletList.add(bulletBuilder.build())
+    }
+
+    override fun build(): ArrayList<HWPBullet> = bulletList
+}

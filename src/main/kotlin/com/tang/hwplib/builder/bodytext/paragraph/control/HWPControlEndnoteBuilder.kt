@@ -3,13 +3,12 @@ package com.tang.hwplib.builder.bodytext.paragraph.control
 import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.control.listheader.HWPListHeaderPropertyBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlEndNote
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderEndnote
 import com.tang.hwplib.objects.bodytext.control.footnoteendnote.ListHeaderForFootnoteEndnote
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPNumberShape
 
-class HWPControlEndnoteBuilder : HWPControlBuilder<HWPControlEndNote> {
+class HWPControlEndnoteBuilder : HWPControlBuilder() {
     private val control : HWPControlEndNote = HWPControlEndNote.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderEndnoteBuilder) : HWPControlEndnoteBuilder = this.apply {

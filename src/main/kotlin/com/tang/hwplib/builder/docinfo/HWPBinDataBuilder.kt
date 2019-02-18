@@ -31,3 +31,13 @@ class HWPBinDataBuilder(private val docInfo: HWPDocInfo) : HWPBuilder<HWPBinData
 
     override fun build(): HWPBinData = binData
 }
+
+class HWPBinDataListBuilder : HWPBuilder<ArrayList<HWPBinData>> {
+    private val binDataList: ArrayList<HWPBinData> = ArrayList()
+
+    fun addBinData(binDataBuilder: HWPBinDataBuilder) : HWPBinDataListBuilder = this.apply {
+        binDataList.add(binDataBuilder.build())
+    }
+
+    override fun build(): ArrayList<HWPBinData> = binDataList
+}

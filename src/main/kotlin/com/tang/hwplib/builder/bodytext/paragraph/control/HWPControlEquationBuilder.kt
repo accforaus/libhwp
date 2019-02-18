@@ -4,12 +4,11 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.ctrlheader.HWPCtrlHead
 import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWPCaptionBuilder
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlEquation
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.equation.HWPEQEdit
 
-class HWPControlEquationBuilder : HWPControlBuilder<HWPControlEquation> {
+class HWPControlEquationBuilder : HWPControlBuilder() {
     private val control : HWPControlEquation = HWPControlEquation.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderGsoBuilder) : HWPControlEquationBuilder = this.apply {

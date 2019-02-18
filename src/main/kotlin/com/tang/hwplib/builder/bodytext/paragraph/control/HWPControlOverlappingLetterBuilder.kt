@@ -2,12 +2,11 @@ package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.bodytext.paragraph.charshape.HWPParaCharShapeBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControl
 import com.tang.hwplib.objects.bodytext.control.HWPControlOverlappingLetter
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderOverlappingLetter
 
-class HWPControlOverlappingLetterBuilder : HWPControlBuilder<HWPControlOverlappingLetter> {
+class HWPControlOverlappingLetterBuilder : HWPControlBuilder() {
     private val control : HWPControlOverlappingLetter = HWPControlOverlappingLetter.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderOverlappingLetterBuilder) : HWPControlOverlappingLetterBuilder = this.apply {

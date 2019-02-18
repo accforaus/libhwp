@@ -6,7 +6,7 @@ import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderPageOddE
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.pageoddevenadjust.HWPOddEvenDivision
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.pageoddevenadjust.PageOddEvenAdjustHeaderProperty
 
-class HWPControlPageOddEvenAdjustBuilder : HWPBuilder<HWPControlPageOddEvenAdjust> {
+class HWPControlPageOddEvenAdjustBuilder : HWPControlBuilder() {
     private val control : HWPControlPageOddEvenAdjust = HWPControlPageOddEvenAdjust.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderPageOddEvenAdjustBuilder) : HWPControlPageOddEvenAdjustBuilder = this.apply {

@@ -14,16 +14,3 @@ class HWPParaLineSegBuilder : HWPBuilder<HWPParaLineSeg> {
 
     override fun build(): HWPParaLineSeg = lineSeg
 }
-
-internal fun buildEmptyParaLineSeg() : HWPParaLineSeg = HWPParaLineSeg.build(
-        lineSegItemGenerator = {
-            val lineSeg: ArrayList<HWPLineSegItem> = ArrayList()
-            lineSeg.add(HWPLineSegItem.build(
-                    lineHeight = 1000, textPartHeight = 1000,
-                    distanceBaseLineToLineVerticalPosition = 850,
-                    lineSpace = 600, segmentWidth = 42520,
-                    tag = HWPLineSegItemTag.build(393216)
-            ))
-            lineSeg
-        }
-)

@@ -20,18 +20,12 @@ class HWPTabDefBuilder : HWPBuilder<HWPTabDef> {
     override fun build(): HWPTabDef = tabDef
 }
 
-internal fun buildEmptyTabDef() : ArrayList<HWPTabDef> {
-    val tabDefList: ArrayList<HWPTabDef> = ArrayList()
-    tabDefList.run {
-        add(HWPTabDef.build(
-                property = HWPTabDefProperty.build(0)
-        ))
-        add(HWPTabDef.build(
-                property = HWPTabDefProperty.build(1)
-        ))
-        add(HWPTabDef.build(
-                property = HWPTabDefProperty.build(2)
-        ))
+class HWPTabDefListBuilder : HWPBuilder<ArrayList<HWPTabDef>> {
+    private val tabDefList : ArrayList<HWPTabDef> = ArrayList()
+
+    fun addTabDef(tabDefBuilder: HWPTabDefBuilder) : HWPTabDefListBuilder = this.apply {
+        tabDefList.add(tabDefBuilder.build())
     }
-    return tabDefList
+
+    override fun build(): ArrayList<HWPTabDef> = tabDefList
 }

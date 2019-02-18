@@ -6,7 +6,7 @@ import com.tang.hwplib.objects.bodytext.control.HWPControlFootnote
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderFootnote
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPNumberShape
 
-class HWPControlFootnoteBuilder : HWPBuilder<HWPControlFootnote> {
+class HWPControlFootnoteBuilder : HWPControlBuilder() {
     private val control : HWPControlFootnote = HWPControlFootnote.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderFootnoteBuilder) : HWPControlFootnoteBuilder = this.apply {

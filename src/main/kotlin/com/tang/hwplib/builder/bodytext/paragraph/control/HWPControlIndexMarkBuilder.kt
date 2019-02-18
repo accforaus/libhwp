@@ -1,11 +1,10 @@
 package com.tang.hwplib.builder.bodytext.paragraph.control
 
 import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.builder.interfaces.HWPControlBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlIndexMark
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderIndexMark
 
-class HWPControlIndexMarkBuilder : HWPControlBuilder<HWPControlIndexMark> {
+class HWPControlIndexMarkBuilder : HWPControlBuilder() {
     private val control : HWPControlIndexMark = HWPControlIndexMark.build()
 
     fun setHeader(headerBuilder: HWPCtrlHeaderIndexMarkBuilder) : HWPControlIndexMarkBuilder = this.apply {
