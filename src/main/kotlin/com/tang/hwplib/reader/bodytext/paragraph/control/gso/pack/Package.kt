@@ -15,6 +15,7 @@ import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.picture.HWPPi
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.render.HWPMatrix
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.shadow.HWPShadowType
 import com.tang.hwplib.objects.bodytext.control.gso.textbox.HWPTextBox
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.reader.bodytext.paragraph.forParagraphList
 import com.tang.hwplib.reader.docinfo.borderfill.forFillInfo
 import com.tang.hwplib.util.binary.get
@@ -30,7 +31,7 @@ import com.tang.hwplib.reader.bodytext.paragraph.control.bookmark.ForParameterSe
  * @param [caption] [HWPCaption], 빈 캡션 객체
  * @param [sr] [StreamReader], 스트림 리더 객체
  */
-internal fun forCaption(caption: HWPCaption, sr: StreamReader) {
+internal fun forCaption(caption: HWPCaption, sr: StreamReader, docInfo : HWPDocInfo) {
     caption.listHeaderForCaption.run {
         paraCount = sr.readInt32()
         property.value = sr.readUInt32()
@@ -40,7 +41,7 @@ internal fun forCaption(caption: HWPCaption, sr: StreamReader) {
         textWidth = sr.readHwpUnit()
         sr.skip(8)
     }
-    forParagraphList(caption.paragraphList, sr)
+    forParagraphList(caption.paragraphList, sr, docInfo)
 }
 
 /**
@@ -264,12 +265,12 @@ internal fun forShapeComponent(gsoControl: HWPGsoControl, sr: StreamReader) {
  * @param [textBox] [HWPTextBox], 글상자 객체
  * @param [sr] [StreamReader], 스트림 리더 객체
  */
-internal fun forTextBox(textBox: HWPTextBox, sr: StreamReader) {
+internal fun forTextBox(textBox: HWPTextBox, sr: StreamReader, docInfo: HWPDocInfo) {
     /**
      * 문단 리스트를 읽는 함수
      */
     fun forParagraph() {
-        forParagraphList(textBox.paragraphList, sr)
+        forParagraphList(textBox.paragraphList, sr, docInfo)
     }
     textBox.listHeader.run {
         paraCount = sr.readInt32()

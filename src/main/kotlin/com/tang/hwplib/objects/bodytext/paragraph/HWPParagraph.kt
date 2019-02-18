@@ -11,6 +11,7 @@ import com.tang.hwplib.objects.bodytext.paragraph.linesegment.HWPParaLineSeg
 import com.tang.hwplib.objects.bodytext.paragraph.memo.HWPMemo
 import com.tang.hwplib.objects.bodytext.paragraph.rangetag.HWPParaRangeTag
 import com.tang.hwplib.objects.bodytext.paragraph.text.HWPParaText
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 
 /**
  * 문단 리스트 인터페이스
@@ -137,6 +138,7 @@ class HWPParagraph {
     var rangeTag: HWPParaRangeTag? = null
     var controlList: ArrayList<HWPControl>? = null
     var memoList: ArrayList<HWPMemo>? = null
+    var docInfo: HWPDocInfo? = null
 
     /**
      * 문단 텍스트[HWPParaText]를 생성하는 함수

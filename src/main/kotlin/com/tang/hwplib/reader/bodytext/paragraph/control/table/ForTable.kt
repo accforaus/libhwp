@@ -4,6 +4,7 @@ import com.tang.hwplib.objects.bodytext.control.bookmark.HWPParameterSet
 import com.tang.hwplib.objects.bodytext.control.bookmark.HWPParameterType
 import com.tang.hwplib.objects.bodytext.control.table.HWPCell
 import com.tang.hwplib.objects.bodytext.control.table.HWPTable
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.etc.LIST_HEADER
 import com.tang.hwplib.reader.bodytext.paragraph.control.bookmark.ForParameterSet
 import com.tang.hwplib.reader.bodytext.paragraph.forParagraphList
@@ -20,7 +21,7 @@ import com.tang.hwplib.reader.util.StreamReader
  * @param [cell] [HWPCell], 빈 셀 속성 객체
  * @param [sr] [StreamReader], 스트림 리더 객체
  */
-internal fun forCell(cell: HWPCell, sr: StreamReader) {
+internal fun forCell(cell: HWPCell, sr: StreamReader, docInfo : HWPDocInfo) {
     if (!sr.isImmediatelyAfterReadingHeader())
         sr.readRecordHeader()
     if (sr.header.tagId == LIST_HEADER) {
@@ -55,7 +56,7 @@ internal fun forCell(cell: HWPCell, sr: StreamReader) {
             }
         }
     } else throw HWPReadException("cell's list header does not exist")
-    forParagraphList(cell.paragraphList, sr)
+    forParagraphList(cell.paragraphList, sr, docInfo)
 }
 
 /**

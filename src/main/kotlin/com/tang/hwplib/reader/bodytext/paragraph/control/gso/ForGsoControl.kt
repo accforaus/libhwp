@@ -13,6 +13,7 @@ import com.tang.hwplib.objects.bodytext.control.gso.video.HWPLocalVideoProperty
 import com.tang.hwplib.objects.bodytext.control.gso.video.HWPVideoType
 import com.tang.hwplib.objects.bodytext.control.gso.video.HWPWebVideoProperty
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.etc.*
 import com.tang.hwplib.reader.bodytext.paragraph.control.bookmark.forCtrlData
 import com.tang.hwplib.reader.bodytext.paragraph.control.gso.pack.*
@@ -34,7 +35,7 @@ private fun forControlArc(arc: HWPControlArc, sr: StreamReader) {
         var rh: HWPRecordHeader = sr.readRecordHeader()
         if (rh.tagId == LIST_HEADER) {
             createTextBox()
-            forTextBox(textBox!!, sr)
+            forTextBox(textBox!!, sr, arc.docInfo!!)
             if (!sr.isImmediatelyAfterReadingHeader())
                 rh = sr.readRecordHeader()
         }
@@ -66,7 +67,7 @@ private fun forControlContainer(container: HWPControlContainer, sr: StreamReader
     val childCount: Int = scc.childControlIdList.size
     for (index in 0 until childCount) {
         val fgc: ForGsoControl = ForGsoControl()
-        fgc.readInContainer(sr).run { container.addChildControl(this) }
+        fgc.readInContainer(sr, container.docInfo!!).run { container.addChildControl(this) }
     }
 }
 
@@ -84,7 +85,7 @@ private fun forControlCurve(curve: HWPControlCurve, sr: StreamReader) {
         var rh: HWPRecordHeader = sr.readRecordHeader()
         if (rh.tagId == LIST_HEADER) {
             createTextBox()
-            forTextBox(textBox!!, sr)
+            forTextBox(textBox!!, sr, curve.docInfo!!)
             if (!sr.isImmediatelyAfterReadingHeader())
                 rh = sr.readRecordHeader()
         }
@@ -118,7 +119,7 @@ private fun forControlEllipse(ellipse: HWPControlEllipse, sr: StreamReader) {
         var rh: HWPRecordHeader = sr.readRecordHeader()
         if (rh.tagId == LIST_HEADER) {
             createTextBox()
-            forTextBox(textBox!!, sr)
+            forTextBox(textBox!!, sr, ellipse.docInfo!!)
             if (!sr.isImmediatelyAfterReadingHeader())
                 rh = sr.readRecordHeader()
         }
@@ -276,7 +277,7 @@ private fun forControlPolygon(polygon: HWPControlPolygon, sr: StreamReader) {
         var rh: HWPRecordHeader = sr.readRecordHeader()
         if (rh.tagId == LIST_HEADER) {
             createTextBox()
-            forTextBox(textBox!!, sr)
+            forTextBox(textBox!!, sr, docInfo!!)
             if (!sr.isImmediatelyAfterReadingHeader())
                 rh = sr.readRecordHeader()
         }
@@ -314,7 +315,7 @@ private fun forControlRectangle(rectangle: HWPControlRectangle, sr: StreamReader
         }
         if (rh.tagId == LIST_HEADER) {
             createTextBox()
-            forTextBox(textBox!!, sr)
+            forTextBox(textBox!!, sr, docInfo!!)
             if (!sr.isImmediatelyAfterReadingHeader())
                 rh = sr.readRecordHeader()
         }
@@ -393,6 +394,7 @@ internal class ForGsoControl {
         val ctrlData: HWPCtrlData? = ctrlData()
         val gsoId: Long = gsoIDFromShapeComponent()
         this.gsoControl = createGsoControl(header, caption, ctrlData, gsoId)
+        this.gsoControl?.docInfo = paragraph.docInfo
         restPartOfShapeComponent()
         restPartOfControl()
     }
@@ -417,7 +419,7 @@ internal class ForGsoControl {
         sr!!.readRecordHeader()
         if (sr!!.header.tagId == LIST_HEADER) {
             val caption: HWPCaption = HWPCaption()
-            forCaption(caption, sr!!)
+            forCaption(caption, sr!!, paragraph!!.docInfo!!)
             return caption
         } else {
             return null
@@ -500,9 +502,9 @@ internal class ForGsoControl {
      *
      * @return [HWPGsoControl] 읽혀진 묶음 개체 컨트롤 객체 반환
      */
-    fun readInContainer(sr: StreamReader) : HWPGsoControl {
+    fun readInContainer(sr: StreamReader, docInfo: HWPDocInfo) : HWPGsoControl {
         this.sr = sr
-        shapeComponentInContainer()
+        shapeComponentInContainer(docInfo)
         restPartOfControl()
         return this.gsoControl!!
     }
@@ -512,11 +514,12 @@ internal class ForGsoControl {
      *
      * @throws [HWPReadException]
      */
-    private fun shapeComponentInContainer() {
+    private fun shapeComponentInContainer(docInfo: HWPDocInfo) {
         sr!!.readRecordHeader()
         if (sr!!.header.tagId == SHAPE_COMPONENT) {
             val id: Long = sr!!.readUInt32()
             this.gsoControl = createHWPGSOControl(id, null)
+            this.gsoControl?.docInfo = docInfo
             forShapeComponent(this.gsoControl!!, sr!!)
         } else throw HWPReadException("[shapeComponentInContainer()] Shape Component must come after HWPCtrlHeader for gso control")
     }

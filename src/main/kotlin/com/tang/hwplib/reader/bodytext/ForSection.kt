@@ -1,6 +1,7 @@
 package com.tang.hwplib.reader.bodytext
 
 import com.tang.hwplib.objects.bodytext.HWPSection
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.reader.bodytext.paragraph.control.secd.forBatangPageInfo
 import com.tang.hwplib.reader.bodytext.paragraph.forParagraphList
 import com.tang.hwplib.reader.util.StreamReader
@@ -13,10 +14,10 @@ import com.tang.hwplib.reader.util.StreamReader
  * @param [s] [HWPSection], 빈 섹션 객체
  * @param [sr] [StreamReader], 스트림 리더 객체
  */
-internal fun forSection(s: HWPSection, sr: StreamReader) {
-    forParagraphList(s, sr)
+internal fun forSection(s: HWPSection, sr: StreamReader, docInfo: HWPDocInfo) {
+    forParagraphList(s, sr, docInfo)
     if (!sr.isEndOfStream()) {
         s.createLastBatangPageInfo()
-        forBatangPageInfo(s.lastBatangPageInfo!!, sr)
+        forBatangPageInfo(s.lastBatangPageInfo!!, sr, docInfo)
     }
 }

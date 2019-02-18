@@ -5,6 +5,7 @@ import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPBatangPageInfo
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPFootEndNoteShape
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPPageBorderFill
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPPageDef
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderThickness
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
 import com.tang.hwplib.reader.bodytext.paragraph.forParagraphList
@@ -107,7 +108,7 @@ internal fun forPageDef(pd: HWPPageDef, sr: StreamReader) {
  * @param [bpi] [HWPBatangPageInfo], 빈 바탕쪽 정보 객체
  * @param [sr] [StreamReader], 스트림 리더 객체
  */
-internal fun forBatangPageInfo(bpi: HWPBatangPageInfo, sr: StreamReader) {
+internal fun forBatangPageInfo(bpi: HWPBatangPageInfo, sr: StreamReader, docInfo : HWPDocInfo) {
     bpi.listHeader.run {
         paraCount = sr.readInt32()
         property.value = sr.readUInt32()
@@ -115,5 +116,5 @@ internal fun forBatangPageInfo(bpi: HWPBatangPageInfo, sr: StreamReader) {
         textHeight = sr.readUInt32()
         sr.skipToEndRecord()
     }
-    forParagraphList(bpi.paragraphList, sr)
+    forParagraphList(bpi.paragraphList, sr, docInfo)
 }

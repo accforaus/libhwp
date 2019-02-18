@@ -63,7 +63,7 @@ private fun fromInputStream(inputStream: InputStream) : HWPDocument {
         for (index in 0 until sectionCount) {
             val sr: StreamReader = cfr.getChildStreamReader("Section$index", isCompressed(), getVersion())
             sr.docInfo = hwpDocument.docInfo
-            forSection(hwpDocument.bodyText.addNewSection(), sr)
+            forSection(hwpDocument.bodyText.addNewSection(), sr, hwpDocument.docInfo)
             sr.close()
         }
         cfr.moveParentStorage()

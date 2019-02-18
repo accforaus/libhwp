@@ -129,7 +129,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
                 sr.skipToEndRecord()
             } else throw HWPReadException("[ControlEndnote] List header must be located.")
         }
-        forParagraphList(en.paragraphList, sr)
+        forParagraphList(en.paragraphList, sr, en.docInfo!!)
     }
 
     /**
@@ -146,7 +146,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
             sr.readRecordHeader()
             if (sr.header.tagId == LIST_HEADER) {
                 createCaption()
-                forCaption(caption!!, sr)
+                forCaption(caption!!, sr, docInfo!!)
             }
 
             while (!sr.isEndOfStream()) {
@@ -207,7 +207,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
                 }
             } else throw HWPReadException("[HWPControlFooter] List header must be located")
         }
-        forParagraphList(foot.paragraphList, sr)
+        forParagraphList(foot.paragraphList, sr, foot.docInfo!!)
     }
 
     /**
@@ -234,7 +234,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
                 }
             } else throw HWPReadException("[HWPControlFootnote] List header must be located")
         }
-        forParagraphList(fn.paragraphList, sr)
+        forParagraphList(fn.paragraphList, sr, fn.docInfo!!)
     }
 
     /**
@@ -261,7 +261,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
             } else throw HWPReadException("[HWPControlHeader] List header must be located")
         }
 
-        forParagraphList(head.paragraphList, sr)
+        forParagraphList(head.paragraphList, sr, head.docInfo!!)
     }
 
     /**
@@ -281,7 +281,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
             } else throw Exception("[HWPControlHiddenComment] List header must be located")
         }
 
-        forParagraphList(tcmt.paragraphList, sr)
+        forParagraphList(tcmt.paragraphList, sr, tcmt.docInfo!!)
     }
 
     /**
@@ -398,7 +398,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
                         }
                         pageBorderFillIndex++
                     }
-                    LIST_HEADER -> forBatangPageInfo(addNewBatangPageInfo(), sr)
+                    LIST_HEADER -> forBatangPageInfo(addNewBatangPageInfo(), sr, this.docInfo!!)
                     CTRL_DATA -> {
                         createCtrlData()
                         forCtrlData(getCtrlData()!!, sr)
@@ -426,7 +426,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
                 sr.readRecordHeader()
             if (sr.header.tagId == LIST_HEADER) {
                 createCaption()
-                forCaption(caption!!, sr)
+                forCaption(caption!!, sr, docInfo!!)
             }
             if (!sr.isImmediatelyAfterReadingHeader())
                 sr.readRecordHeader()
@@ -438,7 +438,7 @@ internal fun forControl(c: HWPControl, sr: StreamReader) {
             for (rowIndex in 0 until rowCount) {
                 addNewRow().apply {
                     for (cellIndex in 0 until cellCountOfRow[rowIndex]) {
-                        this.addNewCell().also { forCell(it, sr) }
+                        this.addNewCell().also { forCell(it, sr, table.docInfo!!) }
                     }
                 }
             }

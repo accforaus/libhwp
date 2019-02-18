@@ -14,6 +14,7 @@ import com.tang.hwplib.objects.bodytext.paragraph.memo.HWPMemoList
 import com.tang.hwplib.objects.bodytext.paragraph.rangetag.HWPParaRangeTag
 import com.tang.hwplib.objects.bodytext.paragraph.rangetag.HWPRangeTagItem
 import com.tang.hwplib.objects.bodytext.paragraph.text.*
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.etc.*
 import com.tang.hwplib.reader.bodytext.paragraph.control.forControl
 import com.tang.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl
@@ -28,11 +29,12 @@ import com.tang.hwplib.reader.util.StreamReader
  * @param [pli] [HWPParagraphListInterface], 빈 문단 리스트 객체
  * @param [sr] [StreamReader], 스트림 리더 객체
  */
-internal fun forParagraphList(pli: HWPParagraphListInterface, sr: StreamReader) {
-    val fp: ForParagraph = ForParagraph()
+internal fun forParagraphList(pli: HWPParagraphListInterface, sr: StreamReader, docInfo: HWPDocInfo) {
+    val fp: ForParagraph = ForParagraph(docInfo)
     sr.readRecordHeader()
     while (!sr.isEndOfStream()) {
         val para = pli.addNewParagraph()
+        para.docInfo = docInfo
         fp.read(para, sr)
         if (para.header.lastInList)
             break
@@ -48,7 +50,7 @@ internal fun forParagraphList(pli: HWPParagraphListInterface, sr: StreamReader) 
  * @property [sr] [StreamReader], 스트림 리더 객체
  * @property [paraHeaderLevel], 문단 머리 레벨
  */
-private class ForParagraph {
+private class ForParagraph(val docInfo : HWPDocInfo) {
     private var paragraph: HWPParagraph? = null
     private var sr: StreamReader? = null
     private var paraHeaderLevel: Short? = null
@@ -84,6 +86,7 @@ private class ForParagraph {
                         forGsoControl.read(paragraph, this.sr!!)
                     } else {
                         val c: HWPControl? = paragraph.addNewControl(id)
+                        c?.docInfo = docInfo
                         forControl(c!!, this.sr!!)
                     }
                 }
@@ -131,7 +134,7 @@ private class ForParagraph {
         m.run {
             forMemoList(memoList)
             listHeader(listHeader)
-            forParagraphList(paragraphList, sr!!)
+            forParagraphList(paragraphList, sr!!, docInfo)
         }
     }
 
