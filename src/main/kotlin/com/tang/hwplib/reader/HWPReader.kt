@@ -140,6 +140,8 @@ private fun fromInputStream(inputStream: InputStream) : HWPDocument {
     docInfo()
     bodyText()
     binData()
+
+    hwpDocument.docInfo.binData = hwpDocument.binData
     cfr.close()
     return hwpDocument
 }
