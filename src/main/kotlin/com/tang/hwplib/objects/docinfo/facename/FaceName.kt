@@ -21,7 +21,7 @@ enum class HWPFaceNameEnum {
     /**
      * 영어
      */
-    LATIN,
+    ENGLISH,
     /**
      * 기타
      */
@@ -33,5 +33,9 @@ enum class HWPFaceNameEnum {
     /**
      * 사용자
      */
-    USER;
+    USER,
+    /**
+     * 전부
+     */
+    ALL;
 }
