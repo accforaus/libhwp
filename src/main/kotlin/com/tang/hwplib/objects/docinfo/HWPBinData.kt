@@ -21,7 +21,7 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
  * @property [binDataID] [Int], Type이 "EMBEDDING"이거나 "STORAGE"일 때, BINDATASTORAGE에 저장된 바이너리 데이터 아이디 (UINT16 - unsigned 2 bytes)
  * @property [extensionForEmbedding] [String], Tyype이 EMBEDDING일 때 extension("." 제외) 그림(jpg, bmp, gif) OLE(ole) (WCHAR array - unsigned 4 bytes)
  */
-@LinkID class HWPBinData {
+@LinkID class HWPBinData : HWPDocInfoElement() {
     var property: HWPBinDataProperty = HWPBinDataProperty()
     var absolutePathForLink: String? = null
     var relativePathForLink: String? = null
@@ -34,7 +34,7 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
      *
      * @return [HWPBinData] 복사된 객체 반환
      */
-    fun copy(): HWPBinData = HWPBinData().also {
+    override fun copy(): HWPBinData = HWPBinData().also {
         it.property.value = this.property.value
         it.absolutePathForLink = this.absolutePathForLink
         it.relativePathForLink = this.relativePathForLink

@@ -22,7 +22,7 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
  * @property [paraShapeId] [Int], 문단 모양[HWPParaShape] 참조값(문단 모양의 아이디 속성) 스타일의 종류가 문단인 경우 반드시 지정해야 한다. (UINT16 - unsigned 2 bytes)
  * @property [charShapeId] [Int], 글자 모양[HWPCharShape] 참조값(글자 모양의 아이디 속성) 스타일의 종류가 글자인 경우 반드시 지정해야 한다. (UINT16 - unsigned 2 bytes)
  */
-@LinkID class HWPStyle {
+@LinkID class HWPStyle : HWPDocInfoElement() {
     var hangulName: String? = null
     var englishName: String? = null
     var property: HWPStyleProperty = HWPStyleProperty()
@@ -38,7 +38,7 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
      *
      * @return [HWPStyle] 복사된 객체 반환
      */
-    fun copy() : HWPStyle = HWPStyle().also {
+    override fun copy() : HWPStyle = HWPStyle().also {
         it.hangulName = this.hangulName
         it.englishName = this.englishName
         it.property.value = this.property.value

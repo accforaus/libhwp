@@ -13,7 +13,7 @@ import com.tang.hwplib.objects.etc.TAB_DEF
  * @property [property] [HWPTabDefProperty], 속성 (UINT32 - unsigned 4 bytes)
  * @property [tabInfoList] [ArrayList], 탭 정보 (count 개수) (8 * count bytes)
  */
-class HWPTabDef {
+class HWPTabDef : HWPDocInfoElement() {
     var property: HWPTabDefProperty = HWPTabDefProperty()
     var tabInfoList: ArrayList<HWPTabInfo> = ArrayList()
 
@@ -29,7 +29,7 @@ class HWPTabDef {
      *
      * @return [HWPTabDef] 복사된 객체 반환
      */
-    fun copy() : HWPTabDef = HWPTabDef().also {
+    override fun copy() : HWPTabDef = HWPTabDef().also {
         it.property.value = this.property.value
         for (tabInfo in this.tabInfoList) it.tabInfoList.add(tabInfo)
     }

@@ -17,7 +17,7 @@ import com.tang.hwplib.objects.etc.BULLET
  * @property [imageBullet] [HWPImageBullet], 이미지 글머리 (대비, 밝기, 효과, ID) (BYTE stream - unsigned 4 bytes)
  * @property [checkBulletChar] [String], 체크 글머리표 문자 (WCHAR - unsigned 2 bytes)
  */
-class HWPBullet {
+class HWPBullet : HWPDocInfoElement() {
     var paragraphHeadInfo: HWPParagraphHeadInfo = HWPParagraphHeadInfo()
     var bulletChar: String = ""
     var imageBulletCheck: Int = 0
@@ -29,7 +29,7 @@ class HWPBullet {
      *
      * @return [HWPBullet] 복사된 객체 반환
      */
-    fun copy() : HWPBullet = HWPBullet().also {
+    override fun copy() : HWPBullet = HWPBullet().also {
         it.paragraphHeadInfo = this.paragraphHeadInfo.copy()
         it.bulletChar = this.bulletChar
         it.imageBulletCheck = this.imageBulletCheck

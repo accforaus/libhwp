@@ -19,7 +19,7 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
  * @property [fontTypeInfo] [HWPFontTypeInfo], 글꼴 유형 정보 (BYTE array - unsigned 10 bytes)
  * @property [baseFontName] [String], 기본 글꼴 이름 (WCHAR array - unsigned 4 bytes)
  */
-class HWPFaceName {
+class HWPFaceName : HWPDocInfoElement() {
     var property: HWPFaceNameProperty = HWPFaceNameProperty()
     var name: String? = null
     var substituteFontType: HWPFontType? = null
@@ -32,7 +32,7 @@ class HWPFaceName {
      *
      * @return [HWPFaceName] 복사된 객체 반환
      */
-    fun copy() : HWPFaceName = HWPFaceName().also {
+    override fun copy() : HWPFaceName = HWPFaceName().also {
         it.property.value = this.property.value
         it.name = this.name
         this.substituteFontType?.run {

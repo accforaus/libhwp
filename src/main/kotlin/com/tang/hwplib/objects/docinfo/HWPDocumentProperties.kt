@@ -13,7 +13,7 @@ import com.tang.hwplib.objects.etc.DOCUMENT_PROPERTIES
  * @property [startNumber] [HWPStartNumber], 문서 내 각종 시작번호에 대한 정보 (12 bytes)
  * @property [caretPosition] [HWPCaretPosition], 문서 내 캐럿의 위치 정보 (12 bytes)
  */
-class HWPDocumentProperties {
+class HWPDocumentProperties : HWPDocInfoElement() {
     var sectionCount: Int = 0
     var startNumber: HWPStartNumber = HWPStartNumber()
     var caretPosition: HWPCaretPosition = HWPCaretPosition()
@@ -23,7 +23,7 @@ class HWPDocumentProperties {
      *
      * @return [HWPDocumentProperties] 복사된 객체 반환
      */
-    fun copy(): HWPDocumentProperties = HWPDocumentProperties().also {
+    override fun copy(): HWPDocumentProperties = HWPDocumentProperties().also {
         it.sectionCount = this.sectionCount
         it.startNumber = this.startNumber.copy()
         it.caretPosition = this.caretPosition.copy()

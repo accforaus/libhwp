@@ -11,7 +11,7 @@ import com.tang.hwplib.objects.etc.COMPATIBLE_DOCUMENT
  *
  * @property [compatibleDocumentSort] [HWPCompatibleDocumentSort], 대상 프로그램 (UINT32 - unsigned 4 bytes)
  */
-class HWPCompatibleDocument {
+class HWPCompatibleDocument : HWPDocInfoElement() {
     var compatibleDocumentSort: HWPCompatibleDocumentSort? = null
 
     /**
@@ -19,7 +19,7 @@ class HWPCompatibleDocument {
      *
      * @return [HWPCompatibleDocument] 복사된 객체 반환
      */
-    fun copy() : HWPCompatibleDocument = HWPCompatibleDocument().also {
+    override fun copy() : HWPCompatibleDocument = HWPCompatibleDocument().also {
         this.compatibleDocumentSort?.run { it.compatibleDocumentSort = HWPCompatibleDocumentSort.valueOf(this.value) }
     }
 

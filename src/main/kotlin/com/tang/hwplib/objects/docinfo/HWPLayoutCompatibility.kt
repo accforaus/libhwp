@@ -13,7 +13,7 @@ import com.tang.hwplib.objects.etc.LAYOUT_COMPATIBILITY
  * @property [objectLevelFormat] [Long], 개체 단위 서식 (UINT32 - unsigned 4 bytes)
  * @property [fieldLevelFormat] [Long], 필드 단위 서식 (UINT32 - unsigned 4 bytes)
  */
-class HWPLayoutCompatibility {
+class HWPLayoutCompatibility : HWPDocInfoElement() {
     var letterLevelFormat: Long = 0
     var paragraphLevelFormat: Long = 0
     var sectionLevelFormat: Long = 0
@@ -25,7 +25,7 @@ class HWPLayoutCompatibility {
      *
      * @return [HWPLayoutCompatibility] 복사된 객체 반환
      */
-    fun copy() : HWPLayoutCompatibility = HWPLayoutCompatibility().also {
+    override fun copy() : HWPLayoutCompatibility = HWPLayoutCompatibility().also {
         it.letterLevelFormat = this.letterLevelFormat
         it.paragraphLevelFormat = this.paragraphLevelFormat
         it.sectionLevelFormat = this.sectionLevelFormat

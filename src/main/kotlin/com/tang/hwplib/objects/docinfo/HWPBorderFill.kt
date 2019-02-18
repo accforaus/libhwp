@@ -21,7 +21,7 @@ import com.tang.hwplib.objects.etc.BORDER_FILL
  * @property [diagonalColor] [Color4Byte], 대각선 색상 (COLORREF - unsigned 4 bytes)
  * @property [fillInfo] [HWPFillInfo], 채우기 정보 (BYTE stream - n bytes)
  */
-class HWPBorderFill {
+class HWPBorderFill : HWPDocInfoElement() {
     var property: HWPBorderFillProperty = HWPBorderFillProperty()
     var leftBorder: HWPEachBorder = HWPEachBorder()
     var rightBorder: HWPEachBorder = HWPEachBorder()
@@ -37,7 +37,7 @@ class HWPBorderFill {
      *
      * @return [HWPBorderFill] 복사된 객체 반환
      */
-    fun copy(): HWPBorderFill = HWPBorderFill().also {
+    override fun copy(): HWPBorderFill = HWPBorderFill().also {
         it.property.value = this.property.value
         it.leftBorder = this.leftBorder.copy()
         it.rightBorder = this.rightBorder.copy()

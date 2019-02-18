@@ -33,7 +33,7 @@ import com.tang.hwplib.objects.etc.PARA_SHAPE
  * @property [lineSpace2] [Long], 줄 간격 [>=5.0.2.5] (UINT32 - unsigned 4 bytes)
  * @property [unknown] [Long], 알 수 없는 값 (UINT32 - unsigned 4 bytes)
  */
-@LinkID class HWPParaShape {
+@LinkID class HWPParaShape : HWPDocInfoElement() {
     var property1: HWPParaShapeProperty1 = HWPParaShapeProperty1()
     var leftMargin: Int = 0
     var rightMargin: Int = 0
@@ -61,7 +61,7 @@ import com.tang.hwplib.objects.etc.PARA_SHAPE
      *
      * @return [HWPParaShape] 복사된 객체 반환
      */
-    fun copy() : HWPParaShape = HWPParaShape().also {
+    override fun copy() : HWPParaShape = HWPParaShape().also {
         it.property1.value = this.property1.value
         it.leftMargin = this.leftMargin
         it.rightMargin = this.rightMargin

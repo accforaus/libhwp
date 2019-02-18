@@ -29,7 +29,7 @@ import com.tang.hwplib.objects.etc.CHAR_SHAPE
  * @property [borderFillId] [Int], 글자 테두리/배경 ID(CharShapeBorderFill) 참조 값 [>=5.0.2.1] (UINT16 - unsigned 2 bytes)
  * @property [strikeLineColor] [Color4Byte], 취소선 색 [>=5.0.3.0] (COLORREF - unsigned 4 bytes)
  */
-@LinkID class HWPCharShape {
+@LinkID class HWPCharShape : HWPDocInfoElement() {
     @ID(IDTypes.FaceName)
     var faceNameIds: HWPFaceNameIds = HWPFaceNameIds()
     var ratios: HWPRatios = HWPRatios()
@@ -52,7 +52,7 @@ import com.tang.hwplib.objects.etc.CHAR_SHAPE
      *
      * @return [HWPCharShape] 복사된 객체 반환
      */
-    fun copy() : HWPCharShape = HWPCharShape().also {
+    override fun copy() : HWPCharShape = HWPCharShape().also {
         it.faceNameIds = this.faceNameIds.copy()
         it.ratios = this.ratios.copy()
         it.charSpaces = this.charSpaces.copy()

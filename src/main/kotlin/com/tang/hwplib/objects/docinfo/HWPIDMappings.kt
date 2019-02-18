@@ -26,7 +26,7 @@ import com.tang.hwplib.objects.etc.ID_MAPPINGS
  * @property [trackChangeCount] [Int], 변경 추적(*>=5.0.3.2*)(INT32) (signed 4 bytes)
  * @property [trackChangeAuthorCount] [Int], 변경 추적 사용자(*>=5.0.3.2*)(INT32) (signed 4 bytes)
  */
-class HWPIDMappings {
+class HWPIDMappings : HWPDocInfoElement() {
     var binDataCount: Int = 0
     var hangulFaceNameCount: Int = 0
     var englishFaceNameCount: Int = 0
@@ -51,7 +51,7 @@ class HWPIDMappings {
      *
      * @return [HWPIDMappings] 복사된 객체 반환
      */
-    fun copy() : HWPIDMappings = HWPIDMappings().also {
+    override fun copy() : HWPIDMappings = HWPIDMappings().also {
         it.binDataCount = this.binDataCount
         it.hangulFaceNameCount = this.hangulFaceNameCount
         it.englishFaceNameCount = this.englishFaceNameCount

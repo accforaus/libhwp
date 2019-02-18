@@ -16,7 +16,7 @@ import com.tang.hwplib.objects.docinfo.numbering.HWPLevelNumbering
  * @property [extendLevelNumberingList] [ArrayList], 수준 (8-10) 번호문단 머리의 형식 제어한다.
  * @property [extendStartNumberForLevel] [LongArray] 확장 수준별 시작번호 [>=5.1.0.0] (UINT - unsigned 4 bytes)
  */
-class HWPNumbering {
+class HWPNumbering : HWPDocInfoElement() {
     var levelNumberingList: ArrayList<HWPLevelNumbering> = Unit.run {
         val temp: ArrayList<HWPLevelNumbering> = ArrayList()
         for (index in 0 until 7) HWPLevelNumbering().let { temp.add(it) }
@@ -120,7 +120,7 @@ class HWPNumbering {
      *
      * @return [HWPNumbering] 복사된 객체 반환
      */
-    fun copy() : HWPNumbering = HWPNumbering().also {
+    override fun copy() : HWPNumbering = HWPNumbering().also {
         for ((index, levelNumbering)in this.levelNumberingList.withIndex())
             it.levelNumberingList[index] = levelNumbering.copy()
         it.startNumber = this.startNumber
