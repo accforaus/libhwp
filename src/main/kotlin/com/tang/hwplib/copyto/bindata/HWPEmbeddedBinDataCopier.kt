@@ -1,11 +1,8 @@
 package com.tang.hwplib.copyto.bindata
 
-import com.tang.hwplib.copyto.docinfo.HWPDocInfoCopier
 import com.tang.hwplib.objects.bindata.HWPBinData
 import com.tang.hwplib.objects.bindata.HWPEmbeddedBinaryData
-import com.tang.hwplib.objects.docinfo.numbering.HWPExtendNumbering
-import com.tang.hwplib.util.exceptions.HWPCopyToExcention
-import kotlin.math.E
+import com.tang.hwplib.util.exceptions.HWPCopyToException
 
 fun getBinDataName(lastIndex: Int, extend: String? = null) : String = StringBuilder("BIN").run {
     val number: String = lastIndex.toString(radix = 16).toUpperCase()
@@ -49,5 +46,5 @@ fun proceedEmbeddedBinData(originalIndex: Int, targetData: HWPBinData, sourceDat
         targetData.embeddedBinaryDataList.add(target)
         return newTargetBinDataID
     }
-    throw HWPCopyToExcention("Cannot find index in [EmbeddedData]")
+    throw HWPCopyToException("Cannot find index in [EmbeddedData]")
 }
