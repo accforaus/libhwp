@@ -71,7 +71,7 @@ class HWPDocInfoCopier(private val targetDocument: HWPDocument, private val orig
                 targetDocInfo.idMappings.paraShapeCount = targetDocInfo.idMappings.paraShapeCount + 1
             }
             IDMappingTypes.BORDERFILL -> {
-                targetDocInfo.idMappings.bulletCount = targetDocInfo.idMappings.bulletCount + 1
+                targetDocInfo.idMappings.borderFillCount = targetDocInfo.idMappings.borderFillCount + 1
             }
             IDMappingTypes.ETC_FACENAME -> {
                 targetDocInfo.idMappings.etcFaceNameCount = targetDocInfo.idMappings.etcFaceNameCount + 1
@@ -95,7 +95,7 @@ class HWPDocInfoCopier(private val targetDocument: HWPDocument, private val orig
                 targetDocInfo.idMappings.japaneseFaceNameCount = targetDocInfo.idMappings.japaneseFaceNameCount + 1
             }
             IDMappingTypes.STYLE -> {
-                targetDocInfo.idMappings.styleCount = targetDocInfo.idMappings.styleCount
+                targetDocInfo.idMappings.styleCount = targetDocInfo.idMappings.styleCount + 1
             }
         }
     }
