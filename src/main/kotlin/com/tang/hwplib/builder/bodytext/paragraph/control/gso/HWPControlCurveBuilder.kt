@@ -9,6 +9,7 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlCurve
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentCurve
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.curve.HWPCurveSegmentType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.polygon.HWPPositionXY
@@ -42,7 +43,9 @@ class HWPControlCurveBuilder : HWPGsoControlBuilder() {
         control.textBox = textBoxBuilder.build()
     }
 
-    override fun build(): HWPControlCurve = control
+    override fun build(): HWPControlCurve = control.apply {
+        setGsoId(HWPGsoControlType.Curve.id)
+    }
 }
 
 class HWPShapeComponentCurveBuilder : HWPBuilder<HWPShapeComponentCurve> {

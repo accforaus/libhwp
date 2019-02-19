@@ -9,6 +9,7 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlPolygon
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentPolygon
 
 class HWPControlPolygonBuilder : HWPGsoControlBuilder() {
@@ -40,7 +41,9 @@ class HWPControlPolygonBuilder : HWPGsoControlBuilder() {
         control.setCtrlData(ctrlDataBuilder.build())
     }
 
-    override fun build(): HWPControlPolygon = control
+    override fun build(): HWPControlPolygon = control.apply {
+        setGsoId(HWPGsoControlType.Polygon.id)
+    }
 }
 
 class HWPShapeComponentPolygonBuilder : HWPBuilder<HWPShapeComponentPolygon> {

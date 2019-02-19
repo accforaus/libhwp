@@ -11,6 +11,7 @@ import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlPicture
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentPicture
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.picture.*
 
@@ -39,7 +40,9 @@ class HWPControlPictureBuilder : HWPGsoControlBuilder() {
         control.setCtrlData(ctrlDataBuilder.build())
     }
 
-    override fun build(): HWPControlPicture = control
+    override fun build(): HWPControlPicture = control.apply {
+        setGsoId(HWPGsoControlType.Picture.id)
+    }
 }
 
 class HWPShapeComponentPictureBuilder : HWPBuilder<HWPShapeComponentPicture> {

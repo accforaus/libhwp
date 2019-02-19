@@ -9,6 +9,8 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlEllipse
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentEllipse
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.ellipse.HWPShapeComponentEllipseProperty
 
@@ -41,7 +43,9 @@ class HWPControlEllipseBuilder : HWPGsoControlBuilder() {
         control.textBox = textBoxBuilder.build()
     }
 
-    override fun build(): HWPControlEllipse = control
+    override fun build(): HWPControlEllipse = control.apply {
+        setGsoId(HWPGsoControlType.Ellipse.id)
+    }
 }
 
 class HWPShapeComponentEllipseBuilder : HWPBuilder<HWPShapeComponentEllipse> {

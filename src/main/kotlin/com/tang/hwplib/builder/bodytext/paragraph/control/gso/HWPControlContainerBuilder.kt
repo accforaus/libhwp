@@ -10,6 +10,7 @@ import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlContainer
 import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 
 class HWPControlContainerBuilder : HWPGsoControlBuilder() {
     private val control: HWPControlContainer = HWPControlContainer.build()
@@ -36,7 +37,9 @@ class HWPControlContainerBuilder : HWPGsoControlBuilder() {
         control.setCtrlData(ctrlDataBuilder.build())
     }
 
-    override fun build(): HWPControlContainer = control
+    override fun build(): HWPControlContainer = control.apply {
+        setGsoId(HWPGsoControlType.Container.id)
+    }
 }
 
 class ChildControlListBuilder : HWPBuilder<ArrayList<HWPGsoControl>> {

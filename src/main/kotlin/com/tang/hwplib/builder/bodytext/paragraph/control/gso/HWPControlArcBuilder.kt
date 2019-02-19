@@ -9,6 +9,7 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlArc
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentArc
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.arc.HWPArcBorder
 
@@ -41,7 +42,9 @@ class HWPControlArcBuilder : HWPGsoControlBuilder() {
         control.textBox = textBoxBuilder.build()
     }
 
-    override fun build(): HWPControlArc = control
+    override fun build(): HWPControlArc = control.apply {
+        setGsoId(HWPGsoControlType.Arc.id)
+    }
 }
 
 class HWPShapeComponentArcBuilder : HWPBuilder<HWPShapeComponentArc> {

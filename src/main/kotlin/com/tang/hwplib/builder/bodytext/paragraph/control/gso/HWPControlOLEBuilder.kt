@@ -11,6 +11,7 @@ import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlOLE
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentOLE
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.ole.DVASPECT
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.ole.HWPObjectSort
@@ -41,7 +42,9 @@ class HWPControlOLEBuilder : HWPGsoControlBuilder() {
         control.setCtrlData(ctrlDataBuilder.build())
     }
 
-    override fun build(): HWPControlOLE = control
+    override fun build(): HWPControlOLE = control.apply {
+        setGsoId(HWPGsoControlType.OLE.id)
+    }
 }
 
 class HWPShapeComponentOLEBuilder : HWPBuilder<HWPShapeComponentOLE> {

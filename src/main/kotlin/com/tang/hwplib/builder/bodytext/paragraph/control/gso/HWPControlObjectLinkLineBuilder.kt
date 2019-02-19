@@ -9,6 +9,7 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlObjectLinkLine
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentLineForObjectLinkLine
 
 class HWPControlObjectLinkLineBuilder : HWPGsoControlBuilder() {
@@ -36,7 +37,9 @@ class HWPControlObjectLinkLineBuilder : HWPGsoControlBuilder() {
         control.setCtrlData(ctrlDataBuilder.build())
     }
 
-    override fun build(): HWPControlObjectLinkLine = control
+    override fun build(): HWPControlObjectLinkLine = control.apply {
+        setGsoId(HWPGsoControlType.ObjectLinkLine.id)
+    }
 }
 
 class HWPShapeComponentLineForObjectLinkLineBuilder : HWPBuilder<HWPShapeComponentLineForObjectLinkLine> {

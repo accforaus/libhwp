@@ -9,6 +9,7 @@ import com.tang.hwplib.builder.bodytext.paragraph.control.gso.shapecomponent.HWP
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.control.HWPControlType
 import com.tang.hwplib.objects.bodytext.control.gso.HWPControlRectangle
+import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControlType
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentRectangle
 
 class HWPControlRectangleBuilder : HWPGsoControlBuilder() {
@@ -40,7 +41,9 @@ class HWPControlRectangleBuilder : HWPGsoControlBuilder() {
         control.setCtrlData(ctrlDataBuilder.build())
     }
 
-    override fun build(): HWPControlRectangle = control
+    override fun build(): HWPControlRectangle = control.apply {
+        setGsoId(HWPGsoControlType.Rectangle.id)
+    }
 }
 
 class HWPShapeComponentRectangleBuilder : HWPBuilder<HWPShapeComponentRectangle> {
