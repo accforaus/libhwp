@@ -345,7 +345,7 @@ class HWPDocInfo {
         }
     }
 
-    fun builderFactory(builderType: HWPDocInfoBuilderType) : HWPDocInfoBuilder = when (builderType) {
+    fun getBuilder(builderType: HWPDocInfoBuilderType) : HWPDocInfoBuilder = when (builderType) {
         HWPDocInfoBuilderType.BinData -> HWPBinDataBuilder(this)
         HWPDocInfoBuilderType.BorderFill -> HWPBorderFillBuilder(this)
         HWPDocInfoBuilderType.CharShape -> HWPCharShapeBuilder(this)
