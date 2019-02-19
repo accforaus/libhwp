@@ -65,6 +65,10 @@ open class HWPShapeComponentBuilder : HWPBuilder<HWPShapeComponent> {
         shapeComponent.renderingInfo = renderInfoBuilder.build()
     }
 
+    fun setRenderingInfoNormal() : HWPShapeComponentBuilder = this.apply {
+        shapeComponent.setMatrixsNormal()
+    }
+
     override fun build(): HWPShapeComponent = shapeComponent
 }
 
