@@ -56,11 +56,11 @@ class HWPEQEditBuilder : HWPBuilder<HWPEQEdit> {
     }
 
     fun setVersionInfo(versionInfo: String) : HWPEQEditBuilder = this.apply {
-        eqEdit.versionInfo
+        eqEdit.versionInfo = versionInfo
     }
 
     fun setFontName(fontName: String) : HWPEQEditBuilder = this.apply {
-        eqEdit.fontName
+        eqEdit.fontName = fontName
     }
 
     override fun build(): HWPEQEdit = eqEdit

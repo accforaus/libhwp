@@ -1,17 +1,14 @@
 package com.tang.hwplib.builder.template.emptydocument.docinfo
 
 import com.tang.hwplib.builder.docinfo.HWPParaShapeBuilder
-import com.tang.hwplib.builder.docinfo.HWPParaShapeListBuilder
 import com.tang.hwplib.builder.docinfo.parashape.HWPParaShapeProperty1Builder
 import com.tang.hwplib.builder.docinfo.parashape.HWPParaShapeProperty2Builder
 import com.tang.hwplib.builder.docinfo.parashape.HWPParaShapeProperty3Builder
 import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
-import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
-import com.tang.hwplib.objects.docinfo.HWPParaShape
 
 class HWPEmptyParaShapeBuilder {
-    private fun getBuilder(docInfo: HWPDocInfo) : HWPParaShapeBuilder = docInfo.builderFactory(HWPDocInfoBuilderType.ParaShape) as HWPParaShapeBuilder
+    private fun getBuilder(docInfo: HWPDocInfo) : HWPParaShapeBuilder = docInfo.getBuilder(HWPDocInfoBuilderType.ParaShape) as HWPParaShapeBuilder
 
     fun build(docInfo : HWPDocInfo) {
         getBuilder(docInfo).setProperty1(HWPParaShapeProperty1Builder().setValue(260))

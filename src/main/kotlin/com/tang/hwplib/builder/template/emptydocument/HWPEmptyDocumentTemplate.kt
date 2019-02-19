@@ -10,6 +10,6 @@ class HWPEmptyDocumentTemplate : HWPBuilder<HWPDocument> {
     override fun build(): HWPDocument = HWPDocument().apply {
         fileHeader = HWPEmptyFileHeaderBuilder().build()
         docInfo = HWPEmptyDocInfoBuilder().build()
-        bodyText = HWPEmptyBodyTextBuilder().build()
+        bodyText = HWPEmptyBodyTextBuilder(docInfo).build()
     }
 }

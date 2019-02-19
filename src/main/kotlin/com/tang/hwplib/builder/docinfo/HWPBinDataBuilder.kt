@@ -31,13 +31,13 @@ class HWPBinDataBuilder(private val docInfo: HWPDocInfo) : HWPDocInfoBuilder() {
 
     fun setBinDataID(embeddedBinDataBuilder: HWPEmbeddedBinDataBuilder) : HWPBinDataBuilder = this.apply {
         embeddedBinDataBuilder.build().run {
-            binData.binDataID = docInfo?.binData?.embeddedBinaryDataList?.size ?: 0
+            binData.binDataID = docInfo.binData?.embeddedBinaryDataList?.size ?: 0
         }
     }
 
     fun setBinDataID(binDataName: String) : HWPBinDataBuilder = this.apply {
         fun findIndexByName() : Int {
-            val embeddedList: ArrayList<HWPEmbeddedBinaryData> = docInfo?.binData?.embeddedBinaryDataList ?: throw HWPBuildException("BinData in DocInfo must not be null")
+            val embeddedList: ArrayList<HWPEmbeddedBinaryData> = docInfo.binData?.embeddedBinaryDataList ?: throw HWPBuildException("BinData in DocInfo must not be null")
             for ((index, bin) in embeddedList.withIndex()) {
                 if (bin.name.contains(binDataName))
                     return index

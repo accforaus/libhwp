@@ -14,10 +14,11 @@ import com.tang.hwplib.objects.bodytext.control.HWPControl
 import com.tang.hwplib.objects.bodytext.control.HWPControlColumnDefine
 import com.tang.hwplib.objects.bodytext.control.HWPControlSectionDefine
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderThickness
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
 
-class HWPBuildEmptyParagraphBuilder : HWPBuilder<HWPParagraph> {
+class HWPBuildEmptyParagraphBuilder(private val docInfo : HWPDocInfo) : HWPBuilder<HWPParagraph> {
     private fun buildParagraph() : HWPParagraphBuilder = HWPParagraphBuilder()
             .setHeader(HWPParaHeadBuilder()
                     .setLastInList(true).setCharacterCount(17)
@@ -32,7 +33,7 @@ class HWPBuildEmptyParagraphBuilder : HWPBuilder<HWPParagraph> {
                             .setLineSpace(600)
                             .setSegmentWidth(42520)
                             .setLineHeight(1000)))
-            .setParaText(HWPParaTextBuilder()
+            .setParaText(HWPParaTextBuilder(docInfo)
                     .addExtendChar(HWPControlSectionDefine())
                     .addExtendChar(HWPControlColumnDefine()))
             .setControlList(HWPControlListBuilder()

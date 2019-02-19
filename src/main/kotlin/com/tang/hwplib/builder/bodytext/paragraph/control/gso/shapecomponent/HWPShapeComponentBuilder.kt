@@ -7,7 +7,7 @@ import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeCompo
 import com.tang.hwplib.objects.bodytext.control.gso.shapecomponent.HWPShapeComponentNormal
 
 open class HWPShapeComponentBuilder : HWPBuilder<HWPShapeComponent> {
-    protected val shapeComponent : HWPShapeComponent = HWPShapeComponent.build()
+    protected var shapeComponent : HWPShapeComponent = HWPShapeComponent.build()
 
     fun setGsoID(gsoID: Long) : HWPShapeComponentBuilder = this.apply {
         shapeComponent.gsoId = gsoID
@@ -72,7 +72,11 @@ open class HWPShapeComponentBuilder : HWPBuilder<HWPShapeComponent> {
     override fun build(): HWPShapeComponent = shapeComponent
 }
 
-class HWPShapeComponentNormalBuilder : HWPShapeComponentBuilder() {
+class HWPShapeComponentNormalBuilder : HWPShapeComponentBuilder {
+    constructor() : super() {
+        shapeComponent = HWPShapeComponentNormal.build()
+    }
+
     fun setLineInfo(lineInfoBuilder: HWPLineInfoBuilder) : HWPShapeComponentNormalBuilder = this.apply {
         (shapeComponent as HWPShapeComponentNormal).lineInfo = lineInfoBuilder.build()
     }
@@ -89,6 +93,10 @@ class HWPShapeComponentNormalBuilder : HWPShapeComponentBuilder() {
 }
 
 class HWPShapeComponentContainerBuilder : HWPShapeComponentBuilder() {
+    init {
+        shapeComponent = HWPShapeComponentContainer.build()
+    }
+
     fun setChildControlIDList(childControlIDBuilder: ChildControlIDBuilder) : HWPShapeComponentContainerBuilder = this.apply {
         (shapeComponent as HWPShapeComponentContainer).childControlIdList = childControlIDBuilder.build()
     }

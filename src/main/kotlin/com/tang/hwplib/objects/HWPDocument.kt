@@ -40,7 +40,7 @@ class HWPDocument {
     constructor() {
         this.fileHeader = HWPEmptyFileHeaderBuilder().build()
         this.docInfo = HWPEmptyDocInfoBuilder().build()
-        this.bodyText = HWPEmptyBodyTextBuilder().build()
+        this.bodyText = HWPEmptyBodyTextBuilder(docInfo).build()
     }
 
     constructor(path: String) {

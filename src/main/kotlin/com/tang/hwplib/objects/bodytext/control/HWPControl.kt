@@ -19,6 +19,7 @@ import com.tang.hwplib.objects.bodytext.control.table.HWPRow
 import com.tang.hwplib.objects.bodytext.control.table.HWPTable
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraphList
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 
 import com.tang.hwplib.objects.etc.*
 
@@ -31,7 +32,7 @@ import com.tang.hwplib.objects.etc.*
  */
 open class HWPControl(var header: HWPCtrlHeader?) {
     private var ctrlData: HWPCtrlData? = null
-
+    var docInfo: HWPDocInfo? = null
     /**
      * 컨트롤 유형을 반환하는 함수
      *

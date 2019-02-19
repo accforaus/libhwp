@@ -1,8 +1,11 @@
 package com.tang.hwplib.objects.bodytext
 
+import com.tang.hwplib.builder.bodytext.paragraph.HWPParagraphBuilder
 import com.tang.hwplib.objects.bodytext.control.sectiondefine.HWPBatangPageInfo
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraph
 import com.tang.hwplib.objects.bodytext.paragraph.HWPParagraphListInterface
+import com.tang.hwplib.objects.bodytext.paragraph.charshape.HWPCharPositionShapeIdPair
+import com.tang.hwplib.objects.bodytext.paragraph.charshape.HWPParaCharShape
 
 /**
  * 섹션을 나타내는 객체
@@ -61,5 +64,14 @@ class HWPSection: HWPParagraphListInterface {
         for (paragraph in this.paragraphList)
             it.paragraphList.add(paragraph.copy())
         this.lastBatangPageInfo?.run { it.lastBatangPageInfo = this.copy() }
+    }
+
+    fun addNewParagraph(paragraphBuilder: HWPParagraphBuilder) : HWPParagraph = paragraphBuilder.build().apply {
+        if (this.paraCharShape == null) {
+            this.paraCharShape = HWPParaCharShape().apply {
+                positionShapeIdPairList.add(HWPCharPositionShapeIdPair(0, 0))
+            }
+        }
+        paragraphList.add(this)
     }
 }

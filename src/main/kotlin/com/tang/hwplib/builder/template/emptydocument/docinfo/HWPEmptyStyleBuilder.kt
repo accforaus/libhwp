@@ -1,15 +1,12 @@
 package com.tang.hwplib.builder.template.emptydocument.docinfo
 
 import com.tang.hwplib.builder.docinfo.HWPStyleBuilder
-import com.tang.hwplib.builder.docinfo.HWPStyleListBuilder
 import com.tang.hwplib.builder.docinfo.style.HWPStylePropertyBuilder
 import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
-import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
-import com.tang.hwplib.objects.docinfo.HWPStyle
 
 class HWPEmptyStyleBuilder {
-    private fun getBuilder(docInfo: HWPDocInfo) : HWPStyleBuilder = docInfo.builderFactory(HWPDocInfoBuilderType.Style) as HWPStyleBuilder
+    private fun getBuilder(docInfo: HWPDocInfo) : HWPStyleBuilder = docInfo.getBuilder(HWPDocInfoBuilderType.Style) as HWPStyleBuilder
     fun build(docInfo: HWPDocInfo) {
         getBuilder(docInfo)
                 .setHangulName("바탕글")

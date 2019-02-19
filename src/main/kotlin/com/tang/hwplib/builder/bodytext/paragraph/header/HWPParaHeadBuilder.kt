@@ -1,9 +1,13 @@
 package com.tang.hwplib.builder.bodytext.paragraph.header
 
+import com.tang.hwplib.builder.docinfo.HWPParaShapeBuilder
+import com.tang.hwplib.builder.docinfo.HWPStyleBuilder
+import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
 import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.bodytext.paragraph.header.HWPControlMask
 import com.tang.hwplib.objects.bodytext.paragraph.header.HWPDivideSort
 import com.tang.hwplib.objects.bodytext.paragraph.header.HWPParaHeader
+import com.tang.hwplib.objects.docinfo.HWPDocInfo
 
 class HWPParaHeadBuilder : HWPBuilder<HWPParaHeader> {
     private val header: HWPParaHeader = HWPParaHeader.build()
@@ -20,8 +24,16 @@ class HWPParaHeadBuilder : HWPBuilder<HWPParaHeader> {
         header.paraShapeId = paraShapeID
     }
 
+    fun setParaShapeID(paraShapeBuilder: HWPParaShapeBuilder) : HWPParaHeadBuilder = this.apply {
+        header.paraShapeId = paraShapeBuilder.proceed()
+    }
+
     fun setStyleID(styleID: Short) : HWPParaHeadBuilder = this.apply {
         header.styleId = styleID
+    }
+
+    fun setStyleID(styleBuilder: HWPStyleBuilder) : HWPParaHeadBuilder = this.apply {
+        header.styleId = styleBuilder.proceed().toShort()
     }
 
     fun setDivideSort(divideSortBuilder: HWPDivideSortBuilder) : HWPParaHeadBuilder = this.apply {

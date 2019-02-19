@@ -1,9 +1,7 @@
 package com.tang.hwplib.builder.bodytext.paragraph
 
 import com.tang.hwplib.builder.bodytext.paragraph.charshape.HWPParaCharShapeBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.charshape.buildEmptyParaCharShape
 import com.tang.hwplib.builder.bodytext.paragraph.control.HWPControlListBuilder
-import com.tang.hwplib.builder.bodytext.paragraph.control.gso.ChildControlListBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.header.HWPParaHeadBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.lineseg.HWPParaLineSegBuilder
 import com.tang.hwplib.builder.bodytext.paragraph.rangetag.HWPParaRangeTagBuilder

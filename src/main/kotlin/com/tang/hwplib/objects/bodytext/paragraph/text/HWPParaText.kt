@@ -144,6 +144,18 @@ class HWPParaText {
                     this.code = HWPControlExtendType.FieldStart.value
                 }
             }
+            is HWPControlEquation -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.GsoControl.value
+                }
+            }
+            is HWPControlTable -> {
+                addNewExtendControlChar().run {
+                    this.addition = HWPControl.getAddition(control)
+                    this.code = HWPControlExtendType.GsoControl.value
+                }
+            }
             is HWPGsoControl -> {
                 addNewExtendControlChar().run {
                     val addition: ByteArray = ByteArray(12)

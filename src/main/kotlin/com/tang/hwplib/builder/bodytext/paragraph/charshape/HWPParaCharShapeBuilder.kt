@@ -16,11 +16,3 @@ class HWPParaCharShapeBuilder : HWPBuilder<HWPParaCharShape> {
 
     override fun build(): HWPParaCharShape = paraCharShape
 }
-
-internal fun buildEmptyParaCharShape() : HWPParaCharShape = HWPParaCharShape.build(
-        positionShapeIDPairGenerator = {
-            val positionShapeIdPair: ArrayList<HWPCharPositionShapeIdPair> = ArrayList()
-            positionShapeIdPair.add(HWPCharPositionShapeIdPair.build(0,0))
-            positionShapeIdPair
-        }
-)

@@ -1,16 +1,13 @@
 package com.tang.hwplib.builder.template.emptydocument.docinfo
 
 import com.tang.hwplib.builder.docinfo.HWPCharShapeBuilder
-import com.tang.hwplib.builder.docinfo.HWPCharShapeListBuilder
 import com.tang.hwplib.builder.docinfo.charshape.*
 import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
-import com.tang.hwplib.builder.interfaces.HWPBuilder
-import com.tang.hwplib.objects.docinfo.HWPCharShape
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
 
 class HWPEmptyCharShapeBuilder {
-    private fun getBuilder(docInfo: HWPDocInfo) : HWPCharShapeBuilder = docInfo.builderFactory(HWPDocInfoBuilderType.CharShape) as HWPCharShapeBuilder
+    private fun getBuilder(docInfo: HWPDocInfo) : HWPCharShapeBuilder = docInfo.getBuilder(HWPDocInfoBuilderType.CharShape) as HWPCharShapeBuilder
 
     fun build(docInfo: HWPDocInfo) {
         getBuilder(docInfo).setFaceNameIDs(HWPFaceNameIDBuilder().setForAll(1))

@@ -1,5 +1,7 @@
 package com.tang.hwplib.objects.bodytext.paragraph
 
+import com.tang.hwplib.builder.bodytext.paragraph.control.HWPControlBuildFactory
+import com.tang.hwplib.builder.bodytext.paragraph.text.HWPTextBuildFactory
 import com.tang.hwplib.objects.bodytext.control.*
 import com.tang.hwplib.objects.bodytext.control.ctrlheader.HWPCtrlHeaderGso
 import com.tang.hwplib.objects.bodytext.control.gso.HWPGsoControl
@@ -297,4 +299,8 @@ class HWPParagraph {
                 it.memoList?.add(memo.copy())
         }
     }
+
+    fun getTextFactory() : HWPTextBuildFactory = HWPTextBuildFactory(this)
+
+    fun getControlFactory() : HWPControlBuildFactory = HWPControlBuildFactory(this)
 }

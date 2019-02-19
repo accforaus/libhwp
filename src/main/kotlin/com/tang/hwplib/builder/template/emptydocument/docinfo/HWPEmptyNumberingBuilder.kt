@@ -1,18 +1,15 @@
 package com.tang.hwplib.builder.template.emptydocument.docinfo
 
 import com.tang.hwplib.builder.docinfo.HWPNumberingBuilder
-import com.tang.hwplib.builder.docinfo.HWPNumberingListBuilder
 import com.tang.hwplib.builder.docinfo.numbering.HWPLevelNumberingBuilder
 import com.tang.hwplib.builder.docinfo.numbering.HWPParagraphHeadInfoBuilder
 import com.tang.hwplib.builder.docinfo.numbering.HWPParagraphHeadInfoPropertyBuilder
 import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
-import com.tang.hwplib.builder.interfaces.HWPBuilder
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
-import com.tang.hwplib.objects.docinfo.HWPNumbering
 
 class HWPEmptyNumberingBuilder {
     fun build(docInfo: HWPDocInfo) {
-        val builder : HWPNumberingBuilder = docInfo.builderFactory(HWPDocInfoBuilderType.Numbering) as HWPNumberingBuilder
+        val builder : HWPNumberingBuilder = docInfo.getBuilder(HWPDocInfoBuilderType.Numbering) as HWPNumberingBuilder
         builder.setLevelNumbering(0, HWPLevelNumberingBuilder()
                 .setParagraphHeadInfo(HWPParagraphHeadInfoBuilder(docInfo)
                         .setProperty(HWPParagraphHeadInfoPropertyBuilder().setValue(12))
