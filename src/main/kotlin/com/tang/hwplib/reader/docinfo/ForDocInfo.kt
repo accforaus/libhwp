@@ -145,7 +145,8 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
             paragraphHeadInfo(paragraphHeadInfo)
             bulletChar = sr.readWChar()
             imageBulletCheck = sr.readInt32()
-            forImageBullet(imageBullet)
+            if (imageBulletCheck > 0)
+                forImageBullet(imageBullet)
             checkBulletChar = sr.readWChar()
             if (!sr.isEndOfRecord())
                 unknownBytes(sr)
@@ -461,7 +462,7 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
 
         n.run {
             levelNumberings(this)
-            startNumber = sr.readUInt16()
+             startNumber = sr.readUInt16()
             if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5, 0, 2, 5))
                 startNumberForLevels(this)
             if (!sr.isEndOfRecord())
