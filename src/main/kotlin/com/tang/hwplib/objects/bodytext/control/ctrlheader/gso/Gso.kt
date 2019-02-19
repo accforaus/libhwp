@@ -419,7 +419,7 @@ class HWPGsoHeaderProperty {
      * @param [likeWord] [Boolean], 글자처럼 취급 여부의 참/거짓 값을 가진 데이터
      */
     fun setLikeWord(likeWord: Boolean) {
-        set(value, 0, likeWord)
+        value = set(value, 0, likeWord)
     }
 
     /**
