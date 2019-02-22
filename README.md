@@ -3,7 +3,7 @@
 <br/>
 
 <p align="center" style="padding: 45px;">
-    <img src="/img/hancomImg.png">
+    <img src="/img/hankom2.png">
 </p>
 
 <br/>
@@ -144,6 +144,7 @@ target_hwp.addParagraphs(some_paragraphs, original_hwp); // add paragraph list
 
 ## Credits for [hwplib](https://github.com/neolord0/hwplib)
 A huge thanks to the author of hwplib for most of the work on libhwp.
+
 
 ## License
 [Apache](LICENSE)
