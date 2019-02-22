@@ -27,7 +27,7 @@ class HWPBorderFill : HWPDocInfoElement() {
     var rightBorder: HWPEachBorder = HWPEachBorder()
     var topBorder: HWPEachBorder = HWPEachBorder()
     var bottomBorder: HWPEachBorder = HWPEachBorder()
-    var diagonalSort: HWPBorderType = HWPBorderType.Solid
+    var diagonalSort: HWPDiagonalSort = HWPDiagonalSort.Slash
     var diagonalThickness: HWPBorderThickness = HWPBorderThickness.MM0_1
     var diagonalColor: Color4Byte = Color4Byte()
     var fillInfo: HWPFillInfo = HWPFillInfo()
@@ -43,7 +43,7 @@ class HWPBorderFill : HWPDocInfoElement() {
         it.rightBorder = this.rightBorder.copy()
         it.topBorder = this.topBorder.copy()
         it.bottomBorder = this.bottomBorder.copy()
-        it.diagonalSort = HWPBorderType.valueOf(this.diagonalSort.value)
+        it.diagonalSort = HWPDiagonalSort.valueOf(this.diagonalSort.value)
         it.diagonalThickness = HWPBorderThickness.valueOf(this.diagonalThickness.value)
         it.diagonalColor.value = this.diagonalColor.value
         it.fillInfo = this.fillInfo.copy()
@@ -60,7 +60,7 @@ class HWPBorderFill : HWPDocInfoElement() {
                   rightBorder: HWPEachBorder = HWPEachBorder.build(),
                   topBorder: HWPEachBorder = HWPEachBorder.build(),
                   bottomBorder: HWPEachBorder = HWPEachBorder.build(),
-                  diagonalSort: HWPBorderType = HWPBorderType.Solid,
+                  diagonalSort: HWPDiagonalSort = HWPDiagonalSort.Slash,
                   diagonalThickness: HWPBorderThickness = HWPBorderThickness.MM0_1,
                   diagonalColor: Color4Byte = Color4Byte.build(),
                   fillInfo: HWPFillInfo = HWPFillInfo.build())

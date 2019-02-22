@@ -9,16 +9,17 @@ import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.builder.etc.HWPDocInfoBuilderType
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
+import com.tang.hwplib.objects.docinfo.borderfill.HWPDiagonalSort
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPPatternType
 
 class HWPEmptyBorderFillBuilder {
     private fun getBuilder(docInfo: HWPDocInfo) : HWPBorderFillBuilder = docInfo.getBuilder(HWPDocInfoBuilderType.BorderFill) as HWPBorderFillBuilder
 
     fun build(docInfo: HWPDocInfo) {
-        getBuilder(docInfo).setProperty(HWPBorderFillPropertyBuilder().setValue(0)).setDiagonalSort(HWPBorderType.Dash)
+        getBuilder(docInfo).setProperty(HWPBorderFillPropertyBuilder().setValue(0)).setDiagonalSort(HWPDiagonalSort.BackSlash)
                 .build()
         getBuilder(docInfo).setProperty(HWPBorderFillPropertyBuilder().setValue(0))
-                .setDiagonalSort(HWPBorderType.Dash)
+                .setDiagonalSort(HWPDiagonalSort.BackSlash)
                 .setFillInfo(HWPFillInfoBuilder(docInfo).setFillType(HWPFillTypeBuilder().setValue(1))
                                 .setPatternFill(HWPPatternFillBuilder()
                                         .setBackColor(Color4ByteBuilder().setValue(-1))

@@ -4,6 +4,7 @@ import com.tang.hwplib.objects.docinfo.*
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataType
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderThickness
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
+import com.tang.hwplib.objects.docinfo.borderfill.HWPDiagonalSort
 import com.tang.hwplib.objects.docinfo.borderfill.HWPEachBorder
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPFillInfo
 import com.tang.hwplib.objects.docinfo.bullet.HWPImageBullet
@@ -95,7 +96,7 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
          */
         fun diagonal(bf: HWPBorderFill) {
             bf.run {
-                diagonalSort = HWPBorderType.valueOf(sr.readUInt8().toByte())
+                diagonalSort = HWPDiagonalSort.valueOf(sr.readUInt8().toByte())
                 diagonalThickness = HWPBorderThickness.valueOf(sr.readInt8())
                 diagonalColor.value = sr.readColorRef()
             }

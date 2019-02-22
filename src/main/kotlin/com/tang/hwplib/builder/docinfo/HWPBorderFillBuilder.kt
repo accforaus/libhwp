@@ -8,10 +8,7 @@ import com.tang.hwplib.builder.etc.Color4ByteBuilder
 import com.tang.hwplib.copyto.docinfo.IDMappingTypes
 import com.tang.hwplib.objects.docinfo.HWPBorderFill
 import com.tang.hwplib.objects.docinfo.HWPDocInfo
-import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderFillProperty
-import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderThickness
-import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
-import com.tang.hwplib.objects.docinfo.borderfill.HWPEachBorder
+import com.tang.hwplib.objects.docinfo.borderfill.*
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPFillInfo
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPFillType
 import com.tang.hwplib.objects.docinfo.borderfill.fillinfo.HWPPatternFill
@@ -41,7 +38,7 @@ class HWPBorderFillBuilder(private val docInfo: HWPDocInfo) : HWPDocInfoBuilder(
         borderFill.bottomBorder = borderBuilder.build()
     }
 
-    fun setDiagonalSort(diagonalSort: HWPBorderType) : HWPBorderFillBuilder = this.apply {
+    fun setDiagonalSort(diagonalSort: HWPDiagonalSort) : HWPBorderFillBuilder = this.apply {
         borderFill.diagonalSort = diagonalSort
     }
 
