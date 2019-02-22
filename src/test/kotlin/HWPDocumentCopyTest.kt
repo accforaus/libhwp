@@ -1,11 +1,24 @@
+import com.tang.hwplib.annotation.ID
+import com.tang.hwplib.annotation.LinkID
+import com.tang.hwplib.builder.template.emptydocument.HWPEmptyDocumentTemplate
 import com.tang.hwplib.objects.HWPDocument
+import com.tang.hwplib.objects.docinfo.HWPParaShape
+import com.tang.hwplib.objects.docinfo.charshape.HWPFaceNameIds
 import org.junit.Test
+import kotlin.reflect.KClass
+import kotlin.reflect.KProperty1
+import kotlin.reflect.full.findParameterByName
+import kotlin.reflect.full.memberProperties
+import kotlin.reflect.jvm.javaGetter
 
 class HWPDocumentCopyTest {
     @Test
     fun `바르게 복사되었는지 테스트`() {
-        val hwp: HWPDocument = HWPDocument("/Users/josh/ChinaProject/hwp/tex/2018 수학 2학년 1학기 중간 적중모의고사 1회(1.수와 식_2.연립방정식) [Q].hwp")
-        val copyedHwp = hwp.copy()
-        copyedHwp.write("/Users/josh/ChinaProject/hwp/tex/2018 수학 2학년 1학기 중간 적중모의고사 1회(1.수와 식_2.연립방정식) [Q] -2-.hwp")
+
+    }
+
+    @Test
+    fun `바르게 저장되는지 테스트`() {
+
     }
 }
