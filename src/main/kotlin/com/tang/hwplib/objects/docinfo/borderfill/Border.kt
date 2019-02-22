@@ -60,7 +60,7 @@ enum class HWPBorderType(v: Byte) {
     /**
      * 물결
      */
-    Wae(11.toByte()),
+    Wave(11.toByte()),
     /**
      * 물결 2중선
      */
