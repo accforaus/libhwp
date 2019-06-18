@@ -185,7 +185,7 @@ private class ForParagraph(val docInfo : HWPDocInfo) {
             rangeTagCount = sr!!.readUInt16()
             lineAlignCount = sr!!.readUInt16()
             instanceID = sr!!.readUInt32()
-            if (!sr!!.isEndOfRecord() && sr!!.fileVersion!!.isOver(5, 0, 3, 2))
+            if (!sr!!.isEndOfRecord() && sr!!.fileVersion.isOver(5, 0, 3, 2))
                 isMergedByTrack = sr!!.readUInt16()
         }
         sr!!.skipToEndRecord()

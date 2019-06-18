@@ -235,9 +235,9 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
             shadeColor.value = sr.readColorRef()
             shadowColor.value = sr.readColorRef()
 
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5, 0, 2, 1))
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5, 0, 2, 1))
                 borderFillId = sr.readUInt16()
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5,0,3,0))
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5,0,3,0))
                 strikeLineColor.value = sr.readColorRef()
         }
 
@@ -372,9 +372,9 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
             bulletCount = sr.readInt32()
             paraShapeCount = sr.readInt32()
             styleCount = sr.readInt32()
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5, 0, 2,1))
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5, 0, 2,1))
                 memoShapeCount = sr.readInt32()
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5,0,3,2)) {
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5,0,3,2)) {
                 trackChangeCount = sr.readInt32()
                 trackChangeAuthorCount = sr.readInt32()
             }
@@ -464,11 +464,11 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
         n.run {
             levelNumberings(this)
              startNumber = sr.readUInt16()
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5, 0, 2, 5))
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5, 0, 2, 5))
                 startNumberForLevels(this)
             if (!sr.isEndOfRecord())
                 extendNumberings(this)
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5,1,0,0))
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5,1,0,0))
                 extendStartNumberForLevels(this)
         }
     }
@@ -495,9 +495,9 @@ internal fun forDocInfo(docInfo: HWPDocInfo, sr: StreamReader) {
             rightBorderSpace = sr.readInt16()
             topBorderSpace = sr.readInt16()
             bottomBorderSpace = sr.readInt16()
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5, 0, 1,7))
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5, 0, 1,7))
                 property2.value = sr.readUInt32()
-            if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5,0,2,5)) {
+            if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5,0,2,5)) {
                 property3.value = sr.readUInt32()
                 lineSpace2 = sr.readUInt32()
             }

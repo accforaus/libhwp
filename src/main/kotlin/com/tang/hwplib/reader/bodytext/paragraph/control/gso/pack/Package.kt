@@ -170,7 +170,7 @@ internal fun forShapeComponent(gsoControl: HWPGsoControl, sr: StreamReader) {
      */
     fun matrix(m: HWPMatrix) {
         for (index in 0 until 6)
-            m.setValue(index, sr.readDouble()!!)
+            m.setValue(index, sr.readDouble())
     }
 
     /**

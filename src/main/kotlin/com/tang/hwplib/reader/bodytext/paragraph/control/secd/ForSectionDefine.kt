@@ -31,7 +31,7 @@ internal fun forCtrlHeaderSecd(header: HWPCtrlHeaderSectionDefine, sr: StreamRea
     header.imageStartNumber = sr.readUInt16()
     header.tableStartNumber = sr.readUInt16()
     header.equationStartNumber = sr.readUInt16()
-    if (!sr.isEndOfRecord() && sr.fileVersion!!.isOver(5, 0, 1, 2))
+    if (!sr.isEndOfRecord() && sr.fileVersion.isOver(5, 0, 1, 2))
         header.defaultLanguage = sr.readUInt16()
     sr.skipToEndRecord()
 }

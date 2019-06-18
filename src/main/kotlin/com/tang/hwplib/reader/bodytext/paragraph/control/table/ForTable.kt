@@ -79,7 +79,7 @@ internal fun forTable(table: HWPTable, sr: StreamReader) {
         bottomInnerMargin = sr.readUInt16()
         for (index in 0 until rowCount) addCellCountOfRow(sr.readUInt16())
         borderFillId = sr.readUInt16()
-        if (sr.fileVersion!!.isOver(5, 0, 1, 0)) {
+        if (sr.fileVersion.isOver(5, 0, 1, 0)) {
             for (index in 0 until sr.readUInt16()) {
                 addNewZoneInfo().also {
                     it.startColumn = sr.readUInt16()

@@ -40,7 +40,7 @@ private fun fromInputStream(inputStream: InputStream) : HWPDocument {
      * HWP 문서의 헤더를 읽는 함수
      */
     fun fileHeader() {
-        val sr: StreamReader = cfr.getChildStreamReader("FileHeader", false, null)
+        val sr: StreamReader = cfr.getChildStreamReader("FileHeader", false, HWPFileVersion())
         forFileHeader(hwpDocument.fileHeader, sr)
         sr.close()
     }
@@ -104,7 +104,7 @@ private fun fromInputStream(inputStream: InputStream) : HWPDocument {
      * @return [ByteArray] 저장된 바이너리 데이터 값 반환
      */
     fun readEmbeddedBinaryData(name: String, compress: HWPBinDataCompress) : ByteArray {
-        val sr: StreamReader = cfr.getChildStreamReader(name, isCompressBinData(compress), null)
+        val sr: StreamReader = cfr.getChildStreamReader(name, isCompressBinData(compress), HWPFileVersion())
         val binaryData: ByteArray = ByteArray(sr.size.toInt())
         sr.readBytes(binaryData)
         sr.close()
