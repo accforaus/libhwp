@@ -5,6 +5,9 @@
 <p align="center" style="padding: 45px;">
     <img src="/img/hankom2.png">
 </p>
+<p align="center">
+    <img src="https://travis-ci.org/accforaus/libhwp.svg?branch=master">    
+</p>
 
 <br/>
 
