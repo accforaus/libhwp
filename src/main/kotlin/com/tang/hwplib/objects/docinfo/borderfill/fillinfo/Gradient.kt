@@ -37,12 +37,7 @@ enum class HWPGradientType(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPGradientType] enum 값
          */
-        fun valueOf(v: Byte) : HWPGradientType {
-            for (gt in values())
-                if (gt.value == v)
-                    return gt
-            return Stripe
-        }
+        fun valueOf(v: Byte) : HWPGradientType = values().find { it.value == v } ?: Stripe
     }
 }
 

@@ -82,12 +82,7 @@ enum class HWPImageFillType(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPImageFillType] enum 값
          */
-        fun valueOf(v: Byte) : HWPImageFillType {
-            for (ift in values())
-                if (ift.value == v)
-                    return ift
-            return None
-        }
+        fun valueOf(v: Byte) : HWPImageFillType = values().find { it.value == v } ?: None
     }
 }
 

@@ -32,13 +32,7 @@ enum class HWPBinDataCompress(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPBinDataCompress] enum 값
          */
-        fun valueOf(v: Byte) : HWPBinDataCompress {
-            for (bdc in values()) {
-                if (bdc.value == v)
-                    return bdc
-            }
-            return ByStorageDefault
-        }
+        fun valueOf(v: Byte) : HWPBinDataCompress = values().find { it.value == v } ?: ByStorageDefault
     }
 }
 
@@ -71,12 +65,7 @@ enum class HWPBinDataType(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPBinDataType] enum 값
          */
-        fun valueOf(v: Byte) : HWPBinDataType {
-            for (dbt in values())
-                if (dbt.value == v)
-                    return dbt
-            return Link
-        }
+        fun valueOf(v: Byte) : HWPBinDataType = values().find { it.value == v } ?: Link
     }
 }
 
@@ -113,12 +102,7 @@ enum class HWPBinDataState(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPBinDataState] enum 값
          */
-        fun valueOf(v: Byte) : HWPBinDataState {
-            for (bds in values())
-                if (bds.value == v)
-                    return bds
-            return NotAccess
-        }
+        fun valueOf(v: Byte) : HWPBinDataState = values().find { it.value == v } ?: NotAccess
     }
 }
 

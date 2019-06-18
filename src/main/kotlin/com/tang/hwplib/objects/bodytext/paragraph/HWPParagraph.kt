@@ -303,4 +303,6 @@ class HWPParagraph {
     fun getTextFactory() : HWPTextBuildFactory = HWPTextBuildFactory(this)
 
     fun getControlFactory() : HWPControlBuildFactory = HWPControlBuildFactory(this)
+
+    override fun toString(): String = getNormalString()
 }

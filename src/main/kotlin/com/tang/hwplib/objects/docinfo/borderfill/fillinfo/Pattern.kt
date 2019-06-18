@@ -48,12 +48,7 @@ enum class HWPPatternType(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPPatternType] enum 값
          */
-        fun valueOf(v: Byte) : HWPPatternType {
-            for (pt in values())
-                if (pt.value == v)
-                    return pt
-            return None
-        }
+        fun valueOf(v: Byte) : HWPPatternType = values().find { it.value == v } ?: None
     }
 }
 

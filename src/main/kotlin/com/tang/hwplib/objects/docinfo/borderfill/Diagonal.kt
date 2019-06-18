@@ -30,12 +30,7 @@ enum class HWPDiagonalSort(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPDiagonalSort] enum 값
          */
-        fun valueOf(v: Byte) : HWPDiagonalSort {
-            for (ds in values())
-                if (ds.value == v)
-                    return ds
-            return Slash
-        }
+        fun valueOf(v: Byte) : HWPDiagonalSort = values().find { it.value == v } ?: Slash
     }
 }
 
@@ -83,12 +78,7 @@ enum class HWPSlashDiagonalShape(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPSlashDiagonalShape] enum 값
          */
-        fun valueOf(v: Byte) : HWPSlashDiagonalShape {
-            for (sds in values())
-                if (sds.value == v)
-                    return sds
-            return None
-        }
+        fun valueOf(v: Byte) : HWPSlashDiagonalShape = values().find { it.value == v } ?: None
     }
 }
 
@@ -136,11 +126,6 @@ enum class HWPBackSlashDiagonalShape(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPBackSlashDiagonalShape] enum 값
          */
-        fun valueOf(v: Byte) : HWPBackSlashDiagonalShape {
-            for (bsds in values())
-                if (bsds.value == v)
-                    return bsds
-            return None
-        }
+        fun valueOf(v: Byte) : HWPBackSlashDiagonalShape = values().find { it.value == v } ?: None
     }
 }

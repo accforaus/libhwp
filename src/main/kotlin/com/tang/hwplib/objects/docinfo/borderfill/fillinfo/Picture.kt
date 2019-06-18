@@ -39,12 +39,7 @@ enum class HWPPictureEffect(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPPictureInfo] enum 값
          */
-        fun valueOf(v: Byte) : HWPPictureEffect {
-            for (pe in values())
-                if (pe.value == v)
-                    return pe
-            return RealPicture
-        }
+        fun valueOf(v: Byte) : HWPPictureEffect = values().find { it.value == v } ?: RealPicture
     }
 }
 

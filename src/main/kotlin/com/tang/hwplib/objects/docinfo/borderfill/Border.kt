@@ -90,12 +90,7 @@ enum class HWPBorderType(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPBorderType] enum 값
          */
-        fun valueOf(v: Byte) : HWPBorderType {
-            for (bt in values())
-                if (bt.value == v)
-                    return bt
-            return Solid
-        }
+        fun valueOf(v: Byte) : HWPBorderType = values().find { it.value == v } ?: Solid
     }
 }
 
@@ -181,12 +176,7 @@ enum class HWPBorderThickness(v: Byte) {
          * @param [v] [Byte], 파일에 저장되는 정수값
          * @return [HWPBorderThickness] enum 값
          */
-        fun valueOf(v: Byte) : HWPBorderThickness {
-            for (bt in values())
-                if (bt.value == v)
-                    return bt
-            return MM0_1
-        }
+        fun valueOf(v: Byte) : HWPBorderThickness = values().find { it.value == v } ?: MM0_1
     }
 }
 

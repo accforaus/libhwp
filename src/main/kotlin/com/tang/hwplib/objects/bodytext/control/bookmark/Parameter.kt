@@ -305,7 +305,7 @@ class HWPCtrlData {
 
     companion object {
         /**
-         * 객체를 생성하고 반환하는 함수
+         * 객체를 생성하고 반환하는 함수¡
          *
          * @return [HWPParameterSet] 생성된 객체 반환
          */
