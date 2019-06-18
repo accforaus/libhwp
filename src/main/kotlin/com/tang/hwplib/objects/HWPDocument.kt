@@ -15,6 +15,7 @@ import com.tang.hwplib.objects.fileheader.HWPFileHeader
 import com.tang.hwplib.reader.fromFile
 import com.tang.hwplib.reader.fromURL
 import com.tang.hwplib.writer.toHWPFile
+import java.io.File
 import java.net.URL
 
 /**
@@ -31,7 +32,8 @@ import java.net.URL
  * @property [bodyText] [HWPBodyText], 본문
  * @property [binData] [HWPBinData], 바이너리 데이터
  */
-class HWPDocument {
+open class HWPDocument {
+    var filename: String
     var fileHeader: HWPFileHeader = HWPFileHeader()
     var docInfo: HWPDocInfo = HWPDocInfo()
     var bodyText: HWPBodyText = HWPBodyText()
@@ -41,6 +43,7 @@ class HWPDocument {
         this.fileHeader = HWPEmptyFileHeaderBuilder().build()
         this.docInfo = HWPEmptyDocInfoBuilder().build()
         this.bodyText = HWPEmptyBodyTextBuilder(docInfo).build()
+        filename = ""
     }
 
     constructor(path: String) {
@@ -49,6 +52,7 @@ class HWPDocument {
             this.docInfo = it.docInfo
             this.bodyText = it.bodyText
             this.binData = it.binData
+            filename = path
         }
     }
 
@@ -58,6 +62,7 @@ class HWPDocument {
             this.docInfo = it.docInfo
             this.bodyText = it.bodyText
             this.binData = it.binData
+            filename = url.path
         }
     }
 
@@ -113,4 +118,6 @@ class HWPDocument {
         HWPDocumentCopyTo(this, hwpDocument)
         return hwpDocument
     }
+
+    fun toFile() : File = File(filename)
 }
