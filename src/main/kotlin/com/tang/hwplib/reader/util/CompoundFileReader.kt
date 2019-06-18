@@ -44,7 +44,7 @@ internal class CompoundFileReader {
             currentStorage = currentStorage.parent
     }
 
-    fun getChildStreamReader(name: String, compress: Boolean, fileVersion: HWPFileVersion?) : StreamReader = try { currentStorage.getEntry(name).run {
+    fun getChildStreamReader(name: String, compress: Boolean, fileVersion: HWPFileVersion) : StreamReader = try { currentStorage.getEntry(name).run {
         when (this is DocumentEntry) {
             true -> when (compress) {
                 true -> StreamReaderForCompress(this, fileVersion)

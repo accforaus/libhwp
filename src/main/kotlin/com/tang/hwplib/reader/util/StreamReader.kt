@@ -34,8 +34,8 @@ internal abstract class StreamReader protected constructor() {
     var read: Long = 0
     var header: HWPRecordHeader = HWPRecordHeader()
     var readAfterHeader: Long = 0
-    var docInfo: HWPDocInfo? = null
-    var fileVersion: HWPFileVersion? = null
+    lateinit var docInfo: HWPDocInfo
+    lateinit var fileVersion: HWPFileVersion
 
     /**
      * byte 배열의 크기 만큼 byte 배열을 읽는 함수
@@ -49,49 +49,49 @@ internal abstract class StreamReader protected constructor() {
      * @throws [NullPointerException]
      * @return [Byte]값
      */
-    protected abstract fun readSInt1() : Byte?
+    protected abstract fun readSInt1() : Byte
 
     /**
      * signed 2 byte 정수값을 읽어서 [Short]값을 반환하는 함수
      * @throws [NullPointerException]
      * @return [Short]값
      */
-    protected abstract fun readSInt2() : Short?
+    protected abstract fun readSInt2() : Short
 
     /**
      * signed 4 byte 정수값을 읽어서 [Int]값을 반환하는 함수
      * @throws [NullPointerException]
      * @return [Int]값
      */
-    protected abstract fun readSInt4() : Int?
+    protected abstract fun readSInt4() : Int
 
     /**
      * unsigned 1 byte 정수값을 읽어서 [Short]값을 반환하는 함수
      * @throws [NullPointerException]
      * @return [Short]값
      */
-    protected abstract fun readUInt1() : Short?
+    protected abstract fun readUInt1() : Short
 
     /**
      * unsigned 2 byte 정수값을 읽어서 [Int]값을 반환하는 함수
      * @throws [NullPointerException]
      * @return [Int]값
      */
-    protected abstract fun readUInt2() : Int?
+    protected abstract fun readUInt2() : Int
 
     /**
      * unsigned 4 byte 정수값을 읽어서 [Long]값을 반환하는 함수
      * @throws [NullPointerException]
      * @return [Long]값
      */
-    protected abstract fun readUInt4() : Long?
+    protected abstract fun readUInt4() : Long
 
     /**
      * double 값을 읽고 [Double]값을 반환하는 함수
      * @throws [NullPointerException]
      * @return [Double]값
      */
-    abstract fun readDouble() : Double?
+    abstract fun readDouble() : Double
 
     /**
      * float 값을 읽고 [Float]값을 반환하는 함수
@@ -131,7 +131,7 @@ internal abstract class StreamReader protected constructor() {
      * @return [header] [HWPRecordHeader], 한글 레코드 헤더
      */
     fun readRecordHeader(): HWPRecordHeader = header.apply {
-        val value: Long = readUInt4()!!
+        val value: Long = readUInt4()
         tagId = get(value, 0, 9).toShort()
         level = get(value, 10, 19).toShort()
         size = get(value, 20, 31)
@@ -148,8 +148,7 @@ internal abstract class StreamReader protected constructor() {
      * @return [String] 문자열 값
      */
     fun readUTF16LEString(): String? = Unit.run{
-        val len: Int = readWord()
-        when (len) {
+        when (val len: Int = readWord()) {
             in 1..Int.MAX_VALUE -> {
                 val arr: ByteArray = ByteArray(len * 2)
                 readBytes(arr)
@@ -181,7 +180,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] BYTE 값이 NULL 값일 때
      * @return [Short] BYTE 값을 반환
      */
-    fun readByte(): Short = readUInt1() ?: throw StreamReaderException("BYTE cannot be null")
+    fun readByte(): Short = readUInt1()
 
     /**
      * WORD 값을 반환하는 함수
@@ -191,7 +190,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] WORD 값이 NULL 값일 때
      * @return [Int] WORD 값을 반환
      */
-    fun readWord(): Int = readUInt2() ?: throw StreamReaderException("WORD cannot be null")
+    fun readWord(): Int = readUInt2()
 
     /**
      * DWORD 값을 반환하는 함수
@@ -201,7 +200,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] DWORD 값이 NULL 값일 때
      * @return [Long] DWORD 값을 반환
      */
-    fun readDWord(): Long = readUInt4() ?: throw StreamReaderException("DWORD cannot be null")
+    fun readDWord(): Long = readUInt4()
 
     /**
      * HWPUNIT 값을 반환하는 함수
@@ -211,7 +210,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] HWPUNIT 값이 NULL 일 때
      * @return [Long] HWPUNIT 값을 반환
      */
-    fun readHwpUnit(): Long = readUInt4() ?: throw StreamReaderException("HWPUINT cannot be null")
+    fun readHwpUnit(): Long = readUInt4()
 
     /**
      * SHWPUNIT 값을 반환하는 함수
@@ -221,7 +220,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] SHWPUNIT 값이 NULL 일 때
      * @return [Int] SHWPUNIT 값을 반환
      */
-    fun readSHwpUnit(): Int = readSInt4() ?: throw StreamReaderException("SHWPUNIT cannot be null")
+    fun readSHwpUnit(): Int = readSInt4()
 
     /**
      * HWPUNIT16 값을 반환하는 함수
@@ -231,7 +230,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] HWPUNIT16 값이 NULL 일 때
      * @return [Short] HWPUNIT16 값을 반환
      */
-    fun readHwpUnit16(): Short = readSInt2() ?: throw StreamReaderException("HWPUNIT16 cannot be null")
+    fun readHwpUnit16(): Short = readSInt2()
 
     /**
      * UINT8 값을 반환하는 함수
@@ -241,7 +240,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] UINT8 값이 NULL 일 때
      * @return [Short] UINT8 값을 반환
      */
-    fun readUInt8(): Short = readUInt1() ?: throw StreamReaderException("UINT8 cannot be null")
+    fun readUInt8(): Short = readUInt1()
 
     /**
      * UINT16 값을 반환하는 함수
@@ -251,7 +250,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] UINT16 값이 NULL 일 때
      * @return [Int] UINT16 값을 반환
      */
-    fun readUInt16(): Int = readUInt2() ?: throw StreamReaderException("UINT16 cannot be null")
+    fun readUInt16(): Int = readUInt2()
 
     /**
      * UINT32(=UINT)값을 반환하는 함수
@@ -261,7 +260,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] UINT32(=UINT) 값이 NULL 일 때
      * @return [Long] UINT(=UINT32) 값을 반환
      */
-    fun readUInt32(): Long = readUInt4() ?: throw StreamReaderException("UINT32(=UINT) cannot be null")
+    fun readUInt32(): Long = readUInt4()
 
     /**
      * INT8 값을 반환하는 함수
@@ -271,7 +270,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] INT8 값이 NULL 일 때
      * @return [Byte] INT8 값을 반환
      */
-    fun readInt8(): Byte = readSInt1() ?: throw StreamReaderException("INT8 cannot be null")
+    fun readInt8(): Byte = readSInt1()
 
     /**
      * INT16 값을 반환하는 함수
@@ -281,7 +280,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] INT16 값이 NULL 일 때
      * @return [Short] INT16 값을 반환
      */
-    fun readInt16(): Short = readSInt2() ?: throw StreamReaderException("INT16 cannot be null")
+    fun readInt16(): Short = readSInt2()
 
     /**
      * INT32 값을 반환하는 함수
@@ -291,7 +290,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] INT32 값이 NULL 일 때
      * @return [Int] INT32 값을 반환
      */
-    fun readInt32(): Int = readSInt4() ?: throw StreamReaderException("INT32 cannot be null")
+    fun readInt32(): Int = readSInt4()
 
     /**
      * COLORREF 값을 반환하는 함수
@@ -302,7 +301,7 @@ internal abstract class StreamReader protected constructor() {
      * @throws [StreamReaderException] COLORREF 값이 NULL 일 때
      * @return [Long] COLORREF 값을 반환
      */
-    fun readColorRef(): Long = readUInt4() ?: throw StreamReaderException("COLORREF cannot be null")
+    fun readColorRef(): Long = readUInt4()
 
     /**
      * 현재 위치가 스트림의 끝인지 여부를 반환하는 함수
@@ -342,9 +341,9 @@ internal abstract class StreamReader protected constructor() {
      * @param [oldParaShapeId] [Int], 값을 조정할 문단 모양 ID 값
      * return [oldParaShapeId] [Int], 값이 조정된 문단 모양 ID
      */
-    fun correctParaShapeId(oldParaShapeId: Int): Int = docInfo?.run {
+    fun correctParaShapeId(oldParaShapeId: Int): Int = docInfo.run {
         return oldParaShapeId - idMappings.paraShapeCount + paraShapeList.size
-    } ?: oldParaShapeId
+    }
 }
 
 /**
@@ -358,33 +357,22 @@ internal abstract class StreamReader protected constructor() {
  *              @param [fileVersion] [HWPFileVersion], HWP 문서의 파일 정보
  *              @throws [Exception]
  */
-internal class StreamReaderForCompress(de: DocumentEntry, fileVersion: HWPFileVersion?) : StreamReader() {
-    private val bis: ByteArrayInputStream = DocumentInputStream(de).let {
+internal class StreamReaderForCompress(de: DocumentEntry, fileVersion: HWPFileVersion) : StreamReader() {
+    private var bis: ByteArrayInputStream
+
+    init {
         this.fileVersion = fileVersion
-        val compressed: ByteArray = getCompressedBytes(it, de.size)
+        val documentInputStream = DocumentInputStream(de)
+        val compressed = getCompressedBytes(documentInputStream, de.size)
         try {
-            val decompressed: ByteArray = decompress(compressed)
+            val decompressed = decompress(compressed)
             this.size = decompressed.size.toLong()
-            ByteArrayInputStream(decompressed)
+            bis = ByteArrayInputStream(decompressed)
         } catch (e: DataFormatException) {
             this.size = compressed.size.toLong()
-            ByteArrayInputStream(compressed)
-        }
-    }
-    /*
-    private fun setByteArrayInputStream(de: DocumentEntry) : Unit {
-        val dis: DocumentInputStream = DocumentInputStream(de)
-        val compressed: ByteArray = getCompressedBytes(dis, de.size)
-        try {
-            val decompressed: ByteArray = decompress(compressed)
-            bis = ByteArrayInputStream(decompressed)
-            size = decompressed.size.toLong()
-        } catch (e: DataFormatException) {
             bis = ByteArrayInputStream(compressed)
-            size = compressed.size.toLong()
         }
     }
-    */
 
     /**
      * 스트림에서 압축된 데이터를 읽고 반환하는 함수
@@ -424,7 +412,7 @@ internal class StreamReaderForCompress(de: DocumentEntry, fileVersion: HWPFileVe
         bis.read(buffer)
     }
 
-    override fun readSInt1(): Byte? {
+    override fun readSInt1(): Byte {
         val buffer: ByteArray = readBytes(1)
         return buffer[0]
     }
@@ -444,17 +432,17 @@ internal class StreamReaderForCompress(de: DocumentEntry, fileVersion: HWPFileVe
         return buffer
     }
 
-    override fun readSInt2(): Short? = ByteBuffer.wrap(readBytes(2)).order(ByteOrder.LITTLE_ENDIAN).short
+    override fun readSInt2(): Short = ByteBuffer.wrap(readBytes(2)).order(ByteOrder.LITTLE_ENDIAN).short
 
-    override fun readSInt4(): Int? = ByteBuffer.wrap(readBytes(4)).order(ByteOrder.LITTLE_ENDIAN).int
+    override fun readSInt4(): Int = ByteBuffer.wrap(readBytes(4)).order(ByteOrder.LITTLE_ENDIAN).int
 
-    override fun readUInt1(): Short? = readSInt1()!!.toShort().and(0xff)
+    override fun readUInt1(): Short = readSInt1().toShort().and(0xff)
 
-    override fun readUInt2(): Int? = readSInt2()!!.toInt().and(0xffff)
+    override fun readUInt2(): Int = readSInt2().toInt().and(0xffff)
 
-    override fun readUInt4(): Long? = readSInt4()!!.and(-1).toLong()
+    override fun readUInt4(): Long = readSInt4().and(-1).toLong()
 
-    override fun readDouble(): Double? = ByteBuffer.wrap(readBytes(8)).order(ByteOrder.LITTLE_ENDIAN).double
+    override fun readDouble(): Double = ByteBuffer.wrap(readBytes(8)).order(ByteOrder.LITTLE_ENDIAN).double
 
     override fun skip(n: Long) {
         readBytes(n.toInt())
@@ -476,7 +464,7 @@ internal class StreamReaderForCompress(de: DocumentEntry, fileVersion: HWPFileVe
 *              @param [fileVersion] [HWPFileVersion], HWP 문서의 파일 정보
 *              @throws [Exception]
 */
-internal class StreamReaderForNormal(de: DocumentEntry, fileVersion: HWPFileVersion?) : StreamReader() {
+internal class StreamReaderForNormal(de: DocumentEntry, fileVersion: HWPFileVersion) : StreamReader() {
     private val dis: DocumentInputStream = DocumentInputStream(de).also {
         this.size = de.size.toLong()
         this.fileVersion = fileVersion
@@ -487,37 +475,37 @@ internal class StreamReaderForNormal(de: DocumentEntry, fileVersion: HWPFileVers
         dis.read(buffer)
     }
 
-    override fun readSInt1(): Byte? {
+    override fun readSInt1(): Byte {
         forwardPosition(1)
         return dis.readByte()
     }
 
-    override fun readSInt2(): Short? {
+    override fun readSInt2(): Short {
         forwardPosition(2)
         return dis.readShort()
     }
 
-    override fun readSInt4(): Int? {
+    override fun readSInt4(): Int {
         forwardPosition(4)
         return dis.readInt()
     }
 
-    override fun readUInt1(): Short? {
+    override fun readUInt1(): Short {
         forwardPosition(1)
         return dis.readByte().toShort().and(0xff)
     }
 
-    override fun readUInt2(): Int? {
+    override fun readUInt2(): Int {
         forwardPosition(2)
         return dis.readShort().toInt().and(0xffff)
     }
 
-    override fun readUInt4(): Long? {
+    override fun readUInt4(): Long {
         forwardPosition(4)
         return dis.readInt().and(0x00000000ffffffffL.toInt()).toLong()
     }
 
-    override fun readDouble(): Double? {
+    override fun readDouble(): Double {
         forwardPosition(8)
         return dis.readDouble()
     }
