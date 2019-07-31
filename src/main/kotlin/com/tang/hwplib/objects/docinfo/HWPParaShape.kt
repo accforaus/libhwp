@@ -119,4 +119,23 @@ import com.tang.hwplib.objects.etc.PARA_SHAPE
             this.unknown = unknown
         }
     }
+
+
+    override fun equals(other: Any?): Boolean = (other as HWPParaShape).let {
+        return property1 == it.property1
+                && leftMargin == it.leftMargin
+                && rightMargin == it.rightMargin
+                && indent == it.indent
+                && topParaSpace == it.topParaSpace
+                && bottomParaSpace == it.bottomParaSpace
+                && lineSpace == it.lineSpace
+                && leftBorderSpace == it.leftBorderSpace
+                && rightBorderSpace == it.rightBorderSpace
+                && topBorderSpace == it.topBorderSpace
+                && bottomBorderSpace == it.bottomBorderSpace
+                && property2 == it.property2
+                && property3 == it.property3
+                && lineSpace2 == it.lineSpace2
+                && unknown == it.unknown
+    }
 }

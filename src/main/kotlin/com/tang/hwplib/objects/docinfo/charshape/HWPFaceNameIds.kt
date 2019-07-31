@@ -160,4 +160,6 @@ class HWPFaceNameIds {
             setForAll(value)
         }
     }
+
+    override fun equals(other: Any?): Boolean = array contentEquals (other as HWPFaceNameIds).array
 }

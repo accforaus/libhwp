@@ -45,4 +45,10 @@ class HWPImageBullet {
             this.id = id
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPImageBullet).let { bullet ->
+        return contrast == bullet.contrast
+                && brightness == bullet.brightness
+                && effects == bullet.effects
+    }
 }

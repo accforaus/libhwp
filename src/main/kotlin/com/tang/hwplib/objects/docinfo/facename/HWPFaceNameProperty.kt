@@ -94,4 +94,6 @@ class HWPFaceNameProperty {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPFaceNameProperty).value
 }

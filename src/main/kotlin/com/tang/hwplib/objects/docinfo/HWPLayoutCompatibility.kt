@@ -52,4 +52,12 @@ class HWPLayoutCompatibility : HWPDocInfoElement() {
             this.fieldLevelFormat = fieldLevelFormat
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPLayoutCompatibility).let {
+        return letterLevelFormat == it.letterLevelFormat
+                && paragraphLevelFormat == it.paragraphLevelFormat
+                && sectionLevelFormat == it.sectionLevelFormat
+                && objectLevelFormat == it.objectLevelFormat
+                && fieldLevelFormat == it.fieldLevelFormat
+    }
 }

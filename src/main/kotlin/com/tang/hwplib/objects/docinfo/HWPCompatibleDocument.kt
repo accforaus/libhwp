@@ -2,6 +2,8 @@ package com.tang.hwplib.objects.docinfo
 
 import com.tang.hwplib.objects.docinfo.compatibledocument.HWPCompatibleDocumentSort
 import com.tang.hwplib.objects.etc.COMPATIBLE_DOCUMENT
+import com.tang.hwplib.util.compare.nullEquals
+
 /**
  * 호환 문서를 나타내는 객체
  * Tag ID: HWPTAG_COMPATIBLE_DOCUMENT [COMPATIBLE_DOCUMENT]
@@ -34,4 +36,6 @@ class HWPCompatibleDocument : HWPDocInfoElement() {
             this.compatibleDocumentSort = compatibleDocumentSort
         }
     }
+
+    override fun equals(other: Any?): Boolean = nullEquals(compatibleDocumentSort, (other as HWPCompatibleDocument).compatibleDocumentSort)
 }

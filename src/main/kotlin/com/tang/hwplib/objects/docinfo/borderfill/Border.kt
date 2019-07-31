@@ -219,6 +219,10 @@ class HWPEachBorder {
             this.color = color
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPEachBorder).let { border ->
+        return border.type == type && border.thickness == thickness && border.color == color
+    }
 }
 
 /**
@@ -455,4 +459,6 @@ class HWPBorderFillProperty {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPBorderFillProperty).value
 }

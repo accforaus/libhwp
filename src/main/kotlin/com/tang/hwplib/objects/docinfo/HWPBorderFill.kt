@@ -76,4 +76,16 @@ class HWPBorderFill : HWPDocInfoElement() {
             this.fillInfo = fillInfo
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPBorderFill).let { borderFill ->
+        return property == borderFill.property
+                && leftBorder == borderFill.leftBorder
+                && rightBorder == borderFill.rightBorder
+                && topBorder == borderFill.topBorder
+                && bottomBorder == borderFill.bottomBorder
+                && diagonalSort.value == borderFill.diagonalSort.value
+                && diagonalThickness.value == borderFill.diagonalThickness.value
+                && diagonalColor == borderFill.diagonalColor
+                && fillInfo == borderFill.fillInfo
+    }
 }

@@ -99,4 +99,17 @@ class HWPFontTypeInfo {
             this.xHeight = xHeight
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPFontTypeInfo).let {
+        return fontType == it.fontType
+                && serifType == it.serifType
+                && thickness == it.thickness
+                && ratio == it.ratio
+                && contrast == it.contrast
+                && strokeDeviation == it.strokeDeviation
+                && characterStrokeType == it.characterStrokeType
+                && characterShape == it.characterShape
+                && middleLine == it.middleLine
+                && xHeight == it.xHeight
+    }
 }

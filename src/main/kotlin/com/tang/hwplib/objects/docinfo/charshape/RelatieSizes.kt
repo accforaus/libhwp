@@ -161,4 +161,6 @@ class HWPRelativeSizes {
             setForAll(value)
         }
     }
+
+    override fun equals(other: Any?): Boolean = array contentEquals (other as HWPRelativeSizes).array
 }

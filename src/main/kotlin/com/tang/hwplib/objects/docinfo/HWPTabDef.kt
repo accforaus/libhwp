@@ -3,6 +3,8 @@ package com.tang.hwplib.objects.docinfo
 import com.tang.hwplib.objects.docinfo.tabdef.HWPTabDefProperty
 import com.tang.hwplib.objects.docinfo.tabdef.HWPTabInfo
 import com.tang.hwplib.objects.etc.TAB_DEF
+import com.tang.hwplib.util.compare.contentEquals
+
 /**
  * 탭 정의를 나타내는 객체
  * Tag ID: HWPTAG_TAB_DEF [TAB_DEF]
@@ -46,5 +48,11 @@ class HWPTabDef : HWPDocInfoElement() {
             this.property = property
             this.tabInfoList = tabInfoGenerator()
         }
+    }
+
+
+    override fun equals(other: Any?): Boolean = (other as HWPTabDef).let {
+        return property == it.property
+                && tabInfoList contentEquals it.tabInfoList
     }
 }

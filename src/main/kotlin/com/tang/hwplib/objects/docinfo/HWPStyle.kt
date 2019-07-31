@@ -6,6 +6,7 @@ import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.style.HWPStyleProperty
 import com.tang.hwplib.objects.docinfo.style.HWPStyleSort
 import com.tang.hwplib.objects.etc.STYLE
+import com.tang.hwplib.util.compare.nullEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
@@ -32,6 +33,12 @@ import com.tang.hwplib.util.exceptions.HWPBuildException
     var paraShapeId: Int = 0
     @ID(IDTypes.CharShape)
     var charShapeId: Int = 0
+
+    override fun equals(other: Any?): Boolean = (other as HWPStyle).let {
+        return nullEquals(hangulName, it.hangulName)
+                && nullEquals(englishName, it.englishName)
+                && property == it.property
+    }
 
     /**
      * 객체를 복사한 후 반환하는 함수

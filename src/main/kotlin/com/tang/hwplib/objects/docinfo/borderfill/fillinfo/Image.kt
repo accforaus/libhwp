@@ -122,4 +122,8 @@ class HWPImageFill {
             this.pictureInfo = pictureInfo
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPImageFill).let { fill ->
+        return imageFillType.value == fill.imageFillType.value && pictureInfo == fill.pictureInfo
+    }
 }

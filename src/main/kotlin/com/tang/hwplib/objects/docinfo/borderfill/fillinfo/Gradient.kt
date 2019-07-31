@@ -1,6 +1,7 @@
 package com.tang.hwplib.objects.docinfo.borderfill.fillinfo
 
 import com.tang.hwplib.objects.etc.Color4Byte
+import com.tang.hwplib.util.compare.contentEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
@@ -121,5 +122,18 @@ class HWPGradientFill {
                     this.changePointList = points
                     this.colorList = colors
         }
+    }
+
+    override fun equals(other: Any?): Boolean = (other as HWPGradientFill).let { fill ->
+        return gradientType.value == fill.gradientType.value
+                && startAngle == fill.startAngle
+                && centerX == fill.centerX
+                && centerY == fill.centerY
+                && blurringDegree == fill.blurringDegree
+                && blurringCenter == fill.blurringCenter
+                && changePointList.size == fill.changePointList.size
+                && colorList.size == fill.colorList.size
+                && changePointList contentEquals fill.changePointList
+                && colorList contentEquals fill.colorList
     }
 }

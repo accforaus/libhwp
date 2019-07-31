@@ -108,4 +108,21 @@ import com.tang.hwplib.objects.etc.CHAR_SHAPE
             this.strikeLineColor = strikeLineColor
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPCharShape).let {
+        return faceNameIds == it.faceNameIds
+                && ratios == it.ratios
+                && charSpaces == it.charSpaces
+                && relativeSizes == it.relativeSizes
+                && charOffsets == it.charOffsets
+                && baseSize == it.baseSize
+                && property == it.property
+                && shadowGap1 == it.shadowGap1
+                && shadowGap2 == it.shadowGap2
+                && charColor == it.charColor
+                && underLineColor == it.underLineColor
+                && shadeColor == it.shadeColor
+                && shadowColor == it.shadowColor
+                && strikeLineColor == it.strikeLineColor
+    }
 }

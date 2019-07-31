@@ -44,4 +44,10 @@ class HWPDocumentProperties : HWPDocInfoElement() {
             this.caretPosition = caretPosition
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPDocumentProperties).let {
+        return sectionCount == it.sectionCount
+                && startNumber == it.startNumber
+                && caretPosition == it.caretPosition
+    }
 }

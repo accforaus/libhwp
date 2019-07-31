@@ -56,4 +56,12 @@ class HWPBullet : HWPDocInfoElement() {
             this.checkBulletChar = checkBulletChar
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPBullet).let {
+        return paragraphHeadInfo == it.paragraphHeadInfo
+                && bulletChar == it.bulletChar
+                && imageBulletCheck == it.imageBulletCheck
+                && imageBullet == it.imageBullet
+                && checkBulletChar == it.checkBulletChar
+    }
 }

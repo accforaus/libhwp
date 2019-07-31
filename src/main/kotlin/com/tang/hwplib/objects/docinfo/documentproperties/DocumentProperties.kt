@@ -40,6 +40,12 @@ class HWPCaretPosition {
             this.positionInParagraph = positionInParagraph
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPCaretPosition).let {
+        return listID == it.listID
+                && paragraphID == it.paragraphID
+                && positionInParagraph == it.positionInParagraph
+    }
 }
 
 /**
@@ -93,5 +99,15 @@ class HWPStartNumber {
             this.table = table
             this.equation = equation
         }
+    }
+
+
+    override fun equals(other: Any?): Boolean = (other as HWPStartNumber).let {
+        return page == it.page
+                && footnote == it.footnote
+                && endnote == it.endnote
+                && picture == it.picture
+                && table == it.table
+                && equation == it.equation
     }
 }

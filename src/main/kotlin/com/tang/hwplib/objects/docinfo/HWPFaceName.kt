@@ -4,6 +4,7 @@ import com.tang.hwplib.objects.docinfo.facename.HWPFaceNameProperty
 import com.tang.hwplib.objects.docinfo.facename.HWPFontType
 import com.tang.hwplib.objects.docinfo.facename.HWPFontTypeInfo
 import com.tang.hwplib.objects.etc.FACE_NAME
+import com.tang.hwplib.util.compare.nullEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
@@ -71,5 +72,15 @@ class HWPFaceName : HWPDocInfoElement() {
             this.fontTypeInfo = fontTypeInfo
             this.baseFontName = baseFontName
         }
+    }
+
+
+    override fun equals(other: Any?): Boolean = (other as HWPFaceName).let {
+        return property == it.property
+                && nullEquals(name, it.name)
+                && nullEquals(substituteFontType, it.substituteFontType)
+                && nullEquals(substituteFontName, it.substituteFontName)
+                && fontTypeInfo == it.fontTypeInfo
+                && nullEquals(baseFontName, it.baseFontName)
     }
 }

@@ -1,6 +1,7 @@
 package com.tang.hwplib.objects.docinfo.tabdef
 
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
+import com.tang.hwplib.util.compare.nullEquals
 
 /**
  * 탭의 종류
@@ -84,5 +85,11 @@ class HWPTabInfo {
             this.tabSort = tabSort
             this.fillSort = fillSort
         }
+    }
+
+    override fun equals(other: Any?): Boolean = (other as HWPTabInfo).let {
+        return position == it.position
+                && tabSort == it.tabSort
+                && nullEquals(fillSort, it.fillSort)
     }
 }

@@ -403,6 +403,8 @@ class HWPParaShapeProperty1 {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPParaShapeProperty1).value
 }
 
 /**
@@ -502,6 +504,8 @@ class HWPParaShapeProperty2 {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPParaShapeProperty2).value
 }
 
 /**
@@ -558,4 +562,7 @@ class HWPParaShapeProperty3 {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPParaShapeProperty3).value
+
 }

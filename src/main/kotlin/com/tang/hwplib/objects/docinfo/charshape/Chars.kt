@@ -165,6 +165,8 @@ class HWPCharOffsets {
             setForAll(value)
         }
     }
+
+    override fun equals(other: Any?): Boolean = array contentEquals (other as HWPCharOffsets).array
 }
 
 /**
@@ -523,6 +525,8 @@ class HWPCharShapeProperty {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPCharShapeProperty).value
 }
 
 /**
@@ -686,4 +690,6 @@ class HWPCharSpaces {
             setForAll(value)
         }
     }
+
+    override fun equals(other: Any?): Boolean = array contentEquals (other as HWPCharSpaces).array
 }

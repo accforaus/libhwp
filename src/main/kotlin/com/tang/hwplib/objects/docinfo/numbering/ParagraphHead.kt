@@ -204,6 +204,8 @@ class HWPParagraphHeadInfoProperty {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as HWPParagraphHeadInfoProperty).value
 }
 
 /**
@@ -252,5 +254,11 @@ class HWPParagraphHeadInfoProperty {
             this.distanceFromBody = distanceFromBody
             this.charShapeID = charShapeID
         }
+    }
+
+    override fun equals(other: Any?): Boolean = (other as HWPParagraphHeadInfo).let {
+        return property == it.property
+                && correctionValueForWidth == it.correctionValueForWidth
+                && distanceFromBody == it.distanceFromBody
     }
 }

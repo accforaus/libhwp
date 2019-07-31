@@ -1,5 +1,7 @@
 package com.tang.hwplib.objects.docinfo.numbering
 
+import com.tang.hwplib.util.compare.nullEquals
+
 /**
  * 번호 형식을 나타내는 객체
  * 2 bytes
@@ -11,6 +13,11 @@ package com.tang.hwplib.objects.docinfo.numbering
 class HWPLevelNumbering {
     var paragraphHeadInfo: HWPParagraphHeadInfo = HWPParagraphHeadInfo()
     var numberFormat: String? = null
+
+    override fun equals(other: Any?): Boolean = (other as HWPLevelNumbering).let {
+        return paragraphHeadInfo == it.paragraphHeadInfo
+                && nullEquals(numberFormat, it.numberFormat)
+    }
 
     /**
      * 객체를 복사한 후 반환하는 함수
@@ -68,4 +75,6 @@ class HWPExtendNumbering {
             this.numberFormat = numberFormat
         }
     }
+
+    override fun equals(other: Any?): Boolean = nullEquals(numberFormat, (other as HWPExtendNumbering).numberFormat)
 }

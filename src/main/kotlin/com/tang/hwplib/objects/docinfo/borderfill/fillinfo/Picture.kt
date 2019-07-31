@@ -88,4 +88,10 @@ enum class HWPPictureEffect(v: Byte) {
             this.binItemID = binItemID
         }
     }
+
+    override fun equals(other: Any?): Boolean = (other as HWPPictureInfo).let { info ->
+        return brightness == info.brightness
+                && contrast == other.contrast
+                && effect.value == info.effect.value
+    }
 }

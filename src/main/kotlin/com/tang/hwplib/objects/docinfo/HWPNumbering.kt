@@ -2,6 +2,7 @@ package com.tang.hwplib.objects.docinfo
 import com.tang.hwplib.objects.etc.NUMBERING
 import com.tang.hwplib.objects.docinfo.numbering.HWPExtendNumbering
 import com.tang.hwplib.objects.docinfo.numbering.HWPLevelNumbering
+import com.tang.hwplib.util.compare.contentEquals
 
 /**
  * 문단 번호를 나타내는 객체
@@ -30,7 +31,6 @@ class HWPNumbering : HWPDocInfoElement() {
         temp
     }
     var extendStartNumberForLevel: LongArray = LongArray(3)
-
 
     /**
      * 수준 번호를 반환하는 함수
@@ -160,5 +160,13 @@ class HWPNumbering : HWPDocInfoElement() {
             for (index in 0 until 3) HWPExtendNumbering.build().let { temp.add(it) }
             return temp
         }
+    }
+
+    override fun equals(other: Any?): Boolean = (other as HWPNumbering).let {
+        return levelNumberingList contentEquals it.levelNumberingList
+                && startNumber == it.startNumber
+                && startNumberForLevel contentEquals it.startNumberForLevel
+                && extendLevelNumberingList contentEquals it.extendLevelNumberingList
+                && extendStartNumberForLevel contentEquals it.extendStartNumberForLevel
     }
 }
