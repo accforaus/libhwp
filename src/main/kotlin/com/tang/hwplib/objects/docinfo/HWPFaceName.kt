@@ -4,7 +4,7 @@ import com.tang.hwplib.objects.docinfo.facename.HWPFaceNameProperty
 import com.tang.hwplib.objects.docinfo.facename.HWPFontType
 import com.tang.hwplib.objects.docinfo.facename.HWPFontTypeInfo
 import com.tang.hwplib.objects.etc.FACE_NAME
-import com.tang.hwplib.util.compare.nullEquals
+import com.tang.hwplib.util.extension.nullEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**

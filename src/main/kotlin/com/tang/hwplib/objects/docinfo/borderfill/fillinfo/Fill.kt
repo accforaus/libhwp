@@ -2,7 +2,7 @@ package com.tang.hwplib.objects.docinfo.borderfill.fillinfo
 
 import com.tang.hwplib.util.binary.get
 import com.tang.hwplib.util.binary.set
-import com.tang.hwplib.util.compare.nullEquals
+import com.tang.hwplib.util.extension.nullEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**
@@ -203,7 +203,7 @@ class HWPFillInfo {
     }
 
     override fun equals(other: Any?): Boolean = (other as HWPFillInfo).let { info ->
-        return type == info.type
+        return type.value == info.type.value
                 && nullEquals(patternFill, info.patternFill)
                 && nullEquals(gradientFill, info.gradientFill)
                 && nullEquals(imageFill, info.imageFill)

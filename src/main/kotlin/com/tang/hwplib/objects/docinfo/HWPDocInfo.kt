@@ -99,6 +99,17 @@ class HWPDocInfo {
         }
     }
 
+    fun getFaceNameByType(type: HWPFaceNameEnum) : ArrayList<HWPFaceName> = when (type) {
+        HWPFaceNameEnum.HANGUL -> hangulFaceNameList
+        HWPFaceNameEnum.HANJA -> hanjaFaceNameList
+        HWPFaceNameEnum.JAPANESE -> japaneseFaceNameList
+        HWPFaceNameEnum.ETC -> etcFaceNameList
+        HWPFaceNameEnum.SYMBOL -> symbolFaceNameList
+        HWPFaceNameEnum.USER -> userFaceNameList
+        HWPFaceNameEnum.ENGLISH -> englishFaceNameList
+        else -> ArrayList()
+    }
+
     fun proceedBinData(binDataName: String) : Int {
         fun findIndexByName() : Int {
             val embeddedList : ArrayList<HWPEmbeddedBinaryData> = binData?.embeddedBinaryDataList ?: throw HWPBuildException("BinData must be not null")

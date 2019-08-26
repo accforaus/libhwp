@@ -6,7 +6,7 @@ import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.style.HWPStyleProperty
 import com.tang.hwplib.objects.docinfo.style.HWPStyleSort
 import com.tang.hwplib.objects.etc.STYLE
-import com.tang.hwplib.util.compare.nullEquals
+import com.tang.hwplib.util.extension.nullEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**

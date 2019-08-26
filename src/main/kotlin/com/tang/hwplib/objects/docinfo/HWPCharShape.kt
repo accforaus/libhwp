@@ -110,8 +110,7 @@ import com.tang.hwplib.objects.etc.CHAR_SHAPE
     }
 
     override fun equals(other: Any?): Boolean = (other as HWPCharShape).let {
-        return faceNameIds == it.faceNameIds
-                && ratios == it.ratios
+        return ratios == it.ratios
                 && charSpaces == it.charSpaces
                 && relativeSizes == it.relativeSizes
                 && charOffsets == it.charOffsets

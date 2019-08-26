@@ -2,7 +2,7 @@ package com.tang.hwplib.objects.docinfo
 import com.tang.hwplib.objects.etc.NUMBERING
 import com.tang.hwplib.objects.docinfo.numbering.HWPExtendNumbering
 import com.tang.hwplib.objects.docinfo.numbering.HWPLevelNumbering
-import com.tang.hwplib.util.compare.contentEquals
+import com.tang.hwplib.util.extension.contentEquals
 
 /**
  * 문단 번호를 나타내는 객체

@@ -1,6 +1,6 @@
 package com.tang.hwplib.objects.docinfo.numbering
 
-import com.tang.hwplib.util.compare.nullEquals
+import com.tang.hwplib.util.extension.nullEquals
 
 /**
  * 번호 형식을 나타내는 객체

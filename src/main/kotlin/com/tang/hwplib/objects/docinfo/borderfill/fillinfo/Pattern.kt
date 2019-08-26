@@ -95,7 +95,7 @@ class HWPPatternFill {
 
     override fun equals(other: Any?): Boolean = (other as HWPPatternFill).let { fill ->
         return backColor == fill.backColor
-                && patternColor == fill.backColor
+                && patternColor == fill.patternColor
                 && patternType.value == fill.patternType.value
     }
 }

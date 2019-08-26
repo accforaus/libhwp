@@ -1,7 +1,7 @@
 package com.tang.hwplib.objects.docinfo.tabdef
 
 import com.tang.hwplib.objects.docinfo.borderfill.HWPBorderType
-import com.tang.hwplib.util.compare.nullEquals
+import com.tang.hwplib.util.extension.nullEquals
 
 /**
  * 탭의 종류

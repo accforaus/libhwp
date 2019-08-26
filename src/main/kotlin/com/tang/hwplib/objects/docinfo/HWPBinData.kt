@@ -6,7 +6,7 @@ import com.tang.hwplib.annotation.LinkID
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataProperty
 import com.tang.hwplib.objects.docinfo.bindata.HWPBinDataType
 import com.tang.hwplib.objects.etc.BIN_DATA
-import com.tang.hwplib.util.compare.nullEquals
+import com.tang.hwplib.util.extension.nullEquals
 import com.tang.hwplib.util.exceptions.HWPBuildException
 
 /**

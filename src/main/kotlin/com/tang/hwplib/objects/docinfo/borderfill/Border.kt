@@ -221,7 +221,9 @@ class HWPEachBorder {
     }
 
     override fun equals(other: Any?): Boolean = (other as HWPEachBorder).let { border ->
-        return border.type == type && border.thickness == thickness && border.color == color
+        return border.type.value == type.value
+                && border.thickness.value == thickness.value
+                && border.color == color
     }
 }
 

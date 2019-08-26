@@ -3,7 +3,7 @@ package com.tang.hwplib.objects.docinfo
 import com.tang.hwplib.objects.docinfo.tabdef.HWPTabDefProperty
 import com.tang.hwplib.objects.docinfo.tabdef.HWPTabInfo
 import com.tang.hwplib.objects.etc.TAB_DEF
-import com.tang.hwplib.util.compare.contentEquals
+import com.tang.hwplib.util.extension.contentEquals
 
 /**
  * 탭 정의를 나타내는 객체

@@ -27,8 +27,8 @@ class HWPBorderFill : HWPDocInfoElement() {
     var rightBorder: HWPEachBorder = HWPEachBorder()
     var topBorder: HWPEachBorder = HWPEachBorder()
     var bottomBorder: HWPEachBorder = HWPEachBorder()
-    var diagonalSort: HWPDiagonalSort = HWPDiagonalSort.Slash
-    var diagonalThickness: HWPBorderThickness = HWPBorderThickness.MM0_1
+    lateinit var diagonalSort: HWPDiagonalSort
+    lateinit var diagonalThickness: HWPBorderThickness
     var diagonalColor: Color4Byte = Color4Byte()
     var fillInfo: HWPFillInfo = HWPFillInfo()
 
