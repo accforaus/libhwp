@@ -109,4 +109,6 @@ class Color4Byte {
             this.value = value
         }
     }
+
+    override fun equals(other: Any?): Boolean = value == (other as Color4Byte).value
 }
