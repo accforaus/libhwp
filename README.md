@@ -143,6 +143,24 @@ target_hwp.addParagraph(some_paragraph, original_hwp); // add paragraph
 target_hwp.addParagraphs(some_paragraphs, original_hwp); // add paragraph list
 ```
 
+* 한글 문서 내 수식(equation)을 latex(tex)문법으로 변환
+
+```kotlin
+val hwp = HWPDocument("...")
+
+val tex = hwp.getEquationList()
+
+// do something
+```
+
+```java
+
+HWPDocument hwp = new HWPDocument("...")
+List<String> tex = hwp.getEquationList()
+
+//do something
+
+```
 <br/>
 
 ## Credits for [hwplib](https://github.com/neolord0/hwplib)
